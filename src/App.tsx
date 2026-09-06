@@ -33,11 +33,13 @@ import {
 } from "lucide-react";
 import {
   CATEGORIES,
+  categoryFor,
+  LEGACY_CATEGORIES,
   DIFFICULTIES,
   type CategoryId,
   type Question,
 } from "./data/types";
-import { questions, questionMap } from "./data/questions";
+import { questions, questionMap, activeQuestionIds } from "./data/questions";
 import {
   categoryScores,
   createSession,
@@ -52,6 +54,17 @@ import {
 import Radar from "./Radar";
 
 const icons: Record<CategoryId, LucideIcon> = {
+  household: Lightbulb,
+  health: Leaf,
+  money: ChartNoAxesCombined,
+  consumer: ShieldCheck,
+  work: BookOpen,
+  manners: Flower2,
+  public: Compass,
+  safety: ShieldCheck,
+  digital: Monitor,
+  civic: Landmark,
+  world: Globe2,
   language: BookOpen,
   geography: Globe2,
   history: Landmark,
@@ -64,7 +77,7 @@ const icons: Record<CategoryId, LucideIcon> = {
 const initialConfig: QuizConfig = {
   difficulty: "mix",
   categories: CATEGORIES.map((c) => c.id),
-  count: 20,
+  count: 24,
   mode: "quiz",
 };
 const dateFormat = new Intl.DateTimeFormat("ja-JP", {
@@ -106,7 +119,15 @@ function Source({ question }: { question: Question }) {
 export default function App() {
   const [saved] = useState(() => readSaved(questionMap));
   const [history, setHistory] = useState<Result[]>(saved.history);
-  const [session, setSession] = useState<Session | null>(saved.session);
+  const retiredSession = Boolean(
+    saved.session?.items.some(
+      (item) => !activeQuestionIds.has(item.questionId),
+    ),
+  );
+  const [session, setSession] = useState<Session | null>(
+    retiredSession ? null : saved.session,
+  );
+  const [showRevisionNotice, setShowRevisionNotice] = useState(retiredSession);
   const [page, setPage] = useState<
     "home" | "quiz" | "result" | "history" | "library"
   >("home");
@@ -123,6 +144,7 @@ export default function App() {
   const [librarySearch, setLibrarySearch] = useState("");
   const [libraryCategory, setLibraryCategory] = useState("all");
   const [libraryDifficulty, setLibraryDifficulty] = useState("all");
+  const [libraryTopic, setLibraryTopic] = useState("all");
   const [libraryPage, setLibraryPage] = useState(0);
   const [reviewFilter, setReviewFilter] = useState<"wrong" | "all">("wrong");
 
@@ -147,7 +169,7 @@ export default function App() {
   }, [session?.index, page]);
   useEffect(() => {
     setLibraryPage(0);
-  }, [librarySearch, libraryCategory, libraryDifficulty]);
+  }, [librarySearch, libraryCategory, libraryDifficulty, libraryTopic]);
 
   const available = questions.filter(
     (q) =>
@@ -155,12 +177,19 @@ export default function App() {
       (config.difficulty === "mix" || q.difficulty === config.difficulty),
   );
   const examCount = Math.min(config.count, available.length);
+  const currentHistory = useMemo(
+    () =>
+      history.filter((record) =>
+        record.items.every((item) => activeQuestionIds.has(item.questionId)),
+      ),
+    [history],
+  );
   const studied = new Set(
-    history.flatMap((r) => r.items.map((i) => i.questionId)),
+    currentHistory.flatMap((r) => r.items.map((i) => i.questionId)),
   ).size;
   const wrongIds = useMemo(() => {
     const wrong = new Set<string>();
-    [...history].reverse().forEach((r) =>
+    [...currentHistory].reverse().forEach((r) =>
       r.items.forEach((item, i) => {
         const q = questionMap.get(item.questionId)!;
         if (item.order[r.answers[i]] === q.answer) wrong.delete(q.id);
@@ -168,12 +197,15 @@ export default function App() {
       }),
     );
     return wrong;
-  }, [history]);
-  const historyCorrect = history.reduce(
+  }, [currentHistory]);
+  const historyCorrect = currentHistory.reduce(
     (sum, r) => sum + resultSummary(r).correct,
     0,
   );
-  const historyTotal = history.reduce((sum, r) => sum + r.items.length, 0);
+  const historyTotal = currentHistory.reduce(
+    (sum, r) => sum + r.items.length,
+    0,
+  );
   const last = history[0];
   const libraryQuestions = useMemo(
     () =>
@@ -181,12 +213,13 @@ export default function App() {
         (q) =>
           (libraryCategory === "all" || q.category === libraryCategory) &&
           (libraryDifficulty === "all" || q.difficulty === libraryDifficulty) &&
-          `${q.prompt} ${q.choices.join(" ")} ${q.explanation}`
+          (libraryTopic === "all" || q.topic === libraryTopic) &&
+          `${q.topic ?? ""} ${q.prompt} ${q.choices.join(" ")} ${q.explanation}`
             .normalize("NFKC")
             .toLowerCase()
             .includes(librarySearch.trim().normalize("NFKC").toLowerCase()),
       ),
-    [librarySearch, libraryCategory, libraryDifficulty],
+    [librarySearch, libraryCategory, libraryDifficulty, libraryTopic],
   );
 
   function start(bank = questions, settings = config) {
@@ -254,6 +287,19 @@ export default function App() {
     }));
   }
   const stats = result ? resultSummary(result) : null;
+  const resultHasRetiredQuestions = Boolean(
+    result?.items.some((item) => !activeQuestionIds.has(item.questionId)),
+  );
+  const reviewableWrongIds = new Set(
+    result?.items
+      .filter(
+        (item, index) =>
+          activeQuestionIds.has(item.questionId) &&
+          item.order[result.answers[index]] !==
+            questionMap.get(item.questionId)!.answer,
+      )
+      .map((item) => item.questionId) ?? [],
+  );
   const grade = stats ? getGrade(stats.percent) : null;
   const currentItem = session?.items[session.index];
   const currentQuestion = currentItem
@@ -325,6 +371,20 @@ export default function App() {
       <main id="main" className={`main-content page-${page}`}>
         {page === "home" && (
           <>
+            {showRevisionNotice && (
+              <div className="content-notice" role="status">
+                <p>
+                  問題集の改訂に伴い、更新前の問題を含む中断データを終了しました。新しい問題で挑戦できます。完了済みの記録は残っています。
+                </p>
+                <button
+                  className="icon-button"
+                  aria-label="問題改訂のお知らせを閉じる"
+                  onClick={() => setShowRevisionNotice(false)}
+                >
+                  <X size={16} />
+                </button>
+              </div>
+            )}
             <section className="hero">
               <div className="hero-copy">
                 <div className="eyebrow">
@@ -353,7 +413,7 @@ export default function App() {
                   </span>
                   <span>
                     <Globe2 size={16} />
-                    <b>8</b>ジャンル
+                    <b>{CATEGORIES.length}</b>ジャンル
                   </span>
                   <span>
                     <ChartNoAxesCombined size={16} />
@@ -391,12 +451,14 @@ export default function App() {
                       category: c.id,
                       correct: 0,
                       total: 0,
-                      percent: [85, 68, 80, 52, 93, 75, 48, 75][i],
+                      percent: [85, 68, 80, 52, 93, 75, 48, 75, 65, 82, 58, 70][
+                        i
+                      ],
                     }))}
                   />
                   <div className="preview-bottom">
                     <span className="legend-dot" />
-                    8つの角度から、得意と苦手を見える化
+                    {CATEGORIES.length}つの角度から、得意と苦手を見える化
                   </div>
                 </div>
                 <div className="floating-label label-bottom">
@@ -442,6 +504,25 @@ export default function App() {
                     <Compass size={17} />
                   </span>
                 </div>
+                <details className="scope-guide">
+                  <summary>
+                    出題範囲と難易度について
+                    <ChevronDown size={14} />
+                  </summary>
+                  <p>
+                    家事、食、お金、買い物、仕事、慣習、交通、防災、ネット、社会の手続きに、ことばや身近な教養を加えた12ジャンル。各100問を収録しています。初級は基本、中級は使い分け、上級は条件を読み合わせる判断が中心です。日本の暮らしを想定し、地域・宗教・製品による違いは問題文で示します。
+                  </p>
+                  <p>
+                    実際のクイズ集と公的・実務資料を調査して再構成しました。
+                    <a
+                      href="https://github.com/akatonboboonboon/ippanzyousiki/blob/codex/build-quiz-app/docs/research/overview.md"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      調査と出題方針を読む
+                    </a>
+                  </p>
+                </details>
                 <fieldset>
                   <legend>
                     <span className="number-label">01</span>難易度
@@ -526,14 +607,14 @@ export default function App() {
                   </legend>
                   <div className="count-row">
                     <div className="count-options">
-                      {[10, 20, 40, 80, 600].map((count) => (
+                      {[12, 24, 48, 96, questions.length].map((count) => (
                         <button
                           key={count}
                           aria-pressed={config.count === count}
                           className={config.count === count ? "selected" : ""}
                           onClick={() => setConfig((c) => ({ ...c, count }))}
                         >
-                          {count === 600 ? (
+                          {count === questions.length ? (
                             "全問"
                           ) : (
                             <>
@@ -567,7 +648,7 @@ export default function App() {
                     <ArrowRight size={19} />
                   </button>
                   <small>
-                    {config.categories.length === 8
+                    {config.categories.length === CATEGORIES.length
                       ? "全ジャンルからバランスよく出題して、一般常識度を測定します。"
                       : "選んだジャンルの理解度を測定します。未出題の分野は「未測定」と表示します。"}
                     {available.length < config.count &&
@@ -583,7 +664,7 @@ export default function App() {
                       <ChartNoAxesCombined size={17} />
                       あなたの学び
                     </span>
-                    <span className="pill light">このブラウザー</span>
+                    <span className="pill light">現行の問題集</span>
                   </div>
                   <div className="journey-stat">
                     <strong>
@@ -602,7 +683,7 @@ export default function App() {
                   <div className="journey-numbers">
                     <div>
                       <b>
-                        {history.length}
+                        {currentHistory.length}
                         <small>回</small>
                       </b>
                       <span>チャレンジ</span>
@@ -660,7 +741,7 @@ export default function App() {
               <div className="section-title-row">
                 <div>
                   <div className="eyebrow subtle">A WORLD OF KNOWLEDGE</div>
-                  <h2>8つのジャンル、広がる世界。</h2>
+                  <h2>{CATEGORIES.length}のジャンル、暮らしに広がる知識。</h2>
                 </div>
                 <button
                   className="text-link"
@@ -901,6 +982,13 @@ export default function App() {
                 ホームへ
               </button>
             </div>
+            {resultHasRetiredQuestions && (
+              <div className="content-notice">
+                <p>
+                  改訂前の問題を含む記録です。当時の問題と正答で表示しており、現在の集計には含めません。差し替えた旧問題は復習の対象外です。
+                </p>
+              </div>
+            )}
             <div className="result-grid">
               <section className="panel score-panel">
                 <div className="eyebrow subtle">
@@ -909,11 +997,16 @@ export default function App() {
                     : "KNOWLEDGE SCORE"}
                 </div>
                 <h2>
-                  {result.config.mode === "review"
-                    ? "復習スコア"
-                    : result.config.categories.length === 8
-                      ? "あなたの一般常識度"
-                      : "選択ジャンルの理解度"}
+                  {resultHasRetiredQuestions
+                    ? "改訂前のスコア"
+                    : result.config.mode === "review"
+                      ? "復習スコア"
+                      : result.config.categories.length ===
+                          (resultHasRetiredQuestions
+                            ? LEGACY_CATEGORIES.length
+                            : CATEGORIES.length)
+                        ? "あなたの一般常識度"
+                        : "選択ジャンルの理解度"}
                 </h2>
                 <div className="score-number">
                   {stats.percent}
@@ -966,7 +1059,10 @@ export default function App() {
                   </span>
                   <span className="pill light">正答率 %</span>
                 </div>
-                <Radar scores={stats.scores} />
+                <Radar
+                  scores={stats.scores}
+                  legacy={resultHasRetiredQuestions}
+                />
                 <p>
                   <span className="legend-dot" />
                   今回のチャレンジ
@@ -983,7 +1079,7 @@ export default function App() {
               </div>
               <div className="breakdown-grid">
                 {stats.scores.map((s) => {
-                  const c = CATEGORIES.find((c) => c.id === s.category)!;
+                  const c = categoryFor(s.category, resultHasRetiredQuestions);
                   return (
                     <div className="breakdown-item" key={c.id}>
                       <span
@@ -1030,7 +1126,8 @@ export default function App() {
                       .filter((s) => s.percent === measured[0].percent)
                       .map(
                         (s) =>
-                          CATEGORIES.find((c) => c.id === s.category)!.name,
+                          categoryFor(s.category, resultHasRetiredQuestions)
+                            .name,
                       );
                     return (
                       <>
@@ -1045,36 +1142,29 @@ export default function App() {
             <div className="result-actions">
               <button
                 className="button primary"
-                disabled={stats.correct === result.items.length}
-                onClick={() =>
-                  startReview(
-                    new Set(
-                      result.items
-                        .filter(
-                          (item, i) =>
-                            item.order[result.answers[i]] !==
-                            questionMap.get(item.questionId)!.answer,
-                        )
-                        .map((i) => i.questionId),
-                    ),
-                  )
-                }
+                disabled={!reviewableWrongIds.size}
+                onClick={() => startReview(reviewableWrongIds)}
               >
                 <RotateCcw size={17} />
-                間違えた{result.items.length - stats.correct}問を復習
+                間違えた{reviewableWrongIds.size}問を復習
               </button>
               <button
                 className="button secondary"
                 onClick={() => {
                   setConfig({
-                    ...result.config,
+                    ...(resultHasRetiredQuestions
+                      ? initialConfig
+                      : result.config),
                     mode: "quiz",
                     count:
+                      resultHasRetiredQuestions ||
                       result.config.mode === "review"
-                        ? 20
-                        : [10, 20, 40, 80, 600].includes(result.config.count)
+                        ? 24
+                        : [12, 24, 48, 96, questions.length].includes(
+                              result.config.count,
+                            )
                           ? result.config.count
-                          : 600,
+                          : questions.length,
                   });
                   setPage("home");
                 }}
@@ -1177,7 +1267,7 @@ export default function App() {
                   チャレンジ回数
                 </span>
                 <strong>
-                  {history.length}
+                  {currentHistory.length}
                   <small>回</small>
                 </strong>
               </div>
@@ -1231,7 +1321,8 @@ export default function App() {
                     <div>
                       <h2>伸びしろを、知識に変えよう。</h2>
                       <p>
-                        最新の回答で間違えた問題が{wrongIds.size}問あります。
+                        現行問題の記録で間違えた問題が{wrongIds.size}
+                        問あります。
                       </p>
                     </div>
                   </div>
@@ -1264,13 +1355,26 @@ export default function App() {
                           <strong>
                             {r.config.mode === "review"
                               ? "復習チャレンジ"
-                              : r.config.categories.length === 8
+                              : r.config.categories.length ===
+                                  (r.items.some(
+                                    (item) =>
+                                      !activeQuestionIds.has(item.questionId),
+                                  )
+                                    ? LEGACY_CATEGORIES.length
+                                    : CATEGORIES.length)
                                 ? "全ジャンル診断"
                                 : r.config.categories
                                     .map(
                                       (id) =>
-                                        CATEGORIES.find((c) => c.id === id)!
-                                          .name,
+                                        categoryFor(
+                                          id,
+                                          r.items.some(
+                                            (item) =>
+                                              !activeQuestionIds.has(
+                                                item.questionId,
+                                              ),
+                                          ),
+                                        ).name,
                                     )
                                     .join("・")}
                           </strong>
@@ -1280,6 +1384,9 @@ export default function App() {
                             {difficultyName(r.config.difficulty)}
                             <span>·</span>
                             {r.items.length}問
+                            {r.items.some(
+                              (item) => !activeQuestionIds.has(item.questionId),
+                            ) && <span className="pill">改訂前</span>}
                           </p>
                         </div>
                         <span className="history-score">
@@ -1294,7 +1401,7 @@ export default function App() {
                 </div>
                 {last && (
                   <p className="history-note">
-                    正答率は保存されている回答の累計です。同じ問題への再回答も含みます。記録はこのブラウザー内に保存されます。
+                    上の集計と復習対象は、現行の問題だけで受けたチャレンジが対象です。改訂前の問題を含む記録は除きます。同じ問題への再回答も含み、最新50回までこのブラウザーに保存します。
                   </p>
                 )}
               </>
@@ -1326,7 +1433,7 @@ export default function App() {
                   aria-label="問題を検索"
                   value={librarySearch}
                   onChange={(e) => setLibrarySearch(e.target.value)}
-                  placeholder="問題・答え・解説から検索"
+                  placeholder="題材・問題・答え・解説から検索"
                 />
                 {librarySearch && (
                   <button
@@ -1340,7 +1447,10 @@ export default function App() {
               <select
                 aria-label="ライブラリのジャンル"
                 value={libraryCategory}
-                onChange={(e) => setLibraryCategory(e.target.value)}
+                onChange={(e) => {
+                  setLibraryCategory(e.target.value);
+                  setLibraryTopic("all");
+                }}
               >
                 <option value="all">すべてのジャンル</option>
                 {CATEGORIES.map((c) => (
@@ -1348,6 +1458,31 @@ export default function App() {
                     {c.name}
                   </option>
                 ))}
+              </select>
+              <select
+                aria-label="ライブラリの題材"
+                value={libraryTopic}
+                onChange={(e) => setLibraryTopic(e.target.value)}
+              >
+                <option value="all">すべての題材</option>
+                {[
+                  ...new Set(
+                    questions
+                      .filter(
+                        (q) =>
+                          libraryCategory === "all" ||
+                          q.category === libraryCategory,
+                      )
+                      .map((q) => q.topic)
+                      .filter(Boolean),
+                  ),
+                ]
+                  .sort((a, b) => a!.localeCompare(b!, "ja"))
+                  .map((topic) => (
+                    <option key={topic} value={topic}>
+                      {topic}
+                    </option>
+                  ))}
               </select>
               <select
                 aria-label="ライブラリの難易度"
@@ -1379,6 +1514,7 @@ export default function App() {
                     setLibrarySearch("");
                     setLibraryCategory("all");
                     setLibraryDifficulty("all");
+                    setLibraryTopic("all");
                   }}
                 >
                   条件をリセット
@@ -1395,14 +1531,12 @@ export default function App() {
                           <span className="library-meta">
                             <span className="category-tag">
                               <CategoryIcon id={q.category} size={14} />
-                              {
-                                CATEGORIES.find((c) => c.id === q.category)!
-                                  .name
-                              }
+                              {categoryFor(q.category).name}
                             </span>
                             <span className={`pill difficulty-${q.difficulty}`}>
                               {difficultyName(q.difficulty)}
                             </span>
+                            <span className="topic-label">{q.topic}</span>
                           </span>
                           <span className="library-prompt">{q.prompt}</span>
                           <ChevronDown size={17} />

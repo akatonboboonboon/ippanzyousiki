@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { CATEGORIES, type Question } from "../src/data/types";
-import { questions, questionMap } from "../src/data/questions";
+import {
+  questions,
+  questionMap,
+  archivedQuestions,
+  activeQuestionIds,
+} from "../src/data/questions";
 import {
   categoryScores,
   createSession,
@@ -25,14 +30,22 @@ function seeded(seed: number) {
 }
 
 describe("question bank quality", () => {
-  it("has 600 unique, explained four-choice questions and an even 8 × 3 × 25 distribution", () => {
-    expect(questions).toHaveLength(600);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(600);
+  it("keeps historical IDs immutable and archived questions out of the active bank", () => {
+    expect(archivedQuestions).toHaveLength(600);
+    expect(questionMap.size).toBe(questions.length + archivedQuestions.length);
+    for (const original of archivedQuestions) {
+      expect(activeQuestionIds.has(original.id)).toBe(false);
+      expect(questionMap.get(original.id)).toEqual(original);
+    }
+  });
+  it("has 1200 unique, explained four-choice questions and an even 12 genres with 40 easy, 35 normal and 25 hard each", () => {
+    expect(questions).toHaveLength(1200);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(1200);
     expect(
       new Set(
         questions.map((q) => q.prompt.normalize("NFKC").replace(/\s/g, "")),
       ).size,
-    ).toBe(600);
+    ).toBe(1200);
     for (const category of CATEGORIES)
       for (const difficulty of ["easy", "normal", "hard"]) {
         expect(
@@ -40,9 +53,25 @@ describe("question bank quality", () => {
             (q) => q.category === category.id && q.difficulty === difficulty,
           ),
           `${category.id}/${difficulty}`,
-        ).toHaveLength(25);
+        ).toHaveLength(
+          { easy: 40, normal: 35, hard: 25 }[
+            difficulty as "easy" | "normal" | "hard"
+          ],
+        );
       }
+    for (const category of CATEGORIES) {
+      expect(
+        new Set(
+          questions
+            .filter((q) => q.category === category.id)
+            .map((q) => q.topic),
+        ).size,
+        category.id,
+      ).toBeGreaterThanOrEqual(10);
+    }
     for (const q of questions) {
+      expect(q.id.startsWith("v2-"), q.id).toBe(true);
+      expect(q.topic?.trim().length, q.id).toBeGreaterThan(0);
       expect(q.prompt.length, q.id).toBeGreaterThan(5);
       expect(q.explanation.length, q.id).toBeGreaterThan(10);
       expect(q.choices, q.id).toHaveLength(4);
@@ -63,7 +92,22 @@ describe("question bank quality", () => {
 });
 
 describe("balanced selection", () => {
-  it("balances all eight categories, includes every difficulty and never repeats an item across varied seeds", () => {
+  it("samples equal numbers from all twelve axes for every full-diagnostic preset", () => {
+    for (const count of [12, 24, 48, 96, 1200]) {
+      const sample = selectQuestions(
+        questions,
+        { ...config, count },
+        seeded(count),
+      );
+      expect(sample).toHaveLength(count);
+      for (const category of CATEGORIES) {
+        expect(sample.filter((q) => q.category === category.id)).toHaveLength(
+          count / 12,
+        );
+      }
+    }
+  });
+  it("balances all twelve categories, includes every difficulty and never repeats an item across varied seeds", () => {
     for (let seed = 1; seed <= 50; seed++) {
       const sample = selectQuestions(questions, config, seeded(seed));
       expect(sample).toHaveLength(20);
@@ -71,8 +115,8 @@ describe("balanced selection", () => {
       const counts = CATEGORIES.map(
         (c) => sample.filter((q) => q.category === c.id).length,
       );
-      expect(Math.min(...counts)).toBe(2);
-      expect(Math.max(...counts)).toBe(3);
+      expect(Math.min(...counts)).toBe(1);
+      expect(Math.max(...counts)).toBe(2);
       expect(new Set(sample.map((q) => q.difficulty)).size).toBe(3);
     }
   });
@@ -80,23 +124,23 @@ describe("balanced selection", () => {
     const sample = selectQuestions(questions, {
       ...config,
       difficulty: "hard",
-      categories: ["science"],
+      categories: ["world"],
       count: 80,
     });
     expect(sample).toHaveLength(25);
     expect(
-      sample.every((q) => q.category === "science" && q.difficulty === "hard"),
+      sample.every((q) => q.category === "world" && q.difficulty === "hard"),
     ).toBe(true);
     expect(selectQuestions(questions, { ...config, categories: [] })).toEqual(
       [],
     );
   });
-  it("can exhaust all 600 questions and select from a small review pool without repeats", () => {
+  it("can exhaust all 1200 questions and select from a small review pool without repeats", () => {
     expect(
       new Set(
-        selectQuestions(questions, { ...config, count: 600 }).map((q) => q.id),
+        selectQuestions(questions, { ...config, count: 1200 }).map((q) => q.id),
       ).size,
-    ).toBe(600);
+    ).toBe(1200);
     const pool = [questions[0], questions[2], questions[4]];
     expect(
       selectQuestions(pool, config)
@@ -107,22 +151,28 @@ describe("balanced selection", () => {
 });
 
 describe("scoring and persistence", () => {
+  it("does not accept a record mixing incompatible editions and chart categories", () => {
+    const session = createSession(questions, config);
+    const legacy = archivedQuestions.find((q) => q.category === "culture")!;
+    session.items[0].questionId = legacy.id;
+    expect(validRecord(session, questionMap, true)).toBe(false);
+  });
   it("scores against shuffled answer order and keeps untested categories null", () => {
-    const pool = questions.filter((q) => q.category === "science").slice(0, 4);
+    const pool = questions.filter((q) => q.category === "world").slice(0, 4);
     const result = {
       items: pool.map((q) => ({ questionId: q.id, order: [3, 2, 1, 0] })),
       answers: pool.map((q, i) => (i < 3 ? 3 - q.answer : (4 - q.answer) % 4)),
     };
     const scores = categoryScores(result, questionMap);
-    expect(scores.find((s) => s.category === "science")).toEqual({
-      category: "science",
+    expect(scores.find((s) => s.category === "world")).toEqual({
+      category: "world",
       correct: 3,
       total: 4,
       percent: 75,
     });
     expect(
       scores
-        .filter((s) => s.category !== "science")
+        .filter((s) => s.category !== "world")
         .every((s) => s.percent === null && s.total === 0),
     ).toBe(true);
   });
@@ -182,7 +232,7 @@ describe("scoring and persistence", () => {
   it("rejects impossible dates and a configuration inconsistent with its questions", () => {
     const session = createSession(questions, {
       ...config,
-      categories: ["science"],
+      categories: ["world"],
       difficulty: "easy",
     });
     expect(

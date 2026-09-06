@@ -1,17 +1,20 @@
-import { CATEGORIES } from "./data/types";
+import { categoryFor } from "./data/types";
 import type { CategoryScore } from "./lib/quiz";
 
 export default function Radar({
   scores,
   sample = false,
+  legacy = false,
 }: {
   scores: CategoryScore[];
   sample?: boolean;
+  legacy?: boolean;
 }) {
+  const categories = scores.map((s) => categoryFor(s.category, legacy));
   const center = 180;
   const radius = 115;
   const point = (index: number, value: number) => {
-    const angle = (index * Math.PI) / 4 - Math.PI / 2;
+    const angle = (index * Math.PI * 2) / scores.length - Math.PI / 2;
     return [
       center + Math.cos(angle) * radius * value,
       center + Math.sin(angle) * radius * value,
@@ -29,23 +32,23 @@ export default function Radar({
       aria-label={
         sample
           ? "診断後のレーダーチャートのサンプル"
-          : `ジャンル別正答率。${scores.map((s) => `${CATEGORIES.find((c) => c.id === s.category)!.name} ${s.percent === null ? "未測定" : `${s.percent}%`}`).join("、")}`
+          : `ジャンル別正答率。${scores.map((s) => `${categories.find((c) => c.id === s.category)!.name} ${s.percent === null ? "未測定" : `${s.percent}%`}`).join("、")}`
       }
     >
       {[0.25, 0.5, 0.75, 1]
         .map((scale) => (
           <polygon
             key={scale}
-            points={CATEGORIES.map((_, i) => point(i, scale).join(",")).join(
-              " ",
-            )}
+            points={categories
+              .map((_, i) => point(i, scale).join(","))
+              .join(" ")}
             fill={scale === 1 ? "var(--radar-bg, #f7faf7)" : "none"}
             stroke="#dce6dc"
             className={scale === 1 ? "radar-outer" : ""}
           />
         ))
         .reverse()}
-      {CATEGORIES.map((c, i) => (
+      {categories.map((c, i) => (
         <line
           key={c.id}
           x1={center}
@@ -105,8 +108,8 @@ export default function Radar({
             />
           ),
       )}
-      {CATEGORIES.map((category, i) => {
-        const [x, y] = point(i, 1.3);
+      {categories.map((category, i) => {
+        const [x, y] = point(i, 1.29);
         return (
           <g key={category.id}>
             <text x={x} y={y + 4} textAnchor="middle" className="radar-label">

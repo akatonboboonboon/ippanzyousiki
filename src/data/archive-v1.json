@@ -1,0 +1,6917 @@
+[
+  {
+    "id": "language-easy-001",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「林」の一般的な訓読みは？",
+    "choices": ["はやし", "もり", "えだ", "みき"],
+    "answer": 0,
+    "explanation": "「林」は「はやし」と読みます。「森」は「もり」、「枝」は「えだ」です。"
+  },
+  {
+    "id": "language-easy-002",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「多い」の反対の意味を表す言葉は？",
+    "choices": ["長い", "少ない", "大きい", "広い"],
+    "answer": 1,
+    "explanation": "「多い」と「少ない」は、数や量について反対の意味を表します。"
+  },
+  {
+    "id": "language-easy-003",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「賛成」の反対語は？",
+    "choices": ["参加", "承認", "反対", "協力"],
+    "answer": 2,
+    "explanation": "賛成は意見を支持すること、反対はその意見に同意しないことです。"
+  },
+  {
+    "id": "language-easy-004",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "ことわざ「急がば回れ」が伝える考え方は？",
+    "choices": [
+      "急いでいるときは必ず走る",
+      "遠回りは必ず失敗する",
+      "何もせずに待ち続ける",
+      "急ぐときほど確実な方法を選ぶ"
+    ],
+    "answer": 3,
+    "explanation": "危険な近道より、安全で確実な方法を選ぶほうが結局早いという教えです。"
+  },
+  {
+    "id": "language-easy-005",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「猫に小判」の意味は？",
+    "choices": [
+      "価値の分からない相手に貴重な物を与えても役立たない",
+      "小さな努力が大きな利益になる",
+      "動物を大切にすると幸運が来る",
+      "お金があれば何でも解決する"
+    ],
+    "answer": 0,
+    "explanation": "猫に金貨を渡しても価値が伝わらないことから、価値を理解できない相手には無駄になるというたとえです。"
+  },
+  {
+    "id": "language-easy-006",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「一石二鳥」の意味は？",
+    "choices": [
+      "鳥を二羽飼う",
+      "一つの行動で二つの利益を得る",
+      "二つの仕事を同時に失敗する",
+      "一人では何もできない"
+    ],
+    "answer": 1,
+    "explanation": "一つの石で二羽の鳥を得ることにたとえ、一つのことから二つの成果を得る意味です。"
+  },
+  {
+    "id": "language-easy-007",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「七転び八起き」が表す姿勢は？",
+    "choices": [
+      "勝負を避け続ける",
+      "他人の失敗を笑う",
+      "何度失敗しても立ち直る",
+      "八回目で必ず諦める"
+    ],
+    "answer": 2,
+    "explanation": "何度倒れてもくじけず立ち上がる、不屈の姿勢を表します。"
+  },
+  {
+    "id": "language-easy-008",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「やぶから棒」の意味は？",
+    "choices": [
+      "準備を十分に整えること",
+      "細かな点まで説明すること",
+      "遠くからゆっくり近づくこと",
+      "前触れなく突然であること"
+    ],
+    "answer": 3,
+    "explanation": "やぶから突然棒が出てくるように、話や行動が唐突であることを表します。"
+  },
+  {
+    "id": "language-easy-009",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "小説『吾輩は猫である』の作者は？",
+    "choices": ["夏目漱石", "宮沢賢治", "太宰治", "川端康成"],
+    "answer": 0,
+    "explanation": "夏目漱石の作品です。猫の視点から人間社会を描いています。"
+  },
+  {
+    "id": "language-easy-010",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "俳句の基本となる音数は？",
+    "choices": [
+      "四・四・四",
+      "五・七・五",
+      "五・七・五・七・七",
+      "七・七・七・七"
+    ],
+    "answer": 1,
+    "explanation": "俳句は五・七・五の十七音を基本とします。字余りや自由律の作品もあります。"
+  },
+  {
+    "id": "language-easy-011",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "短歌の基本となる音数は？",
+    "choices": [
+      "七・五・七・五",
+      "五・五・七・七",
+      "五・七・五・七・七",
+      "五・七・五"
+    ],
+    "answer": 2,
+    "explanation": "短歌は五・七・五・七・七の三十一音を基本とする詩の形式です。"
+  },
+  {
+    "id": "language-easy-012",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "日本語の文章で、文の終わりに付ける「句点」はどれ？",
+    "choices": ["、", "「", "・", "。"],
+    "answer": 3,
+    "explanation": "句点は「。」、読点は「、」です。合わせて句読点といいます。"
+  },
+  {
+    "id": "language-easy-013",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「太郎が図書館で本を読む。」の主語は？",
+    "choices": ["太郎が", "図書館で", "本を", "読む"],
+    "answer": 0,
+    "explanation": "「だれが」に当たる「太郎が」が主語です。場所や目的語と区別しましょう。"
+  },
+  {
+    "id": "language-easy-014",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「私は毎朝走る。」の述語は？",
+    "choices": ["私", "走る", "私は", "毎朝"],
+    "answer": 1,
+    "explanation": "述語は主語の動作・状態などを述べる部分です。この文では動作を表す「走る」です。"
+  },
+  {
+    "id": "language-easy-015",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "次のうち、名詞はどれ？",
+    "choices": ["美しい", "ゆっくり", "机", "走る"],
+    "answer": 2,
+    "explanation": "名詞は物事の名前を表します。「走る」は動詞、「美しい」は形容詞です。"
+  },
+  {
+    "id": "language-easy-016",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "次のうち、動詞はどれ？",
+    "choices": ["海", "青い", "とても", "泳ぐ"],
+    "answer": 3,
+    "explanation": "「泳ぐ」は動作を表す動詞です。「海」は名詞、「青い」は形容詞です。"
+  },
+  {
+    "id": "language-easy-017",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "相手の動作を高める、「来る」の尊敬語は？",
+    "choices": ["いらっしゃる", "参る", "申す", "いただく"],
+    "answer": 0,
+    "explanation": "「いらっしゃる」は「行く・来る・いる」の尊敬語です。「参る」は自分側の行動に使う丁重な表現です。"
+  },
+  {
+    "id": "language-easy-018",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "自分が相手に「言う」ときの謙譲語は？",
+    "choices": ["ご覧になる", "申し上げる", "おっしゃる", "召し上がる"],
+    "answer": 1,
+    "explanation": "「申し上げる」は自分の言う行為をへりくだって表します。「おっしゃる」は相手側の行為を高めます。"
+  },
+  {
+    "id": "language-easy-019",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "昼間の挨拶を現代仮名遣いで正しく書いたものは？",
+    "choices": ["こんちには", "こんにちば", "こんにちは", "こんにちわ"],
+    "answer": 2,
+    "explanation": "挨拶は「こんにちは」と書きます。最後は助詞「は」に由来する表記です。"
+  },
+  {
+    "id": "language-easy-020",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "同じ読みで意味の異なる「同音異義語」の組は？",
+    "choices": ["山・川", "赤・青", "昼・夜", "橋・箸"],
+    "answer": 3,
+    "explanation": "「橋」と「箸」はどちらも「はし」と読みますが、指すものが異なります。アクセントは地域により異なります。"
+  },
+  {
+    "id": "language-easy-021",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "文章における「筆者」とは？",
+    "choices": [
+      "その文章を書いた人",
+      "その文章を読んだ人",
+      "印刷用の紙を作った人",
+      "本を販売した人"
+    ],
+    "answer": 0,
+    "explanation": "筆者は文章の書き手です。文章を読む人は読者といいます。"
+  },
+  {
+    "id": "language-easy-022",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "文章を「要約する」とは？",
+    "choices": [
+      "結論をすべて省く",
+      "大事な点を短くまとめる",
+      "一字も変えずに書き写す",
+      "難しい言葉を増やす"
+    ],
+    "answer": 1,
+    "explanation": "要約では中心となる内容を保ち、必要な情報を簡潔にまとめます。"
+  },
+  {
+    "id": "language-easy-023",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "山の形をかたどってできた「山」のような漢字を何という？",
+    "choices": ["ひらがな", "点字", "象形文字", "ローマ字"],
+    "answer": 2,
+    "explanation": "物の形をかたどってできた漢字を象形文字といいます。「日」「月」などもその例です。"
+  },
+  {
+    "id": "language-easy-024",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「十人十色」の意味は？",
+    "choices": [
+      "全員が同じ意見になる",
+      "十色だけで絵を描く",
+      "人の性格は変えられない",
+      "人によって考え方や好みが異なる"
+    ],
+    "answer": 3,
+    "explanation": "十人いれば十通りあるというたとえで、人それぞれに違いがあることを表します。"
+  },
+  {
+    "id": "language-easy-025",
+    "category": "language",
+    "difficulty": "easy",
+    "prompt": "「灯台下暗し」の意味は？",
+    "choices": [
+      "身近なことほどかえって気付きにくい",
+      "暗い場所では必ず道に迷う",
+      "遠くの情報はすべて間違っている",
+      "明るい場所では秘密が守れない"
+    ],
+    "answer": 0,
+    "explanation": "灯火の台の下が暗いように、自分の身近な事情をかえってよく知らないことのたとえです。"
+  },
+  {
+    "id": "language-normal-001",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「温故知新」の意味は？",
+    "choices": [
+      "昔のことを学び、そこから新しい知識や考えを得る",
+      "古い物をすべて捨てる",
+      "新しい情報だけを集める",
+      "暖かい場所で勉強する"
+    ],
+    "answer": 0,
+    "explanation": "「故きを温ねて新しきを知る」という、過去の学びを新たな理解につなげる言葉です。"
+  },
+  {
+    "id": "language-normal-002",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「臨機応変」の意味は？",
+    "choices": [
+      "人の意見を無条件に真似する",
+      "その場の状況に応じて適切に対応する",
+      "決めた方法を何があっても変えない",
+      "返事をいつも遅らせる"
+    ],
+    "answer": 1,
+    "explanation": "「機」は機会や状況を指します。状況の変化に合わせた対応を表します。"
+  },
+  {
+    "id": "language-normal-003",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「切磋琢磨」の意味は？",
+    "choices": [
+      "道具を使わず作業する",
+      "一度で完全に暗記する",
+      "互いに励まし合い、学問や技術を高める",
+      "相手の失敗を待つ"
+    ],
+    "answer": 2,
+    "explanation": "玉や石を磨くことから、仲間と競い励まし合って能力を磨く意味で使われます。"
+  },
+  {
+    "id": "language-normal-004",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「自業自得」の意味は？",
+    "choices": [
+      "必ず努力が報われる",
+      "他人の責任をすべて引き受ける",
+      "仕事を他人に譲る",
+      "自分の行いの結果を自分で受ける"
+    ],
+    "answer": 3,
+    "explanation": "自分の行為が自分にもたらした結果を表し、日常では悪い結果についてよく使われます。"
+  },
+  {
+    "id": "language-normal-005",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "ことわざ「情けは人のためならず」の意味は？",
+    "choices": [
+      "人への親切は巡り巡って自分のためにもなる",
+      "親切は相手の成長を必ず妨げる",
+      "人を助けてはいけない",
+      "感情を表に出してはいけない"
+    ],
+    "answer": 0,
+    "explanation": "「人のためだけではない」という意味です。親切が自分にも返るという教えを表します。"
+  },
+  {
+    "id": "language-normal-006",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「弘法にも筆の誤り」の意味は？",
+    "choices": [
+      "間違いは隠すべきである",
+      "名人でも失敗することがある",
+      "文字を書くには必ず筆を使う",
+      "努力しても上達しない"
+    ],
+    "answer": 1,
+    "explanation": "書に優れた弘法大師でも書き損じることがあるというたとえです。"
+  },
+  {
+    "id": "language-normal-007",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「他山の石」とは、どのように役立つもの？",
+    "choices": [
+      "価値のないものを他人に渡すこと",
+      "遠くの山から採れた宝石だけ",
+      "他人の誤りなど、自分を改善する参考になるもの",
+      "自分には無関係なので無視するもの"
+    ],
+    "answer": 2,
+    "explanation": "他の山の石も自分の玉を磨くのに使えるように、他人の言動を自分の改善の材料にすることです。"
+  },
+  {
+    "id": "language-normal-008",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「推測」に最も近い意味の言葉は？",
+    "choices": [
+      "事実を証明し終えること",
+      "記録をそのまま複写すること",
+      "相手に命令すること",
+      "ある情報をもとに推し量ること"
+    ],
+    "answer": 3,
+    "explanation": "推測は手掛かりから考えることです。確定した事実とは区別して示す必要があります。"
+  },
+  {
+    "id": "language-normal-009",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「客観的」な説明はどれ？",
+    "choices": [
+      "測定した気温は二十五度だった",
+      "今日は私にはとても快適だ",
+      "この景色は世界一美しい",
+      "あの人は何となく苦手だ"
+    ],
+    "answer": 0,
+    "explanation": "測定値は他の人も確かめられる情報です。個人の感覚や好みを中心にした説明は主観的です。"
+  },
+  {
+    "id": "language-normal-010",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「因果関係」とは？",
+    "choices": [
+      "二つの物の色の違い",
+      "原因と結果のつながり",
+      "言葉の読みと漢字のつながり",
+      "時間とは無関係な分類"
+    ],
+    "answer": 1,
+    "explanation": "因果関係は、ある出来事が原因となって別の出来事が起こる関係です。単なる同時発生とは異なります。"
+  },
+  {
+    "id": "language-normal-011",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「独創的」の意味は？",
+    "choices": [
+      "古い決まりを必ず守る",
+      "意見を持たない",
+      "他人のまねによらない新しい発想がある",
+      "一人でいる時間が長い"
+    ],
+    "answer": 2,
+    "explanation": "独自の考えで新しいものを生み出す性質を表します。人数の少なさを指す言葉ではありません。"
+  },
+  {
+    "id": "language-normal-012",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「代替」の一般的な読みは？",
+    "choices": ["だいがえし", "たいだい", "だいたく", "だいたい"],
+    "answer": 3,
+    "explanation": "一般的には「だいたい」と読み、別のものに替えることを表します。"
+  },
+  {
+    "id": "language-normal-013",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「遵守」の読みは？",
+    "choices": ["じゅんしゅ", "そんしゅ", "じゅんす", "しゅんじゅ"],
+    "answer": 0,
+    "explanation": "法律や規則などを守ることを「遵守（じゅんしゅ）」といいます。"
+  },
+  {
+    "id": "language-normal-014",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「著しい」の読みは？",
+    "choices": ["うるわしい", "いちじるしい", "あらわしい", "めずらしい"],
+    "answer": 1,
+    "explanation": "「いちじるしい」と読み、変化や程度がはっきりしていることを表します。"
+  },
+  {
+    "id": "language-normal-015",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「あたたかい人柄」の「あたたかい」に使う漢字は？",
+    "choices": ["熱かい", "暑かい", "温かい", "暖かい"],
+    "answer": 2,
+    "explanation": "心の優しさや物の温度には主に「温かい」、気候や空気の暖かさには主に「暖かい」を使います。"
+  },
+  {
+    "id": "language-normal-016",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「案件を会議にはかる」の「はかる」に適する漢字は？",
+    "choices": ["量る", "測る", "計る", "諮る"],
+    "answer": 3,
+    "explanation": "人に相談したり意見を求めたりする場合は「諮る」を使います。"
+  },
+  {
+    "id": "language-normal-017",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「雨が降った。だから試合は中止になった。」の「だから」はどの関係を示す？",
+    "choices": ["順接", "逆接", "並列", "選択"],
+    "answer": 0,
+    "explanation": "前の内容を理由として、後ろに結果を続ける順接の接続詞です。"
+  },
+  {
+    "id": "language-normal-018",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「努力した。しかし結果は届かなかった。」の「しかし」はどの関係を示す？",
+    "choices": ["補足", "逆接", "順接", "並列"],
+    "answer": 1,
+    "explanation": "前の内容から予想される結果と異なる内容につなぐ、逆接の接続詞です。"
+  },
+  {
+    "id": "language-normal-019",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「雪のように白い肌」で使われる表現技法は？",
+    "choices": ["倒置法", "反復法", "直喩", "擬人法"],
+    "answer": 2,
+    "explanation": "「ように」「まるで」などを使って明示的にたとえる表現を直喩といいます。"
+  },
+  {
+    "id": "language-normal-020",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "「風がささやく」で使われる表現技法は？",
+    "choices": ["倒置法", "対句法", "反復法", "擬人法"],
+    "answer": 3,
+    "explanation": "人間以外のものを、人がする動作や感情にたとえて表すのが擬人法です。"
+  },
+  {
+    "id": "language-normal-021",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "『枕草子』の作者は？",
+    "choices": ["清少納言", "紫式部", "小野小町", "与謝野晶子"],
+    "answer": 0,
+    "explanation": "清少納言による平安時代の随筆です。『源氏物語』の作者は紫式部です。"
+  },
+  {
+    "id": "language-normal-022",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "『源氏物語』の作者は？",
+    "choices": ["林芙美子", "紫式部", "清少納言", "樋口一葉"],
+    "answer": 1,
+    "explanation": "紫式部による平安時代の物語で、光源氏やその周辺の人々を描いています。"
+  },
+  {
+    "id": "language-normal-023",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "『おくのほそ道』を書いた俳人は？",
+    "choices": ["与謝蕪村", "正岡子規", "松尾芭蕉", "小林一茶"],
+    "answer": 2,
+    "explanation": "松尾芭蕉が東北・北陸などを旅した経験をもとにまとめた紀行文学です。"
+  },
+  {
+    "id": "language-normal-024",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "『走れメロス』の作者は？",
+    "choices": ["芥川龍之介", "志賀直哉", "井伏鱒二", "太宰治"],
+    "answer": 3,
+    "explanation": "太宰治の短編小説です。約束と信頼をめぐる物語として知られています。"
+  },
+  {
+    "id": "language-normal-025",
+    "category": "language",
+    "difficulty": "normal",
+    "prompt": "『注文の多い料理店』の作者は？",
+    "choices": ["宮沢賢治", "新美南吉", "小川未明", "菊池寛"],
+    "answer": 0,
+    "explanation": "宮沢賢治の童話です。山で道に迷った二人の紳士が、不思議な料理店に入ります。"
+  },
+  {
+    "id": "language-hard-001",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「忖度」の本来の意味は？",
+    "choices": [
+      "他人の気持ちを推し量ること",
+      "必ず金品を渡すこと",
+      "法律に違反すること",
+      "意見を強く否定すること"
+    ],
+    "answer": 0,
+    "explanation": "忖度は他人の気持ちや意向を推測することです。語そのものに金品の授受という意味はありません。"
+  },
+  {
+    "id": "language-hard-002",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「逡巡」の読みと意味の正しい組み合わせは？",
+    "choices": [
+      "そんじゅん・意見を断言すること",
+      "しゅんじゅん・決断をためらうこと",
+      "そんじゅん・順番を守ること",
+      "しゅんじゅん・急いで移動すること"
+    ],
+    "answer": 1,
+    "explanation": "「逡巡（しゅんじゅん）」は、どうするか迷って決断をためらうことです。"
+  },
+  {
+    "id": "language-hard-003",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「漸進」の意味は？",
+    "choices": [
+      "一度にすべて変えること",
+      "順番を無視すること",
+      "少しずつ進むこと",
+      "急激に後退すること"
+    ],
+    "answer": 2,
+    "explanation": "「漸」は少しずつという意味です。「漸進的な改革」のように用います。"
+  },
+  {
+    "id": "language-hard-004",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「示唆」の意味は？",
+    "choices": [
+      "すべてを直接命令すること",
+      "説明を完全に禁止すること",
+      "結果を保証すること",
+      "それとなく気付かせること"
+    ],
+    "answer": 3,
+    "explanation": "示唆は手掛かりを示して考えや理解を促すことです。断定や保証とは区別されます。"
+  },
+  {
+    "id": "language-hard-005",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「敷衍（ふえん）」の意味は？",
+    "choices": [
+      "意味や趣旨を押し広げて詳しく説明すること",
+      "要点をすべて隠すこと",
+      "文字を逆さまに書くこと",
+      "話題と無関係に怒ること"
+    ],
+    "answer": 0,
+    "explanation": "敷衍は、ある考えの意味を広げたり、内容を詳しく述べたりすることをいいます。",
+    "source": {
+      "label": "漢字ペディア｜敷衍",
+      "url": "https://www.kanjipedia.jp/kotoba/0006066600"
+    }
+  },
+  {
+    "id": "language-hard-006",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「帰結」の意味は？",
+    "choices": [
+      "前提のない思いつき",
+      "議論や物事が行き着いた結果",
+      "会議を始める合図",
+      "文章の出典の一覧"
+    ],
+    "answer": 1,
+    "explanation": "物事の経過や推論の末に生じる結果・結論を表します。"
+  },
+  {
+    "id": "language-hard-007",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「杞憂」の意味は？",
+    "choices": [
+      "喜びを大勢で分け合うこと",
+      "過去の成功を自慢すること",
+      "起こりそうもないことを必要以上に心配すること",
+      "危険を正しく測定すること"
+    ],
+    "answer": 2,
+    "explanation": "杞憂は取り越し苦労を表す言葉です。単にあらゆる心配を否定する語ではありません。"
+  },
+  {
+    "id": "language-hard-008",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「換骨奪胎」の意味は？",
+    "choices": [
+      "資料を一字も変えず複写すること",
+      "古い作品を必ず破棄すること",
+      "体の骨を医学的に交換すること",
+      "先人の作品などを生かし、新しい表現へ作り替えること"
+    ],
+    "answer": 3,
+    "explanation": "以前の発想や表現を取り入れながら、工夫を加えて新たなものを生み出す意味です。",
+    "source": {
+      "label": "漢字ペディア｜換骨奪胎",
+      "url": "https://www.kanjipedia.jp/kotoba/0001077700"
+    }
+  },
+  {
+    "id": "language-hard-009",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「画竜点睛」の「睛」は何を表す？",
+    "choices": ["ひとみ", "うろこ", "つばさ", "しっぽ"],
+    "answer": 0,
+    "explanation": "竜を描いて最後に瞳を入れる故事に由来し、物事を完成させる大切な仕上げを表します。"
+  },
+  {
+    "id": "language-hard-010",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「付和雷同」の意味は？",
+    "choices": [
+      "独自の考えを貫くこと",
+      "自分の考えを持たず他人の意見に同調すること",
+      "よく考えて協力関係を結ぶこと",
+      "意見の違いを丁寧に整理すること"
+    ],
+    "answer": 1,
+    "explanation": "十分な判断をせず、周囲の言動に安易に合わせることを批判的に表す言葉です。"
+  },
+  {
+    "id": "language-hard-011",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「人口に膾炙する」の意味は？",
+    "choices": [
+      "食物を生のまま食べる",
+      "人前で話すのを避ける",
+      "広く人々に知られ、話題になる",
+      "人口が急激に減る"
+    ],
+    "answer": 2,
+    "explanation": "詩歌・言葉・評判などが広く世間に知られ、語られることを表します。"
+  },
+  {
+    "id": "language-hard-012",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「枚挙にいとまがない」の意味は？",
+    "choices": [
+      "例が一つも見つからない",
+      "資料がすべて同じ大きさである",
+      "順番に並べる時間が余る",
+      "数が多くて一つ一つ挙げきれない"
+    ],
+    "answer": 3,
+    "explanation": "同様の事例が非常に多く、列挙し尽くせないという意味です。"
+  },
+  {
+    "id": "language-hard-013",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「吝か」の読みは？",
+    "choices": ["やぶさか", "おろそか", "すみやか", "あざやか"],
+    "answer": 0,
+    "explanation": "「やぶさか」と読みます。「協力するにやぶさかでない」は、協力を惜しまないという意味です。"
+  },
+  {
+    "id": "language-hard-014",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「相殺」の一般的な読みは？",
+    "choices": ["しょうさつ", "そうさい", "そうさつ", "あいさい"],
+    "answer": 1,
+    "explanation": "「そうさい」と読み、差し引いて互いの効果などを打ち消すことを表します。"
+  },
+  {
+    "id": "language-hard-015",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「脆弱」の読みは？",
+    "choices": ["せいにゃく", "すいじゃく", "ぜいじゃく", "きじゃく"],
+    "answer": 2,
+    "explanation": "「ぜいじゃく」と読み、もろくて弱いことです。情報システムなどの弱点にも使われます。"
+  },
+  {
+    "id": "language-hard-016",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「漸く」の読みは？",
+    "choices": ["しばらく", "あいにく", "いたく", "ようやく"],
+    "answer": 3,
+    "explanation": "「ようやく」と読み、長い時間や努力を経て実現したことなどを表します。"
+  },
+  {
+    "id": "language-hard-017",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「先生がおっしゃられた」を一般的な尊敬語に整えるなら？",
+    "choices": [
+      "先生がおっしゃった",
+      "先生が申した",
+      "先生がいただいた",
+      "先生が存じた"
+    ],
+    "answer": 0,
+    "explanation": "「おっしゃる」自体が尊敬語です。さらに「れる」を重ねず「おっしゃった」とするのが一般的です。"
+  },
+  {
+    "id": "language-hard-018",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "社外の相手に、自分の上司の田中が後ほど電話すると伝える表現は？",
+    "choices": [
+      "田中先生が後ほど拝見します",
+      "田中から後ほどお電話いたします",
+      "田中部長様からお電話なさいます",
+      "田中が後ほどお電話を召し上がります"
+    ],
+    "answer": 1,
+    "explanation": "社外へ自分側の行動を伝えるときは、自分の上司にも敬称を付けず、謙譲表現を用います。"
+  },
+  {
+    "id": "language-hard-019",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「静かだ」は、学校文法では何という品詞？",
+    "choices": ["副詞", "接続詞", "形容動詞", "形容詞"],
+    "answer": 2,
+    "explanation": "「静かだ・静かな・静かに」と活用する語で、学校文法では形容動詞に分類します。"
+  },
+  {
+    "id": "language-hard-020",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「急いで読んだ本」の中で、「本」を直接修飾する部分は？",
+    "choices": ["本", "急いでだけ", "修飾する部分はない", "急いで読んだ"],
+    "answer": 3,
+    "explanation": "「急いで読んだ」がどのような本かを説明します。体言を修飾する連体修飾の関係です。"
+  },
+  {
+    "id": "language-hard-021",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "「倒置法」を使っている文は？",
+    "choices": [
+      "忘れない、あの日の約束を。",
+      "空は青く、海も青い。",
+      "雨が降ったので傘を差した。",
+      "彼は風のように走った。"
+    ],
+    "answer": 0,
+    "explanation": "通常の「あの日の約束を忘れない」という語順を変え、強調や余韻を生んでいます。"
+  },
+  {
+    "id": "language-hard-022",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "『徒然草』の作者は？",
+    "choices": ["西行", "兼好法師", "鴨長明", "紀貫之"],
+    "answer": 1,
+    "explanation": "兼好法師による随筆です。鴨長明の代表作は『方丈記』です。"
+  },
+  {
+    "id": "language-hard-023",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "『方丈記』の作者は？",
+    "choices": ["松尾芭蕉", "井原西鶴", "鴨長明", "兼好法師"],
+    "answer": 2,
+    "explanation": "鴨長明が災害や自身の生活を通じて、世の無常を描いた随筆です。"
+  },
+  {
+    "id": "language-hard-024",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "『土佐日記』の作者は？",
+    "choices": ["藤原定家", "大伴家持", "柿本人麻呂", "紀貫之"],
+    "answer": 3,
+    "explanation": "紀貫之による仮名の日記文学で、土佐から都へ帰る旅が描かれています。"
+  },
+  {
+    "id": "language-hard-025",
+    "category": "language",
+    "difficulty": "hard",
+    "prompt": "『たけくらべ』の作者は？",
+    "choices": ["樋口一葉", "与謝野晶子", "平塚らいてう", "幸田文"],
+    "answer": 0,
+    "explanation": "樋口一葉の小説です。明治時代の子どもたちが大人へ近づく姿を描いています。"
+  },
+  {
+    "id": "geography-easy-001",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "日本で最も面積が大きい都道府県は？",
+    "choices": ["北海道", "岩手県", "長野県", "新潟県"],
+    "answer": 0,
+    "explanation": "北海道は日本の都道府県の中で最も面積が大きい地域です。"
+  },
+  {
+    "id": "geography-easy-002",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "日本で最も高い山は？",
+    "choices": ["筑波山", "富士山", "北岳", "槍ヶ岳"],
+    "answer": 1,
+    "explanation": "富士山の標高は約三七七六メートルです。山梨県と静岡県にまたがります。"
+  },
+  {
+    "id": "geography-easy-003",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "日本で面積が最大の湖は？",
+    "choices": ["諏訪湖", "浜名湖", "琵琶湖", "霞ヶ浦"],
+    "answer": 2,
+    "explanation": "滋賀県にある琵琶湖が、日本で面積最大の湖です。"
+  },
+  {
+    "id": "geography-easy-004",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "沖縄県の県庁所在地は？",
+    "choices": ["名護市", "石垣市", "宮古島市", "那覇市"],
+    "answer": 3,
+    "explanation": "沖縄県の県庁は沖縄本島南部の那覇市にあります。"
+  },
+  {
+    "id": "geography-easy-005",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "北海道の道庁所在地は？",
+    "choices": ["札幌市", "函館市", "旭川市", "釧路市"],
+    "answer": 0,
+    "explanation": "北海道庁は札幌市にあります。函館市は北海道の南部にある都市です。"
+  },
+  {
+    "id": "geography-easy-006",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "神奈川県の県庁所在地は？",
+    "choices": ["小田原市", "横浜市", "川崎市", "鎌倉市"],
+    "answer": 1,
+    "explanation": "神奈川県の県庁所在地は横浜市です。横浜港は東京湾に面しています。"
+  },
+  {
+    "id": "geography-easy-007",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "次のうち、四国にある県は？",
+    "choices": ["宮崎県", "広島県", "愛媛県", "愛知県"],
+    "answer": 2,
+    "explanation": "四国は徳島県・香川県・愛媛県・高知県からなります。"
+  },
+  {
+    "id": "geography-easy-008",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "次のうち、九州にある県は？",
+    "choices": ["岡山県", "福井県", "三重県", "熊本県"],
+    "answer": 3,
+    "explanation": "熊本県は九州の中央部に位置し、阿蘇山などで知られます。"
+  },
+  {
+    "id": "geography-easy-009",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "日本の東側に広がる大洋は？",
+    "choices": ["太平洋", "大西洋", "インド洋", "北極海"],
+    "answer": 0,
+    "explanation": "日本列島の東側には太平洋が広がり、西側には日本海などがあります。"
+  },
+  {
+    "id": "geography-easy-010",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "日本の都道府県の数は？",
+    "choices": ["五十二", "四十七", "四十五", "五十"],
+    "answer": 1,
+    "explanation": "日本は一都一道二府四十三県、合計四十七都道府県で構成されています。"
+  },
+  {
+    "id": "geography-easy-011",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "フランスの首都は？",
+    "choices": ["マドリード", "ベルリン", "パリ", "ローマ"],
+    "answer": 2,
+    "explanation": "パリはフランスの首都で、セーヌ川が流れています。"
+  },
+  {
+    "id": "geography-easy-012",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "イギリスの首都は？",
+    "choices": ["パリ", "ダブリン", "アムステルダム", "ロンドン"],
+    "answer": 3,
+    "explanation": "ロンドンはイギリスの首都で、テムズ川沿いに発展した都市です。"
+  },
+  {
+    "id": "geography-easy-013",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "イタリアの首都は？",
+    "choices": ["ローマ", "ミラノ", "ベネチア", "フィレンツェ"],
+    "answer": 0,
+    "explanation": "イタリアの首都はローマです。ミラノやフィレンツェもイタリアの主要都市です。"
+  },
+  {
+    "id": "geography-easy-014",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "アメリカ合衆国の首都は？",
+    "choices": ["シカゴ", "ワシントンD.C.", "ニューヨーク", "ロサンゼルス"],
+    "answer": 1,
+    "explanation": "首都はワシントンD.C.です。ニューヨークは最大級の都市ですが、首都ではありません。"
+  },
+  {
+    "id": "geography-easy-015",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "中国の首都は？",
+    "choices": ["広州", "西安", "北京", "上海"],
+    "answer": 2,
+    "explanation": "中国の首都は北京です。上海は長江河口近くの大都市です。"
+  },
+  {
+    "id": "geography-easy-016",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "韓国の首都は？",
+    "choices": ["釜山", "仁川", "大邱", "ソウル"],
+    "answer": 3,
+    "explanation": "韓国の首都はソウルです。漢江が市内を流れています。"
+  },
+  {
+    "id": "geography-easy-017",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "エジプトを流れる代表的な川は？",
+    "choices": ["ナイル川", "アマゾン川", "ライン川", "メコン川"],
+    "answer": 0,
+    "explanation": "ナイル川はアフリカ北東部を流れ、地中海に注ぎます。流域で古代エジプト文明が発展しました。"
+  },
+  {
+    "id": "geography-easy-018",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "アマゾン川がある大陸は？",
+    "choices": ["南極大陸", "南アメリカ大陸", "アフリカ大陸", "ユーラシア大陸"],
+    "answer": 1,
+    "explanation": "アマゾン川は南アメリカを流れ、大西洋に注ぎます。流域には広大な熱帯雨林があります。"
+  },
+  {
+    "id": "geography-easy-019",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "サハラ砂漠がある大陸は？",
+    "choices": [
+      "オーストラリア大陸",
+      "北アメリカ大陸",
+      "アフリカ大陸",
+      "南アメリカ大陸"
+    ],
+    "answer": 2,
+    "explanation": "サハラ砂漠はアフリカ大陸の北部に広がっています。"
+  },
+  {
+    "id": "geography-easy-020",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "世界で面積が最も大きい大洋は？",
+    "choices": ["大西洋", "インド洋", "北極海", "太平洋"],
+    "answer": 3,
+    "explanation": "太平洋は世界最大の大洋で、アジア・オセアニアと南北アメリカの間に広がります。"
+  },
+  {
+    "id": "geography-easy-021",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "赤道の緯度は？",
+    "choices": ["零度", "北緯四十五度", "南緯九十度", "東経百八十度"],
+    "answer": 0,
+    "explanation": "赤道は緯度零度の線で、地球を北半球と南半球に分けます。"
+  },
+  {
+    "id": "geography-easy-022",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "地図で、ふつう上を北にしたとき右はどの方角？",
+    "choices": ["北西", "東", "西", "南"],
+    "answer": 1,
+    "explanation": "北を上に置く地図では右が東、下が南、左が西です。方位記号も確認しましょう。"
+  },
+  {
+    "id": "geography-easy-023",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "オーストラリアは赤道から見てどちら側にある？",
+    "choices": ["全土が赤道上", "北極側だけ", "南側", "北側"],
+    "answer": 2,
+    "explanation": "オーストラリアは南半球にあり、日本とは夏と冬の時期が逆になります。"
+  },
+  {
+    "id": "geography-easy-024",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "ピラミッドとスフィンクスで知られるギザがある国は？",
+    "choices": ["ギリシャ", "メキシコ", "インド", "エジプト"],
+    "answer": 3,
+    "explanation": "ギザのピラミッド群はエジプトにあります。古代エジプトの遺跡です。"
+  },
+  {
+    "id": "geography-easy-025",
+    "category": "geography",
+    "difficulty": "easy",
+    "prompt": "海に囲まれた陸地を何という？",
+    "choices": ["島", "盆地", "平野", "高原"],
+    "answer": 0,
+    "explanation": "周囲を海や湖などの水域に囲まれた陸地が島です。大陸とは通常区別します。"
+  },
+  {
+    "id": "geography-normal-001",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "日本で最も長い川は？",
+    "choices": ["信濃川", "利根川", "石狩川", "木曽川"],
+    "answer": 0,
+    "explanation": "信濃川は長野県では千曲川と呼ばれ、新潟県を通って日本海に注ぎます。"
+  },
+  {
+    "id": "geography-normal-002",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "日本で流域面積が最大の川は？",
+    "choices": ["四万十川", "利根川", "信濃川", "淀川"],
+    "answer": 1,
+    "explanation": "利根川は関東地方に広大な流域を持ちます。川の長さと流域面積は異なる指標です。"
+  },
+  {
+    "id": "geography-normal-003",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "日本で最も面積が小さい都道府県は？",
+    "choices": ["東京都", "沖縄県", "香川県", "大阪府"],
+    "answer": 2,
+    "explanation": "都道府県の面積では香川県が最も小さく、四国の北東部に位置します。"
+  },
+  {
+    "id": "geography-normal-004",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "次の県のうち、海に面していないのは？",
+    "choices": ["富山県", "和歌山県", "山口県", "長野県"],
+    "answer": 3,
+    "explanation": "長野県は内陸県です。富山県は日本海、和歌山県は太平洋側、山口県は日本海と瀬戸内海に面します。"
+  },
+  {
+    "id": "geography-normal-005",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "仙台市が県庁所在地の県は？",
+    "choices": ["宮城県", "宮崎県", "岩手県", "山形県"],
+    "answer": 0,
+    "explanation": "仙台市は宮城県の県庁所在地です。宮崎県の県庁所在地は宮崎市です。"
+  },
+  {
+    "id": "geography-normal-006",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "金沢市が県庁所在地の県は？",
+    "choices": ["新潟県", "石川県", "富山県", "福井県"],
+    "answer": 1,
+    "explanation": "金沢市は石川県の県庁所在地で、北陸地方に位置します。"
+  },
+  {
+    "id": "geography-normal-007",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "明石市を通る、日本標準時の基準となる経線は？",
+    "choices": [
+      "西経百三十五度",
+      "東経百八十度",
+      "東経百三十五度",
+      "東経九十度"
+    ],
+    "answer": 2,
+    "explanation": "東経百三十五度は兵庫県明石市などを通ります。日本標準時は協定世界時より九時間進んでいます。"
+  },
+  {
+    "id": "geography-normal-008",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "関東平野を説明したものは？",
+    "choices": [
+      "日本で最も高い高原",
+      "北海道に広がる盆地",
+      "沖縄県のサンゴ礁",
+      "日本で最も広い平野"
+    ],
+    "answer": 3,
+    "explanation": "関東平野は日本最大の平野で、東京を含む関東地方に広がっています。"
+  },
+  {
+    "id": "geography-normal-009",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "本州と四国の間に広がる海は？",
+    "choices": ["瀬戸内海", "日本海", "オホーツク海", "有明海"],
+    "answer": 0,
+    "explanation": "瀬戸内海は本州・四国・九州に囲まれ、多くの島が点在する海域です。"
+  },
+  {
+    "id": "geography-normal-010",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "津軽海峡は主にどの二つの島を隔てる？",
+    "choices": ["九州と沖縄本島", "本州と北海道", "本州と四国", "四国と九州"],
+    "answer": 1,
+    "explanation": "津軽海峡は本州の北端と北海道の南端の間にあります。"
+  },
+  {
+    "id": "geography-normal-011",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "カナダの首都は？",
+    "choices": ["バンクーバー", "モントリオール", "オタワ", "トロント"],
+    "answer": 2,
+    "explanation": "カナダの首都はオタワです。トロントはカナダ最大の都市として知られます。"
+  },
+  {
+    "id": "geography-normal-012",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "オーストラリアの首都は？",
+    "choices": ["シドニー", "メルボルン", "パース", "キャンベラ"],
+    "answer": 3,
+    "explanation": "首都はキャンベラです。シドニーやメルボルンは大都市ですが、首都ではありません。"
+  },
+  {
+    "id": "geography-normal-013",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "ブラジルの首都は？",
+    "choices": ["ブラジリア", "リオデジャネイロ", "サンパウロ", "サルバドル"],
+    "answer": 0,
+    "explanation": "ブラジリアは内陸に建設された計画都市で、一九六〇年に首都となりました。"
+  },
+  {
+    "id": "geography-normal-014",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "インドの首都は？",
+    "choices": ["チェンナイ", "ニューデリー", "ムンバイ", "コルカタ"],
+    "answer": 1,
+    "explanation": "インドの首都はニューデリーです。ムンバイは西海岸の大都市です。"
+  },
+  {
+    "id": "geography-normal-015",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "エベレストが属する山脈は？",
+    "choices": ["アンデス山脈", "ロッキー山脈", "ヒマラヤ山脈", "アルプス山脈"],
+    "answer": 2,
+    "explanation": "エベレストはアジアのヒマラヤ山脈にあり、海抜の標高で世界最高峰です。"
+  },
+  {
+    "id": "geography-normal-016",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "南アメリカ大陸の西側を南北に連なる山脈は？",
+    "choices": ["ウラル山脈", "アトラス山脈", "アパラチア山脈", "アンデス山脈"],
+    "answer": 3,
+    "explanation": "アンデス山脈は南アメリカ西部を太平洋岸に沿って長く連なります。"
+  },
+  {
+    "id": "geography-normal-017",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "スエズ運河が直接結ぶ二つの海は？",
+    "choices": [
+      "地中海と紅海",
+      "太平洋と大西洋",
+      "黒海とカスピ海",
+      "日本海と黄海"
+    ],
+    "answer": 0,
+    "explanation": "エジプトのスエズ運河は地中海と紅海を結び、ヨーロッパとアジアを結ぶ重要な航路です。"
+  },
+  {
+    "id": "geography-normal-018",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "パナマ運河が結ぶ二つの大洋は？",
+    "choices": [
+      "大西洋とインド洋",
+      "太平洋と大西洋",
+      "太平洋とインド洋",
+      "インド洋と北極海"
+    ],
+    "answer": 1,
+    "explanation": "パナマ運河は中央アメリカのパナマ地峡を横断し、太平洋とカリブ海側の大西洋を結びます。"
+  },
+  {
+    "id": "geography-normal-019",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "本初子午線が通ることで知られる、ロンドンの地域は？",
+    "choices": ["モンマルトル", "バチカン", "グリニッジ", "マンハッタン"],
+    "answer": 2,
+    "explanation": "歴史的にグリニッジ天文台を通る子午線が経度零度の基準として採用されました。"
+  },
+  {
+    "id": "geography-normal-020",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "季節によって卓越する風向きが変わる風は？",
+    "choices": ["海流", "偏光", "地震波", "季節風"],
+    "answer": 3,
+    "explanation": "季節風はモンスーンともいい、大陸と海洋の温まり方の違いなどにより生じます。"
+  },
+  {
+    "id": "geography-normal-021",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "地中海性気候の典型的な特徴は？",
+    "choices": [
+      "夏に乾燥し、冬に比較的雨が多い",
+      "一年中氷に覆われる",
+      "一年中毎日同量の雨が降る",
+      "冬だけ極端に高温になる"
+    ],
+    "answer": 0,
+    "explanation": "地中海性気候では夏に乾燥しやすく、オリーブやぶどうなどの栽培が行われます。"
+  },
+  {
+    "id": "geography-normal-022",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "熱帯雨林気候の典型的な特徴は？",
+    "choices": [
+      "年間を通してほとんど雨が降らない",
+      "一年を通して高温で雨が多い",
+      "冬にだけ雪が多い",
+      "昼夜とも一年中氷点下になる"
+    ],
+    "answer": 1,
+    "explanation": "赤道付近などに見られ、年中高温で明瞭な乾季がないことが特徴です。"
+  },
+  {
+    "id": "geography-normal-023",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "縮尺五万分の一の地図で、一センチメートルは実際の何メートル？",
+    "choices": ["五千メートル", "五メートル", "五百メートル", "五十メートル"],
+    "answer": 2,
+    "explanation": "地図上の一センチメートルに五万を掛けると五万センチメートル、つまり五百メートルです。"
+  },
+  {
+    "id": "geography-normal-024",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "等高線が同じ条件で密になっている場所の地形は？",
+    "choices": ["傾斜が緩やか", "必ず海面下", "必ず平ら", "傾斜が急"],
+    "answer": 3,
+    "explanation": "同じ高低差を短い水平距離で変化するため、等高線の間隔が狭いほど急斜面になります。"
+  },
+  {
+    "id": "geography-normal-025",
+    "category": "geography",
+    "difficulty": "normal",
+    "prompt": "リアス海岸の特徴は？",
+    "choices": [
+      "山地の谷が沈水し、入り組んだ海岸線になる",
+      "必ず一直線の砂浜だけになる",
+      "すべてサンゴでできている",
+      "海岸全体が氷でできている"
+    ],
+    "answer": 0,
+    "explanation": "河川などが刻んだ谷が海に沈み、複雑な湾や入り江ができた海岸です。三陸海岸などに見られます。"
+  },
+  {
+    "id": "geography-hard-001",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "本州などの標高で用いる、日本の高さの基準となる平均海面は？",
+    "choices": [
+      "東京湾の平均海面",
+      "琵琶湖の平均水面",
+      "富士五湖の平均水面",
+      "カスピ海の平均海面"
+    ],
+    "answer": 0,
+    "explanation": "日本の標高は東京湾平均海面を基準とします。一部離島などには独自の高さの基準があります。",
+    "source": {
+      "label": "国土地理院｜日本の測地系",
+      "url": "https://www.gsi.go.jp/sokuchikijun/datum-main"
+    }
+  },
+  {
+    "id": "geography-hard-002",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "メルカトル図法の地図で、特に高緯度ほど大きくひずむものは？",
+    "choices": [
+      "緯線と経線が直交すること",
+      "面積",
+      "局所的な角度",
+      "経線が直線であること"
+    ],
+    "answer": 1,
+    "explanation": "メルカトル図法は角度を保つ正角図法ですが、面積は高緯度ほど大きく表されます。"
+  },
+  {
+    "id": "geography-hard-003",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ある中心からの距離と方位を正しく表す地図の図法は？",
+    "choices": [
+      "モルワイデ図法",
+      "サンソン図法",
+      "正距方位図法",
+      "メルカトル図法"
+    ],
+    "answer": 2,
+    "explanation": "正距方位図法では中心から各地点への距離と方位が正しく、任意の二地点間がすべて正確なわけではありません。",
+    "source": {
+      "label": "国土地理院｜緯度経度・世界測地系",
+      "url": "https://www.gsi.go.jp/common/000240801.pdf"
+    }
+  },
+  {
+    "id": "geography-hard-004",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "河川が山地から平地へ出る場所にできやすい、扇形の堆積地形は？",
+    "choices": ["三角州", "砂州", "海食崖", "扇状地"],
+    "answer": 3,
+    "explanation": "河川の勾配が緩くなって運搬力が弱まり、砂や礫が扇形に堆積してできる地形です。"
+  },
+  {
+    "id": "geography-hard-005",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "河口付近で土砂が堆積してできる代表的な地形は？",
+    "choices": ["三角州", "扇状地", "カルデラ", "カール"],
+    "answer": 0,
+    "explanation": "三角州は川が海や湖に注ぐ場所で土砂が堆積してでき、低く平らな土地になりやすい地形です。"
+  },
+  {
+    "id": "geography-hard-006",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "氷河に削られた谷が海に沈んでできる、細長く深い湾は？",
+    "choices": ["カルスト", "フィヨルド", "扇状地", "砂丘"],
+    "answer": 1,
+    "explanation": "氷河の侵食による谷が沈水してできた湾です。ノルウェーなどに多く見られます。"
+  },
+  {
+    "id": "geography-hard-007",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "石灰岩が水に溶けてできる地形の総称は？",
+    "choices": ["三角州地形", "氷床地形", "カルスト地形", "火山地形"],
+    "answer": 2,
+    "explanation": "石灰岩が二酸化炭素を含む水に溶かされ、鍾乳洞やすり鉢状のくぼ地などができます。"
+  },
+  {
+    "id": "geography-hard-008",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "寒流として正しいものは？",
+    "choices": ["黒潮", "対馬海流", "メキシコ湾流", "親潮"],
+    "answer": 3,
+    "explanation": "親潮は日本の北東側から南下する寒流です。黒潮・対馬海流・メキシコ湾流は暖流です。"
+  },
+  {
+    "id": "geography-hard-009",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "赤道付近から亜熱帯にかけて、一般に東寄りに吹く恒常風は？",
+    "choices": ["貿易風", "偏西風", "海陸風だけ", "山谷風だけ"],
+    "answer": 0,
+    "explanation": "貿易風は北半球では北東、南半球では南東から赤道側へ吹く風として知られます。"
+  },
+  {
+    "id": "geography-hard-010",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "中緯度で上空を主に西から東へ吹く風は？",
+    "choices": ["陸風", "偏西風", "貿易風", "極東風"],
+    "answer": 1,
+    "explanation": "日本などの中緯度では偏西風が卓越し、天気が西から東へ移り変わる要因の一つです。"
+  },
+  {
+    "id": "geography-hard-011",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "インドネシアのジャワ島が属する気候帯として代表的なのは？",
+    "choices": ["冷帯", "極地氷雪帯", "熱帯", "寒帯"],
+    "answer": 2,
+    "explanation": "ジャワ島は赤道の南にある低緯度の島で、低地の大部分は熱帯に属します。"
+  },
+  {
+    "id": "geography-hard-012",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "アルゼンチンの首都は？",
+    "choices": ["リマ", "ボゴタ", "サンティアゴ", "ブエノスアイレス"],
+    "answer": 3,
+    "explanation": "アルゼンチンの首都はブエノスアイレスです。サンティアゴはチリの首都です。"
+  },
+  {
+    "id": "geography-hard-013",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "トルコの首都は？",
+    "choices": ["アンカラ", "イスタンブール", "イズミル", "アンタルヤ"],
+    "answer": 0,
+    "explanation": "トルコの首都は内陸のアンカラです。イスタンブールはボスポラス海峡に面する大都市です。"
+  },
+  {
+    "id": "geography-hard-014",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ニュージーランドの首都は？",
+    "choices": [
+      "クイーンズタウン",
+      "ウェリントン",
+      "オークランド",
+      "クライストチャーチ"
+    ],
+    "answer": 1,
+    "explanation": "ウェリントンは北島南端に位置する首都です。オークランドは北島北部の大都市です。"
+  },
+  {
+    "id": "geography-hard-015",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "モンゴルの首都は？",
+    "choices": ["タシケント", "ビシュケク", "ウランバートル", "アスタナ"],
+    "answer": 2,
+    "explanation": "モンゴルの首都はウランバートルです。国はロシアと中国に挟まれた内陸国です。"
+  },
+  {
+    "id": "geography-hard-016",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ケニアの首都は？",
+    "choices": ["カイロ", "アクラ", "ダカール", "ナイロビ"],
+    "answer": 3,
+    "explanation": "ケニアの首都はナイロビです。カイロはエジプト、アクラはガーナ、ダカールはセネガルの首都です。"
+  },
+  {
+    "id": "geography-hard-017",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "次の国のうち、国土に赤道が通るのは？",
+    "choices": ["エクアドル", "日本", "ドイツ", "ニュージーランド"],
+    "answer": 0,
+    "explanation": "南アメリカのエクアドルを赤道が通ります。国名はスペイン語で赤道を意味します。"
+  },
+  {
+    "id": "geography-hard-018",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ヨーロッパとアフリカを隔て、地中海と大西洋を結ぶ海峡は？",
+    "choices": [
+      "ホルムズ海峡",
+      "ジブラルタル海峡",
+      "ベーリング海峡",
+      "マラッカ海峡"
+    ],
+    "answer": 1,
+    "explanation": "ジブラルタル海峡はイベリア半島南端とアフリカ北西端の間にあります。"
+  },
+  {
+    "id": "geography-hard-019",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "マレー半島とスマトラ島の間の海峡は？",
+    "choices": [
+      "マゼラン海峡",
+      "ボスポラス海峡",
+      "マラッカ海峡",
+      "ドーバー海峡"
+    ],
+    "answer": 2,
+    "explanation": "マラッカ海峡はインド洋側と南シナ海側を結ぶ重要な海上交通路です。"
+  },
+  {
+    "id": "geography-hard-020",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ロシアとアラスカの間にある海峡は？",
+    "choices": [
+      "ジブラルタル海峡",
+      "ドレーク海峡",
+      "宗谷海峡",
+      "ベーリング海峡"
+    ],
+    "answer": 3,
+    "explanation": "ベーリング海峡はユーラシア大陸と北アメリカ大陸を隔て、北極海とベーリング海を結びます。"
+  },
+  {
+    "id": "geography-hard-021",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ライン川が注ぐ海は？",
+    "choices": ["北海", "地中海", "黒海", "カスピ海"],
+    "answer": 0,
+    "explanation": "ライン川は西ヨーロッパを流れ、オランダ付近で北海へ注ぎます。"
+  },
+  {
+    "id": "geography-hard-022",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "ドナウ川が注ぐ海は？",
+    "choices": ["紅海", "黒海", "北海", "バルト海"],
+    "answer": 1,
+    "explanation": "ドナウ川は中央・東ヨーロッパを流れ、河口で大きな三角州をつくって黒海に注ぎます。"
+  },
+  {
+    "id": "geography-hard-023",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "日本で最も深い湖は？",
+    "choices": ["霞ヶ浦", "猪苗代湖", "田沢湖", "琵琶湖"],
+    "answer": 2,
+    "explanation": "秋田県の田沢湖は、日本で最も深い湖です。面積が最大の琵琶湖とは異なります。"
+  },
+  {
+    "id": "geography-hard-024",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "飛騨山脈・木曽山脈・赤石山脈の総称は？",
+    "choices": ["出羽山地", "中国山地", "九州山地", "日本アルプス"],
+    "answer": 3,
+    "explanation": "飛騨山脈が北アルプス、木曽山脈が中央アルプス、赤石山脈が南アルプスと呼ばれます。"
+  },
+  {
+    "id": "geography-hard-025",
+    "category": "geography",
+    "difficulty": "hard",
+    "prompt": "都市中心部の気温が周辺部より高くなる現象は？",
+    "choices": ["ヒートアイランド現象", "海面上昇", "酸性雨", "砂漠化"],
+    "answer": 0,
+    "explanation": "建物や舗装面の蓄熱、人工排熱、緑地の減少などが関係します。地球全体の温暖化とは区別される現象です。"
+  },
+  {
+    "id": "history-easy-001",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "日本の縄文時代を代表する土器は？",
+    "choices": ["縄文土器", "須恵器", "唐三彩", "青磁"],
+    "answer": 0,
+    "explanation": "縄文土器は縄目の模様を持つ例が多い土器で、縄文時代の名称の由来になりました。"
+  },
+  {
+    "id": "history-easy-002",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "弥生時代に日本列島で広がった農耕として代表的なのは？",
+    "choices": [
+      "サトウキビだけの栽培",
+      "水田での稲作",
+      "コーヒー栽培",
+      "ゴムのプランテーション"
+    ],
+    "answer": 1,
+    "explanation": "弥生時代には水田稲作が広がり、集落や社会のあり方が変化していきました。"
+  },
+  {
+    "id": "history-easy-003",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "古墳とは、主に何のために造られたもの？",
+    "choices": [
+      "税を集める市場",
+      "米を水田へ送る水路",
+      "有力者の墓",
+      "船を修理する港"
+    ],
+    "answer": 2,
+    "explanation": "古墳は支配者や有力者の墓です。前方後円墳などさまざまな形があります。"
+  },
+  {
+    "id": "history-easy-004",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "奈良時代の都「平城京」が置かれた場所は現在のどこ？",
+    "choices": ["東京都", "福岡県", "青森県", "奈良県"],
+    "answer": 3,
+    "explanation": "平城京は現在の奈良市周辺に置かれた都です。七一〇年に遷都されました。"
+  },
+  {
+    "id": "history-easy-005",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "平安京が置かれた場所は現在のどこ？",
+    "choices": ["京都府", "神奈川県", "広島県", "宮城県"],
+    "answer": 0,
+    "explanation": "平安京は現在の京都市に置かれた都です。七九四年に桓武天皇が都を移しました。"
+  },
+  {
+    "id": "history-easy-006",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "鎌倉幕府を開いた人物は？",
+    "choices": ["藤原道長", "源頼朝", "源義経", "平清盛"],
+    "answer": 1,
+    "explanation": "源頼朝が鎌倉を本拠に武家政権を築きました。成立時期は複数の段階から捉えられます。"
+  },
+  {
+    "id": "history-easy-007",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "室町幕府を開いた人物は？",
+    "choices": ["徳川家康", "豊臣秀吉", "足利尊氏", "足利義満"],
+    "answer": 2,
+    "explanation": "足利尊氏が室町幕府の初代将軍です。足利義満は第三代将軍です。"
+  },
+  {
+    "id": "history-easy-008",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "江戸幕府を開いた人物は？",
+    "choices": ["織田信長", "武田信玄", "伊達政宗", "徳川家康"],
+    "answer": 3,
+    "explanation": "徳川家康は一六〇三年に征夷大将軍となり、江戸幕府を開きました。"
+  },
+  {
+    "id": "history-easy-009",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "本能寺の変で織田信長に謀反を起こした家臣は？",
+    "choices": ["明智光秀", "石田三成", "真田幸村", "北条氏康"],
+    "answer": 0,
+    "explanation": "一五八二年、明智光秀が京都の本能寺にいた織田信長を襲撃しました。"
+  },
+  {
+    "id": "history-easy-010",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "天下統一を進め、刀狩を行った人物は？",
+    "choices": ["足利義政", "豊臣秀吉", "徳川吉宗", "源頼朝"],
+    "answer": 1,
+    "explanation": "豊臣秀吉は刀狩や太閤検地を実施し、全国支配の体制を整えました。"
+  },
+  {
+    "id": "history-easy-011",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "江戸時代、大名に江戸と領地を行き来させた制度は？",
+    "choices": ["廃藩置県", "普通選挙", "参勤交代", "班田収授法"],
+    "answer": 2,
+    "explanation": "参勤交代では大名が原則として江戸と領地に交代で住み、妻子は江戸に置かれました。"
+  },
+  {
+    "id": "history-easy-012",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "一八五三年、浦賀に来航したアメリカの使節は？",
+    "choices": ["コロンブス", "マゼラン", "ザビエル", "ペリー"],
+    "answer": 3,
+    "explanation": "ペリーは艦隊を率いて浦賀に来航し、日本に開国を求めました。"
+  },
+  {
+    "id": "history-easy-013",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "江戸幕府の後に始まった時代は？",
+    "choices": ["明治時代", "大正時代", "昭和時代", "平安時代"],
+    "answer": 0,
+    "explanation": "江戸幕府が終わり、明治政府による近代国家づくりが進められました。"
+  },
+  {
+    "id": "history-easy-014",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "日本の元号を古い順に並べたものは？",
+    "choices": [
+      "平成→昭和→大正→明治",
+      "明治→大正→昭和→平成",
+      "大正→明治→平成→昭和",
+      "昭和→大正→明治→平成"
+    ],
+    "answer": 1,
+    "explanation": "近代以降は明治、大正、昭和、平成、令和の順です。"
+  },
+  {
+    "id": "history-easy-015",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "日本の初代内閣総理大臣は？",
+    "choices": ["板垣退助", "西郷隆盛", "伊藤博文", "大隈重信"],
+    "answer": 2,
+    "explanation": "一八八五年の内閣制度発足に伴い、伊藤博文が初代内閣総理大臣に就任しました。"
+  },
+  {
+    "id": "history-easy-016",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "一九四五年に原子爆弾が投下された日本の二都市は？",
+    "choices": ["東京と大阪", "京都と奈良", "横浜と神戸", "広島と長崎"],
+    "answer": 3,
+    "explanation": "八月六日に広島、八月九日に長崎へ原子爆弾が投下され、甚大な被害をもたらしました。"
+  },
+  {
+    "id": "history-easy-017",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "第二次世界大戦が終結した年は？",
+    "choices": ["一九四五年", "一九一四年", "一九二九年", "一九六四年"],
+    "answer": 0,
+    "explanation": "第二次世界大戦は一九三九年に始まり、一九四五年に終結しました。"
+  },
+  {
+    "id": "history-easy-018",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "一九六四年に日本で初めて開催された夏季オリンピックの開催都市は？",
+    "choices": ["大阪", "東京", "札幌", "長野"],
+    "answer": 1,
+    "explanation": "一九六四年の夏季大会は東京で開催されました。札幌と長野で行われたのは冬季大会です。"
+  },
+  {
+    "id": "history-easy-019",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "古代エジプトの王を指す言葉は？",
+    "choices": ["執政官", "大統領", "ファラオ", "将軍"],
+    "answer": 2,
+    "explanation": "ファラオは古代エジプトの王の称号として使われる言葉です。"
+  },
+  {
+    "id": "history-easy-020",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "中国を統一して秦を建てた皇帝は？",
+    "choices": ["孔子", "孫文", "玄奘", "始皇帝"],
+    "answer": 3,
+    "explanation": "始皇帝は紀元前三世紀に中国を統一し、文字や度量衡の統一などを進めました。"
+  },
+  {
+    "id": "history-easy-021",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "中国の孔子の教えをもとに発展した思想・学問は？",
+    "choices": ["儒学", "イスラム教", "キリスト教", "道教"],
+    "answer": 0,
+    "explanation": "儒学は孔子の教えをもとに発展し、仁や礼などを重視します。日本にも大きな影響を与えました。"
+  },
+  {
+    "id": "history-easy-022",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "古代オリンピックが生まれた地域は？",
+    "choices": ["カナダ", "ギリシャ", "日本", "ブラジル"],
+    "answer": 1,
+    "explanation": "古代オリンピックはギリシャのオリンピアで行われた祭典競技です。"
+  },
+  {
+    "id": "history-easy-023",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "一四九二年に大西洋を渡り、カリブ海の島々に到達した人物は？",
+    "choices": ["ニュートン", "リンカン", "コロンブス", "ナポレオン"],
+    "answer": 2,
+    "explanation": "コロンブスはスペインの支援で航海しました。到達先にはすでに先住民の社会がありました。"
+  },
+  {
+    "id": "history-easy-024",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "産業革命が最初に進んだ国は？",
+    "choices": ["日本", "ロシア", "ブラジル", "イギリス"],
+    "answer": 3,
+    "explanation": "十八世紀後半のイギリスで、機械を使う工場生産への大きな変化が始まりました。"
+  },
+  {
+    "id": "history-easy-025",
+    "category": "history",
+    "difficulty": "easy",
+    "prompt": "フランス革命が始まった年は？",
+    "choices": ["一七八九年", "一四九二年", "一六〇三年", "一九四五年"],
+    "answer": 0,
+    "explanation": "一七八九年のバスティーユ襲撃などをきっかけに、フランス革命が展開しました。"
+  },
+  {
+    "id": "history-normal-001",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "邪馬台国の女王として中国の歴史書に記された人物は？",
+    "choices": ["卑弥呼", "推古天皇", "持統天皇", "紫式部"],
+    "answer": 0,
+    "explanation": "中国の『魏志』倭人伝に卑弥呼が記されています。邪馬台国の所在地には複数の説があります。"
+  },
+  {
+    "id": "history-normal-002",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "遣隋使として知られる人物は？",
+    "choices": ["阿倍仲麻呂", "小野妹子", "鑑真", "空海"],
+    "answer": 1,
+    "explanation": "小野妹子は七世紀初めに隋へ派遣されました。鑑真は日本へ渡来した唐の僧です。"
+  },
+  {
+    "id": "history-normal-003",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "東大寺の大仏造立を進めた天皇は？",
+    "choices": ["後醍醐天皇", "明治天皇", "聖武天皇", "桓武天皇"],
+    "answer": 2,
+    "explanation": "聖武天皇は仏教の力で国を守ろうとし、国分寺の建立や大仏造立を進めました。"
+  },
+  {
+    "id": "history-normal-004",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "藤原道長らが摂政・関白として政治を行った仕組みは？",
+    "choices": ["院政", "幕政", "立憲政治", "摂関政治"],
+    "answer": 3,
+    "explanation": "藤原氏は天皇家と姻戚関係を結び、摂政や関白として政治の実権を握りました。"
+  },
+  {
+    "id": "history-normal-005",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "上皇が政治の実権を握る政治の形態は？",
+    "choices": ["院政", "摂関政治", "執権政治", "政党内閣"],
+    "answer": 0,
+    "explanation": "天皇を退位した上皇が自ら政治を行う仕組みを院政といいます。"
+  },
+  {
+    "id": "history-normal-006",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "鎌倉幕府で将軍を補佐し、北条氏が代々就いた役職は？",
+    "choices": ["太政大臣", "執権", "関白", "老中"],
+    "answer": 1,
+    "explanation": "北条氏は執権として幕府政治の実権を握りました。老中は江戸幕府の役職です。"
+  },
+  {
+    "id": "history-normal-007",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "元寇の際に日本へ攻めてきた王朝は？",
+    "choices": ["漢", "清", "元", "秦"],
+    "answer": 2,
+    "explanation": "元の皇帝フビライのもと、十三世紀に文永の役と弘安の役の二度、日本への遠征が行われました。"
+  },
+  {
+    "id": "history-normal-008",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "京都の金閣を建てた室町幕府の将軍は？",
+    "choices": ["足利義政", "足利尊氏", "徳川家光", "足利義満"],
+    "answer": 3,
+    "explanation": "足利義満の北山山荘に建てられた金閣は、北山文化を代表する建築です。"
+  },
+  {
+    "id": "history-normal-009",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "京都の銀閣を建てた室町幕府の将軍は？",
+    "choices": ["足利義政", "足利義満", "足利義昭", "徳川吉宗"],
+    "answer": 0,
+    "explanation": "足利義政の東山山荘に建てられた銀閣は、東山文化を代表します。"
+  },
+  {
+    "id": "history-normal-010",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "一四六七年に始まり、京都を中心に長く続いた戦乱は？",
+    "choices": ["西南戦争", "応仁の乱", "承久の乱", "島原・天草一揆"],
+    "answer": 1,
+    "explanation": "応仁の乱は将軍や有力大名家の後継争いなどを背景に起こり、戦国時代へ向かう契機となりました。"
+  },
+  {
+    "id": "history-normal-011",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "一五四九年に日本へキリスト教を伝えた宣教師は？",
+    "choices": [
+      "ガリレオ・ガリレイ",
+      "トーマス・モア",
+      "フランシスコ・ザビエル",
+      "マルコ・ポーロ"
+    ],
+    "answer": 2,
+    "explanation": "ザビエルは鹿児島に来航して宣教を始めました。イエズス会の宣教師です。"
+  },
+  {
+    "id": "history-normal-012",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "関ヶ原の戦いが起きた年は？",
+    "choices": ["一五四三年", "一五八二年", "一八六八年", "一六〇〇年"],
+    "answer": 3,
+    "explanation": "一六〇〇年の関ヶ原の戦いでは、徳川家康の東軍が石田三成らの西軍に勝利しました。"
+  },
+  {
+    "id": "history-normal-013",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "江戸時代の享保の改革を行った将軍は？",
+    "choices": ["徳川吉宗", "徳川家康", "徳川綱吉", "徳川慶喜"],
+    "answer": 0,
+    "explanation": "第八代将軍の徳川吉宗が、財政の立て直しや目安箱の設置などを進めました。"
+  },
+  {
+    "id": "history-normal-014",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "『解体新書』の翻訳に関わった人物の組は？",
+    "choices": [
+      "西郷隆盛と大久保利通",
+      "杉田玄白と前野良沢",
+      "本居宣長と平田篤胤",
+      "松尾芭蕉と小林一茶"
+    ],
+    "answer": 1,
+    "explanation": "杉田玄白や前野良沢らがオランダ語の解剖学書を翻訳し、一七七四年に『解体新書』を刊行しました。"
+  },
+  {
+    "id": "history-normal-015",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "日本各地を測量し、精密な日本地図づくりを進めた人物は？",
+    "choices": ["井原西鶴", "徳川光圀", "伊能忠敬", "近松門左衛門"],
+    "answer": 2,
+    "explanation": "伊能忠敬は全国の測量を進めました。測量成果をもとに、死後に『大日本沿海輿地全図』が完成しました。"
+  },
+  {
+    "id": "history-normal-016",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "大政奉還を行った最後の江戸幕府将軍は？",
+    "choices": ["徳川家茂", "徳川家定", "徳川吉宗", "徳川慶喜"],
+    "answer": 3,
+    "explanation": "徳川慶喜は一八六七年に政権を朝廷へ返上する大政奉還を行いました。"
+  },
+  {
+    "id": "history-normal-017",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "一八七一年、藩を廃して府県を置いた改革は？",
+    "choices": ["廃藩置県", "版籍奉還", "地租改正", "学制"],
+    "answer": 0,
+    "explanation": "廃藩置県で旧来の藩を廃し、中央政府が地方行政を担う体制を整えました。",
+    "source": {
+      "label": "国立公文書館｜版籍奉還と廃藩置県",
+      "url": "https://www.archives.go.jp/exhibition/digital/modean_state/contents/return/index.html"
+    }
+  },
+  {
+    "id": "history-normal-018",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "自由民権運動の中心人物で、自由党を結成した人物は？",
+    "choices": ["東郷平八郎", "板垣退助", "岩倉具視", "大久保利通"],
+    "answer": 1,
+    "explanation": "板垣退助は国会開設などを求める自由民権運動を進め、一八八一年に自由党を結成しました。"
+  },
+  {
+    "id": "history-normal-019",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "日清戦争の講和条約は？",
+    "choices": ["ベルサイユ条約", "日米和親条約", "下関条約", "ポーツマス条約"],
+    "answer": 2,
+    "explanation": "一八九五年に下関条約が結ばれました。ポーツマス条約は日露戦争の講和条約です。"
+  },
+  {
+    "id": "history-normal-020",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "日露戦争の講和条約は？",
+    "choices": ["下関条約", "ワシントン条約", "南京条約", "ポーツマス条約"],
+    "answer": 3,
+    "explanation": "一九〇五年にアメリカのポーツマスで講和が成立しました。"
+  },
+  {
+    "id": "history-normal-021",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "第一次世界大戦が始まった年は？",
+    "choices": ["一九一四年", "一八四八年", "一九二九年", "一九三九年"],
+    "answer": 0,
+    "explanation": "一九一四年に始まり、一九一八年に休戦となりました。一九三九年は第二次世界大戦の開戦年です。"
+  },
+  {
+    "id": "history-normal-022",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "一九二九年に始まった世界的な経済危機は？",
+    "choices": ["冷戦", "世界恐慌", "産業革命", "ルネサンス"],
+    "answer": 1,
+    "explanation": "アメリカの株価暴落を契機に金融や生産・雇用の危機が世界へ広がりました。"
+  },
+  {
+    "id": "history-normal-023",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "ルネサンスが最初に盛んになった地域は？",
+    "choices": ["オーストラリア", "南極", "イタリア", "日本"],
+    "answer": 2,
+    "explanation": "ルネサンスは古代ギリシャ・ローマの文化を見直す動きで、イタリアの都市を中心に発展しました。"
+  },
+  {
+    "id": "history-normal-024",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "宗教改革のきっかけとなった「九十五か条の論題」で知られる人物は？",
+    "choices": ["ナポレオン", "ルイ十四世", "ビスマルク", "マルティン・ルター"],
+    "answer": 3,
+    "explanation": "ルターは一五一七年に贖宥状などを批判し、宗教改革へとつながる動きを起こしました。"
+  },
+  {
+    "id": "history-normal-025",
+    "category": "history",
+    "difficulty": "normal",
+    "prompt": "アメリカ独立宣言が採択された年は？",
+    "choices": ["一七七六年", "一六〇〇年", "一七八九年", "一八六八年"],
+    "answer": 0,
+    "explanation": "一七七六年七月四日に独立宣言が採択されました。この日はアメリカの独立記念日です。"
+  },
+  {
+    "id": "history-hard-001",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一二三二年、北条泰時が定めた武士のための法は？",
+    "choices": ["御成敗式目", "武家諸法度", "大宝律令", "五箇条の御誓文"],
+    "answer": 0,
+    "explanation": "御成敗式目は武家社会の慣習などに基づく法で、貞永式目とも呼ばれます。"
+  },
+  {
+    "id": "history-hard-002",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一二二一年、後鳥羽上皇が鎌倉幕府の打倒を図った戦いは？",
+    "choices": ["応仁の乱", "承久の乱", "壬申の乱", "保元の乱"],
+    "answer": 1,
+    "explanation": "承久の乱で幕府側が勝利し、朝廷に対する幕府の支配力が強まりました。"
+  },
+  {
+    "id": "history-hard-003",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "足利義満の時代に始まった、証明書を使う明との貿易は？",
+    "choices": ["南蛮貿易", "三角貿易", "勘合貿易", "朱印船貿易"],
+    "answer": 2,
+    "explanation": "勘合という証明書で正規の船を倭寇と区別したため、勘合貿易と呼ばれます。"
+  },
+  {
+    "id": "history-hard-004",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "豊臣秀吉が行った、土地の面積や収穫量を調べる政策は？",
+    "choices": ["刀狩", "楽市・楽座", "参勤交代", "太閤検地"],
+    "answer": 3,
+    "explanation": "太閤検地は田畑の面積や石高、耕作者などを把握し、年貢徴収と支配の基礎を整える政策です。"
+  },
+  {
+    "id": "history-hard-005",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "寛政の改革を主導した老中は？",
+    "choices": ["松平定信", "田沼意次", "水野忠邦", "井伊直弼"],
+    "answer": 0,
+    "explanation": "松平定信は十八世紀末に寛政の改革を行い、倹約や農村の立て直しなどを進めました。"
+  },
+  {
+    "id": "history-hard-006",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "天保の改革を主導した老中は？",
+    "choices": ["新井白石", "水野忠邦", "松平定信", "徳川光圀"],
+    "answer": 1,
+    "explanation": "水野忠邦は十九世紀の天保の改革で、倹約令や株仲間の解散などを進めました。"
+  },
+  {
+    "id": "history-hard-007",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "『古事記伝』を著した国学者は？",
+    "choices": ["伊能忠敬", "緒方洪庵", "本居宣長", "杉田玄白"],
+    "answer": 2,
+    "explanation": "本居宣長は『古事記』を研究し、注釈書『古事記伝』を著しました。"
+  },
+  {
+    "id": "history-hard-008",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一八六九年、藩主が土地と人民を朝廷に返すことを申し出た改革は？",
+    "choices": ["廃藩置県", "地租改正", "秩禄処分", "版籍奉還"],
+    "answer": 3,
+    "explanation": "版は土地、籍は人民を意味します。版籍奉還の後も旧藩主の多くは知藩事となり、廃藩置県は一八七一年です。",
+    "source": {
+      "label": "国立公文書館｜版籍奉還",
+      "url": "https://www.archives.go.jp/ayumi/kobetsu/m02_1869_01.html"
+    }
+  },
+  {
+    "id": "history-hard-009",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一八七三年の地租改正で、地租の基準となったものは？",
+    "choices": [
+      "地価",
+      "その年の米の収穫量だけ",
+      "納税者の年齢",
+      "家族の人数だけ"
+    ],
+    "answer": 0,
+    "explanation": "地租改正では土地価格を基準に税を定め、土地所有者が金納する仕組みに改めました。"
+  },
+  {
+    "id": "history-hard-010",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "岩倉使節団が欧米へ派遣された主な目的は？",
+    "choices": [
+      "元との貿易再開",
+      "条約改正の予備交渉と制度の視察",
+      "植民地の割譲を欧米に迫ること",
+      "鎌倉幕府の再建"
+    ],
+    "answer": 1,
+    "explanation": "一八七一年に出発し、条約改正に向けた交渉や欧米の制度・産業の視察を行いました。"
+  },
+  {
+    "id": "history-hard-011",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一八七七年、西郷隆盛を中心に起きた士族の反乱は？",
+    "choices": ["甲午農民戦争", "日清戦争", "西南戦争", "戊辰戦争"],
+    "answer": 2,
+    "explanation": "西南戦争は鹿児島の士族を中心に起こった、明治政府に対する大規模な反乱です。"
+  },
+  {
+    "id": "history-hard-012",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "陸奥宗光が外務大臣のときに条約改正で実現したのは？",
+    "choices": [
+      "国際連盟への加盟",
+      "国際連合の創設",
+      "普通選挙法の制定",
+      "領事裁判権の撤廃に向けた条約締結"
+    ],
+    "answer": 3,
+    "explanation": "一八九四年の日英通商航海条約などにより領事裁判権の撤廃が決まり、一八九九年に実施されました。",
+    "source": {
+      "label": "外務省｜日英通商航海条約",
+      "url": "https://www.mofa.go.jp/mofaj/ms/da/pagew_000001_00731.html"
+    }
+  },
+  {
+    "id": "history-hard-013",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一九一一年、関税自主権の完全回復に尽力した外務大臣は？",
+    "choices": ["小村寿太郎", "陸奥宗光", "岩倉具視", "板垣退助"],
+    "answer": 0,
+    "explanation": "小村寿太郎のもとで条約改正が進み、一九一一年に関税自主権が完全に回復しました。"
+  },
+  {
+    "id": "history-hard-014",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一九一八年、富山県の出来事を発端に全国へ広がった運動は？",
+    "choices": [
+      "公武合体運動",
+      "米騒動",
+      "大塩平八郎の乱",
+      "自由民権運動の開始"
+    ],
+    "answer": 1,
+    "explanation": "米価の急上昇に抗議する動きが全国へ広がり、寺内正毅内閣の退陣につながりました。"
+  },
+  {
+    "id": "history-hard-015",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一九二五年の普通選挙法で、衆議院議員選挙の選挙権が広がった対象は？",
+    "choices": [
+      "満二十歳以上の女子だけ",
+      "満十五歳以上のすべての男女",
+      "満二十五歳以上の男子",
+      "満十八歳以上のすべての男女"
+    ],
+    "answer": 2,
+    "explanation": "納税額による制限が撤廃されましたが、対象は満二十五歳以上の男子で、女性にはまだ選挙権がありませんでした。",
+    "source": {
+      "label": "アジア歴史資料センター｜普通選挙法",
+      "url": "https://jacar.go.jp/learning/term.html?uid=Y40C100066"
+    }
+  },
+  {
+    "id": "history-hard-016",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "日本で女性が初めて衆議院議員選挙に投票した年は？",
+    "choices": ["一八八九年", "一九二五年", "一九六四年", "一九四六年"],
+    "answer": 3,
+    "explanation": "一九四五年の法改正で女性参政権が認められ、一九四六年の総選挙で女性が初めて投票しました。",
+    "source": {
+      "label": "アジア歴史資料センター｜普通選挙法",
+      "url": "https://jacar.go.jp/learning/term.html?uid=Y40C100066"
+    }
+  },
+  {
+    "id": "history-hard-017",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "アテネで発達した古代民主政の特徴は？",
+    "choices": [
+      "市民が民会で政治に直接参加した",
+      "すべての住民が同じ参政権を持った",
+      "王がすべての法を単独で決めた",
+      "近代的な政党内閣が存在した"
+    ],
+    "answer": 0,
+    "explanation": "成人男性市民が直接参加する政治でした。女性・奴隷・在留外国人などは政治参加から除外されていました。"
+  },
+  {
+    "id": "history-hard-018",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "古代メソポタミアで使われた代表的な文字は？",
+    "choices": ["ひらがな", "楔形文字", "ハングル", "キリル文字"],
+    "answer": 1,
+    "explanation": "楔形文字は粘土板に楔のような形を刻んで記した文字で、メソポタミア文明で用いられました。"
+  },
+  {
+    "id": "history-hard-019",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "古代バビロニアで法典を整備した王は？",
+    "choices": [
+      "カール大帝",
+      "ルイ十六世",
+      "ハンムラビ王",
+      "アレクサンドロス大王"
+    ],
+    "answer": 2,
+    "explanation": "ハンムラビ法典は古代メソポタミアの法を伝える重要な史料です。身分によって扱いが異なる規定もありました。"
+  },
+  {
+    "id": "history-hard-020",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "イングランドで一二一五年に成立した、王権を制約する文書は？",
+    "choices": [
+      "アメリカ独立宣言",
+      "人権宣言",
+      "ナントの王令",
+      "マグナ・カルタ"
+    ],
+    "answer": 3,
+    "explanation": "マグナ・カルタは大憲章とも呼ばれ、王の権力を制限する原則の発展に影響を与えました。"
+  },
+  {
+    "id": "history-hard-021",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一六八八年のイングランドで起き、議会政治の発展につながった出来事は？",
+    "choices": ["名誉革命", "フランス革命", "二月革命", "ロシア革命"],
+    "answer": 0,
+    "explanation": "名誉革命ではジェームズ二世が退き、翌年に権利の章典が制定されました。"
+  },
+  {
+    "id": "history-hard-022",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "アメリカ南北戦争当時、奴隷解放宣言を出した大統領は？",
+    "choices": ["トルーマン", "リンカン", "ワシントン", "ウィルソン"],
+    "answer": 1,
+    "explanation": "リンカンは一八六三年に奴隷解放宣言を出しました。奴隷制の全国的廃止は憲法修正第十三条によります。"
+  },
+  {
+    "id": "history-hard-023",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "第一次世界大戦後、ドイツとの講和のため一九一九年に結ばれた条約は？",
+    "choices": [
+      "下関条約",
+      "トルデシリャス条約",
+      "ベルサイユ条約",
+      "ポーツマス条約"
+    ],
+    "answer": 2,
+    "explanation": "ベルサイユ条約はドイツへの賠償や領土・軍備に関する条件などを定めました。"
+  },
+  {
+    "id": "history-hard-024",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "一九五五年にインドネシアで開かれたアジア・アフリカ会議の通称は？",
+    "choices": ["ウィーン会議", "ヤルタ会談", "ミュンヘン会談", "バンドン会議"],
+    "answer": 3,
+    "explanation": "バンドン会議ではアジアとアフリカの国々が集まり、平和共存や反植民地主義などを話し合いました。"
+  },
+  {
+    "id": "history-hard-025",
+    "category": "history",
+    "difficulty": "hard",
+    "prompt": "ベルリンの壁が開放された年は？",
+    "choices": ["一九八九年", "一九四五年", "一九六一年", "二〇〇一年"],
+    "answer": 0,
+    "explanation": "一九八九年十一月に東西ベルリンの往来が開かれ、翌一九九〇年のドイツ再統一へつながりました。"
+  },
+  {
+    "id": "science-easy-001",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "植物が光合成をするとき、空気中から主に取り込む気体は？",
+    "choices": ["二酸化炭素", "窒素", "ヘリウム", "水素"],
+    "answer": 0,
+    "explanation": "植物は光のエネルギーを使い、二酸化炭素と水から有機物をつくり、酸素を放出します。"
+  },
+  {
+    "id": "science-easy-002",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "水の化学式は？",
+    "choices": ["NaCl", "H₂O", "CO₂", "O₂"],
+    "answer": 1,
+    "explanation": "水の分子は水素原子 2 個と酸素原子 1 個からできています。"
+  },
+  {
+    "id": "science-easy-003",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "氷は、水のどの状態？",
+    "choices": ["気体", "プラズマ", "固体", "液体"],
+    "answer": 2,
+    "explanation": "水は固体では氷、液体では水、気体では水蒸気と呼ばれます。"
+  },
+  {
+    "id": "science-easy-004",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "1 気圧で純粋な水が沸騰する温度は、およそ何度？",
+    "choices": ["0 ℃", "50 ℃", "200 ℃", "100 ℃"],
+    "answer": 3,
+    "explanation": "水の沸点は圧力によって変わります。標準的な 1 気圧では約 100 ℃です。"
+  },
+  {
+    "id": "science-easy-005",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "次のうち、電気をよく通す物質は？",
+    "choices": ["銅", "乾いたゴム", "ガラス", "プラスチック"],
+    "answer": 0,
+    "explanation": "銅は電気をよく通す金属で、電線などに利用されます。"
+  },
+  {
+    "id": "science-easy-006",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "2 本の棒磁石で N 極どうしを近づけると、どうなる？",
+    "choices": [
+      "必ず発熱する",
+      "反発する",
+      "必ずくっつく",
+      "両方の磁力が消える"
+    ],
+    "answer": 1,
+    "explanation": "同じ極どうしは反発し、N 極と S 極のように異なる極どうしは引き合います。"
+  },
+  {
+    "id": "science-easy-007",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "地球が公転している中心の天体は？",
+    "choices": ["北極星", "木星", "太陽", "月"],
+    "answer": 2,
+    "explanation": "地球は太陽のまわりを回る惑星です。月は地球のまわりを回る衛星です。"
+  },
+  {
+    "id": "science-easy-008",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "地球の自然衛星は？",
+    "choices": ["金星", "火星", "太陽", "月"],
+    "answer": 3,
+    "explanation": "月は地球のまわりを公転する自然の天体です。人工衛星とは区別されます。"
+  },
+  {
+    "id": "science-easy-009",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "太陽系で最も大きい惑星は？",
+    "choices": ["木星", "地球", "水星", "火星"],
+    "answer": 0,
+    "explanation": "木星は太陽系の惑星の中で、直径も質量も最大です。"
+  },
+  {
+    "id": "science-easy-010",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "地球が太陽のまわりを 1 周する期間は、およそどれくらい？",
+    "choices": ["1 か月", "1 年", "1 日", "1 週間"],
+    "answer": 1,
+    "explanation": "地球の公転周期は約 365 日です。自転周期は約 1 日です。"
+  },
+  {
+    "id": "science-easy-011",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "音は、空気中を主に何として伝わる？",
+    "choices": ["水滴の移動", "光の反射", "空気の振動", "電子の流れ"],
+    "answer": 2,
+    "explanation": "音は空気などの物質の振動が、周囲へ伝わる現象です。"
+  },
+  {
+    "id": "science-easy-012",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "人の体で、血液を送り出すポンプの役割をする器官は？",
+    "choices": ["胃", "肝臓", "腎臓", "心臓"],
+    "answer": 3,
+    "explanation": "心臓の筋肉が収縮し、血液を肺や全身へ送り出します。"
+  },
+  {
+    "id": "science-easy-013",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "人の体で、空気と血液の間で酸素などを交換する主な器官は？",
+    "choices": ["肺", "胃", "小腸", "膀胱"],
+    "answer": 0,
+    "explanation": "肺の中の肺胞で、酸素を血液に取り込み、二酸化炭素を外へ出します。"
+  },
+  {
+    "id": "science-easy-014",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "植物が土の中から水を吸収する主な部分は？",
+    "choices": ["種子の皮", "根", "花びら", "果実"],
+    "answer": 1,
+    "explanation": "根は植物を支えるほか、水や無機養分を吸収する役割を担います。"
+  },
+  {
+    "id": "science-easy-015",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "成虫の昆虫の脚は、基本的に何本？",
+    "choices": ["8 本", "10 本", "6 本", "4 本"],
+    "answer": 2,
+    "explanation": "昆虫は胸に 3 対、合計 6 本の脚を持ちます。クモは昆虫ではありません。"
+  },
+  {
+    "id": "science-easy-016",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "多くの魚が、水中の酸素を取り込む器官は？",
+    "choices": ["羽", "角", "触角", "えら"],
+    "answer": 3,
+    "explanation": "えらは水に溶けた酸素を取り込むための器官です。"
+  },
+  {
+    "id": "science-easy-017",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "クジラは、動物のどの仲間？",
+    "choices": ["哺乳類", "魚類", "両生類", "爬虫類"],
+    "answer": 0,
+    "explanation": "クジラは肺で呼吸し、子に乳を与えて育てる哺乳類です。"
+  },
+  {
+    "id": "science-easy-018",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "オタマジャクシが成長すると、一般に何になる？",
+    "choices": ["メダカ", "カエル", "カメ", "トカゲ"],
+    "answer": 1,
+    "explanation": "カエルは両生類です。幼生のオタマジャクシから、姿を変えて成体になります。"
+  },
+  {
+    "id": "science-easy-019",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "チョウの成長の順序として正しいものは？",
+    "choices": [
+      "幼虫 → 卵 → 成虫 → さなぎ",
+      "卵 → 成虫 → 幼虫 → さなぎ",
+      "卵 → 幼虫 → さなぎ → 成虫",
+      "卵 → さなぎ → 幼虫 → 成虫"
+    ],
+    "answer": 2,
+    "explanation": "幼虫と成虫の間にさなぎの段階がある成長を、完全変態といいます。"
+  },
+  {
+    "id": "science-easy-020",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "雲から液体の水滴が地上へ落ちてくる現象は？",
+    "choices": ["霜", "霧", "露", "雨"],
+    "answer": 3,
+    "explanation": "雨は雲の中で成長した水滴が落下する現象です。霜は氷の結晶です。"
+  },
+  {
+    "id": "science-easy-021",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "虹が見えるとき、太陽の光を屈折・反射させている主なものは？",
+    "choices": ["空中の水滴", "地面の砂", "月の表面", "地球の内部"],
+    "answer": 0,
+    "explanation": "太陽光が水滴の中で屈折・反射し、色ごとに分かれることで虹が見えます。"
+  },
+  {
+    "id": "science-easy-022",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "空気の体積の約 78％を占める気体は？",
+    "choices": ["水素", "窒素", "酸素", "二酸化炭素"],
+    "answer": 1,
+    "explanation": "乾燥した空気の主成分は窒素です。酸素は約 21％を占めます。"
+  },
+  {
+    "id": "science-easy-023",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "手を離した物が地面へ落ちる主な原因は？",
+    "choices": ["空気の色", "地球の磁力だけ", "地球の重力", "月の光"],
+    "answer": 2,
+    "explanation": "地球は重力で物体を引き付けます。磁石に付かない物にも重力は働きます。"
+  },
+  {
+    "id": "science-easy-024",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "食塩水から水だけを蒸発させると、主に何が残る？",
+    "choices": ["砂糖", "鉄", "何も残らない", "食塩"],
+    "answer": 3,
+    "explanation": "水は蒸発しますが、食塩は通常の加熱では蒸発せず、結晶として残ります。"
+  },
+  {
+    "id": "science-easy-025",
+    "category": "science",
+    "difficulty": "easy",
+    "prompt": "次のうち、自分自身で光を出す恒星は？",
+    "choices": ["太陽", "月", "地球", "金星"],
+    "answer": 0,
+    "explanation": "太陽は恒星です。月や惑星が明るく見えるのは、主に太陽光を反射するためです。"
+  },
+  {
+    "id": "science-normal-001",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "生物の遺伝情報を担う物質として代表的なものは？",
+    "choices": ["セルロース", "DNA", "食塩", "デンプン"],
+    "answer": 1,
+    "explanation": "DNA の塩基の並びが、遺伝情報を記録しています。"
+  },
+  {
+    "id": "science-normal-002",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "植物の細胞で、光合成を行う主なつくりは？",
+    "choices": ["液胞", "核小体", "葉緑体", "細胞壁"],
+    "answer": 2,
+    "explanation": "葉緑体には葉緑素などがあり、光エネルギーを利用して有機物をつくります。"
+  },
+  {
+    "id": "science-normal-003",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "多くの生物が行う細胞呼吸の主な目的は？",
+    "choices": [
+      "必ず光を発生させる",
+      "DNA をすべて分解する",
+      "体内の水をすべてなくす",
+      "有機物から活動に必要なエネルギーを得る"
+    ],
+    "answer": 3,
+    "explanation": "細胞呼吸は有機物の持つエネルギーを、細胞が利用しやすい形で取り出す働きです。"
+  },
+  {
+    "id": "science-normal-004",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "生態系で、光合成によって有機物をつくる植物は何と呼ばれる？",
+    "choices": ["生産者", "一次消費者", "二次消費者", "捕食者"],
+    "answer": 0,
+    "explanation": "生産者は無機物から有機物をつくり、食物連鎖の土台になります。"
+  },
+  {
+    "id": "science-normal-005",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "被子植物で、花粉がめしべの柱頭に付くことを何という？",
+    "choices": ["分裂", "受粉", "発芽", "蒸散"],
+    "answer": 1,
+    "explanation": "受粉のあと、花粉管が伸びて受精につながります。受粉と受精は別の過程です。"
+  },
+  {
+    "id": "science-normal-006",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "脊椎動物に共通する特徴は？",
+    "choices": [
+      "必ず卵を産む",
+      "必ず 4 本の脚を持つ",
+      "背骨を持つ",
+      "必ず空を飛ぶ"
+    ],
+    "answer": 2,
+    "explanation": "魚類・両生類・爬虫類・鳥類・哺乳類は、背骨を持つ脊椎動物です。"
+  },
+  {
+    "id": "science-normal-007",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "生態系で、菌類や細菌が死骸などを分解して無機物へ戻す働きは？",
+    "choices": [
+      "重力をなくす",
+      "太陽光を増やす",
+      "水を元素へ変えるだけ",
+      "物質の循環を支える"
+    ],
+    "answer": 3,
+    "explanation": "分解者が有機物を分解することで、炭素や窒素などが環境へ戻ります。"
+  },
+  {
+    "id": "science-normal-008",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "水に溶けない物体が水に浮くか考えるとき、体積あたりの質量を表す量は？",
+    "choices": ["密度", "温度", "電流", "周波数"],
+    "answer": 0,
+    "explanation": "平均密度が水より小さい物体は、一般に水に浮きます。空洞も含めて考えます。"
+  },
+  {
+    "id": "science-normal-009",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "力の大きさを表す SI 単位は？",
+    "choices": ["モル", "ニュートン", "アンペア", "ケルビン"],
+    "answer": 1,
+    "explanation": "力の単位はニュートン（N）です。質量の単位のキログラムとは区別します。"
+  },
+  {
+    "id": "science-normal-010",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "電流の大きさを表す SI 単位は？",
+    "choices": ["オーム", "パスカル", "アンペア", "ボルト"],
+    "answer": 2,
+    "explanation": "電流はアンペア（A）、電圧はボルト（V）、電気抵抗はオーム（Ω）で表します。"
+  },
+  {
+    "id": "science-normal-011",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "抵抗が 3 Ω の抵抗器に 6 V の電圧をかけると、流れる電流は？",
+    "choices": ["18 A", "9 A", "0.5 A", "2 A"],
+    "answer": 3,
+    "explanation": "オームの法則 I = V ÷ R より、6 ÷ 3 = 2 A です。"
+  },
+  {
+    "id": "science-normal-012",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "空気などの物質がない真空中で、伝わらないものは？",
+    "choices": ["音", "可視光", "電波", "赤外線"],
+    "answer": 0,
+    "explanation": "音は物質の振動なので、伝える物質がない真空では進みません。電磁波は進めます。"
+  },
+  {
+    "id": "science-normal-013",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "真空中の光の速さは、およそ毎秒何 km？",
+    "choices": ["3 億 km", "30 万 km", "300 km", "3,000 km"],
+    "answer": 1,
+    "explanation": "真空中の光速は約 30 万 km/秒です。音速とは大きく異なります。"
+  },
+  {
+    "id": "science-normal-014",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "25 ℃の純粋な水の pH は、およそいくつ？",
+    "choices": ["3", "14", "7", "1"],
+    "answer": 2,
+    "explanation": "25 ℃では中性の pH は約 7 です。中性の pH は温度によって変わることがあります。"
+  },
+  {
+    "id": "science-normal-015",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "物が燃えるのを助ける性質がある気体は？",
+    "choices": ["窒素", "二酸化炭素", "ヘリウム", "酸素"],
+    "answer": 3,
+    "explanation": "酸素は燃焼を支えます。酸素そのものを可燃性の燃料と呼ぶわけではありません。"
+  },
+  {
+    "id": "science-normal-016",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "元素記号 Fe が表す元素は？",
+    "choices": ["鉄", "銅", "銀", "金"],
+    "answer": 0,
+    "explanation": "鉄は Fe、銅は Cu、銀は Ag、金は Au と表します。"
+  },
+  {
+    "id": "science-normal-017",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "次のうち、新しい物質ができる化学変化ではなく、状態変化なのは？",
+    "choices": ["水を電気分解する", "氷が溶ける", "鉄がさびる", "木が燃える"],
+    "answer": 1,
+    "explanation": "氷が溶けても物質は H₂O のままです。姿や状態だけが変化します。"
+  },
+  {
+    "id": "science-normal-018",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "次のうち、地球が放出する赤外線を吸収する温室効果ガスは？",
+    "choices": ["酸素", "アルゴン", "二酸化炭素", "窒素"],
+    "answer": 2,
+    "explanation": "二酸化炭素は温室効果ガスの一つです。水蒸気やメタンにも温室効果があります。"
+  },
+  {
+    "id": "science-normal-019",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "太陽からの紫外線の一部を吸収するオゾン層は、主にどこにある？",
+    "choices": ["地球の内核", "海底の堆積物", "対流圏の地表付近だけ", "成層圏"],
+    "answer": 3,
+    "explanation": "オゾン層は主に成層圏にあり、生物に有害な紫外線の一部を吸収します。"
+  },
+  {
+    "id": "science-normal-020",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "地震そのものの規模を表す指標は？",
+    "choices": ["マグニチュード", "各地点の震度", "湿度", "風速"],
+    "answer": 0,
+    "explanation": "マグニチュードは地震の規模、震度はそれぞれの場所での揺れの強さを表します。"
+  },
+  {
+    "id": "science-normal-021",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "月の満ち欠けが起こる主な理由は？",
+    "choices": [
+      "月が自分で発光する量を変えるため",
+      "太陽に照らされた部分の見え方が変わるため",
+      "月そのものが毎月大きくなるため",
+      "毎晩地球の影が月を覆うため"
+    ],
+    "answer": 1,
+    "explanation": "太陽・地球・月の位置関係で、月の明るい半面のうち地球から見える割合が変わります。"
+  },
+  {
+    "id": "science-normal-022",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "昼と夜が繰り返される主な原因は？",
+    "choices": ["月の満ち欠け", "海面の上下", "地球の自転", "太陽の地球周回"],
+    "answer": 2,
+    "explanation": "地球が自転すると、同じ場所が太陽に向く時間と、反対側を向く時間ができます。"
+  },
+  {
+    "id": "science-normal-023",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "砂や泥などが積もり、固まってできる岩石は？",
+    "choices": ["深成岩", "火山岩", "隕石", "堆積岩"],
+    "answer": 3,
+    "explanation": "砂岩や泥岩などは堆積岩です。マグマが冷えて固まる岩石は火成岩です。"
+  },
+  {
+    "id": "science-normal-024",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "地層の中に残された、過去の生物の体や生活の跡は？",
+    "choices": ["化石", "鉱脈", "マグマ", "断層面"],
+    "answer": 0,
+    "explanation": "骨や貝殻だけでなく、足跡などの生痕も化石に含まれます。"
+  },
+  {
+    "id": "science-normal-025",
+    "category": "science",
+    "difficulty": "normal",
+    "prompt": "冷たいコップの外側に水滴が付く主な理由は？",
+    "choices": [
+      "酸素だけが液体になるため",
+      "空気中の水蒸気が冷えて凝結するため",
+      "ガラスから水が作られるため",
+      "水が必ずコップを通り抜けるため"
+    ],
+    "answer": 1,
+    "explanation": "周りの空気が冷やされ、含まれていた水蒸気の一部が液体になります。"
+  },
+  {
+    "id": "science-hard-001",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "半減期が 10 年の放射性物質は、20 年後に元の何分の 1 になる？",
+    "choices": ["10 分の 1", "0", "4 分の 1", "2 分の 1"],
+    "answer": 2,
+    "explanation": "半減期が 2 回経過するため、1/2 × 1/2 = 1/4 になります。"
+  },
+  {
+    "id": "science-hard-002",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "同じ元素の同位体で、数が異なる粒子は？",
+    "choices": ["陽子", "原子核の数", "必ず電子だけ", "中性子"],
+    "answer": 3,
+    "explanation": "同位体は陽子数が同じで、中性子数が異なる原子です。"
+  },
+  {
+    "id": "science-hard-003",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "元素の原子番号は、原子核に含まれる何の数？",
+    "choices": ["陽子", "中性子だけ", "陽子と中性子の合計", "周囲の分子"],
+    "answer": 0,
+    "explanation": "陽子数が元素の種類を決めます。陽子数と中性子数の和は質量数です。"
+  },
+  {
+    "id": "science-hard-004",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "化学反応の速度を変え、自身は反応全体では消費されない物質は？",
+    "choices": ["沈殿物の総称", "触媒", "溶媒の総称", "生成物の総称"],
+    "answer": 1,
+    "explanation": "触媒は反応の進み方を変えます。途中で変化しても、反応全体では再生されます。"
+  },
+  {
+    "id": "science-hard-005",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "電子の受け渡しで考えると、物質が酸化されるとは？",
+    "choices": [
+      "必ず水に溶けること",
+      "必ず気体になること",
+      "電子を失うこと",
+      "電子を受け取ること"
+    ],
+    "answer": 2,
+    "explanation": "酸化は電子を失う変化、還元は電子を受け取る変化です。"
+  },
+  {
+    "id": "science-hard-006",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "希薄な水溶液で pH が 4 から 3 になると、水素イオン濃度はおよそどうなる？",
+    "choices": ["2 倍になる", "10 分の 1 になる", "変わらない", "10 倍になる"],
+    "answer": 3,
+    "explanation": "pH は対数の尺度です。pH が 1 小さくなると、水素イオン濃度はおよそ 10 倍になります。"
+  },
+  {
+    "id": "science-hard-007",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "3 Ω の抵抗器 2 個を並列につないだときの合成抵抗は？",
+    "choices": ["1.5 Ω", "6 Ω", "3 Ω", "9 Ω"],
+    "answer": 0,
+    "explanation": "同じ抵抗を 2 個並列につなぐと電流の通り道が増え、合成抵抗は半分になります。"
+  },
+  {
+    "id": "science-hard-008",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "通常の変圧器が電圧を変えるために利用する現象は？",
+    "choices": ["放射性崩壊", "電磁誘導", "光合成", "毛細管現象"],
+    "answer": 1,
+    "explanation": "コイルを通る変化する磁束で電圧を生じさせます。通常は交流を扱います。"
+  },
+  {
+    "id": "science-hard-009",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "1 気圧で沸騰中の純粋な水に熱を加えても、液体が残る間は温度がほぼ一定なのはなぜ？",
+    "choices": [
+      "水が熱を一切受け取らないため",
+      "重力が熱に変わるため",
+      "加えた熱が主に気化に使われるため",
+      "熱が完全に消えるため"
+    ],
+    "answer": 2,
+    "explanation": "状態を変えるために使われる熱を潜熱といいます。沸騰中は気化に必要な熱となります。"
+  },
+  {
+    "id": "science-hard-010",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "1 秒あたりに 1 ジュールのエネルギーを使う仕事率は？",
+    "choices": ["1 ボルト", "1 クーロン", "1 テスラ", "1 ワット"],
+    "answer": 3,
+    "explanation": "ワット（W）は仕事率や電力の単位で、1 W = 1 J/秒です。"
+  },
+  {
+    "id": "science-hard-011",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "1 平方メートルあたり 1 ニュートンの力が垂直にかかる圧力は？",
+    "choices": ["1 パスカル", "1 ワット", "1 ヘルツ", "1 オーム"],
+    "answer": 0,
+    "explanation": "圧力は単位面積あたりの力で、1 Pa = 1 N/m² です。"
+  },
+  {
+    "id": "science-hard-012",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "蜃気楼が生じる主な原因は？",
+    "choices": [
+      "音が光へ変わること",
+      "温度の異なる空気の層で光が屈折すること",
+      "地磁気が光を吸い取ること",
+      "海が自分で発光すること"
+    ],
+    "answer": 1,
+    "explanation": "空気の密度が高さによって変わると、光の進む方向が曲がり、像がずれて見えます。"
+  },
+  {
+    "id": "science-hard-013",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "近づく救急車のサイレンが高く、遠ざかると低く聞こえる現象は？",
+    "choices": ["光電効果", "毛細管現象", "ドップラー効果", "温室効果"],
+    "answer": 2,
+    "explanation": "音源と観測者の相対的な運動によって、観測される音の周波数が変わります。"
+  },
+  {
+    "id": "science-hard-014",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "物質の出入りがない容器内で化学反応を起こしたとき、通常の化学で保存される量は？",
+    "choices": ["気体の体積", "分子の総数", "温度", "全体の質量"],
+    "answer": 3,
+    "explanation": "化学反応で原子の組み合わせは変わりますが、閉じた系では反応前後の総質量は保存されます。"
+  },
+  {
+    "id": "science-hard-015",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "深い海溝が形成されることが多いプレート境界は？",
+    "choices": [
+      "一方のプレートが他方の下へ沈み込む境界",
+      "プレートが左右に離れる境界",
+      "大陸内部の平坦な場所だけ",
+      "プレートと無関係な湖の中央"
+    ],
+    "answer": 0,
+    "explanation": "海洋プレートが沈み込む場所では、海底が深く折れ曲がり、海溝ができます。"
+  },
+  {
+    "id": "science-hard-016",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "地震波の P 波と S 波を比べると、一般に先に届くのは？",
+    "choices": ["どちらも観測できない", "P 波", "S 波", "必ず同時"],
+    "answer": 1,
+    "explanation": "P 波は S 波より速く伝わります。この到着時間差は震源を調べる手がかりになります。"
+  },
+  {
+    "id": "science-hard-017",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "空気中の水蒸気量を変えずに気温だけを上げると、相対湿度は一般にどうなる？",
+    "choices": ["必ず 100％になる", "必ず変わらない", "下がる", "上がる"],
+    "answer": 2,
+    "explanation": "気温が上がると飽和水蒸気量が増えるため、その比で表す相対湿度は下がります。",
+    "source": {
+      "label": "気象庁｜気温、湿度",
+      "url": "https://www.jma.go.jp/jma/kishou/know/yougo_hp/kion.html"
+    }
+  },
+  {
+    "id": "science-hard-018",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "北半球で水平に移動する空気を、コリオリの力は進行方向の左右どちらへ曲げる？",
+    "choices": ["左", "必ず真上だけ", "必ず真下だけ", "右"],
+    "answer": 3,
+    "explanation": "地球の自転に伴う見かけの力です。水平運動に対して、北半球では進行方向の右、南半球では左に曲げる向きに働きます。",
+    "source": {
+      "label": "気象庁｜総観気象学 理論編",
+      "url": "https://www.jma.go.jp/jma/kishou/know/expert/pdf/textbook_synop_theory_20220318.pdf"
+    }
+  },
+  {
+    "id": "science-hard-019",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "地上から同じ位置に見える静止衛星の軌道は、基本的にどこ？",
+    "choices": [
+      "赤道上空の円軌道",
+      "北極上空だけの円軌道",
+      "月を中心とした軌道",
+      "地上 1 km の南北の直線"
+    ],
+    "answer": 0,
+    "explanation": "静止衛星は赤道上空の高度約 3 万 6 千 km を、地球の自転と同じ周期で回ります。",
+    "source": {
+      "label": "JAXA｜人工衛星の軌道",
+      "url": "https://www.satnavi.jaxa.jp/ja/satellite-knowledge/whats-eosatellite/orbit/index.html"
+    }
+  },
+  {
+    "id": "science-hard-020",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "日食が起こるときの天体の並び方は？",
+    "choices": [
+      "地球・太陽・月",
+      "太陽・月・地球",
+      "太陽・地球・月",
+      "月・太陽・地球"
+    ],
+    "answer": 1,
+    "explanation": "月が太陽と地球の間に入り、太陽の一部または全部を隠す現象が日食です。"
+  },
+  {
+    "id": "science-hard-021",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "太陽の中心部で、エネルギーの主な源となる反応は？",
+    "choices": [
+      "水の電気分解",
+      "鉄のさび",
+      "水素がヘリウムになる核融合",
+      "石炭の燃焼"
+    ],
+    "answer": 2,
+    "explanation": "太陽では水素の原子核が融合してヘリウムになり、エネルギーを放出しています。"
+  },
+  {
+    "id": "science-hard-022",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "天文学で使う「1 天文単位」は、何を測る単位？",
+    "choices": ["時間", "明るさ", "質量", "距離"],
+    "answer": 3,
+    "explanation": "1 天文単位は地球と太陽の平均的な距離にほぼ相当する、約 1 億 5 千万 km の長さです。"
+  },
+  {
+    "id": "science-hard-023",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "「1 光年」が表すものは？",
+    "choices": [
+      "光が真空中を 1 年間に進む距離",
+      "星が誕生してからの年齢",
+      "光が届くまでの時間だけ",
+      "太陽が回る速さ"
+    ],
+    "answer": 0,
+    "explanation": "光年は時間ではなく距離の単位です。約 9 兆 5 千億 km に相当します。"
+  },
+  {
+    "id": "science-hard-024",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "真核細胞で、酸素を使った呼吸による ATP 産生に深く関わる細胞小器官は？",
+    "choices": ["核小体", "ミトコンドリア", "細胞壁", "中心体"],
+    "answer": 1,
+    "explanation": "ミトコンドリアでは有機物由来のエネルギーを利用し、細胞の活動に使う ATP をつくります。"
+  },
+  {
+    "id": "science-hard-025",
+    "category": "science",
+    "difficulty": "hard",
+    "prompt": "進化の仕組みである自然選択の説明として適切なのは？",
+    "choices": [
+      "すべての個体が同時に同じ姿へ変わること",
+      "生物が必ず大型化すること",
+      "遺伝する特徴によって、生存や繁殖の成功に差が生じること",
+      "生物が望んだ特徴を必ず獲得すること"
+    ],
+    "answer": 2,
+    "explanation": "環境の中で繁殖に有利な遺伝的特徴が、世代を経て集団に広がることがあります。"
+  },
+  {
+    "id": "information-easy-001",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "コンピューターで、命令を実行して計算や制御を行う中心的な装置は？",
+    "choices": ["キーボード", "ディスプレイ", "スピーカー", "CPU"],
+    "answer": 3,
+    "explanation": "CPU は中央処理装置です。プログラムの命令に従い、計算や各部の制御を行います。"
+  },
+  {
+    "id": "information-easy-002",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "パソコンの基本動作を管理する Windows や macOS などのソフトウェアは？",
+    "choices": ["OS", "URL", "USB", "PDF"],
+    "answer": 0,
+    "explanation": "OS はオペレーティングシステムの略で、機器やアプリの動作を管理します。"
+  },
+  {
+    "id": "information-easy-003",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "ウェブページを見るためのソフトウェアを何という？",
+    "choices": ["画像編集ソフト", "ブラウザー", "表計算ソフト", "圧縮ソフト"],
+    "answer": 1,
+    "explanation": "ブラウザーはウェブページを取得して表示します。検索エンジンは情報を探すサービスです。"
+  },
+  {
+    "id": "information-easy-004",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "ウェブ上のページなどの場所を表す「https://...」という文字列は？",
+    "choices": ["RAM", "PIN", "URL", "CPU"],
+    "answer": 2,
+    "explanation": "URL はインターネット上の情報の場所や、アクセス方法を表します。"
+  },
+  {
+    "id": "information-easy-005",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "検索エンジンの主な役割は？",
+    "choices": [
+      "端末の電池を充電する",
+      "画面を物理的に大きくする",
+      "必ず情報の正しさを保証する",
+      "入力した言葉に関連する情報を探す"
+    ],
+    "answer": 3,
+    "explanation": "検索エンジンは情報を見つける道具です。検索結果の内容が正しいかは別に確認します。"
+  },
+  {
+    "id": "information-easy-006",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "手元の写真をインターネット上のサービスへ送る操作は？",
+    "choices": ["アップロード", "ダウンロード", "再起動", "印刷"],
+    "answer": 0,
+    "explanation": "端末からサーバーなどへデータを送ることを、アップロードといいます。"
+  },
+  {
+    "id": "information-easy-007",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "インターネット上のファイルを手元の端末へ受け取る操作は？",
+    "choices": ["強制終了", "ダウンロード", "アップロード", "初期化"],
+    "answer": 1,
+    "explanation": "サーバーなどから端末へデータを受け取ることを、ダウンロードといいます。"
+  },
+  {
+    "id": "information-easy-008",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "クラウドストレージとは、主にどのようなサービス？",
+    "choices": [
+      "電池を長持ちさせる機械",
+      "画面だけを明るくする機能",
+      "ネットワーク経由で使うデータの保存場所",
+      "紙を保存する倉庫"
+    ],
+    "answer": 2,
+    "explanation": "クラウドストレージでは、サービス提供者のサーバーなどにデータを保存します。"
+  },
+  {
+    "id": "information-easy-009",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "データの紛失に備えて、別の場所にも複製を保存しておくことは？",
+    "choices": ["ログアウト", "トリミング", "スクロール", "バックアップ"],
+    "answer": 3,
+    "explanation": "バックアップは、故障や誤削除などで失ったデータを復元するための備えです。"
+  },
+  {
+    "id": "information-easy-010",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "アカウントのパスワードの扱いとして適切なのは？",
+    "choices": [
+      "他人に知らせず管理する",
+      "SNS の自己紹介に載せる",
+      "確認を求める相手なら誰にでも伝える",
+      "公開の共有メモに書く"
+    ],
+    "answer": 0,
+    "explanation": "パスワードは本人確認に使う秘密の情報です。サービスごとに異なるものを使うことも大切です。",
+    "source": {
+      "label": "IPA｜不正ログインの対策",
+      "url": "https://www.ipa.go.jp/security/anshin/attention/2025/mgdayori20250828.html"
+    }
+  },
+  {
+    "id": "information-easy-011",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "本物そっくりの偽サイトへ誘導し、パスワードなどを盗む手口は？",
+    "choices": [
+      "ストリーミング",
+      "フィッシング",
+      "バックアップ",
+      "インストール"
+    ],
+    "answer": 1,
+    "explanation": "フィッシングでは、実在する組織を装ったメールやメッセージなどが使われます。"
+  },
+  {
+    "id": "information-easy-012",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "コンピューターに害を与える目的で作られたソフトウェアの総称は？",
+    "choices": ["ミドルウェア", "フリーウェア", "マルウェア", "ファームウェア"],
+    "answer": 2,
+    "explanation": "ウイルスやランサムウェアなど、悪意あるソフトウェアをまとめてマルウェアと呼びます。"
+  },
+  {
+    "id": "information-easy-013",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "データを暗号化するなどして使えなくし、身代金を要求するマルウェアは？",
+    "choices": [
+      "ブラウザー",
+      "コンパイラー",
+      "スクリーンリーダー",
+      "ランサムウェア"
+    ],
+    "answer": 3,
+    "explanation": "ランサムウェアは、データを利用不能にするなどして金銭を要求する攻撃に使われます。"
+  },
+  {
+    "id": "information-easy-014",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "SNS へ写真を投稿する前に、個人情報の面で確認したいものは？",
+    "choices": [
+      "住所や氏名が写り込んでいないか",
+      "必ず横長の写真か",
+      "青い物が写っていないか",
+      "ファイル名が短いかだけ"
+    ],
+    "answer": 0,
+    "explanation": "郵便物や名札、位置情報などから、意図せず個人の情報が伝わることがあります。"
+  },
+  {
+    "id": "information-easy-015",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "Wi-Fi が主に使う通信方法は？",
+    "choices": [
+      "必ず光ファイバーの直結",
+      "電波による無線通信",
+      "紙の郵送",
+      "音声だけの手渡し"
+    ],
+    "answer": 1,
+    "explanation": "Wi-Fi は無線 LAN に用いられます。Wi-Fi に接続しても、必ずインターネットにつながるとは限りません。"
+  },
+  {
+    "id": "information-easy-016",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "スマートフォンと近くの無線イヤホンの接続などによく使う技術は？",
+    "choices": ["PDF", "CSV", "Bluetooth", "HTML"],
+    "answer": 2,
+    "explanation": "Bluetooth は、周辺機器などを比較的近い距離で無線接続する技術です。"
+  },
+  {
+    "id": "information-easy-017",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "USB は主に何のための規格？",
+    "choices": [
+      "文章の敬語を判定する",
+      "気温を測る",
+      "地図の縮尺を決める",
+      "パソコンなどと周辺機器を接続する"
+    ],
+    "answer": 3,
+    "explanation": "USB はデータのやり取りや電力供給などに使われる接続規格です。"
+  },
+  {
+    "id": "information-easy-018",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "画面に表示されている内容を画像として記録する操作は？",
+    "choices": ["スクリーンショット", "再起動", "解凍", "ログイン"],
+    "answer": 0,
+    "explanation": "スクリーンショットは画面の画像です。画面を動画で記録する操作とは異なります。"
+  },
+  {
+    "id": "information-easy-019",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "表示や印刷のレイアウトを保って文書を配布するためによく使う形式は？",
+    "choices": ["EXE", "PDF", "MP3", "WAV"],
+    "answer": 1,
+    "explanation": "PDF は文書形式です。MP3 や WAV は音声、EXE は主に Windows の実行ファイルです。"
+  },
+  {
+    "id": "information-easy-020",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "表計算ソフトで、行と列が交わる一つのマスを何という？",
+    "choices": ["カーソル", "フォルダー", "セル", "タブ"],
+    "answer": 2,
+    "explanation": "セルには文字・数値・数式などを入力できます。"
+  },
+  {
+    "id": "information-easy-021",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "ハードウェアの例はどれ？",
+    "choices": ["OS", "ブラウザーのプログラム", "表計算アプリ", "キーボード"],
+    "answer": 3,
+    "explanation": "ハードウェアは物理的な機器です。プログラムなどはソフトウェアと呼びます。"
+  },
+  {
+    "id": "information-easy-022",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "文字をパソコンへ入力するための装置は？",
+    "choices": ["キーボード", "プリンター", "スピーカー", "プロジェクター"],
+    "answer": 0,
+    "explanation": "キーボードは入力装置です。プリンターなどは情報を外へ出す出力装置です。"
+  },
+  {
+    "id": "information-easy-023",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "パソコンの処理結果を画面として表示する装置は？",
+    "choices": ["スキャナー", "ディスプレイ", "マイク", "マウス"],
+    "answer": 1,
+    "explanation": "ディスプレイは出力装置です。タッチパネル付きなら入力の機能も持ちます。"
+  },
+  {
+    "id": "information-easy-024",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "ファイルを整理して入れておく、画面上の入れ物は？",
+    "choices": ["ビット", "ポート番号", "フォルダー", "ピクセル"],
+    "answer": 2,
+    "explanation": "フォルダーを使うと、用途や種類ごとにファイルを階層的に整理できます。"
+  },
+  {
+    "id": "information-easy-025",
+    "category": "information",
+    "difficulty": "easy",
+    "prompt": "ソフトウェアの更新に含まれることがある、重要な目的は？",
+    "choices": [
+      "必ずすべての写真を公開すること",
+      "端末の重さを減らすこと",
+      "必ず画面を交換すること",
+      "不具合やセキュリティ上の弱点の修正"
+    ],
+    "answer": 3,
+    "explanation": "更新には機能の追加だけでなく、不具合や脆弱性を修正する役割があります。"
+  },
+  {
+    "id": "information-normal-001",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "コンピューターで扱う 1 ビットが表せる状態は、何通り？",
+    "choices": ["2 通り", "8 通り", "10 通り", "16 通り"],
+    "answer": 0,
+    "explanation": "1 ビットは 0 と 1 の 2 通りです。ビット数が増えると表せる組み合わせも増えます。"
+  },
+  {
+    "id": "information-normal-002",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "現在一般的なコンピューターで、1 バイトは何ビット？",
+    "choices": ["100 ビット", "8 ビット", "2 ビット", "10 ビット"],
+    "answer": 1,
+    "explanation": "8 ビットをまとめて 1 バイトとして扱います。bit と byte は異なる単位です。"
+  },
+  {
+    "id": "information-normal-003",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "10 進の SI 接頭語を使うとき、1 kB は何バイト？",
+    "choices": ["1,024 バイト", "10,000 バイト", "1,000 バイト", "100 バイト"],
+    "answer": 2,
+    "explanation": "k は 1,000 倍です。2 進の 1,024 バイトを明確に表す単位は 1 KiB です。"
+  },
+  {
+    "id": "information-normal-004",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "表形式のデータを、一般にカンマで区切ったテキストとして保存する形式は？",
+    "choices": ["PNG", "MP4", "WAV", "CSV"],
+    "answer": 3,
+    "explanation": "CSV はデータ交換によく使われます。セルの色などの見た目は通常保存しません。"
+  },
+  {
+    "id": "information-normal-005",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "複数のファイルをまとめ、圧縮して保存する用途によく使う形式は？",
+    "choices": ["ZIP", "JPEG", "MP3", "HTML"],
+    "answer": 0,
+    "explanation": "ZIP はファイルをまとめるアーカイブ形式で、圧縮もできます。常に大幅に小さくなるとは限りません。"
+  },
+  {
+    "id": "information-normal-006",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "写真の保存によく使われ、一般に非可逆圧縮を用いる画像形式は？",
+    "choices": ["WAV", "JPEG", "TXT", "CSV"],
+    "answer": 1,
+    "explanation": "JPEG は写真向けの画像形式です。圧縮の設定によっては細部の情報が失われます。"
+  },
+  {
+    "id": "information-normal-007",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "可逆圧縮を用い、透明な部分も扱える画像形式は？",
+    "choices": ["CSV", "TXT", "PNG", "MP3"],
+    "answer": 2,
+    "explanation": "PNG は圧縮前の画素情報を復元できる画像形式で、透過の表現にも対応します。"
+  },
+  {
+    "id": "information-normal-008",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "ウェブページの見出しや段落など、文書の構造を記述する言語は？",
+    "choices": ["CSS", "SQL", "CSV", "HTML"],
+    "answer": 3,
+    "explanation": "HTML は文書の構造や意味を表します。見た目の指定は主に CSS が担います。"
+  },
+  {
+    "id": "information-normal-009",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "ウェブページの色や文字サイズ、配置などを指定する言語は？",
+    "choices": ["CSS", "HTML", "SQL", "XML"],
+    "answer": 0,
+    "explanation": "CSS はスタイルシート言語で、HTML などで作った内容の見た目を指定します。"
+  },
+  {
+    "id": "information-normal-010",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "ブラウザー上でボタン操作への反応などを実装する際によく使う言語は？",
+    "choices": ["Markdown", "JavaScript", "CSV", "JPEG"],
+    "answer": 1,
+    "explanation": "JavaScript はウェブページの動作などをプログラムする言語です。Java とは別の言語です。"
+  },
+  {
+    "id": "information-normal-011",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "ドメイン名に対応する IP アドレスなどを調べる仕組みは？",
+    "choices": ["GPU", "PDF", "DNS", "USB"],
+    "answer": 2,
+    "explanation": "DNS は名前を使ってネットワーク上の接続先などを調べるための仕組みです。"
+  },
+  {
+    "id": "information-normal-012",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "IP アドレスの主な役割は？",
+    "choices": [
+      "必ず利用者の本名を表す",
+      "端末の画面サイズを表す",
+      "パスワードの強さを決める",
+      "IP ネットワーク上の通信先などを識別する"
+    ],
+    "answer": 3,
+    "explanation": "IP アドレスは通信に使う識別情報です。アドレスだけで個人の本名が必ず分かるわけではありません。"
+  },
+  {
+    "id": "information-normal-013",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "異なるネットワークの間でデータを中継する機器は？",
+    "choices": ["ルーター", "スキャナー", "プロジェクター", "キーボード"],
+    "answer": 0,
+    "explanation": "ルーターは宛先に応じてパケットを適切なネットワークへ転送します。"
+  },
+  {
+    "id": "information-normal-014",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "家庭や学校、オフィス内など、比較的限られた範囲のネットワークは？",
+    "choices": ["URL", "LAN", "CPU", "BIOS"],
+    "answer": 1,
+    "explanation": "LAN は Local Area Network の略です。有線方式も無線方式もあります。"
+  },
+  {
+    "id": "information-normal-015",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "HTTPS の通信で主に保護されるものは？",
+    "choices": [
+      "商品の品質が必ず高いこと",
+      "運営者が絶対に詐欺をしないこと",
+      "通信途中の盗み見や改ざんへの耐性",
+      "掲載情報がすべて事実であること"
+    ],
+    "answer": 2,
+    "explanation": "HTTPS は通信を暗号化して保護しますが、サイトの内容や取引相手の誠実さまで保証しません。"
+  },
+  {
+    "id": "information-normal-016",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "ウェブサイトがブラウザーに保存させ、ログイン状態の管理などに使う小さなデータは？",
+    "choices": ["CPU", "HDMI", "ビットマップ", "Cookie"],
+    "answer": 3,
+    "explanation": "Cookie はセッション管理や設定の保存などに使われます。追跡に用いられる場合もあります。"
+  },
+  {
+    "id": "information-normal-017",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "再表示を速くするため、以前取得したデータを一時的に保存する仕組みは？",
+    "choices": ["キャッシュ", "フィッシング", "暗号解読", "デフラグの別名"],
+    "answer": 0,
+    "explanation": "キャッシュはデータを再利用する仕組みです。古い情報が残って表示されることもあります。"
+  },
+  {
+    "id": "information-normal-018",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "ブラウザーで、あとから訪問しやすいようページの URL を登録する機能は？",
+    "choices": ["圧縮", "ブックマーク", "タスクマネージャー", "機内モード"],
+    "answer": 1,
+    "explanation": "ブックマークはページへのリンクを保存します。ページの全内容を保存するとは限りません。"
+  },
+  {
+    "id": "information-normal-019",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "メールで、他の受信者に宛先アドレスを表示させずに送る欄は？",
+    "choices": ["件名", "返信先", "Bcc", "Cc"],
+    "answer": 2,
+    "explanation": "Bcc の宛先は、他の受信者には通常表示されません。送信者には確認できます。"
+  },
+  {
+    "id": "information-normal-020",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "迷惑メールフィルターの性質として正しいものは？",
+    "choices": [
+      "判定は必ず 100％正しい",
+      "迷惑メールを世界中から消す",
+      "送信者の本心を直接読み取る",
+      "必要なメールを誤って振り分ける場合がある"
+    ],
+    "answer": 3,
+    "explanation": "フィルターには誤検知があります。届くはずのメールがない場合は迷惑メール欄も確認します。"
+  },
+  {
+    "id": "information-normal-021",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "アプリが利用するカメラや位置情報などの権限は、どう考えるのが適切？",
+    "choices": [
+      "用途に必要な範囲かを確認して許可する",
+      "すべてのアプリに無条件で許可する",
+      "一度許可すると変更は不可能と考える",
+      "要求する権限と機能は無関係と考える"
+    ],
+    "answer": 0,
+    "explanation": "権限は端末の情報や機能へのアクセスを認めるものです。利用目的との関係を確認します。"
+  },
+  {
+    "id": "information-normal-022",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "異なる種類の要素を組み合わせる多要素認証の例は？",
+    "choices": [
+      "同じパスワードを 2 人で使う",
+      "パスワードと所持端末での確認",
+      "パスワードと別の秘密の質問だけ",
+      "パスワードを同じ欄へ 2 回入力"
+    ],
+    "answer": 1,
+    "explanation": "知識・所持・生体など、異なる種類の要素を組み合わせます。知識を 2 個使うだけでは多要素になりません。",
+    "source": {
+      "label": "IPA｜不正ログインの対策",
+      "url": "https://www.ipa.go.jp/security/anshin/attention/2025/mgdayori20250828.html"
+    }
+  },
+  {
+    "id": "information-normal-023",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "複数のサービスで同じパスワードを使うと、どのようなリスクが増える？",
+    "choices": [
+      "メールの文字数が減る",
+      "通信速度が必ず半分になる",
+      "一つの漏えいが他のサービスの不正ログインにつながる",
+      "必ず端末の画面が壊れる"
+    ],
+    "answer": 2,
+    "explanation": "漏れた認証情報を別のサービスでも試す攻撃があるため、パスワードの使い回しは危険です。",
+    "source": {
+      "label": "IPA｜不正ログインの対策",
+      "url": "https://www.ipa.go.jp/security/anshin/attention/2025/mgdayori20250828.html"
+    }
+  },
+  {
+    "id": "information-normal-024",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "生成 AI の回答に関する説明として適切なのは？",
+    "choices": [
+      "文章が自然なら必ず事実である",
+      "出典らしい名前は必ず実在する",
+      "計算結果は確認不要である",
+      "もっともらしい誤情報を出す場合がある"
+    ],
+    "answer": 3,
+    "explanation": "生成 AI は誤った内容や実在しない出典を出すことがあります。重要な事実は一次資料などで確認します。"
+  },
+  {
+    "id": "information-normal-025",
+    "category": "information",
+    "difficulty": "normal",
+    "prompt": "SNS の驚くような情報を広める前の確認として適切なのは？",
+    "choices": [
+      "元の発表や日時、前後の文脈を確認する",
+      "共有数が多ければ真実と判断する",
+      "画像に文字があれば真実と判断する",
+      "自分の意見に合えば出典を見ない"
+    ],
+    "answer": 0,
+    "explanation": "古いニュースや切り取られた画像の場合もあります。出所と日付、文脈をたどることが大切です。"
+  },
+  {
+    "id": "information-hard-001",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "2 進数の「1010」を 10 進数で表すと？",
+    "choices": ["1010", "10", "8", "12"],
+    "answer": 1,
+    "explanation": "各桁の重みは右から 1、2、4、8 です。8 + 2 = 10 になります。"
+  },
+  {
+    "id": "information-hard-002",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "8 ビットで表せる異なるビット列は何通り？",
+    "choices": ["64 通り", "128 通り", "256 通り", "8 通り"],
+    "answer": 2,
+    "explanation": "各ビットが 2 通りなので、2 の 8 乗で 256 通りです。"
+  },
+  {
+    "id": "information-hard-003",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "文字コード UTF-8 の特徴として正しいものは？",
+    "choices": [
+      "すべての文字が必ず 1 バイト",
+      "日本語を表せない",
+      "画像だけを保存する形式",
+      "文字によって使うバイト数が変わる"
+    ],
+    "answer": 3,
+    "explanation": "UTF-8 は文字を表す符号位置ごとに 1〜4 バイトを使います。見た目の 1 文字が、複数の符号位置からなる場合もあります。",
+    "source": {
+      "label": "Unicode｜UTF の FAQ",
+      "url": "https://www.unicode.org/faq/utf_bom.html"
+    }
+  },
+  {
+    "id": "information-hard-004",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "図形を点や線の数式的な情報で表し、拡大しても輪郭を保ちやすい画像は？",
+    "choices": [
+      "ベクター画像",
+      "低解像度のラスター画像",
+      "画面の写真",
+      "画素だけでできたビットマップ"
+    ],
+    "answer": 0,
+    "explanation": "ベクター画像は形を計算で描きます。ラスター画像は画素の集まりで表現します。"
+  },
+  {
+    "id": "information-hard-005",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "非可逆圧縮の説明として正しいものは？",
+    "choices": [
+      "複製を禁止すること",
+      "元のデータを完全には復元できない圧縮",
+      "必ず元より容量が増える圧縮",
+      "パスワードで暗号化すること"
+    ],
+    "answer": 1,
+    "explanation": "非可逆圧縮は一部の情報を捨てて容量を減らすため、元と完全に同じデータには戻せません。"
+  },
+  {
+    "id": "information-hard-006",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "暗号学的ハッシュ関数の用途として適切なのは？",
+    "choices": [
+      "ファイルの物理的な重さを量る",
+      "画像の被写体を必ず特定する",
+      "データから値を計算し、改ざんの検出などに使う",
+      "常に元のデータを復元する"
+    ],
+    "answer": 2,
+    "explanation": "ハッシュ値はデータの一致確認などに使います。一般に、値から元のデータを復元するための仕組みではありません。"
+  },
+  {
+    "id": "information-hard-007",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "暗号化と、Base64 などの符号化の違いとして適切なのは？",
+    "choices": [
+      "どちらも必ず秘密鍵が必要",
+      "Base64 なら誰も元へ戻せない",
+      "暗号化は文字を大きくする操作",
+      "符号化だけでは秘密を守るための鍵がない"
+    ],
+    "answer": 3,
+    "explanation": "符号化はデータの表現を変える処理です。Base64 は手順が分かれば戻せるため、機密性を保護しません。"
+  },
+  {
+    "id": "information-hard-008",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "デジタル署名の主な目的は？",
+    "choices": [
+      "作成者の確認やデータ改ざんの検出",
+      "ファイルを必ず小さくする",
+      "誰にも内容を読めなくすることだけ",
+      "画面に手書きの線を描くことだけ"
+    ],
+    "answer": 0,
+    "explanation": "デジタル署名は署名者に対応する鍵で検証します。内容の暗号化とは異なる役割です。"
+  },
+  {
+    "id": "information-hard-009",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "公開鍵暗号で、受信者の公開鍵を使って暗号化した内容を復号する鍵は？",
+    "choices": [
+      "鍵は一切不要",
+      "受信者の秘密鍵",
+      "送信者の公開鍵",
+      "誰かの公開鍵ならどれでもよい"
+    ],
+    "answer": 1,
+    "explanation": "公開鍵と秘密鍵は対になっています。受信者の秘密鍵を持つ側が復号できます。"
+  },
+  {
+    "id": "information-hard-010",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "共通鍵暗号の基本的な特徴は？",
+    "choices": [
+      "暗号化には必ず公開鍵を使う",
+      "文章以外は暗号化できない",
+      "暗号化と復号に同じ秘密の鍵を使う",
+      "秘密にする鍵が一切ない"
+    ],
+    "answer": 2,
+    "explanation": "共通鍵暗号では、送受信者が同じ鍵を共有します。鍵を安全に共有・管理する必要があります。"
+  },
+  {
+    "id": "information-hard-011",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "ファイアウォールの主な役割は？",
+    "choices": [
+      "すべての誤情報を削除する",
+      "端末の発火を物理的に消火する",
+      "画面の明るさを自動調節する",
+      "通信をルールに従って許可・遮断する"
+    ],
+    "answer": 3,
+    "explanation": "ファイアウォールは通信の出入りを制御します。単独ですべての攻撃を防げるわけではありません。"
+  },
+  {
+    "id": "information-hard-012",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "VPN について正しい説明は？",
+    "choices": [
+      "通信経路の一部を保護するが、すべての危険をなくすわけではない",
+      "接続すれば偽サイトも本物になる",
+      "利用すればパスワード管理は不要",
+      "通信先の情報は必ず正しいと保証する"
+    ],
+    "answer": 0,
+    "explanation": "VPN は仮想的な専用ネットワークを作る技術です。詐欺やマルウェアなどへの対策は別に必要です。"
+  },
+  {
+    "id": "information-hard-013",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "HTTP ステータスコード「404 Not Found」が通常示すものは？",
+    "choices": [
+      "必ず端末が故障している",
+      "要求されたリソースが見つからない",
+      "処理が正常に完了した",
+      "別の URL へ恒久的に移転した"
+    ],
+    "answer": 1,
+    "explanation": "404 はサーバーが要求されたリソースを見つけられないことを示す応答です。",
+    "source": {
+      "label": "MDN｜404 Not Found",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404"
+    }
+  },
+  {
+    "id": "information-hard-014",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "HTTP ステータスコード「500 Internal Server Error」が示すものは？",
+    "choices": [
+      "画像の幅が 500 ピクセル",
+      "ダウンロードが 500％完了した",
+      "サーバー内部で予期しない問題が起きた",
+      "必ずパスワードが間違っている"
+    ],
+    "answer": 2,
+    "explanation": "500 は、要求を処理できない問題がサーバー側で起きたことを示します。",
+    "source": {
+      "label": "MDN｜500 Internal Server Error",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500"
+    }
+  },
+  {
+    "id": "information-hard-015",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "IPv6 のアドレスの長さは何ビット？",
+    "choices": ["16 ビット", "32 ビット", "64 ビット", "128 ビット"],
+    "answer": 3,
+    "explanation": "IPv6 のアドレスは 128 ビットです。IPv4 の 32 ビットより大きなアドレス空間があります。",
+    "source": {
+      "label": "IETF｜RFC 8200",
+      "url": "https://www.rfc-editor.org/rfc/rfc8200.html"
+    }
+  },
+  {
+    "id": "information-hard-016",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "通信速度 80 Mbps を、1 バイト = 8 ビットとして MB/秒に直すと？",
+    "choices": ["10 MB/秒", "80 MB/秒", "640 MB/秒", "0.1 MB/秒"],
+    "answer": 0,
+    "explanation": "80 メガビット/秒を 8 で割ると 10 メガバイト/秒です。実際には通信の付加情報などの影響も受けます。"
+  },
+  {
+    "id": "information-hard-017",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "ネットワークの「レイテンシー」が主に表すものは？",
+    "choices": ["利用者の人数だけ", "通信の遅延時間", "保存容量", "画面解像度"],
+    "answer": 1,
+    "explanation": "レイテンシーはデータが届くまでの遅延です。通信できる量を示す帯域幅とは別の指標です。"
+  },
+  {
+    "id": "information-hard-018",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "問題を解くための、明確な計算や処理の手順を何という？",
+    "choices": ["コネクター", "キャプション", "アルゴリズム", "ピクセル"],
+    "answer": 2,
+    "explanation": "アルゴリズムは、入力から結果を得るための手順です。同じ問題にも複数の手順があります。"
+  },
+  {
+    "id": "information-hard-019",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "データベースの表で、各行を一意に識別するための項目や項目の組は？",
+    "choices": ["背景色", "注釈", "表示倍率", "主キー"],
+    "answer": 3,
+    "explanation": "主キーは各レコードを区別します。重複しない値を持ち、空の値は認められません。"
+  },
+  {
+    "id": "information-hard-020",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "SQL で、表からデータを取得するために使う基本的な命令は？",
+    "choices": ["SELECT", "DELETE", "DROP", "UPDATE"],
+    "answer": 0,
+    "explanation": "SELECT は検索・取得、UPDATE は更新、DELETE は行の削除に使います。"
+  },
+  {
+    "id": "information-hard-021",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "オープンソースソフトウェアを再配布するとき、確認すべきものは？",
+    "choices": [
+      "ファイル名の長さだけ",
+      "適用されているライセンスの条件",
+      "画面の色だけ",
+      "開発者の星座だけ"
+    ],
+    "answer": 1,
+    "explanation": "ソースコードが公開されていても条件はあります。著作権表示の保持など、ライセンスの義務を確認します。"
+  },
+  {
+    "id": "information-hard-022",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "Git などのバージョン管理システムの主な役割は？",
+    "choices": [
+      "必ずプログラムの誤りを自動修正する",
+      "写真の人物を必ず識別する",
+      "ファイルの変更履歴を記録・管理する",
+      "電池の電圧を一定にする"
+    ],
+    "answer": 2,
+    "explanation": "変更履歴を比較したり、過去の状態を確認したり、複数人の変更を統合したりできます。"
+  },
+  {
+    "id": "information-hard-023",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "意味のある画像に代替テキストを付ける主な目的は？",
+    "choices": [
+      "画像を必ず非公開にする",
+      "画像の容量をゼロにする",
+      "閲覧者全員に同じ色を見せる",
+      "画像の情報や役割を文字でも伝える"
+    ],
+    "answer": 3,
+    "explanation": "代替テキストは、読み上げなどで画像の内容や機能を理解する助けになります。装飾だけの画像は別に扱います。",
+    "source": {
+      "label": "W3C WAI｜Images Tutorial",
+      "url": "https://www.w3.org/WAI/tutorials/images/"
+    }
+  },
+  {
+    "id": "information-hard-024",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "論理演算「A AND B」が真になるのは？",
+    "choices": [
+      "A と B が両方とも真のとき",
+      "A だけが偽のとき",
+      "B だけが偽のとき",
+      "A と B が両方とも偽のとき"
+    ],
+    "answer": 0,
+    "explanation": "AND は論理積です。OR は少なくとも一方が真なら真になります。"
+  },
+  {
+    "id": "information-hard-025",
+    "category": "information",
+    "difficulty": "hard",
+    "prompt": "SaaS に最も当てはまるものは？",
+    "choices": [
+      "画像の画素数を表す単位",
+      "ネットワーク経由で提供されるアプリケーションを利用する形態",
+      "端末の CPU を製造する工程",
+      "光ファイバーそのもの"
+    ],
+    "answer": 1,
+    "explanation": "SaaS は Software as a Service の略で、ソフトウェアをサービスとして提供する形態です。"
+  },
+  {
+    "id": "life-easy-001",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "1 L は何 mL？",
+    "choices": ["100 mL", "10,000 mL", "1,000 mL", "10 mL"],
+    "answer": 2,
+    "explanation": "ミリは 1,000 分の 1 を表すため、1 L は 1,000 mL です。"
+  },
+  {
+    "id": "life-easy-002",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "1 kg は何 g？",
+    "choices": ["10 g", "100 g", "10,000 g", "1,000 g"],
+    "answer": 3,
+    "explanation": "キロは 1,000 倍を表します。1 kg は 1,000 g です。"
+  },
+  {
+    "id": "life-easy-003",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "1 時間は何分？",
+    "choices": ["60 分", "30 分", "100 分", "120 分"],
+    "answer": 0,
+    "explanation": "時間と分は 60 進法で換算します。1 分は 60 秒です。"
+  },
+  {
+    "id": "life-easy-004",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "1 m は何 cm？",
+    "choices": ["10,000 cm", "100 cm", "10 cm", "1,000 cm"],
+    "answer": 1,
+    "explanation": "センチは 100 分の 1 を表します。1 m は 100 cm です。"
+  },
+  {
+    "id": "life-easy-005",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "鉛筆などを数える「1 ダース」は何本？",
+    "choices": ["10 本", "24 本", "12 本", "6 本"],
+    "answer": 2,
+    "explanation": "ダースは 12 個をまとめた数え方です。2 ダースなら 24 個になります。"
+  },
+  {
+    "id": "life-easy-006",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "全体の半分を百分率で表すと？",
+    "choices": ["10％", "25％", "75％", "50％"],
+    "answer": 3,
+    "explanation": "百分率は全体を 100 とした割合です。半分は 100 ÷ 2 = 50％です。"
+  },
+  {
+    "id": "life-easy-007",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "2 人分で材料を 300 g 使う料理を、同じ割合で 4 人分作ると必要な量は？",
+    "choices": ["600 g", "150 g", "450 g", "1,200 g"],
+    "answer": 0,
+    "explanation": "人数が 2 倍になるため、材料も 300 × 2 = 600 g です。"
+  },
+  {
+    "id": "life-easy-008",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "500 円の商品が 20％引き。支払う金額は？",
+    "choices": ["600 円", "400 円", "100 円", "480 円"],
+    "answer": 1,
+    "explanation": "値引き額は 500 × 0.2 = 100 円なので、500 − 100 = 400 円です。"
+  },
+  {
+    "id": "life-easy-009",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "650 円の買い物で 1,000 円を渡すと、おつりは？",
+    "choices": ["450 円", "1,650 円", "350 円", "250 円"],
+    "answer": 2,
+    "explanation": "渡した金額から代金を引き、1,000 − 650 = 350 円です。"
+  },
+  {
+    "id": "life-easy-010",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "午前 10 時 15 分の 45 分後は？",
+    "choices": ["午前 10 時 45 分", "午前 11 時 15 分", "正午", "午前 11 時"],
+    "answer": 3,
+    "explanation": "15 分に 45 分を足すと 60 分になるため、1 時間繰り上がります。"
+  },
+  {
+    "id": "life-easy-011",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "縦 3 m、横 4 m の長方形の面積は？",
+    "choices": ["12 m²", "7 m²", "14 m²", "24 m²"],
+    "answer": 0,
+    "explanation": "長方形の面積は縦 × 横です。3 × 4 = 12 m² になります。"
+  },
+  {
+    "id": "life-easy-012",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "日本の一般的な料理の計量で、小さじ 1 杯は何 mL？",
+    "choices": ["15 mL", "5 mL", "1 mL", "10 mL"],
+    "answer": 1,
+    "explanation": "小さじは 5 mL、大さじは 15 mL です。容量なので、何 g になるかは材料によって異なります。",
+    "source": {
+      "label": "京都市｜調味料の計り方",
+      "url": "https://kyo-kenko.city.kyoto.lg.jp/food-education/trivia/seasoning/"
+    }
+  },
+  {
+    "id": "life-easy-013",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "食品を熱い蒸気で加熱する調理法は？",
+    "choices": ["漬ける", "冷凍する", "蒸す", "揚げる"],
+    "answer": 2,
+    "explanation": "蒸す調理では、湯などから発生する蒸気の熱を利用します。"
+  },
+  {
+    "id": "life-easy-014",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "食品をだし汁や水などの液体の中で加熱する調理法は？",
+    "choices": ["干す", "刻む", "和える", "煮る"],
+    "answer": 3,
+    "explanation": "煮る調理では液体を通じて熱を伝え、食品を加熱します。"
+  },
+  {
+    "id": "life-easy-015",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "少量の油を使い、食品を動かしながら加熱する調理法は？",
+    "choices": ["炒める", "蒸す", "漬ける", "冷やす"],
+    "answer": 0,
+    "explanation": "炒める調理は、フライパンなどで材料を動かしながら加熱する方法です。"
+  },
+  {
+    "id": "life-easy-016",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "豆腐の主な原料となる豆は？",
+    "choices": ["カカオ豆", "大豆", "小豆", "コーヒー豆"],
+    "answer": 1,
+    "explanation": "豆腐は大豆から作った豆乳を、にがりなどの凝固剤で固めた食品です。"
+  },
+  {
+    "id": "life-easy-017",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "一般的なうどんの主な原料は？",
+    "choices": ["米粉だけ", "片栗粉だけ", "小麦粉", "そば粉"],
+    "answer": 2,
+    "explanation": "うどんは主に小麦粉に水と塩を加えて生地を作り、麺状にした食品です。"
+  },
+  {
+    "id": "life-easy-018",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "食酢の酸味を生む主な成分は？",
+    "choices": ["食塩", "デンプン", "セルロース", "酢酸"],
+    "answer": 3,
+    "explanation": "食酢には酢酸が含まれ、酸味のもとになっています。"
+  },
+  {
+    "id": "life-easy-019",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "パン生地を発酵させるときによく使う微生物は？",
+    "choices": ["酵母", "乳酸だけ", "食塩", "重曹そのもの"],
+    "answer": 0,
+    "explanation": "酵母は糖を利用して二酸化炭素などを生み、生地が膨らむのを助けます。"
+  },
+  {
+    "id": "life-easy-020",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "服装や振る舞いを考える際の「TPO」は、何を意識する言葉？",
+    "choices": [
+      "才能・体力・運",
+      "時・場所・場合",
+      "温度・圧力・酸素",
+      "価格・人数・順番"
+    ],
+    "answer": 1,
+    "explanation": "TPO は Time・Place・Occasion から作られた表現で、その場の目的や状況を考える際に使います。"
+  },
+  {
+    "id": "life-easy-021",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "情報を整理する 5W1H の「Where」が表すものは？",
+    "choices": ["なぜ", "どのように", "どこで", "いつ"],
+    "answer": 2,
+    "explanation": "5W1H は、誰が・いつ・どこで・何を・なぜ・どのように、という観点です。"
+  },
+  {
+    "id": "life-easy-022",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "仕事のメールの件名で、用件を伝えやすいものは？",
+    "choices": [
+      "「あの件」だけ",
+      "記号だけを並べる",
+      "本文と無関係な話題",
+      "内容と目的が分かる短い表現"
+    ],
+    "answer": 3,
+    "explanation": "件名から用件が分かると、受信者が内容や対応の必要性を判断しやすくなります。"
+  },
+  {
+    "id": "life-easy-023",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "待ち合わせの日時を誤解なく伝えやすい表現は？",
+    "choices": [
+      "「9 月 10 日の午後 3 時」",
+      "「いつもの感じで」",
+      "「あとで」",
+      "「そのうち」"
+    ],
+    "answer": 0,
+    "explanation": "日付と時刻を具体的に示すと、受け手との認識のずれを減らせます。"
+  },
+  {
+    "id": "life-easy-024",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "コミュニケーションで「傾聴」とは？",
+    "choices": [
+      "自分の話だけを続けること",
+      "相手の話を理解しようと注意深く聴くこと",
+      "相手の発言を必ず否定すること",
+      "返事を考えずに話を遮ること"
+    ],
+    "answer": 1,
+    "explanation": "傾聴では、言葉の内容や相手の気持ちを理解しようとしながら聴きます。"
+  },
+  {
+    "id": "life-easy-025",
+    "category": "life",
+    "difficulty": "easy",
+    "prompt": "「アポイントメントを取る」の意味は？",
+    "choices": [
+      "領収書を発行する",
+      "予定を秘密にする",
+      "会う日時などを事前に約束する",
+      "会議を必ず中止する"
+    ],
+    "answer": 2,
+    "explanation": "アポイントメントは面会などの約束です。日時・場所・目的を共有すると行き違いを防げます。"
+  },
+  {
+    "id": "life-normal-001",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "同じ 200 mL の水と小麦粉を量ったとき、重さはどう考える？",
+    "choices": [
+      "体積が同じなら必ず同じ重さ",
+      "小麦粉は必ず 200 kg",
+      "どちらも必ず 200 g",
+      "材料の密度などが違うので、同じ重さとは限らない"
+    ],
+    "answer": 3,
+    "explanation": "mL は体積、g は質量です。粉の詰まり方によっても、同じ体積に入る重さが変わります。"
+  },
+  {
+    "id": "life-normal-002",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "米を量る「1 合」の容量は、およそ何 mL？",
+    "choices": ["180 mL", "100 mL", "200 mL", "250 mL"],
+    "answer": 0,
+    "explanation": "米 1 合の計量カップは約 180 mL です。料理で使う一般的な 1 カップ 200 mL とは異なります。",
+    "source": {
+      "label": "貝印｜お米用計量カップ",
+      "url": "https://store.kai-group.com/shop/g/g14275/"
+    }
+  },
+  {
+    "id": "life-normal-003",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "日本の一般的な計量スプーンで、大さじ 1 杯は小さじ何杯分？",
+    "choices": ["10 杯分", "3 杯分", "2 杯分", "5 杯分"],
+    "answer": 1,
+    "explanation": "大さじは 15 mL、小さじは 5 mL なので、15 ÷ 5 = 3 杯分です。",
+    "source": {
+      "label": "京都市｜調味料の計り方",
+      "url": "https://kyo-kenko.city.kyoto.lg.jp/food-education/trivia/seasoning/"
+    }
+  },
+  {
+    "id": "life-normal-004",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "4 分の 3 L は何 mL？",
+    "choices": ["300 mL", "1,333 mL", "750 mL", "250 mL"],
+    "answer": 2,
+    "explanation": "1 L = 1,000 mL なので、1,000 × 3 ÷ 4 = 750 mL です。"
+  },
+  {
+    "id": "life-normal-005",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "90 分を時間で表すと？",
+    "choices": ["0.9 時間", "1.3 時間", "9 時間", "1.5 時間"],
+    "answer": 3,
+    "explanation": "90 ÷ 60 = 1.5 時間です。1 時間 30 分の「30 分」は 0.5 時間です。"
+  },
+  {
+    "id": "life-normal-006",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "午後 0 時 10 分から午後 2 時 45 分までは、何分間？",
+    "choices": ["155 分間", "135 分間", "145 分間", "235 分間"],
+    "answer": 0,
+    "explanation": "2 時間 35 分なので、120 + 35 = 155 分間です。"
+  },
+  {
+    "id": "life-normal-007",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "同じ品質の商品で、200 g・300 円と 300 g・420 円。100 g あたり安いのは？",
+    "choices": [
+      "内容量だけでは計算できない",
+      "300 g・420 円の方",
+      "200 g・300 円の方",
+      "どちらも同じ"
+    ],
+    "answer": 1,
+    "explanation": "前者は 100 g あたり 150 円、後者は 140 円です。単位量あたりの価格で比較できます。"
+  },
+  {
+    "id": "life-normal-008",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "1,500 円の商品が 1,800 円になった。値上がり率は？",
+    "choices": ["30％", "120％", "20％", "16.7％"],
+    "answer": 2,
+    "explanation": "増えた 300 円を元の 1,500 円で割り、300 ÷ 1,500 = 0.2 です。"
+  },
+  {
+    "id": "life-normal-009",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "500 円の商品を 10％引きし、その価格からさらに 10％引きすると？",
+    "choices": ["400 円", "450 円", "490 円", "405 円"],
+    "answer": 3,
+    "explanation": "500 × 0.9 × 0.9 = 405 円です。合計 20％引きにはなりません。"
+  },
+  {
+    "id": "life-normal-010",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "40 問のうち 80％に正解した。正解数は？",
+    "choices": ["32 問", "8 問", "20 問", "36 問"],
+    "answer": 0,
+    "explanation": "40 × 0.8 = 32 問です。残りの不正解は 8 問です。"
+  },
+  {
+    "id": "life-normal-011",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "日本標準時は UTC より 9 時間進んでいる。日本が 18 時なら UTC は？",
+    "choices": [
+      "前日の 9 時",
+      "同じ日の 9 時",
+      "同じ日の 18 時",
+      "翌日の 3 時"
+    ],
+    "answer": 1,
+    "explanation": "日本の時刻から 9 時間を引きます。18 − 9 = 9 時です。"
+  },
+  {
+    "id": "life-normal-012",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "華氏は「摂氏 × 1.8 + 32」で換算する。摂氏 20 度は華氏何度？",
+    "choices": ["36 度", "96 度", "68 度", "52 度"],
+    "answer": 2,
+    "explanation": "20 × 1.8 + 32 = 36 + 32 = 68 度です。"
+  },
+  {
+    "id": "life-normal-013",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "水の硬度に主に関係する成分の組み合わせは？",
+    "choices": [
+      "酸素と窒素だけ",
+      "砂糖と酢だけ",
+      "水素とヘリウムだけ",
+      "カルシウムとマグネシウム"
+    ],
+    "answer": 3,
+    "explanation": "硬度は主に水中のカルシウムやマグネシウムの量を指標にします。"
+  },
+  {
+    "id": "life-normal-014",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "水と油のように混ざりにくい液体の一方が、細かい粒として他方に分散することは？",
+    "choices": ["乳化", "蒸留", "昇華", "凝固"],
+    "answer": 0,
+    "explanation": "乳化はマヨネーズなどに見られます。乳化剤は分散した状態を保つのを助けます。"
+  },
+  {
+    "id": "life-normal-015",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "小麦粉に水を加えてこねた生地の、粘りや弾力に関係するものは？",
+    "choices": ["葉緑素", "グルテン", "セルロースだけ", "食塩の結晶だけ"],
+    "answer": 1,
+    "explanation": "小麦のタンパク質が水を吸い、こねることでグルテンの網目構造ができます。"
+  },
+  {
+    "id": "life-normal-016",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "パスタのゆで加減で「アルデンテ」とは、一般にどのような状態？",
+    "choices": [
+      "まったく水を吸っていない状態",
+      "表面が凍った状態",
+      "中心にわずかな歯ごたえが残る状態",
+      "完全に粉状に崩れた状態"
+    ],
+    "answer": 2,
+    "explanation": "アルデンテは、噛んだときに適度な歯ごたえを感じるゆで加減を指します。"
+  },
+  {
+    "id": "life-normal-017",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "チョコレートなどを温める「湯せん」は、どの方法？",
+    "choices": [
+      "食品を直接火に置く",
+      "必ず油で揚げる",
+      "冷水に長時間つける",
+      "容器を湯につけて間接的に温める"
+    ],
+    "answer": 3,
+    "explanation": "湯せんは湯を介して熱を伝えるため、直接加熱するより穏やかに温められます。"
+  },
+  {
+    "id": "life-normal-018",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "煮物で使う落としぶたは、基本的にどこへ置く？",
+    "choices": [
+      "食材の上に近接させて置く",
+      "鍋の下へ敷く",
+      "コンロの火の上だけに置く",
+      "鍋と無関係な場所に置く"
+    ],
+    "answer": 0,
+    "explanation": "落としぶたは煮汁を行き渡りやすくし、食材の動きを抑えるために使います。"
+  },
+  {
+    "id": "life-normal-019",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "食品に表示された消費期限・賞味期限が前提としている状態は？",
+    "choices": [
+      "包装を捨てた後の状態だけ",
+      "未開封で、表示された保存方法を守っている状態",
+      "開封後でも保存方法にかかわらない状態",
+      "一度でも加熱すれば何日でもよい状態"
+    ],
+    "answer": 1,
+    "explanation": "期限表示は未開封で所定の方法により保存した場合のものです。開封後にそのまま適用できるわけではありません。",
+    "source": {
+      "label": "消費者庁｜食品ロス削減ガイドブック",
+      "url": "https://www.no-foodloss.caa.go.jp/digitalbook/02_2021/pageindices/index55.html"
+    }
+  },
+  {
+    "id": "life-normal-020",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "「食品ロス」とは？",
+    "choices": [
+      "調理に使う電力のすべて",
+      "すべての食品包装",
+      "本来食べられるのに捨てられる食品",
+      "骨や貝殻など食べられない部分だけ"
+    ],
+    "answer": 2,
+    "explanation": "食品ロスは、まだ食べられる部分が廃棄されることです。食品廃棄物全体とは区別されます。",
+    "source": {
+      "label": "農林水産省｜食品ロスの現状",
+      "url": "https://www.maff.go.jp/j/pr/aff/2010/pdf/aff2010_02.pdf"
+    }
+  },
+  {
+    "id": "life-normal-021",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "資源を大切にする 3R のうち「リユース」は？",
+    "choices": [
+      "資源として原料に戻すこと",
+      "必要以上に買い増すこと",
+      "使う前にすべて捨てること",
+      "使える物を繰り返し使うこと"
+    ],
+    "answer": 3,
+    "explanation": "リユースは再使用、リサイクルは再資源化、リデュースはごみなどの発生を減らすことです。"
+  },
+  {
+    "id": "life-normal-022",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "「バリアフリー」の基本的な考え方は？",
+    "choices": [
+      "生活や参加の障壁を取り除くこと",
+      "利用者を年齢だけで分けること",
+      "すべての建物を同じ色にすること",
+      "案内をすべてなくすこと"
+    ],
+    "answer": 0,
+    "explanation": "段差などの物理的な障壁だけでなく、情報や制度などの障壁も対象になります。"
+  },
+  {
+    "id": "life-normal-023",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "「ユニバーサルデザイン」の基本的な考え方は？",
+    "choices": [
+      "説明を増やすほど必ず使いやすいと考える",
+      "できるだけ多くの人が使いやすいよう初めから設計する",
+      "特定の熟練者だけが使えるようにする",
+      "すべての人へ一つの操作方法を強制する"
+    ],
+    "answer": 1,
+    "explanation": "年齢や能力などの違いを考慮し、幅広い人が利用しやすい製品や環境を目指します。"
+  },
+  {
+    "id": "life-normal-024",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "「アサーティブな伝え方」に最も近いものは？",
+    "choices": [
+      "自分の希望を一切伝えない",
+      "相手の話を遮り続ける",
+      "相手を尊重しながら、自分の考えも率直に伝える",
+      "相手を責めて従わせる"
+    ],
+    "answer": 2,
+    "explanation": "アサーティブなコミュニケーションでは、自分と相手の両方を尊重します。"
+  },
+  {
+    "id": "life-normal-025",
+    "category": "life",
+    "difficulty": "normal",
+    "prompt": "会議の議事録で、実行につなげるために明確にするとよい内容は？",
+    "choices": [
+      "参加者の服の色だけ",
+      "発言した回数だけ",
+      "机の配置だけ",
+      "決定事項・担当者・期限"
+    ],
+    "answer": 3,
+    "explanation": "何を決め、誰が、いつまでに行うかを記録すると、次の行動を共有できます。"
+  },
+  {
+    "id": "life-hard-001",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "価格が 20％下がったあと、元の価格へ戻すには、下がった価格から何％上げる？",
+    "choices": ["25％", "20％", "15％", "80％"],
+    "answer": 0,
+    "explanation": "元を 100 とすると値下げ後は 80。20 ÷ 80 = 25％の値上げが必要です。"
+  },
+  {
+    "id": "life-hard-002",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "1,000 円から 10％値上げし、その後の価格から 10％値下げすると？",
+    "choices": ["900 円", "990 円", "1,000 円", "1,010 円"],
+    "answer": 1,
+    "explanation": "1,000 × 1.1 × 0.9 = 990 円です。増減の基準額が変わるため、元の価格には戻りません。"
+  },
+  {
+    "id": "life-hard-003",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "時速 4.5 km で 30 分歩くと、進む距離は？",
+    "choices": ["1.35 km", "4.5 km", "2.25 km", "9 km"],
+    "answer": 2,
+    "explanation": "30 分は 0.5 時間なので、4.5 × 0.5 = 2.25 km です。"
+  },
+  {
+    "id": "life-hard-004",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "1 回塗りで 1 缶あたり 9 m² 塗れる塗料。20 m² の壁を同じ使用量で 2 回塗るには、最低何缶必要？",
+    "choices": ["3 缶", "4 缶", "6 缶", "5 缶"],
+    "answer": 3,
+    "explanation": "2 回分の面積は 20 × 2 = 40 m²。40 ÷ 9 は約 4.44 缶なので、缶単位では切り上げて 5 缶必要です。"
+  },
+  {
+    "id": "life-hard-005",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "A と B を体積比 3：2 で混ぜて合計 500 mL にする。体積が加算できるとき A は？",
+    "choices": ["300 mL", "200 mL", "250 mL", "350 mL"],
+    "answer": 0,
+    "explanation": "比の合計は 5。A は全体の 3/5 なので、500 × 3/5 = 300 mL です。"
+  },
+  {
+    "id": "life-hard-006",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "濃度 10％の食塩水 200 g に、水 300 g を加える。質量パーセント濃度は？",
+    "choices": ["10％", "4％", "5％", "6％"],
+    "answer": 1,
+    "explanation": "食塩は 20 g のまま、全体が 500 g になります。20 ÷ 500 × 100 = 4％です。"
+  },
+  {
+    "id": "life-hard-007",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "10 問のテストで 80％、40 問のテストで 50％正解。合計の正答率は？",
+    "choices": ["60％", "50％", "56％", "65％"],
+    "answer": 2,
+    "explanation": "正解数は 8 + 20 = 28 問。全 50 問なので、28 ÷ 50 = 56％です。率の単純平均では求められません。"
+  },
+  {
+    "id": "life-hard-008",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "表と裏が同じ確率のコインを独立に 2 回投げる。表がちょうど 1 回出る確率は？",
+    "choices": ["4 分の 1", "4 分の 3", "1", "2 分の 1"],
+    "answer": 3,
+    "explanation": "表表・表裏・裏表・裏裏の 4 通りのうち、表裏と裏表の 2 通りです。"
+  },
+  {
+    "id": "life-hard-009",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "データ 2・3・4・5・100 の中央値は？",
+    "choices": ["4", "22.8", "5", "100"],
+    "answer": 0,
+    "explanation": "中央値はデータを順に並べたときの中央の値です。大きな外れ値の影響を平均値ほど受けません。"
+  },
+  {
+    "id": "life-hard-010",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "4 人の平均点が 70 点。5 人目が 90 点なら、5 人の平均点は？",
+    "choices": ["78 点", "74 点", "80 点", "72 点"],
+    "answer": 1,
+    "explanation": "合計は 4 × 70 + 90 = 370 点。370 ÷ 5 = 74 点です。"
+  },
+  {
+    "id": "life-hard-011",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "消費電力 1,000 W の機器を、一定の電力で 30 分使った電力量は？",
+    "choices": ["500 kWh", "2 kWh", "0.5 kWh", "30 kWh"],
+    "answer": 2,
+    "explanation": "1,000 W は 1 kW、30 分は 0.5 時間なので、1 × 0.5 = 0.5 kWh です。"
+  },
+  {
+    "id": "life-hard-012",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "内側の一辺が 10 cm の立方体の容器の容量は？",
+    "choices": ["0.1 L", "10 L", "100 L", "1 L"],
+    "answer": 3,
+    "explanation": "10 × 10 × 10 = 1,000 cm³。1 cm³ = 1 mL なので、容量は 1 L です。"
+  },
+  {
+    "id": "life-hard-013",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "0.25 g は何 mg？",
+    "choices": ["250 mg", "25 mg", "2.5 mg", "2,500 mg"],
+    "answer": 0,
+    "explanation": "1 g = 1,000 mg なので、0.25 × 1,000 = 250 mg です。"
+  },
+  {
+    "id": "life-hard-014",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "利用率が 40％から 35％へ下がった。減少幅を「ポイント」で表すと？",
+    "choices": ["87.5 ポイント", "5 ポイント", "12.5 ポイント", "35 ポイント"],
+    "answer": 1,
+    "explanation": "割合どうしの差は 40 − 35 = 5 ポイントです。元の割合に対する減少率 12.5％とは区別します。"
+  },
+  {
+    "id": "life-hard-015",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "一つの選択をしたために、別の最善の選択肢から得られなくなった価値は？",
+    "choices": ["購入時の税額だけ", "現金の残高だけ", "機会費用", "埋没費用"],
+    "answer": 2,
+    "explanation": "機会費用は、選ばなかった選択肢によって失う価値です。時間の使い方などにも当てはまります。"
+  },
+  {
+    "id": "life-hard-016",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "すでに支払っていて、今後どの選択をしても取り戻せない費用は？",
+    "choices": ["将来の追加費用", "未払い費用", "機会費用だけ", "埋没費用"],
+    "answer": 3,
+    "explanation": "埋没費用はサンクコストとも呼ばれます。今後の選択によって変わらない過去の支出です。"
+  },
+  {
+    "id": "life-hard-017",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "初期費用 2,400 円、月額 1,200 円のサービスを 12 か月利用する。ほかの費用がないと合計は？",
+    "choices": ["16,800 円", "14,400 円", "3,600 円", "28,800 円"],
+    "answer": 0,
+    "explanation": "月額の合計は 1,200 × 12 = 14,400 円。初期費用を足して 16,800 円です。"
+  },
+  {
+    "id": "life-hard-018",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "任意参加のネット投票から、国民全体の意見を推測する際の注意点は？",
+    "choices": [
+      "参加者の属性は結果と無関係",
+      "参加する人の偏りが結果に影響する",
+      "人数が多ければ偏りは必ず消える",
+      "回答が整数なら完全に正確"
+    ],
+    "answer": 1,
+    "explanation": "回答したい人だけが参加すると、全体とは違う傾向になることがあります。標本の選び方が重要です。"
+  },
+  {
+    "id": "life-hard-019",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "アイスの売上と水難事故が同じ時期に増えた。ここから直ちにいえることは？",
+    "choices": [
+      "事故が必ずアイスを作らせる",
+      "共通の要因は考えなくてよい",
+      "同時に増えても、一方が他方の原因とは限らない",
+      "アイスを買うことが必ず事故を起こす"
+    ],
+    "answer": 2,
+    "explanation": "気温など別の要因が両方に影響している場合があります。相関だけでは因果関係は確定しません。"
+  },
+  {
+    "id": "life-hard-020",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "棒グラフの縦軸が 0 ではなく 90 から始まっているとき、特に注意する点は？",
+    "choices": [
+      "数値は必ずすべて誤りになる",
+      "単位を確認する必要がなくなる",
+      "平均値を自動的に表している",
+      "値の差が見た目で大きく強調される場合がある"
+    ],
+    "answer": 3,
+    "explanation": "軸の範囲で印象は変わります。棒の長さだけでなく、目盛りと実際の値を読みます。"
+  },
+  {
+    "id": "life-hard-021",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "食品の加熱で起きるメイラード反応に主に関わる組み合わせは？",
+    "choices": [
+      "アミノ酸などのアミノ基を持つ成分と還元糖",
+      "食塩と水だけ",
+      "窒素とヘリウム",
+      "氷と酸素だけ"
+    ],
+    "answer": 0,
+    "explanation": "アミノカルボニル反応とも呼ばれ、加熱した食品の褐色や香りの形成に関係します。",
+    "source": {
+      "label": "農林水産省｜加熱中に起こる化学反応",
+      "url": "https://www.maff.go.jp/j/syouan/seisaku/acryl_amide/a_syosai/about/sikumi.html"
+    }
+  },
+  {
+    "id": "life-hard-022",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "砂糖を加熱して褐色や独特の香りが生じる、糖の変化は？",
+    "choices": ["凝固点降下", "カラメル化", "乳化", "糊化"],
+    "answer": 1,
+    "explanation": "カラメル化は糖の加熱による反応です。アミノ酸などを必要とするメイラード反応とは区別します。"
+  },
+  {
+    "id": "life-hard-023",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "でんぷんに水を加えて加熱し、粒が膨らんで糊状になる変化は？",
+    "choices": ["電離", "酸敗", "糊化", "昇華"],
+    "answer": 2,
+    "explanation": "糊化は、ご飯を炊く過程やでんぷんでとろみを付ける過程に関係します。",
+    "source": {
+      "label": "グリコ栄養食品｜デンプンの糊化と老化",
+      "url": "https://www.glico.com/nutrition/product/ingredient/starch/"
+    }
+  },
+  {
+    "id": "life-hard-024",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "圧力鍋で、通常の鍋より高温の水を使った調理ができる主な理由は？",
+    "choices": [
+      "圧力が高いと水が必ず凍るため",
+      "水の沸点が 0 ℃になるため",
+      "水の分子がすべて油になるため",
+      "圧力が高いと水の沸点が上がるため"
+    ],
+    "answer": 3,
+    "explanation": "内部の圧力を高めると、水は通常の大気圧より高い温度で沸騰するようになります。",
+    "source": {
+      "label": "ティファール｜圧力鍋の仕組み",
+      "url": "https://www.t-fal.co.jp/pressurecookers/pc/"
+    }
+  },
+  {
+    "id": "life-hard-025",
+    "category": "life",
+    "difficulty": "hard",
+    "prompt": "魔法瓶の壁を二重にし、間を真空にする主な目的は？",
+    "choices": [
+      "空気を通じた熱伝導と対流を抑える",
+      "熱を新しく無限に生み出す",
+      "水を永久に動かし続ける",
+      "重力を完全になくす"
+    ],
+    "answer": 0,
+    "explanation": "真空の層は空気を通じる熱の移動を抑えます。放射による熱の移動には、反射する構造などで対応します。",
+    "source": {
+      "label": "象印｜まほうびんのしくみ",
+      "url": "https://www.zojirushi.co.jp/life/sea/"
+    }
+  },
+  {
+    "id": "society-easy-001",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本国憲法で、国の唯一の立法機関とされるのは？",
+    "choices": ["国会", "内閣", "最高裁判所", "日本銀行"],
+    "answer": 0,
+    "explanation": "法律を制定する立法権を担う機関が国会です。憲法第41条に定められています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-002",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本国憲法で、行政権が属するのは？",
+    "choices": ["国会", "最高裁判所", "選挙管理委員会", "内閣"],
+    "answer": 3,
+    "explanation": "憲法第65条は、行政権が内閣に属すると定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-003",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本で、裁判を通じて司法権を担う機関は？",
+    "choices": ["国会", "都道府県議会", "裁判所", "税務署"],
+    "answer": 2,
+    "explanation": "司法権は最高裁判所と、法律により設置される下級裁判所に属します。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-004",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本の国会を構成する二つの議院は？",
+    "choices": [
+      "上院と枢密院",
+      "衆議院と参議院",
+      "衆議院と貴族院",
+      "参議院と元老院"
+    ],
+    "answer": 1,
+    "explanation": "憲法第42条により、日本の国会は衆議院と参議院の二院で構成されます。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-005",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本国憲法で、主権があるとされるのは？",
+    "choices": ["国民", "天皇", "裁判官", "内閣総理大臣"],
+    "answer": 0,
+    "explanation": "国の政治のあり方を最終的に決める権力が国民にあるという原則が国民主権です。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-006",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本の法体系で「最高法規」とされるものは？",
+    "choices": ["地方の条例", "国会の議事規則", "会社の就業規則", "日本国憲法"],
+    "answer": 3,
+    "explanation": "憲法第98条は、憲法に反する法律などは効力を持たないと定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-007",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本の内閣総理大臣を、国会議員の中から指名するのは？",
+    "choices": ["日本銀行", "国連総会", "国会", "最高裁判所"],
+    "answer": 2,
+    "explanation": "内閣総理大臣は国会の議決で指名され、その指名に基づいて天皇が任命します。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-008",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "特定の宗教を信じることも、信じないことも尊重する自由は？",
+    "choices": ["通信販売の自由", "信教の自由", "営業の自由", "移転の自由"],
+    "answer": 1,
+    "explanation": "憲法第20条は信教の自由を保障し、宗教上の行為への参加を強制されないと定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-009",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "選挙で「誰に投票したか」を他人に知られないようにする原則は？",
+    "choices": ["秘密投票", "公開投票", "記名投票", "代理投票の強制"],
+    "answer": 0,
+    "explanation": "憲法第15条は投票の秘密を保障しています。自由な意思による投票を支える原則です。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-010",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "すべての国民が、人種や性別などによって差別されないという原則は？",
+    "choices": ["身分制度", "世襲の原則", "多数派だけの自由", "法の下の平等"],
+    "answer": 3,
+    "explanation": "憲法第14条は法の下の平等を定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-011",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本の中央銀行は？",
+    "choices": ["日本取引所グループ", "国際通貨基金", "日本銀行", "世界銀行"],
+    "answer": 2,
+    "explanation": "日本銀行は日本の中央銀行として、通貨や金融に関する仕事を担います。",
+    "source": {
+      "label": "日本銀行：おしえて！日本銀行",
+      "url": "https://www.boj.or.jp/about/education/oshiete.pdf"
+    }
+  },
+  {
+    "id": "society-easy-012",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本の紙幣である「日本銀行券」を発行するのは？",
+    "choices": ["東京証券取引所", "日本銀行", "国立印刷局", "造幣局"],
+    "answer": 1,
+    "explanation": "紙幣を製造するのは国立印刷局で、発行するのは日本銀行です。",
+    "source": {
+      "label": "日本銀行：銀行券・貨幣の発行・管理",
+      "url": "https://www.boj.or.jp/note_tfjgs/note/outline/index.htm"
+    }
+  },
+  {
+    "id": "society-easy-013",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本の通貨単位は？",
+    "choices": ["円", "ウォン", "ユーロ", "バーツ"],
+    "answer": 0,
+    "explanation": "日本では円を通貨単位として、紙幣や硬貨が流通しています。",
+    "source": {
+      "label": "日本銀行：銀行券・貨幣の発行・管理",
+      "url": "https://www.boj.or.jp/note_tfjgs/note/outline/index.htm"
+    }
+  },
+  {
+    "id": "society-easy-014",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "物価全体が継続的に上がる現象を何という？",
+    "choices": ["デフレーション", "人口減少", "円の改鋳", "インフレーション"],
+    "answer": 3,
+    "explanation": "インフレーションでは、同じ金額で買える物やサービスが少なくなります。",
+    "source": {
+      "label": "日本銀行：おしえて！日本銀行",
+      "url": "https://www.boj.or.jp/about/education/oshiete.pdf"
+    }
+  },
+  {
+    "id": "society-easy-015",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "物価全体が継続的に下がる現象を何という？",
+    "choices": ["都市化", "工業化", "デフレーション", "インフレーション"],
+    "answer": 2,
+    "explanation": "デフレーションは個別商品の一時的な値下げではなく、物価全体が下がり続ける状態です。",
+    "source": {
+      "label": "日本銀行：おしえて！日本銀行",
+      "url": "https://www.boj.or.jp/about/education/oshiete.pdf"
+    }
+  },
+  {
+    "id": "society-easy-016",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "外国から商品を買い入れることは？",
+    "choices": ["融資", "輸入", "輸出", "出資"],
+    "answer": 1,
+    "explanation": "外国から国内へ商品を買い入れることを輸入、外国へ売ることを輸出といいます。"
+  },
+  {
+    "id": "society-easy-017",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "国内の商品を外国に売ることは？",
+    "choices": ["輸出", "輸入", "貯蓄", "徴税"],
+    "answer": 0,
+    "explanation": "輸出は外国に商品を売る取引です。輸入と合わせて貿易と呼びます。"
+  },
+  {
+    "id": "society-easy-018",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "商品の「需要」を表す説明は？",
+    "choices": [
+      "売り手が売ろうとすること",
+      "国が通貨を発行すること",
+      "商品の製造を禁止すること",
+      "買い手が買おうとすること"
+    ],
+    "answer": 3,
+    "explanation": "需要は買い手側、供給は売り手側の動きを表す経済用語です。"
+  },
+  {
+    "id": "society-easy-019",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "商品の「供給」を表す説明は？",
+    "choices": [
+      "銀行にお金を預けること",
+      "税率を決めること",
+      "売り手が商品を提供すること",
+      "買い手が商品を欲しがること"
+    ],
+    "answer": 2,
+    "explanation": "供給とは、市場で売り手が商品やサービスを提供することです。"
+  },
+  {
+    "id": "society-easy-020",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "国際社会で「UN」と略される組織は？",
+    "choices": ["世界貿易機関", "国際連合", "欧州連合", "国際通貨基金"],
+    "answer": 1,
+    "explanation": "UNはUnited Nationsの略で、日本語では国際連合といいます。",
+    "source": {
+      "label": "国連広報センター：国連の機構",
+      "url": "https://www.unic.or.jp/info/un/un_organization/"
+    }
+  },
+  {
+    "id": "society-easy-021",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "「WHO」は主にどの分野を担当する国際機関？",
+    "choices": ["保健・健康", "国際郵便", "航空運賃", "サッカー"],
+    "answer": 0,
+    "explanation": "WHOは世界保健機関で、世界の人々の健康を支える国連の専門機関です。",
+    "source": {
+      "label": "WHO：About WHO",
+      "url": "https://www.who.int/about"
+    }
+  },
+  {
+    "id": "society-easy-022",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "「UNICEF」が特に支援の対象としているのは？",
+    "choices": [
+      "プロスポーツの審判",
+      "株式市場の投資家",
+      "宇宙飛行士だけ",
+      "子ども"
+    ],
+    "answer": 3,
+    "explanation": "UNICEFは、子どもの権利や健康、教育、栄養などを支える国連機関です。",
+    "source": {
+      "label": "UNICEF：Who we are",
+      "url": "https://www.unicef.org/who-we-are"
+    }
+  },
+  {
+    "id": "society-easy-023",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "「UNESCO」が主に国際協力を進める分野は？",
+    "choices": [
+      "原油価格の決定",
+      "国際送金の決済だけ",
+      "教育・科学・文化",
+      "軍事同盟の指揮"
+    ],
+    "answer": 2,
+    "explanation": "UNESCOは国際連合教育科学文化機関の略称です。",
+    "source": {
+      "label": "UNESCO：UNESCO in brief",
+      "url": "https://www.unesco.org/en/about-us"
+    }
+  },
+  {
+    "id": "society-easy-024",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "日本国憲法が保障する「表現の自由」に含まれるものは？",
+    "choices": [
+      "すべての契約を無条件で取り消す権利",
+      "自分の意見を発表する自由",
+      "他人の財産を自由に奪う権利",
+      "必ず選挙で当選できる権利"
+    ],
+    "answer": 1,
+    "explanation": "憲法第21条は、言論・出版などの表現の自由を保障しています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-easy-025",
+    "category": "society",
+    "difficulty": "easy",
+    "prompt": "「SDGs」は日本語で何と呼ばれる？",
+    "choices": [
+      "持続可能な開発目標",
+      "世界共通の通貨制度",
+      "国際的な軍事協定",
+      "自動車の排気量規格"
+    ],
+    "answer": 0,
+    "explanation": "SDGsは、貧困や教育、環境などの課題を解決するための国際目標です。",
+    "source": {
+      "label": "日本ユニセフ協会：SDGs17の目標",
+      "url": "https://www.unicef.or.jp/kodomo/sdgs/17goals/"
+    }
+  },
+  {
+    "id": "society-normal-001",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "衆議院議員の任期は、解散がない場合、何年？",
+    "choices": ["8年", "4年", "2年", "6年"],
+    "answer": 1,
+    "explanation": "憲法第45条で4年と定められています。解散があれば、その前に任期が終わります。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-002",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "参議院議員の任期は何年？",
+    "choices": ["6年", "3年", "4年", "8年"],
+    "answer": 0,
+    "explanation": "参議院議員の任期は6年で、3年ごとに半数が改選されます。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-003",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "衆議院と参議院のうち、解散があるのは？",
+    "choices": ["参議院だけ", "両方", "どちらにもない", "衆議院だけ"],
+    "answer": 3,
+    "explanation": "参議院には解散がなく、議員の半数を3年ごとに改選します。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-004",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "日本国憲法上、予算が先に提出される議院は？",
+    "choices": ["毎年くじで決める", "両院の合同会議のみ", "衆議院", "参議院"],
+    "answer": 2,
+    "explanation": "予算は先に衆議院へ提出することが、憲法第60条で定められています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-005",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "最高裁判所の裁判官を国民が審査する制度は？",
+    "choices": ["公聴会", "国民審査", "住民監査請求", "内閣不信任決議"],
+    "answer": 1,
+    "explanation": "憲法第79条は、最高裁判所の裁判官に対する国民審査を定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-006",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "内閣が行政権の行使について連帯して責任を負う相手は？",
+    "choices": ["国会", "日本銀行", "各国の大使館", "地方の商工会議所"],
+    "answer": 0,
+    "explanation": "議院内閣制の下で、内閣は国会に対して連帯して責任を負います。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-007",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "地方公共団体の長を選ぶ方法として、憲法に定められているのは？",
+    "choices": [
+      "内閣による一律任命",
+      "世襲",
+      "国会議員の互選",
+      "住民による直接選挙"
+    ],
+    "answer": 3,
+    "explanation": "憲法第93条は、地方公共団体の長と議会議員を住民が直接選挙すると定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-008",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "地方公共団体が、法律の範囲内で制定できる決まりは？",
+    "choices": ["条約", "国際慣習法", "条例", "憲法"],
+    "answer": 2,
+    "explanation": "憲法第94条は、地方公共団体に法律の範囲内で条例を制定する権限を認めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-009",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "国の権力を立法・行政・司法に分け、互いに抑制する仕組みは？",
+    "choices": ["身分制議会", "三権分立", "中央集権", "絶対王政"],
+    "answer": 1,
+    "explanation": "国会・内閣・裁判所が権限を分担し、一つの機関への権力集中を防ぐ仕組みです。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-010",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "憲法第25条の「健康で文化的な最低限度の生活を営む権利」は一般に何と呼ばれる？",
+    "choices": ["生存権", "選挙権", "請願権", "著作権"],
+    "answer": 0,
+    "explanation": "生存権は、生活の基盤を保障する社会権の一つです。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-011",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "憲法が定める「国民の三大義務」に含まれないのは？",
+    "choices": [
+      "納税の義務",
+      "勤労の義務",
+      "子に普通教育を受けさせる義務",
+      "特定政党を支持する義務"
+    ],
+    "answer": 3,
+    "explanation": "三大義務は教育・勤労・納税です。教育の義務は保護する子に普通教育を受けさせる義務です。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-012",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "憲法第28条が保障する、労働者が労働組合をつくる権利は？",
+    "choices": ["恩赦権", "徴税権", "団結権", "解散権"],
+    "answer": 2,
+    "explanation": "団結権は、団体交渉権・団体行動権とともに労働基本権を構成します。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-013",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "「GDP」の日本語名は？",
+    "choices": ["国際収支", "国内総生産", "国民総所得", "消費者物価指数"],
+    "answer": 1,
+    "explanation": "GDPは、一定期間に国内で生み出された付加価値の総額を表します。",
+    "source": {
+      "label": "内閣府：GDP統計の見方",
+      "url": "https://www.esri.cao.go.jp/jp/esri/esr/esr_report/esr_045/esr_045_l.pdf"
+    }
+  },
+  {
+    "id": "society-normal-014",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "「CPI」はどのような指標？",
+    "choices": [
+      "家計が買う商品・サービスの物価の動きを示す指数",
+      "国会議員の支持率",
+      "会社の従業員数",
+      "国土の面積を示す指数"
+    ],
+    "answer": 0,
+    "explanation": "CPIは消費者物価指数です。多くの商品やサービスの価格変動をまとめて表します。",
+    "source": {
+      "label": "総務省統計局：消費者物価指数",
+      "url": "https://www.stat.go.jp/data/cpi/"
+    }
+  },
+  {
+    "id": "society-normal-015",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "「実質GDP」が名目GDPから取り除こうとする影響は？",
+    "choices": [
+      "人口の年齢構成",
+      "国土面積の違い",
+      "曜日の名称",
+      "物価変動の影響"
+    ],
+    "answer": 3,
+    "explanation": "実質値は物価の上昇・下落を調整し、生産量の変化を捉えやすくしたものです。",
+    "source": {
+      "label": "内閣府：名目値と実質値の違い",
+      "url": "https://www.esri.cao.go.jp/jp/sna/otoiawase/faq/qa1.html"
+    }
+  },
+  {
+    "id": "society-normal-016",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "運用で得た利息を元本に加え、その利息にも利息が付く方式は？",
+    "choices": ["現物交換", "固定費", "複利", "単利"],
+    "answer": 2,
+    "explanation": "複利では利息も次の運用の元本に加わります。元本だけに利息が付く方式は単利です。",
+    "source": {
+      "label": "金融庁：資産形成の基本",
+      "url": "https://www.fsa.go.jp/policy/nisa2/invest/index.html"
+    }
+  },
+  {
+    "id": "society-normal-017",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "株式会社に出資し、会社の所有者の一員になる立場は？",
+    "choices": ["すべての預金者", "株主", "債権回収の代行者", "すべての取引先"],
+    "answer": 1,
+    "explanation": "株式への出資は会社の所有への参加です。株価や配当は保証されません。",
+    "source": {
+      "label": "日本取引所グループ：株式投資と債券投資",
+      "url": "https://www.jpx.co.jp/corporate/learning/resources/tvdivq0000003toh-att/shitteimasuka.pdf"
+    }
+  },
+  {
+    "id": "society-normal-018",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "国や企業が資金を借り入れるために発行する有価証券は？",
+    "choices": ["債券", "領収書", "社員証", "貨物の送り状"],
+    "answer": 0,
+    "explanation": "債券の購入は発行体への資金貸付に当たります。株式による出資とは性質が異なります。",
+    "source": {
+      "label": "日本取引所グループ：株式投資と債券投資",
+      "url": "https://www.jpx.co.jp/corporate/learning/resources/tvdivq0000003toh-att/shitteimasuka.pdf"
+    }
+  },
+  {
+    "id": "society-normal-019",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "政府が税や公共支出を通じて経済に働きかける政策は？",
+    "choices": ["人事評価", "司法審査", "商標登録", "財政政策"],
+    "answer": 3,
+    "explanation": "財政政策は、政府の収入と支出を通じて経済に働きかける政策です。",
+    "source": {
+      "label": "IMF：About the IMF",
+      "url": "https://www.imf.org/en/about"
+    }
+  },
+  {
+    "id": "society-normal-020",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "SDGsの目標は、全部でいくつ？",
+    "choices": ["12", "24", "17", "8"],
+    "answer": 2,
+    "explanation": "SDGsには貧困、教育、気候変動などに関する17の目標があります。",
+    "source": {
+      "label": "日本ユニセフ協会：SDGs17の目標",
+      "url": "https://www.unicef.or.jp/kodomo/sdgs/17goals/"
+    }
+  },
+  {
+    "id": "society-normal-021",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "国連で、国際の平和と安全の維持に主要な責任を負う機関は？",
+    "choices": [
+      "国際オリンピック委員会",
+      "安全保障理事会",
+      "世界気象機関",
+      "万国郵便連合"
+    ],
+    "answer": 1,
+    "explanation": "安全保障理事会は国連憲章に基づき、平和と安全に関する問題を扱います。",
+    "source": {
+      "label": "外務省：国連安全保障理事会とは",
+      "url": "https://www.mofa.go.jp/mofaj/gaiko/un_anpori/torikumi/anpori.html"
+    }
+  },
+  {
+    "id": "society-normal-022",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "「WTO」の日本語名は？",
+    "choices": [
+      "世界貿易機関",
+      "世界保健機関",
+      "世界観光都市連合",
+      "国際労働機関"
+    ],
+    "answer": 0,
+    "explanation": "WTOは、国際貿易のルールや貿易交渉などを扱う国際機関です。",
+    "source": {
+      "label": "WTO：What we do",
+      "url": "https://www.wto.org/english/thewto_e/whatis_e/what_we_do_e.htm"
+    }
+  },
+  {
+    "id": "society-normal-023",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "「IMF」の日本語名は？",
+    "choices": [
+      "国際海事機関",
+      "国際司法裁判所",
+      "国際オリンピック委員会",
+      "国際通貨基金"
+    ],
+    "answer": 3,
+    "explanation": "IMFは、通貨協力や金融の安定、加盟国への融資などに取り組みます。",
+    "source": {
+      "label": "IMF：About the IMF",
+      "url": "https://www.imf.org/en/about"
+    }
+  },
+  {
+    "id": "society-normal-024",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "憲法上、天皇の地位を表す言葉は？",
+    "choices": [
+      "行政権の最高責任者",
+      "最高裁判所の裁判長",
+      "日本国と日本国民統合の象徴",
+      "国の唯一の立法機関"
+    ],
+    "answer": 2,
+    "explanation": "憲法第1条は、天皇を日本国と日本国民統合の象徴と定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-normal-025",
+    "category": "society",
+    "difficulty": "normal",
+    "prompt": "NPOの「非営利」の意味として適切なのは？",
+    "choices": [
+      "行政の一部として活動する",
+      "利益を構成員に分配することを目的としない",
+      "一切収入を得てはいけない",
+      "全員が必ず無給で働く"
+    ],
+    "answer": 1,
+    "explanation": "非営利は利益の分配を目的としないという意味です。活動のために収益を得ることはあります。",
+    "source": {
+      "label": "内閣府：NPOワーキング・グループ報告書",
+      "url": "https://www5.cao.go.jp/98/e/19980513e-keishinnpo.html"
+    }
+  },
+  {
+    "id": "society-hard-001",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "憲法改正を国会が発議するために必要な賛成は？",
+    "choices": [
+      "衆議院の総議員の4分の1だけ",
+      "内閣の過半数だけ",
+      "各議院の総議員の3分の2以上",
+      "各議院の出席議員の過半数だけ"
+    ],
+    "answer": 2,
+    "explanation": "憲法第96条は各議院の総議員の3分の2以上の賛成による発議と、国民の承認を求めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-002",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "憲法第96条で、国会の発議後の憲法改正に必要とされるのは？",
+    "choices": [
+      "日本銀行総裁の承認",
+      "国民投票などによる国民の承認",
+      "最高裁判所長官だけの承認",
+      "全都道府県知事の全会一致"
+    ],
+    "answer": 1,
+    "explanation": "国会の発議だけで改正は成立せず、国民投票などで過半数の賛成による承認が必要です。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-003",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "衆議院解散中に国に緊急の必要があるとき、内閣が求められるのは？",
+    "choices": [
+      "参議院の緊急集会",
+      "最高裁判所の予算編成",
+      "都道府県議会の国会代行",
+      "解散した衆議院の任期延長"
+    ],
+    "answer": 0,
+    "explanation": "憲法第54条は、衆議院の解散中に内閣が参議院の緊急集会を求められると定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-004",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "内閣が締結する条約について、憲法が原則として必要とするのは？",
+    "choices": [
+      "日本銀行の承認",
+      "全地方議会の可決",
+      "最高裁判所による条約の起草",
+      "事前または事後の国会の承認"
+    ],
+    "answer": 3,
+    "explanation": "憲法第73条は、条約の締結に国会の承認が必要と定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-005",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "最高裁判所長官の任命について、正しい組み合わせは？",
+    "choices": [
+      "参議院が指名し、衆議院が任命する",
+      "国民の直接選挙だけで決まる",
+      "内閣が指名し、天皇が任命する",
+      "国会が指名し、知事が任命する"
+    ],
+    "answer": 2,
+    "explanation": "憲法第6条により、最高裁判所長官は内閣の指名に基づいて天皇が任命します。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-006",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国の予算を作成して国会へ提出するのは？",
+    "choices": ["参議院議長個人", "内閣", "最高裁判所", "会計検査院"],
+    "answer": 1,
+    "explanation": "憲法第86条は、内閣が毎会計年度の予算を作成し、国会に提出すると定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-007",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "憲法第39条により、原則として禁じられている処罰は？",
+    "choices": [
+      "行為の時に適法だった行為を後の法律で処罰すること",
+      "法律に基づく罰金",
+      "裁判で確定した刑の執行",
+      "法律に従った証拠調べ"
+    ],
+    "answer": 0,
+    "explanation": "行為後にできた法律でさかのぼって処罰することを禁じる原則を、刑罰不遡及といいます。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-008",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "憲法上、裁判官が独立して職権を行う際に拘束されるのは？",
+    "choices": [
+      "内閣の個別事件への指示",
+      "世論調査の多数意見",
+      "与党の党内規則",
+      "憲法と法律"
+    ],
+    "answer": 3,
+    "explanation": "憲法第76条は、裁判官が良心に従って独立し、憲法と法律にのみ拘束されると定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-009",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "一つの地方公共団体だけに適用される特別法について、憲法第95条が求めるのは？",
+    "choices": [
+      "日本銀行の事前審査",
+      "他の全自治体の同意",
+      "その地方公共団体の住民投票で過半数の同意",
+      "全国の裁判官の全会一致"
+    ],
+    "answer": 2,
+    "explanation": "特定の地方公共団体だけに適用される特別法には、その住民の同意が必要です。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-010",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "憲法第81条で、法令などの合憲性を判断する終審裁判所とされるのは？",
+    "choices": ["地方議会", "最高裁判所", "家庭裁判所", "簡易裁判所"],
+    "answer": 1,
+    "explanation": "最高裁判所は、法令や処分が憲法に適合するかを最終的に判断する権限を持ちます。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-011",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国の収入・支出の決算を検査する、憲法上の機関は？",
+    "choices": ["会計検査院", "公正取引委員会", "中央選挙管理会", "人事院"],
+    "answer": 0,
+    "explanation": "憲法第90条は会計検査院による決算の検査と、内閣から国会への提出を定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-012",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国会の各議院が国政について調査できる権能は？",
+    "choices": ["通貨発行権", "恩赦権", "外交使節の接受権", "国政調査権"],
+    "answer": 3,
+    "explanation": "憲法第62条に基づき、各議院は証人の出頭や記録の提出などを求められます。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-013",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国務大臣の任命について、憲法第68条が定める条件は？",
+    "choices": [
+      "全員を民間人から選ぶ",
+      "全員を知事経験者から選ぶ",
+      "過半数を国会議員から選ぶ",
+      "全員を参議院議員から選ぶ"
+    ],
+    "answer": 2,
+    "explanation": "国務大臣は内閣総理大臣が任命し、その過半数は国会議員でなければなりません。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-014",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "日本国憲法で、検閲はどのように定められている？",
+    "choices": [
+      "新聞だけは無条件で認められる",
+      "してはならない",
+      "選挙期間中に限り常に義務となる",
+      "地方議会だけが自由に行える"
+    ],
+    "answer": 1,
+    "explanation": "憲法第21条は表現の自由を保障するとともに、検閲の禁止と通信の秘密を定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-015",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "日本銀行が国債を市場から買い入れるオペレーションは、通常どちらに分類される？",
+    "choices": ["資金供給", "資金吸収", "租税の徴収", "国会の立法"],
+    "answer": 0,
+    "explanation": "日本銀行による国債の買入れは、金融市場に資金を供給するオペレーションです。",
+    "source": {
+      "label": "日本銀行：オペレーションの種類",
+      "url": "https://www.boj.or.jp/about/education/oshiete/seisaku/b34.htm"
+    }
+  },
+  {
+    "id": "society-hard-016",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "完全失業率の計算式で、分母となる人口は？",
+    "choices": [
+      "日本の総人口",
+      "18歳未満の人口",
+      "就業者だけの人口",
+      "労働力人口"
+    ],
+    "answer": 3,
+    "explanation": "完全失業率は、完全失業者数を労働力人口で割って100を掛けた割合です。",
+    "source": {
+      "label": "厚生労働省：統計に用いる比率・用語",
+      "url": "https://www.mhlw.go.jp/toukei/kaisetu/index-hw.html"
+    }
+  },
+  {
+    "id": "society-hard-017",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "貿易収支が黒字というとき、財の輸出入の関係は？",
+    "choices": [
+      "輸出額と輸入額が必ず等しい",
+      "輸出も輸入も存在しない",
+      "輸出額が輸入額を上回る",
+      "輸入額が輸出額を上回る"
+    ],
+    "answer": 2,
+    "explanation": "貿易収支は輸出額と輸入額の差です。輸出が輸入を上回れば黒字になります。",
+    "source": {
+      "label": "財務省：国際収支状況の概要",
+      "url": "https://www.mof.go.jp/policy/international_policy/reference/balance_of_payments/preliminary/pg2025fy.htm"
+    }
+  },
+  {
+    "id": "society-hard-018",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "GDPを生産・分配・支出の三つの面から見た値が概念上等しいという原則は？",
+    "choices": [
+      "比較優位の原理",
+      "三面等価の原則",
+      "一物一価の法則",
+      "多数決の原則"
+    ],
+    "answer": 1,
+    "explanation": "生み出された付加価値は所得として分配され、最終的な支出に対応します。",
+    "source": {
+      "label": "内閣府：GDP統計の見方",
+      "url": "https://www.esri.cao.go.jp/jp/esri/esr/esr_report/esr_045/esr_045_l.pdf"
+    }
+  },
+  {
+    "id": "society-hard-019",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国連安全保障理事会で、手続事項を除く決定に対する拒否権を持つのは？",
+    "choices": [
+      "常任理事国",
+      "全加盟国",
+      "非常任理事国だけ",
+      "国連事務局の全職員"
+    ],
+    "answer": 0,
+    "explanation": "常任理事国の1か国が反対票を投じると、実質事項の決定は成立しません。",
+    "source": {
+      "label": "外務省：国連安全保障理事会とは",
+      "url": "https://www.mofa.go.jp/mofaj/gaiko/un_anpori/torikumi/anpori.html"
+    }
+  },
+  {
+    "id": "society-hard-020",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国際司法裁判所が置かれている都市は？",
+    "choices": ["ニューヨーク", "ウィーン", "ローマ", "ハーグ"],
+    "answer": 3,
+    "explanation": "国際司法裁判所はオランダのハーグにあり、国連の主要な司法機関です。",
+    "source": {
+      "label": "国連広報センター：国際司法裁判所",
+      "url": "https://www.unic.or.jp/files/un00_08.pdf"
+    }
+  },
+  {
+    "id": "society-hard-021",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "ILOの三者構成をつくる三つの立場は？",
+    "choices": [
+      "生産者・輸出者・輸入者だけ",
+      "国王・貴族・聖職者",
+      "政府・使用者・労働者",
+      "裁判官・警察官・消防士"
+    ],
+    "answer": 2,
+    "explanation": "国際労働機関ILOでは、政府・使用者・労働者の代表が労働基準や政策を話し合います。",
+    "source": {
+      "label": "ILO：How the ILO works",
+      "url": "https://www.ilo.org/about-ilo/how-ilo-works"
+    }
+  },
+  {
+    "id": "society-hard-022",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "国連憲章で定められた国連の主要機関は全部でいくつ？",
+    "choices": ["12", "6", "3", "9"],
+    "answer": 1,
+    "explanation": "総会、安全保障理事会、経済社会理事会、信託統治理事会、国際司法裁判所、事務局の六つです。",
+    "source": {
+      "label": "国連広報センター：国連の機構",
+      "url": "https://www.unic.or.jp/info/un/un_organization/"
+    }
+  },
+  {
+    "id": "society-hard-023",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "衆議院が内閣不信任決議を可決したとき、内閣は原則としてどうする？",
+    "choices": [
+      "10日以内に衆議院を解散しなければ総辞職する",
+      "直ちに参議院を解散する",
+      "最高裁判所長官を解任する",
+      "国会を永久に閉会する"
+    ],
+    "answer": 0,
+    "explanation": "憲法第69条は、衆議院解散または内閣総辞職という対応を定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-024",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "衆議院と参議院で法律案の議決が異なるとき、衆議院で再可決するために必要なのは？",
+    "choices": [
+      "出席議員の3分の1以上の多数",
+      "内閣総理大臣の1票",
+      "議長の署名だけ",
+      "出席議員の3分の2以上の多数"
+    ],
+    "answer": 3,
+    "explanation": "憲法第59条では、衆議院が出席議員の3分の2以上で再可決すると法律になると定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "society-hard-025",
+    "category": "society",
+    "difficulty": "hard",
+    "prompt": "各議院の会議を開き議決するための定足数は、憲法上どう定められている？",
+    "choices": [
+      "議長1人の出席",
+      "必ず総議員全員の出席",
+      "総議員の3分の1以上の出席",
+      "総議員の10分の1以上の出席"
+    ],
+    "answer": 2,
+    "explanation": "憲法第56条は、総議員の3分の1以上が出席しなければ議事を開き議決できないと定めています。",
+    "source": {
+      "label": "衆議院：日本国憲法",
+      "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm"
+    }
+  },
+  {
+    "id": "culture-easy-001",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "絵とコマ割り、吹き出しなどを使って物語を表現するものは？",
+    "choices": ["漫画", "彫刻", "書道", "陶芸"],
+    "answer": 0,
+    "explanation": "漫画では、絵やせりふ、コマの順序などを組み合わせて出来事を表現します。"
+  },
+  {
+    "id": "culture-easy-002",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "粘土などを成形して焼き、器や作品をつくる工芸は？",
+    "choices": ["染織", "版画", "金工", "陶芸"],
+    "answer": 3,
+    "explanation": "陶芸は土を成形して焼く工芸です。茶碗や皿、立体作品などをつくります。"
+  },
+  {
+    "id": "culture-easy-003",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "筆と墨などで文字を芸術的に表現するものは？",
+    "choices": ["香道", "茶道", "書道", "華道"],
+    "answer": 2,
+    "explanation": "書道では文字の形だけでなく、線の強弱や配置、余白などでも表現します。"
+  },
+  {
+    "id": "culture-easy-004",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "歌手の歌唱を中心に、オーケストラなどとともに物語を演じる舞台芸術は？",
+    "choices": ["講談", "オペラ", "パントマイム", "落語"],
+    "answer": 1,
+    "explanation": "オペラは歌劇とも呼ばれ、音楽と演劇、美術などが組み合わさった舞台芸術です。"
+  },
+  {
+    "id": "culture-easy-005",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "絵画『モナ・リザ』を描いたのは？",
+    "choices": [
+      "レオナルド・ダ・ヴィンチ",
+      "パブロ・ピカソ",
+      "クロード・モネ",
+      "フィンセント・ファン・ゴッホ"
+    ],
+    "answer": 0,
+    "explanation": "レオナルド・ダ・ヴィンチは、ルネサンス期に絵画や科学などで活躍しました。"
+  },
+  {
+    "id": "culture-easy-006",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "浮世絵『冨嶽三十六景』の作者は？",
+    "choices": ["雪舟", "尾形光琳", "狩野永徳", "葛飾北斎"],
+    "answer": 3,
+    "explanation": "葛飾北斎がさまざまな場所や構図で富士山を描いた連作です。"
+  },
+  {
+    "id": "culture-easy-007",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "合唱を含む交響曲第9番、通称「第九」の作曲者は？",
+    "choices": ["ヴィヴァルディ", "ドビュッシー", "ベートーヴェン", "ショパン"],
+    "answer": 2,
+    "explanation": "ベートーヴェンの交響曲第9番は、終楽章で独唱と合唱が加わります。"
+  },
+  {
+    "id": "culture-easy-008",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "白鍵と黒鍵のある鍵盤を押して演奏する楽器は？",
+    "choices": ["ヴァイオリン", "ピアノ", "トランペット", "ハープ"],
+    "answer": 1,
+    "explanation": "ピアノでは鍵盤を押すと内部のハンマーが弦を打ち、音が出ます。"
+  },
+  {
+    "id": "culture-easy-009",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "通常、弓で弦をこすって演奏する楽器は？",
+    "choices": ["ヴァイオリン", "トランペット", "フルート", "ティンパニ"],
+    "answer": 0,
+    "explanation": "ヴァイオリンは弦楽器です。弓で弾くほか、指で弦をはじく奏法もあります。"
+  },
+  {
+    "id": "culture-easy-010",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "オーケストラの前で、演奏の速さや表現をまとめる人は？",
+    "choices": ["舞台照明係", "調律師", "楽譜の製本係", "指揮者"],
+    "answer": 3,
+    "explanation": "指揮者は身振りなどで演奏者に合図し、音楽全体の表現をまとめます。"
+  },
+  {
+    "id": "culture-easy-011",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "和太鼓は、一般的にどのようにして音を出す楽器？",
+    "choices": [
+      "管に息を吹き込む",
+      "鍵盤で弦をはじく",
+      "張られた皮などを打つ",
+      "弦を弓でこする"
+    ],
+    "answer": 2,
+    "explanation": "和太鼓は打楽器です。ばちなどで打つことで、張られた皮が振動して音が出ます。"
+  },
+  {
+    "id": "culture-easy-012",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "竹でつくられることが多い、日本の伝統的な縦笛は？",
+    "choices": ["鼓", "尺八", "三味線", "琴"],
+    "answer": 1,
+    "explanation": "尺八は歌口に息を当てて音を出す管楽器です。三味線と琴は弦楽器、鼓は打楽器です。"
+  },
+  {
+    "id": "culture-easy-013",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "一般的に3月3日に行う、ひな人形を飾る行事は？",
+    "choices": ["ひな祭り", "七夕", "七五三", "節分"],
+    "answer": 0,
+    "explanation": "ひな祭りは桃の節句とも呼ばれます。祝い方には地域ごとの違いがあります。"
+  },
+  {
+    "id": "culture-easy-014",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "願い事を書いた短冊を笹に飾る行事は？",
+    "choices": ["お彼岸", "節分", "鏡開き", "七夕"],
+    "answer": 3,
+    "explanation": "七夕では短冊を笹に飾る風習があります。実施する時期は地域により異なります。"
+  },
+  {
+    "id": "culture-easy-015",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "端午の節句に、屋外に掲げる代表的な飾りは？",
+    "choices": ["しめ縄だけ", "ひな人形", "こいのぼり", "門松"],
+    "answer": 2,
+    "explanation": "端午の節句には、こいのぼりや五月人形を飾って子どもの成長を祝います。"
+  },
+  {
+    "id": "culture-easy-016",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "伝統的な餅つきで、杵と組み合わせて使う道具は？",
+    "choices": ["せいろだけ", "臼", "茶筅", "すり鉢"],
+    "answer": 1,
+    "explanation": "蒸したもち米を臼に入れ、杵でついて餅にします。"
+  },
+  {
+    "id": "culture-easy-017",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "一般的なサッカーで、1チームが試合開始時にピッチに出せる最大人数は？",
+    "choices": ["11人", "5人", "9人", "15人"],
+    "answer": 0,
+    "explanation": "11人のうち1人がゴールキーパーです。少年向けの8人制など別形式もあります。",
+    "source": {
+      "label": "日本サッカー協会：サッカー競技規則",
+      "url": "https://www.jfa.jp/laws/soccer/2025_26/"
+    }
+  },
+  {
+    "id": "culture-easy-018",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "一般的な5人制バスケットボールで、フリースロー1本の成功は何点？",
+    "choices": ["2点", "3点", "4点", "1点"],
+    "answer": 3,
+    "explanation": "フリースローは1点です。通常のフィールドゴールは位置により2点か3点になります。",
+    "source": {
+      "label": "日本バスケットボール協会：育成環境ガイドライン",
+      "url": "https://www.japanbasketball.jp/wp-content/uploads/growing-environment-guide.pdf"
+    }
+  },
+  {
+    "id": "culture-easy-019",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "バレーボールで、ネットを挟んだ相手のコートへ打ち込む攻撃は一般に何と呼ぶ？",
+    "choices": ["スクラム", "パッティング", "スパイク", "ドリブル"],
+    "answer": 2,
+    "explanation": "スパイクは、主にジャンプしてボールを相手コートへ強く打ち込む攻撃です。",
+    "source": {
+      "label": "日本バレーボール協会：はじめてのバレーボール",
+      "url": "https://www.jva.or.jp/for_begginers/"
+    }
+  },
+  {
+    "id": "culture-easy-020",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "サッカーで、自陣のペナルティーエリア内で手を使える特別な役割は？",
+    "choices": [
+      "ウイング",
+      "ゴールキーパー",
+      "センターフォワード",
+      "サイドバック"
+    ],
+    "answer": 1,
+    "explanation": "ゴールキーパーは自陣のペナルティーエリア内で手を使えますが、バックパスなどには制限があります。",
+    "source": {
+      "label": "日本サッカー協会：サッカー競技規則",
+      "url": "https://www.jfa.jp/laws/soccer/2025_26/"
+    }
+  },
+  {
+    "id": "culture-easy-021",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "バットでボールを打ち、塁を回って得点する球技は？",
+    "choices": ["野球", "ハンドボール", "水球", "カーリング"],
+    "answer": 0,
+    "explanation": "野球では打者が打球を放って出塁し、本塁へ戻ることで得点します。"
+  },
+  {
+    "id": "culture-easy-022",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "テニスの通常のゲームで、得点が0のときの呼び方は？",
+    "choices": ["エース", "デュース", "セット", "ラブ"],
+    "answer": 3,
+    "explanation": "通常のゲームの得点はラブ、15、30、40と数えます。タイブレークの数え方は異なります。",
+    "source": {
+      "label": "ITF：テニス競技規則",
+      "url": "https://www.itftennis.com/media/11824/2024-wta-rulebook.pdf"
+    }
+  },
+  {
+    "id": "culture-easy-023",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "将棋で、歩が成った駒は何と呼ばれる？",
+    "choices": ["竜馬", "玉将", "と金", "竜王"],
+    "answer": 2,
+    "explanation": "歩が成ると「と金」になり、金将と同じ動きができるようになります。",
+    "source": {
+      "label": "日本将棋連盟：対局規則",
+      "url": "https://www.shogi.or.jp/match/taikyoku_rules/"
+    }
+  },
+  {
+    "id": "culture-easy-024",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "黒と白の石を、盤の線の交点に置いて対局するゲームは？",
+    "choices": ["バックギャモン", "囲碁", "将棋", "チェス"],
+    "answer": 1,
+    "explanation": "囲碁は黒石と白石を交互に置き、囲んだ地などを競う盤上ゲームです。",
+    "source": {
+      "label": "日本棋院：This is 囲碁",
+      "url": "https://archive.nihonkiin.or.jp/howto/htm/this1.htm"
+    }
+  },
+  {
+    "id": "culture-easy-025",
+    "category": "culture",
+    "difficulty": "easy",
+    "prompt": "紙を折って鶴などの形をつくる、日本の伝統的な遊びは？",
+    "choices": ["折り紙", "切り絵", "版画", "水墨画"],
+    "answer": 0,
+    "explanation": "折り紙は紙を折って形をつくります。鶴はよく知られた作品の一つです。"
+  },
+  {
+    "id": "culture-normal-001",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "小説『羅生門』の作者は？",
+    "choices": ["三島由紀夫", "芥川龍之介", "太宰治", "川端康成"],
+    "answer": 1,
+    "explanation": "芥川龍之介の短編小説です。平安京の羅生門を舞台に、人間の心理を描いています。"
+  },
+  {
+    "id": "culture-normal-002",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "歌舞伎で、顔に赤や青などの筋を引いて役柄を表す特徴的な化粧は？",
+    "choices": ["隈取", "見得", "連獅子", "早替り"],
+    "answer": 0,
+    "explanation": "隈取は歌舞伎独特の化粧法で、顔の筋を強調し、役の性格や力強さなどを表します。",
+    "source": {
+      "label": "日本芸術文化振興会：隈取",
+      "url": "https://www2.ntj.jac.go.jp/dglib/contents/learn/edc25/jp/kumadori-makeup/index.html"
+    }
+  },
+  {
+    "id": "culture-normal-003",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "『銀河鉄道の夜』の作者は？",
+    "choices": ["新美南吉", "小川未明", "北原白秋", "宮沢賢治"],
+    "answer": 3,
+    "explanation": "宮沢賢治の童話で、ジョバンニとカムパネルラが銀河の旅をします。"
+  },
+  {
+    "id": "culture-normal-004",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "俳句・短歌の革新に取り組み、「写生」を重視した明治の文学者は？",
+    "choices": ["小林一茶", "西行", "正岡子規", "松尾芭蕉"],
+    "answer": 2,
+    "explanation": "正岡子規は、俳句や短歌の近代化に大きな役割を果たしました。"
+  },
+  {
+    "id": "culture-normal-005",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "小倉百人一首の基本的な構成は？",
+    "choices": [
+      "50人の歌人から3首ずつ",
+      "100人の歌人から1首ずつ",
+      "1人の歌人から100首",
+      "10人の歌人から100首ずつ"
+    ],
+    "answer": 1,
+    "explanation": "小倉百人一首は、100人の歌人の和歌を1首ずつ選んだ歌集です。"
+  },
+  {
+    "id": "culture-normal-006",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "彫刻『考える人』の作者は？",
+    "choices": [
+      "オーギュスト・ロダン",
+      "クロード・モネ",
+      "エドガー・ドガ",
+      "アンリ・マティス"
+    ],
+    "answer": 0,
+    "explanation": "ロダンの代表的な彫刻です。もとは『地獄の門』の構想から生まれました。",
+    "source": {
+      "label": "国立西洋美術館：考える人",
+      "url": "https://www.nmwa.go.jp/jp/collection/1959-0040.html"
+    }
+  },
+  {
+    "id": "culture-normal-007",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "絵画『ゲルニカ』の作者は？",
+    "choices": [
+      "サルバドール・ダリ",
+      "ポール・セザンヌ",
+      "エドヴァルド・ムンク",
+      "パブロ・ピカソ"
+    ],
+    "answer": 3,
+    "explanation": "ピカソが1937年に制作した、スペイン内戦の爆撃と関わりの深い作品です。",
+    "source": {
+      "label": "ソフィア王妃芸術センター：Guernica",
+      "url": "https://www.museoreinasofia.es/en/collections/artwork/guernica-0/"
+    }
+  },
+  {
+    "id": "culture-normal-008",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "池の水面と花を描いた連作『睡蓮』で知られる画家は？",
+    "choices": [
+      "サンドロ・ボッティチェリ",
+      "葛飾北斎",
+      "クロード・モネ",
+      "レオナルド・ダ・ヴィンチ"
+    ],
+    "answer": 2,
+    "explanation": "モネは、自宅の庭の池に咲く睡蓮を繰り返し描きました。"
+  },
+  {
+    "id": "culture-normal-009",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "絵画『ひまわり』の連作で知られるオランダ出身の画家は？",
+    "choices": [
+      "ピエト・モンドリアン",
+      "フィンセント・ファン・ゴッホ",
+      "ヨハネス・フェルメール",
+      "レンブラント"
+    ],
+    "answer": 1,
+    "explanation": "ゴッホは、花瓶に入ったひまわりなどを題材に複数の作品を描きました。"
+  },
+  {
+    "id": "culture-normal-010",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "ヴァイオリン協奏曲集『四季』の作曲者は？",
+    "choices": ["ヴィヴァルディ", "モーツァルト", "ワーグナー", "マーラー"],
+    "answer": 0,
+    "explanation": "ヴィヴァルディの『四季』は、春・夏・秋・冬の四つの協奏曲からなります。",
+    "source": {
+      "label": "サントリーホール：プログラムノート",
+      "url": "https://www.suntory.co.jp/suntoryhall/article/upload/program_cmg2024_forweb_39.pdf"
+    }
+  },
+  {
+    "id": "culture-normal-011",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "バレエ音楽『白鳥の湖』の作曲者は？",
+    "choices": ["ショパン", "ベートーヴェン", "ラヴェル", "チャイコフスキー"],
+    "answer": 3,
+    "explanation": "チャイコフスキーは『白鳥の湖』のほか、『眠れる森の美女』『くるみ割り人形』も作曲しました。"
+  },
+  {
+    "id": "culture-normal-012",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "オペラ『魔笛』の作曲者は？",
+    "choices": ["ドヴォルザーク", "シューマン", "モーツァルト", "バッハ"],
+    "answer": 2,
+    "explanation": "モーツァルト晩年の作品で、タミーノやパパゲーノ、夜の女王が登場します。"
+  },
+  {
+    "id": "culture-normal-013",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "楽譜の強弱記号「f（フォルテ）」の意味は？",
+    "choices": ["1オクターブ高く", "強く", "弱く", "だんだん遅く"],
+    "answer": 1,
+    "explanation": "フォルテは「強く」、ピアノを表すpは「弱く」という強弱の指示です。"
+  },
+  {
+    "id": "culture-normal-014",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "音楽用語「クレッシェンド」の意味は？",
+    "choices": [
+      "だんだん強く",
+      "だんだん弱く",
+      "急に演奏を止める",
+      "最初に戻る"
+    ],
+    "answer": 0,
+    "explanation": "クレッシェンドは音を次第に強くする指示です。速さを変える指示ではありません。"
+  },
+  {
+    "id": "culture-normal-015",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "一般的な弦楽四重奏の楽器編成は？",
+    "choices": [
+      "ピアノ2・フルート2",
+      "ヴァイオリン4",
+      "チェロ2・トランペット2",
+      "ヴァイオリン2・ヴィオラ1・チェロ1"
+    ],
+    "answer": 3,
+    "explanation": "弦楽四重奏は四つの弦楽器で演奏する室内楽の代表的な編成です。",
+    "source": {
+      "label": "サントリーホール：弦楽四重奏の系譜",
+      "url": "https://www.suntory.co.jp/suntoryhall/schedule/detail/20260121_S_3.html"
+    }
+  },
+  {
+    "id": "culture-normal-016",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "わび茶を大成した茶人として知られるのは？",
+    "choices": ["井原西鶴", "近松門左衛門", "千利休", "雪舟"],
+    "answer": 2,
+    "explanation": "千利休は安土桃山時代の茶人で、わび茶の発展に大きな役割を果たしました。"
+  },
+  {
+    "id": "culture-normal-017",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "室町時代に能を大成させた親子は？",
+    "choices": [
+      "葛飾北斎と応為",
+      "観阿弥と世阿弥",
+      "藤原道長と頼通",
+      "徳川家康と秀忠"
+    ],
+    "answer": 1,
+    "explanation": "観阿弥と世阿弥は猿楽を発展させ、後の能につながる芸術性を高めました。",
+    "source": {
+      "label": "日本芸術文化振興会：能の大成と発展",
+      "url": "https://www2.ntj.jac.go.jp/unesco/noh/jp/history/history2.html"
+    }
+  },
+  {
+    "id": "culture-normal-018",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "歌舞伎で、女性の役を演じる男性俳優を何と呼ぶ？",
+    "choices": ["女方", "行司", "太夫元", "勧進元"],
+    "answer": 0,
+    "explanation": "女方（おんながた）は女性の役を演じる歌舞伎俳優です。",
+    "source": {
+      "label": "日本芸術文化振興会：女方",
+      "url": "https://www2.ntj.jac.go.jp/dglib/contents/learn/edc25/jp/female-roles/index.html"
+    }
+  },
+  {
+    "id": "culture-normal-019",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "文楽で、主要な役の人形1体は一般に何人で操る？",
+    "choices": ["1人", "2人", "5人", "3人"],
+    "answer": 3,
+    "explanation": "主遣い・左遣い・足遣いの3人が、役割を分担して1体を操ります。",
+    "source": {
+      "label": "日本芸術文化振興会：文楽の三人遣い",
+      "url": "https://www2.ntj.jac.go.jp/dglib/contents/learn/edc26/ningyo/shikumi1.html"
+    }
+  },
+  {
+    "id": "culture-normal-020",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "1896年の第1回近代オリンピックが開かれた都市は？",
+    "choices": ["ロンドン", "ローマ", "アテネ", "パリ"],
+    "answer": 2,
+    "explanation": "近代オリンピックの第1回大会は、ギリシャのアテネで開催されました。",
+    "source": {
+      "label": "日本オリンピック委員会：アテネ1896",
+      "url": "https://www.joc.or.jp/column/olympic/athens1896/"
+    }
+  },
+  {
+    "id": "culture-normal-021",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "フルマラソンの正式な距離は？",
+    "choices": ["50km", "42.195km", "40km", "21.0975km"],
+    "answer": 1,
+    "explanation": "フルマラソンは42.195kmです。ハーフマラソンはその半分の21.0975kmです。",
+    "source": {
+      "label": "大阪国際女子マラソン：大会要項",
+      "url": "https://www.osaka-marathon.jp/entry/index.html"
+    }
+  },
+  {
+    "id": "culture-normal-022",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "講道館柔道の創始者は？",
+    "choices": ["嘉納治五郎", "植芝盛平", "船越義珍", "大山倍達"],
+    "answer": 0,
+    "explanation": "嘉納治五郎は1882年に講道館を開き、柔道を創始しました。",
+    "source": {
+      "label": "講道館：講道館柔道の歴史",
+      "url": "https://kdkjudo.org/history/"
+    }
+  },
+  {
+    "id": "culture-normal-023",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "バレーボールで、守備を専門とし、他の選手と色の異なるユニフォームを着る役割は？",
+    "choices": ["キャッチャー", "ピボット", "スクラムハーフ", "リベロ"],
+    "answer": 3,
+    "explanation": "リベロは守備を専門とする選手で、通常の選手とは異なる交代やプレーの規則があります。",
+    "source": {
+      "label": "日本バレーボール協会：はじめてのバレーボール",
+      "url": "https://www.jva.or.jp/for_begginers/"
+    }
+  },
+  {
+    "id": "culture-normal-024",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "テニスの四大大会に含まれないのは？",
+    "choices": ["全仏オープン", "全米オープン", "全日本選手権", "全豪オープン"],
+    "answer": 2,
+    "explanation": "四大大会は全豪・全仏・ウィンブルドン・全米です。",
+    "source": {
+      "label": "ITF：Grand Slam tournaments",
+      "url": "https://www.itftennis.com/en/tours/grand-slam-tournaments/"
+    }
+  },
+  {
+    "id": "culture-normal-025",
+    "category": "culture",
+    "difficulty": "normal",
+    "prompt": "一般的な5人制バスケットボールで、3ポイントラインの外側からの成功したショットは何点？",
+    "choices": ["4点", "3点", "1点", "2点"],
+    "answer": 1,
+    "explanation": "ラインの外側からのフィールドゴールは3点です。足がラインに触れている場合などは2点になります。",
+    "source": {
+      "label": "日本バスケットボール協会：育成環境ガイドライン",
+      "url": "https://www.japanbasketball.jp/wp-content/uploads/growing-environment-guide.pdf"
+    }
+  },
+  {
+    "id": "culture-hard-001",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "能の芸術論『風姿花伝』を著したのは？",
+    "choices": ["出雲阿国", "河竹黙阿弥", "世阿弥", "近松門左衛門"],
+    "answer": 2,
+    "explanation": "世阿弥は能の演者・作者であるとともに、『風姿花伝』などの芸術論を残しました。",
+    "source": {
+      "label": "日本芸術文化振興会：世阿弥の花伝",
+      "url": "https://www2.ntj.jac.go.jp/dglib/contents/learn/edc9/zeami/gyouseki/kaden01.html"
+    }
+  },
+  {
+    "id": "culture-hard-002",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "保永堂版の浮世絵連作『東海道五十三次』の作者は？",
+    "choices": ["鈴木春信", "歌川広重", "喜多川歌麿", "東洲斎写楽"],
+    "answer": 1,
+    "explanation": "歌川広重が、東海道の宿場や旅の風景を描いた連作です。",
+    "source": {
+      "label": "国立国会図書館：東海道五十三次",
+      "url": "https://id.ndl.go.jp/auth/ndlna/01212667"
+    }
+  },
+  {
+    "id": "culture-hard-003",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "能で、主役を指す呼び名は？",
+    "choices": ["シテ", "ワキ", "アイ", "ツレ"],
+    "answer": 0,
+    "explanation": "能では主役がシテ、その相手役がワキです。ツレはシテなどの助演役を指します。",
+    "source": {
+      "label": "日本芸術文化振興会：能を演じる人",
+      "url": "https://www2.ntj.jac.go.jp/unesco/noh/jp/stage/performer1.html"
+    }
+  },
+  {
+    "id": "culture-hard-004",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "『平家物語』の冒頭に登場する、鐘のある寺の名は？",
+    "choices": ["法隆寺", "金閣寺", "唐招提寺", "祇園精舎"],
+    "answer": 3,
+    "explanation": "冒頭の祇園精舎の鐘は、諸行無常という作品全体の主題につながっています。"
+  },
+  {
+    "id": "culture-hard-005",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "日本で最初の勅撰和歌集は？",
+    "choices": ["新古今和歌集", "金槐和歌集", "古今和歌集", "万葉集"],
+    "answer": 2,
+    "explanation": "勅撰和歌集は天皇の命令で編集された歌集です。最初のものは『古今和歌集』です。",
+    "source": {
+      "label": "国立国会図書館：和歌",
+      "url": "https://www.ndl.go.jp/exhibit60/copy1/2waka.html"
+    }
+  },
+  {
+    "id": "culture-hard-006",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "シェイクスピアの作品のうち、一般に喜劇に分類されるのは？",
+    "choices": ["リア王", "夏の夜の夢", "ハムレット", "マクベス"],
+    "answer": 1,
+    "explanation": "『夏の夜の夢』は妖精たちも登場する喜劇です。他の三つは四大悲劇に数えられます。"
+  },
+  {
+    "id": "culture-hard-007",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "小説『ドン・キホーテ』の作者は？",
+    "choices": ["セルバンテス", "ダンテ", "ゲーテ", "バルザック"],
+    "answer": 0,
+    "explanation": "スペインの作家セルバンテスが、騎士道に憧れる主人公と従者サンチョの旅を描きました。"
+  },
+  {
+    "id": "culture-hard-008",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "『神曲』の作者は？",
+    "choices": ["ホメロス", "シェイクスピア", "トルストイ", "ダンテ"],
+    "answer": 3,
+    "explanation": "ダンテの長編叙事詩で、地獄篇・煉獄篇・天国篇からなります。"
+  },
+  {
+    "id": "culture-hard-009",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "小説『罪と罰』の作者は？",
+    "choices": ["チェーホフ", "ツルゲーネフ", "ドストエフスキー", "トルストイ"],
+    "answer": 2,
+    "explanation": "ドストエフスキーが、青年ラスコーリニコフの犯罪とその後の葛藤を描いた小説です。"
+  },
+  {
+    "id": "culture-hard-010",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "戯曲『ファウスト』の作者は？",
+    "choices": ["ヘッセ", "ゲーテ", "シラー", "カフカ"],
+    "answer": 1,
+    "explanation": "ゲーテが長年にわたり取り組んだ戯曲で、ファウストとメフィストフェレスが登場します。",
+    "source": {
+      "label": "NHK交響楽団：ファウスト伝説",
+      "url": "https://www.nhkso.or.jp/concert/phil24Dec.pdf"
+    }
+  },
+  {
+    "id": "culture-hard-011",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "絵画『真珠の耳飾りの少女』の作者は？",
+    "choices": [
+      "ヨハネス・フェルメール",
+      "レンブラント",
+      "フランス・ハルス",
+      "ピーテル・ブリューゲル"
+    ],
+    "answer": 0,
+    "explanation": "フェルメールが描いた作品で、青いターバンと耳元の光が印象的です。",
+    "source": {
+      "label": "マウリッツハイス美術館：Girl with a Pearl Earring",
+      "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+    }
+  },
+  {
+    "id": "culture-hard-012",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "絵画『落穂拾い』の作者は？",
+    "choices": [
+      "クロード・モネ",
+      "ウジェーヌ・ドラクロワ",
+      "ポール・ゴーギャン",
+      "ジャン＝フランソワ・ミレー"
+    ],
+    "answer": 3,
+    "explanation": "ミレーが、収穫後の畑で落ちた穂を拾う農村の女性たちを描いた作品です。",
+    "source": {
+      "label": "オルセー美術館：Des glaneuses",
+      "url": "https://www.musee-orsay.fr/en/artworks/des-glaneuses-342"
+    }
+  },
+  {
+    "id": "culture-hard-013",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "絵画『夜警』の作者は？",
+    "choices": ["ルーベンス", "ベラスケス", "レンブラント", "フェルメール"],
+    "answer": 2,
+    "explanation": "レンブラントの集団肖像画で、アムステルダムの市民隊を描いています。",
+    "source": {
+      "label": "アムステルダム国立美術館：Night Watch",
+      "url": "https://www.rijksmuseum.nl/en/visit/night-watch"
+    }
+  },
+  {
+    "id": "culture-hard-014",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "絵画『ヴィーナスの誕生』の作者は？",
+    "choices": [
+      "カラヴァッジョ",
+      "サンドロ・ボッティチェリ",
+      "ミケランジェロ",
+      "ラファエロ"
+    ],
+    "answer": 1,
+    "explanation": "ボッティチェリが古代神話を題材に描いた、ルネサンスを代表する作品です。",
+    "source": {
+      "label": "ウフィツィ美術館：The birth of Venus",
+      "url": "https://www.uffizi.it/en/artworks/birth-of-venus"
+    }
+  },
+  {
+    "id": "culture-hard-015",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "『ブランデンブルク協奏曲』の作曲者は？",
+    "choices": [
+      "ヨハン・ゼバスティアン・バッハ",
+      "ヘンデル",
+      "ハイドン",
+      "シューベルト"
+    ],
+    "answer": 0,
+    "explanation": "バッハによる六つの協奏曲で、作品ごとにさまざまな楽器編成が用いられています。",
+    "source": {
+      "label": "NHK交響楽団：プログラムノート",
+      "url": "https://www.nhkso.or.jp/concert/phil23Apr.pdf"
+    }
+  },
+  {
+    "id": "culture-hard-016",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "交響曲第9番『新世界より』の作曲者は？",
+    "choices": ["スメタナ", "シベリウス", "ブルックナー", "ドヴォルザーク"],
+    "answer": 3,
+    "explanation": "チェコの作曲家ドヴォルザークが、アメリカ滞在中に作曲した交響曲です。",
+    "source": {
+      "label": "NHK交響楽団：演奏曲目",
+      "url": "https://www.nhkso.or.jp/news/20251205.html"
+    }
+  },
+  {
+    "id": "culture-hard-017",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "歌曲『魔王』の作曲者は？",
+    "choices": ["メンデルスゾーン", "ベルリオーズ", "シューベルト", "リスト"],
+    "answer": 2,
+    "explanation": "シューベルトがゲーテの詩に曲を付けた歌曲です。語り手・父・子・魔王を歌い分けます。",
+    "source": {
+      "label": "サントリーホール：ゲーテの詩による歌曲の夕べ",
+      "url": "https://www.suntory.co.jp/suntoryhall/archive/det.html?data_id=1442"
+    }
+  },
+  {
+    "id": "culture-hard-018",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "オペラ『カルメン』の作曲者は？",
+    "choices": ["ロッシーニ", "ビゼー", "ヴェルディ", "プッチーニ"],
+    "answer": 1,
+    "explanation": "ビゼーのオペラで、「ハバネラ」や「闘牛士の歌」などがよく知られています。",
+    "source": {
+      "label": "新国立劇場：カルメン",
+      "url": "https://www.nntt.jac.go.jp/opera/carmen/index.html"
+    }
+  },
+  {
+    "id": "culture-hard-019",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "オペラ『アイーダ』の作曲者は？",
+    "choices": ["ヴェルディ", "ワーグナー", "モーツァルト", "ドニゼッティ"],
+    "answer": 0,
+    "explanation": "ヴェルディのオペラです。古代エジプトを舞台とし、凱旋の場面でも知られます。",
+    "source": {
+      "label": "新国立劇場：アイーダ",
+      "url": "https://www2.nntt.jac.go.jp/performance-database/ja/performance/detail/169"
+    }
+  },
+  {
+    "id": "culture-hard-020",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "楽譜の記号「♮（ナチュラル）」の働きは？",
+    "choices": [
+      "音を半音上げる",
+      "音を半音下げる",
+      "音の長さを2倍にする",
+      "変化した音を元の高さに戻す"
+    ],
+    "answer": 3,
+    "explanation": "ナチュラルは、シャープやフラットなどによる変化を取り消す記号です。"
+  },
+  {
+    "id": "culture-hard-021",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "一般に金属製のものも多いフルートは、オーケストラでは何に分類される？",
+    "choices": ["弦楽器", "打楽器", "木管楽器", "金管楽器"],
+    "answer": 2,
+    "explanation": "フルートは木管楽器です。木管・金管という分類は、現在の材質だけで決まるものではありません。",
+    "source": {
+      "label": "ヤマハ：楽器の運指を学ぼう",
+      "url": "https://www.yamaha.com/ja/musical_instrument_guide/feature/fingering/"
+    }
+  },
+  {
+    "id": "culture-hard-022",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "将棋で角行が成った駒は？",
+    "choices": ["成桂", "竜馬（馬）", "竜王（竜）", "と金"],
+    "answer": 1,
+    "explanation": "角行は成ると竜馬になり、斜めの動きに加えて縦横に1マス動けます。",
+    "source": {
+      "label": "日本将棋連盟：対局規則",
+      "url": "https://www.shogi.or.jp/match/taikyoku_rules/"
+    }
+  },
+  {
+    "id": "culture-hard-023",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "囲碁の標準的な19路盤で、縦横の線の交点はいくつ？",
+    "choices": ["361", "324", "360", "400"],
+    "answer": 0,
+    "explanation": "縦19本と横19本の交点なので、19×19＝361です。石はこの交点に置きます。",
+    "source": {
+      "label": "日本棋院：This is 囲碁",
+      "url": "https://archive.nihonkiin.or.jp/howto/htm/this1.htm"
+    }
+  },
+  {
+    "id": "culture-hard-024",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "陸上の男子十種競技で、最後に行う種目は？",
+    "choices": ["100m", "棒高跳", "やり投", "1500m"],
+    "answer": 3,
+    "explanation": "十種競技は2日間で行われ、最後は1500mです。各種目の記録を得点に換算して合計を競います。",
+    "source": {
+      "label": "日本陸上競技連盟：混成競技の特徴",
+      "url": "https://www.jaaf.or.jp/news/article/20120/?player=28"
+    }
+  },
+  {
+    "id": "culture-hard-025",
+    "category": "culture",
+    "difficulty": "hard",
+    "prompt": "一般的なトライアスロンで、3種目を行う順番は？",
+    "choices": [
+      "自転車→ラン→水泳",
+      "水泳→ラン→自転車",
+      "水泳→自転車→ラン",
+      "ラン→水泳→自転車"
+    ],
+    "answer": 2,
+    "explanation": "スイム、バイク、ランの順番で、一人の選手が連続して行います。",
+    "source": {
+      "label": "日本オリンピック委員会：トライアスロン",
+      "url": "https://www.joc.or.jp/sports/triathlon/index.html"
+    }
+  }
+]

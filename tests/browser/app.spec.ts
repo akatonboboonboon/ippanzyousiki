@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { questions } from "../../src/data/questions";
 import AxeBuilder from "@axe-core/playwright";
 
-async function completeQuiz(page: Page, correctCount: number, count = 10) {
+async function completeQuiz(page: Page, correctCount: number, count = 12) {
   for (let i = 0; i < count; i++) {
     const prompt = await page.locator(".question-panel h1").innerText();
     const question = questions.find((q) => q.prompt === prompt)!;
@@ -30,17 +30,21 @@ test("completes and scores a quiz, explains mistakes, saves history and allows t
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
-  await page.getByRole("button", { name: "10問", exact: true }).click();
+  await page.getByRole("button", { name: "12問", exact: true }).click();
   await page.getByRole("button", { name: "クイズをはじめる" }).click();
   await expect(
     page.getByRole("button", { name: "回答を確定する" }),
   ).toBeDisabled();
-  await completeQuiz(page, 7);
-  await expect(page.locator(".score-number")).toHaveText("70/ 100");
-  await expect(page.locator(".score-details")).toContainText("7 / 10問");
+  await completeQuiz(page, 9);
+  await expect(page.locator(".score-number")).toHaveText("75/ 100");
+  await expect(page.locator(".score-details")).toContainText("9 / 12問");
   await expect(
     page.getByRole("img", { name: /ジャンル別正答率/ }),
   ).toBeVisible();
+  await expect(page.locator(".breakdown-content")).toHaveCount(12);
+  await expect(
+    page.locator(".breakdown-content b").filter({ hasText: "未測定" }),
+  ).toHaveCount(0);
   await expect(page.locator(".review-item")).toHaveCount(3);
   await page.screenshot({
     path: "artifacts/results-desktop.png",
@@ -59,7 +63,7 @@ test("completes and scores a quiz, explains mistakes, saves history and allows t
   await expect(page.locator(".score-number")).toHaveText("100/ 100");
   await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
   await expect(
-    page.getByRole("button", { name: "20問", exact: true }),
+    page.getByRole("button", { name: "24問", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-row")).toHaveCount(2);
@@ -80,7 +84,7 @@ test("resumes an answered question with the same shuffled options and score afte
   await page.locator(".answer-option").nth(2).click();
   await page.getByRole("button", { name: "回答を確定する" }).click();
   await page.reload();
-  await expect(page.locator(".resume-banner")).toContainText("1 / 20問");
+  await expect(page.locator(".resume-banner")).toContainText("1 / 24問");
   await page.getByRole("button", { name: "クイズを再開" }).click();
   await expect(page.locator(".question-panel h1")).toHaveText(prompt);
   expect(await page.locator(".answer-option").allTextContents()).toEqual(
@@ -106,8 +110,8 @@ test("mobile stays in the viewport and single-genre result leaves other axes unm
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
-  await page.getByRole("button", { name: /国語・ことば.*漢字/ }).click();
-  await page.getByRole("button", { name: "10問", exact: true }).click();
+  await page.getByRole("button", { name: /家事・暮らし.*洗濯/ }).click();
+  await page.getByRole("button", { name: "12問", exact: true }).click();
   await page.getByRole("button", { name: "クイズをはじめる" }).click();
   await page.locator(".answer-option").first().click();
   await page.screenshot({ path: "artifacts/quiz-mobile.png", fullPage: true });
@@ -116,13 +120,13 @@ test("mobile stays in the viewport and single-genre result leaves other axes unm
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
-  await completeQuiz(page, 5);
+  await completeQuiz(page, 6);
   await expect(page.locator(".score-panel h2")).toHaveText(
     "選択ジャンルの理解度",
   );
   await expect(
     page.locator(".breakdown-content b").filter({ hasText: "未測定" }),
-  ).toHaveCount(7);
+  ).toHaveCount(11);
   await page.screenshot({
     path: "artifacts/results-mobile.png",
     fullPage: true,
@@ -141,8 +145,8 @@ test("searches and filters the complete library, clears empty results and change
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
-  await expect(page.locator(".library-count")).toContainText("600");
-  await page.getByLabel("ライブラリのジャンル").selectOption("information");
+  await expect(page.locator(".library-count")).toContainText("1200");
+  await page.getByLabel("ライブラリのジャンル").selectOption("digital");
   await page.getByLabel("ライブラリの難易度").selectOption("hard");
   await expect(page.locator(".library-count")).toContainText("25");
   await page.getByRole("button", { name: "次へ", exact: true }).click();
@@ -152,8 +156,8 @@ test("searches and filters the complete library, clears empty results and change
     page.getByRole("heading", { name: "一致する問題が見つかりませんでした。" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "条件をリセット" }).click();
-  await expect(page.locator(".library-count")).toContainText("600");
-  await page.getByLabel("問題を検索").fill("光合成");
+  await expect(page.locator(".library-count")).toContainText("1200");
+  await page.getByLabel("問題を検索").fill("スクリーンショット");
   await page.locator(".library-question").first().locator("summary").click();
   await expect(page.locator(".library-answer").first()).toBeVisible();
 });

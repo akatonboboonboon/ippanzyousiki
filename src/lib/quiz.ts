@@ -1,5 +1,6 @@
 import {
   CATEGORY_IDS,
+  LEGACY_CATEGORY_IDS,
   type CategoryId,
   type Difficulty,
   type Question,
@@ -111,7 +112,10 @@ export function categoryScores(
   result: Pick<Result, "items" | "answers">,
   bank: Map<string, Question>,
 ): CategoryScore[] {
-  return CATEGORY_IDS.map((category) => {
+  const legacy = result.items.some(
+    (item) => !item.questionId.startsWith("v2-"),
+  );
+  return (legacy ? LEGACY_CATEGORY_IDS : CATEGORY_IDS).map((category) => {
     let total = 0;
     let correct = 0;
     result.items.forEach((item, index) => {
@@ -208,7 +212,9 @@ export function validRecord(
     return false;
   if (
     new Set(r.config.categories).size !== r.config.categories.length ||
-    !r.config.categories.every((c) => CATEGORY_IDS.includes(c))
+    !r.config.categories.every((c) =>
+      [...CATEGORY_IDS, ...LEGACY_CATEGORY_IDS].includes(c),
+    )
   )
     return false;
   if (
@@ -234,6 +240,22 @@ export function validRecord(
         item.order.length === 4 &&
         item.order.every(Number.isInteger) &&
         [...item.order].sort().join("") === "0123",
+    )
+  )
+    return false;
+  const currentEdition = r.items[0].questionId.startsWith("v2-");
+  if (
+    !r.items.every(
+      (item) => item.questionId.startsWith("v2-") === currentEdition,
+    )
+  )
+    return false;
+  const allowedCategories: readonly CategoryId[] = currentEdition
+    ? CATEGORY_IDS
+    : LEGACY_CATEGORY_IDS;
+  if (
+    !r.config.categories.every((category) =>
+      allowedCategories.includes(category),
     )
   )
     return false;

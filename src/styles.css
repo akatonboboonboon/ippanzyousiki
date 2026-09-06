@@ -17,6 +17,41 @@
   --soft: #edf4ec;
   --radar-bg: #fafbf7;
 }
+.scope-guide {
+  margin: -9px 0 24px;
+  font-size: 10px;
+  color: #52674b;
+}
+.scope-guide summary {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+.scope-guide p {
+  margin-top: 10px;
+  line-height: 2;
+}
+.scope-guide[open] summary svg {
+  transform: rotate(180deg);
+}
+.content-notice {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  background: #edf3e5;
+  border: 1px solid #d4e0ca;
+  border-radius: 8px;
+  color: #53634a;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.content-notice p {
+  flex: 1;
+}
 * {
   box-sizing: border-box;
 }
@@ -1819,6 +1854,7 @@ legend {
 .library-filters {
   padding: 18px;
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
 }
@@ -1865,6 +1901,17 @@ legend {
   margin: 22px 0 17px;
   font-size: 11px;
   color: #616f57;
+}
+.topic-label {
+  color: #5c694f;
+  font-size: 10px;
+}
+.library-meta {
+  flex-wrap: wrap;
+}
+.scope-guide a {
+  color: #356447;
+  text-decoration: underline;
 }
 .library-count b {
   font-family: Arial, sans-serif;
