@@ -38,14 +38,14 @@ describe("question bank quality", () => {
       expect(questionMap.get(original.id)).toEqual(original);
     }
   });
-  it("has 2124 unique questions including all six everyday topics", () => {
-    expect(questions).toHaveLength(2124);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(2124);
+  it("has 2239 unique questions including the expanded living topics", () => {
+    expect(questions).toHaveLength(2239);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(2239);
     expect(
       new Set(
         questions.map((q) => q.prompt.normalize("NFKC").replace(/\s/g, "")),
       ).size,
-    ).toBe(2124);
+    ).toBe(2239);
     for (const category of CATEGORIES)
       for (const difficulty of ["easy", "normal", "hard"]) {
         expect(
@@ -137,7 +137,7 @@ describe("balanced selection", () => {
       categories: ["world"],
       count: 80,
     });
-    expect(sample).toHaveLength(37);
+    expect(sample).toHaveLength(41);
     expect(
       sample.every((q) => q.category === "world" && q.difficulty === "hard"),
     ).toBe(true);
@@ -145,12 +145,12 @@ describe("balanced selection", () => {
       [],
     );
   });
-  it("can exhaust all 2124 questions and select from a small review pool without repeats", () => {
+  it("can exhaust all 2239 questions and select from a small review pool without repeats", () => {
     expect(
       new Set(
-        selectQuestions(questions, { ...config, count: 2124 }).map((q) => q.id),
+        selectQuestions(questions, { ...config, count: 2239 }).map((q) => q.id),
       ).size,
-    ).toBe(2124);
+    ).toBe(2239);
     const pool = [questions[0], questions[2], questions[4]];
     expect(
       selectQuestions(pool, config)

@@ -14,7 +14,10 @@ import {
 
 const additions = questions.filter((q) => q.id.includes("-expanded-"));
 const previousBank = questions.filter(
-  (q) => !q.id.includes("-expanded-") && !q.id.includes("-everyday-"),
+  (q) =>
+    !q.id.includes("-expanded-") &&
+    !q.id.includes("-everyday-") &&
+    !q.id.includes("-living-"),
 );
 function seeded(seed: number) {
   return () => {

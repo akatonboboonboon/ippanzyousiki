@@ -14,12 +14,13 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v3";
+export const DIAGNOSTIC_VERSION = "standard-v4";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
   "standard-v2": "標準診断 2",
   "standard-v3": "標準診断 3",
+  "standard-v4": "標準診断 4",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -145,6 +146,34 @@ for (const [category, topic] of [
   }
 }
 
+// Standard 4 adds the published living topics; older diagnostics retain their pools.
+const livingDiagnosticPool = new Map<
+  string,
+  { category: CategoryId; difficulty: Difficulty; bucket: DiagnosticBucket }
+>();
+for (const [category, topic] of [
+  ["consumer", "rent"],
+  ["health", "label"],
+  ["household", "recycle"],
+  ["household", "battery"],
+  ["public", "bicycle"],
+  ["world", "familiar"],
+] as const) {
+  const counts = topic === "battery" ? [6, 6, 3] : [8, 8, 4];
+  for (const [difficulty, count, bucket] of [
+    ["easy", counts[0], "easyText"],
+    ["normal", counts[1], "normalText"],
+    ["hard", counts[2], "hardText"],
+  ] as const) {
+    for (let n = 1; n <= count; n++) {
+      livingDiagnosticPool.set(
+        `v2-${category}-living-${topic}-${difficulty}-${String(n).padStart(3, "0")}`,
+        { category, difficulty, bucket },
+      );
+    }
+  }
+}
+
 export function createDiagnosticConfig(
   version: DiagnosticVersion = DIAGNOSTIC_VERSION,
 ): QuizConfig {
@@ -189,11 +218,14 @@ function diagnosticBucket(
 ): DiagnosticBucket | null {
   const expected =
     diagnosticPool.get(question.id) ??
-    (version === "standard-v2" || version === "standard-v3"
+    (["standard-v2", "standard-v3", "standard-v4"].includes(version)
       ? expandedDiagnosticPool.get(question.id)
       : undefined) ??
-    (version === "standard-v3"
+    (version === "standard-v3" || version === "standard-v4"
       ? everydayDiagnosticPool.get(question.id)
+      : undefined) ??
+    (version === "standard-v4"
+      ? livingDiagnosticPool.get(question.id)
       : undefined);
   if (!expected) {
     if (

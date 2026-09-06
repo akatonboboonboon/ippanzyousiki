@@ -10,6 +10,9 @@ import { expansionCommunicationQuestions } from "./expansion-communication";
 import { cookingUvQuestions } from "./expansion-cooking-uv";
 import { deliveryLostQuestions } from "./expansion-delivery-lost";
 import { carHomeQuestions } from "./expansion-car-home";
+import { rentLabelQuestions } from "./expansion-rent-label";
+import { recycleBatteryQuestions } from "./expansion-recycle-battery";
+import { bicycleFamiliarQuestions } from "./expansion-bicycle-familiar";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
 export const questions: Question[] = [
@@ -25,6 +28,9 @@ export const questions: Question[] = [
   ...cookingUvQuestions,
   ...deliveryLostQuestions,
   ...carHomeQuestions,
+  ...rentLabelQuestions,
+  ...recycleBatteryQuestions,
+  ...bicycleFamiliarQuestions,
 ];
 export const archivedQuestions = archive as Question[];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));

@@ -149,7 +149,7 @@ test("searches and filters the complete library, clears empty results and change
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
-  await expect(page.locator(".library-count")).toContainText("2124");
+  await expect(page.locator(".library-count")).toContainText("2239");
   await page.getByLabel("ライブラリのジャンル").selectOption("digital");
   await page.getByLabel("ライブラリの難易度").selectOption("hard");
   await expect(page.locator(".library-count")).toContainText("37");
@@ -160,7 +160,7 @@ test("searches and filters the complete library, clears empty results and change
     page.getByRole("heading", { name: "一致する問題が見つかりませんでした。" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "条件をリセット" }).click();
-  await expect(page.locator(".library-count")).toContainText("2124");
+  await expect(page.locator(".library-count")).toContainText("2239");
   await page.getByLabel("問題を検索").fill("スクリーンショット");
   await page.locator(".library-question").first().locator("summary").click();
   await expect(page.locator(".library-answer").first()).toBeVisible();

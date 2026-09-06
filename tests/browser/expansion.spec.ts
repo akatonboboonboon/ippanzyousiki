@@ -7,11 +7,11 @@ import {
   finishSession,
 } from "../../src/lib/quiz";
 
-for (const version of ["standard-v1", "standard-v2"] as const) {
+for (const version of ["standard-v1", "standard-v2", "standard-v3"] as const) {
   test(`a ${version} session survives the expansion and keeps its own label and comparison`, async ({
     page,
   }) => {
-    const label = version === "standard-v1" ? "標準診断 1" : "標準診断 2";
+    const label = `標準診断 ${version.slice(-1)}`;
     const old = createSession(questions, createDiagnosticConfig(version));
     old.startedAt = Date.now() - 10000;
     old.answers = old.items.map(
@@ -33,7 +33,7 @@ for (const version of ["standard-v1", "standard-v2"] as const) {
     );
     await page.reload();
     await expect(page.locator(".diagnostic-heading")).toContainText(
-      "標準診断 3",
+      "標準診断 4",
     );
     await expect(page.locator(".last-diagnostic")).toHaveCount(0);
     await expect(page.locator(".resume-banner")).toContainText(label);
@@ -55,7 +55,7 @@ for (const version of ["standard-v1", "standard-v2"] as const) {
     await expect(page.locator(".diagnostic-comparison")).toContainText(label);
     await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
     await expect(page.locator(".diagnostic-heading")).toContainText(
-      "標準診断 3",
+      "標準診断 4",
     );
     await page.getByRole("button", { name: "学習の記録", exact: true }).click();
     await expect(page.locator(".history-row")).toHaveCount(2);
