@@ -14,11 +14,12 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v2";
+export const DIAGNOSTIC_VERSION = "standard-v3";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
   "standard-v2": "標準診断 2",
+  "standard-v3": "標準診断 3",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -117,6 +118,33 @@ for (const category of DIAGNOSTIC_CATEGORIES) {
   }
 }
 
+// Standard 3 includes these six topics without changing either earlier pool.
+const everydayDiagnosticPool = new Map<
+  string,
+  { category: CategoryId; difficulty: Difficulty; bucket: DiagnosticBucket }
+>();
+for (const [category, topic] of [
+  ["public", "lost"],
+  ["public", "parcel"],
+  ["public", "car"],
+  ["health", "cooking"],
+  ["health", "uv"],
+  ["household", "home"],
+] as const) {
+  for (const [difficulty, count, bucket] of [
+    ["easy", 8, "easyText"],
+    ["normal", 8, "normalText"],
+    ["hard", 4, "hardText"],
+  ] as const) {
+    for (let n = 1; n <= count; n++) {
+      everydayDiagnosticPool.set(
+        `v2-${category}-everyday-${topic}-${difficulty}-${String(n).padStart(3, "0")}`,
+        { category, difficulty, bucket },
+      );
+    }
+  }
+}
+
 export function createDiagnosticConfig(
   version: DiagnosticVersion = DIAGNOSTIC_VERSION,
 ): QuizConfig {
@@ -161,8 +189,11 @@ function diagnosticBucket(
 ): DiagnosticBucket | null {
   const expected =
     diagnosticPool.get(question.id) ??
-    (version === "standard-v2"
+    (version === "standard-v2" || version === "standard-v3"
       ? expandedDiagnosticPool.get(question.id)
+      : undefined) ??
+    (version === "standard-v3"
+      ? everydayDiagnosticPool.get(question.id)
       : undefined);
   if (!expected) {
     if (

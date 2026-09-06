@@ -13,7 +13,9 @@ import {
 } from "../src/lib/quiz";
 
 const additions = questions.filter((q) => q.id.includes("-expanded-"));
-const previousBank = questions.filter((q) => !q.id.includes("-expanded-"));
+const previousBank = questions.filter(
+  (q) => !q.id.includes("-expanded-") && !q.id.includes("-everyday-"),
+);
 function seeded(seed: number) {
   return () => {
     seed = (Math.imul(seed, 1664525) + 1013904223) | 0;
@@ -62,7 +64,7 @@ describe("720-question expansion", () => {
       );
       const current = selectQuestions(
         questions,
-        createDiagnosticConfig(),
+        createDiagnosticConfig("standard-v2"),
         seeded(seed),
       );
       expect(current).toHaveLength(60);
@@ -107,7 +109,7 @@ describe("720-question expansion", () => {
   });
 
   it("enforces each version's allowed ID ranges, category, difficulty and image requirements", () => {
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v2");
     const session = createSession(questions, config);
     const extra = additions.find(
       (q) =>

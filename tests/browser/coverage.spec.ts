@@ -5,13 +5,13 @@ test("daily-life topics are discoverable, filterable and reset when the genre ch
   page,
 }) => {
   await page.goto("/");
-  await expect(page.locator(".hero-facts")).toContainText("2004");
+  await expect(page.locator(".hero-facts")).toContainText("2124");
   await expect(page.locator(".category-card")).toHaveCount(12);
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
   await page.getByLabel("ライブラリのジャンル").selectOption("household");
-  await expect(page.locator(".library-count")).toContainText("202");
+  await expect(page.locator(".library-count")).toContainText("222");
   const topic = questions.find((q) => q.category === "household")!.topic!;
   await page.getByLabel("ライブラリの題材").selectOption(topic);
   const count = questions.filter(

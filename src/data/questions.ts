@@ -7,6 +7,9 @@ import { lifeExpansionQuestions } from "./life-expansion";
 import { expansionLifeWorldQuestions } from "./expansion-life-world";
 import { expansionSocietyDigitalQuestions } from "./expansion-society-digital";
 import { expansionCommunicationQuestions } from "./expansion-communication";
+import { cookingUvQuestions } from "./expansion-cooking-uv";
+import { deliveryLostQuestions } from "./expansion-delivery-lost";
+import { carHomeQuestions } from "./expansion-car-home";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
 export const questions: Question[] = [
@@ -19,6 +22,9 @@ export const questions: Question[] = [
   ...expansionLifeWorldQuestions,
   ...expansionSocietyDigitalQuestions,
   ...expansionCommunicationQuestions,
+  ...cookingUvQuestions,
+  ...deliveryLostQuestions,
+  ...carHomeQuestions,
 ];
 export const archivedQuestions = archive as Question[];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));
