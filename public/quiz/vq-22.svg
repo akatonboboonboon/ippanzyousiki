@@ -1,0 +1,86 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 22</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="20"
+      y="20"
+      width="265"
+      height="240"
+      rx="0"
+      fill="#93b59d"
+      stroke="#93b59d"
+      stroke-width="2"
+    />
+    <rect
+      x="285"
+      y="20"
+      width="175"
+      height="240"
+      rx="0"
+      fill="#ece6d9"
+      stroke="#ece6d9"
+      stroke-width="2"
+    />
+    <rect
+      x="261"
+      y="20"
+      width="24"
+      height="240"
+      rx="0"
+      fill="#fff"
+      stroke="#fff"
+      stroke-width="2"
+    />
+    <text x="137" y="49" font-size="21" text-anchor="middle" fill="#233d36">
+      フィールド内
+    </text>
+    <text x="376" y="49" font-size="21" text-anchor="middle" fill="#233d36">
+      外
+    </text>
+    <circle
+      cx="215"
+      cy="96"
+      r="24"
+      fill="#fff"
+      stroke="#334e40"
+      stroke-width="3"
+    />
+    <path d="M207 86L223 86L228 100L215 109L202 100Z" fill="#334e40" />
+    <text x="260" y="104" font-size="27" text-anchor="start" fill="#233d36">
+      A
+    </text>
+    <circle
+      cx="279"
+      cy="159"
+      r="24"
+      fill="#fff"
+      stroke="#334e40"
+      stroke-width="3"
+    />
+    <path d="M271 149L287 149L292 163L279 172L266 163Z" fill="#334e40" />
+    <text x="324" y="167" font-size="27" text-anchor="start" fill="#233d36">
+      B
+    </text>
+    <circle
+      cx="329"
+      cy="222"
+      r="24"
+      fill="#fff"
+      stroke="#334e40"
+      stroke-width="3"
+    />
+    <path d="M321 212L337 212L342 226L329 235L316 226Z" fill="#334e40" />
+    <text x="374" y="230" font-size="27" text-anchor="start" fill="#233d36">
+      C
+    </text>
+  </g>
+</svg>

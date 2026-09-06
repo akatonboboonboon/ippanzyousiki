@@ -14,7 +14,7 @@ test("home, quiz, library and empty history have no automated WCAG AA violations
       ).violations,
     ).toEqual([]);
   await check();
-  await page.getByRole("button", { name: "クイズをはじめる" }).click();
+  await page.getByRole("button", { name: "標準診断をはじめる" }).click();
   await check();
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
@@ -35,7 +35,7 @@ test("blocked local storage shows a warning while the quiz remains usable", asyn
   });
   await page.goto("/");
   await expect(page.getByRole("alert")).toContainText("記録を保存できません");
-  await page.getByRole("button", { name: "クイズをはじめる" }).click();
+  await page.getByRole("button", { name: "標準診断をはじめる" }).click();
   await page.locator(".answer-option").first().click();
   await page.getByRole("button", { name: "回答を確定する" }).click();
   await expect(page.getByRole("status")).toBeVisible();

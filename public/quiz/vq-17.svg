@@ -1,0 +1,102 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 17</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="40"
+      y="65"
+      width="74"
+      height="116"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <rect
+      x="150"
+      y="65"
+      width="74"
+      height="116"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <rect
+      x="260"
+      y="65"
+      width="74"
+      height="116"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <rect
+      x="370"
+      y="65"
+      width="74"
+      height="116"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <path
+      d="M50 105Q77 77 104 105 M60 116Q77 98 94 116 M70 127Q77 120 84 127"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="5"
+    />
+    <circle
+      cx="77"
+      cy="140"
+      r="4"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <path
+      d="M178 86L202 107L171 137 M178 145L202 123L171 96 M184 83V148"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="4"
+    />
+    <path
+      d="M295 83L301 83L305 106L330 121V128L305 121L303 142L312 151V156L298 151L284 156V151L293 142L291 121L266 128V121L291 106Z"
+      fill="#233d36"
+    />
+    <path
+      d="M390 137H427L423 130V112Q422 91 409 91Q395 91 395 112L394 130Z"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="4"
+    />
+    <path
+      d="M403 145Q409 153 415 145"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="4"
+    />
+    <text x="77" y="222" font-size="28" text-anchor="middle" fill="#233d36">
+      A
+    </text>
+    <text x="187" y="222" font-size="28" text-anchor="middle" fill="#233d36">
+      B
+    </text>
+    <text x="297" y="222" font-size="28" text-anchor="middle" fill="#233d36">
+      C
+    </text>
+    <text x="407" y="222" font-size="28" text-anchor="middle" fill="#233d36">
+      D
+    </text>
+  </g>
+</svg>

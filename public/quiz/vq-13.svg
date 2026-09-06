@@ -1,0 +1,39 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 13</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M240 191L240 255"
+      fill="none"
+      stroke="#87978e"
+      stroke-width="12"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="240"
+      cy="121"
+      r="88"
+      fill="#c9343c"
+      stroke="#fff"
+      stroke-width="7"
+    />
+    <rect
+      x="174"
+      y="104"
+      width="132"
+      height="34"
+      rx="0"
+      fill="#fff"
+      stroke="#fff"
+      stroke-width="2"
+    />
+  </g>
+</svg>

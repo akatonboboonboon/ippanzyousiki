@@ -1,0 +1,83 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 19</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <text x="240" y="32" font-size="25" text-anchor="middle" fill="#233d36">
+      衆議院議員選挙
+    </text>
+    <rect
+      x="38"
+      y="59"
+      width="177"
+      height="190"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <circle
+      cx="64"
+      cy="88"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="64" y="95" font-size="21" text-anchor="middle" fill="#fff">A</text>
+    <text x="126" y="129" font-size="25" text-anchor="middle" fill="#233d36">
+      小選挙区
+    </text>
+    <rect
+      x="63"
+      y="153"
+      width="127"
+      height="67"
+      rx="0"
+      fill="#fafcf8"
+      stroke="#acbfb1"
+      stroke-width="2"
+    />
+    <rect
+      x="265"
+      y="59"
+      width="177"
+      height="190"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <circle
+      cx="291"
+      cy="88"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="291" y="95" font-size="21" text-anchor="middle" fill="#fff">
+      B
+    </text>
+    <text x="353" y="129" font-size="25" text-anchor="middle" fill="#233d36">
+      比例代表
+    </text>
+    <rect
+      x="290"
+      y="153"
+      width="127"
+      height="67"
+      rx="0"
+      fill="#fafcf8"
+      stroke="#acbfb1"
+      stroke-width="2"
+    />
+  </g>
+</svg>

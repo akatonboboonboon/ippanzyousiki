@@ -43,6 +43,9 @@ import { questions, questionMap, activeQuestionIds } from "./data/questions";
 import {
   categoryScores,
   createSession,
+  createDiagnosticConfig,
+  DIAGNOSTIC_COUNT,
+  isStandardDiagnostic,
   finishSession,
   getGrade,
   readSaved,
@@ -52,6 +55,7 @@ import {
   type Session,
 } from "./lib/quiz";
 import Radar from "./Radar";
+import QuestionImage from "./QuestionImage";
 
 const icons: Record<CategoryId, LucideIcon> = {
   household: Lightbulb,
@@ -132,6 +136,10 @@ export default function App() {
     "home" | "quiz" | "result" | "history" | "library"
   >("home");
   const [config, setConfig] = useState<QuizConfig>(initialConfig);
+  const [challengeMode, setChallengeMode] = useState<"diagnostic" | "quiz">(
+    "diagnostic",
+  );
+  const [startError, setStartError] = useState("");
   const [result, setResult] = useState<Result | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [storageError, setStorageError] = useState(false);
@@ -145,6 +153,7 @@ export default function App() {
   const [libraryCategory, setLibraryCategory] = useState("all");
   const [libraryDifficulty, setLibraryDifficulty] = useState("all");
   const [libraryTopic, setLibraryTopic] = useState("all");
+  const [libraryFormat, setLibraryFormat] = useState("all");
   const [libraryPage, setLibraryPage] = useState(0);
   const [reviewFilter, setReviewFilter] = useState<"wrong" | "all">("wrong");
 
@@ -169,7 +178,13 @@ export default function App() {
   }, [session?.index, page]);
   useEffect(() => {
     setLibraryPage(0);
-  }, [librarySearch, libraryCategory, libraryDifficulty, libraryTopic]);
+  }, [
+    librarySearch,
+    libraryCategory,
+    libraryDifficulty,
+    libraryTopic,
+    libraryFormat,
+  ]);
 
   const available = questions.filter(
     (q) =>
@@ -187,6 +202,8 @@ export default function App() {
   const studied = new Set(
     currentHistory.flatMap((r) => r.items.map((i) => i.questionId)),
   ).size;
+  const diagnosticHistory = currentHistory.filter(isStandardDiagnostic);
+  const latestDiagnostic = diagnosticHistory[0];
   const wrongIds = useMemo(() => {
     const wrong = new Set<string>();
     [...currentHistory].reverse().forEach((r) =>
@@ -214,19 +231,37 @@ export default function App() {
           (libraryCategory === "all" || q.category === libraryCategory) &&
           (libraryDifficulty === "all" || q.difficulty === libraryDifficulty) &&
           (libraryTopic === "all" || q.topic === libraryTopic) &&
+          (libraryFormat === "all" ||
+            (libraryFormat === "image" ? Boolean(q.image) : !q.image)) &&
           `${q.topic ?? ""} ${q.prompt} ${q.choices.join(" ")} ${q.explanation}`
             .normalize("NFKC")
             .toLowerCase()
             .includes(librarySearch.trim().normalize("NFKC").toLowerCase()),
       ),
-    [librarySearch, libraryCategory, libraryDifficulty, libraryTopic],
+    [
+      librarySearch,
+      libraryCategory,
+      libraryDifficulty,
+      libraryTopic,
+      libraryFormat,
+    ],
   );
 
   function start(bank = questions, settings = config) {
     const begin = () => {
-      setSession(createSession(bank, settings));
-      setSelected(null);
-      setPage("quiz");
+      try {
+        const nextSession = createSession(bank, settings);
+        setSession(nextSession);
+        setSelected(null);
+        setStartError("");
+        setPage("quiz");
+      } catch (error) {
+        setStartError(
+          error instanceof Error
+            ? error.message
+            : "クイズを開始できませんでした。",
+        );
+      }
       setReplacePending(null);
     };
     if (session) setReplacePending(() => begin);
@@ -301,12 +336,24 @@ export default function App() {
       .map((item) => item.questionId) ?? [],
   );
   const grade = stats ? getGrade(stats.percent) : null;
+  const standardResult = result ? isStandardDiagnostic(result) : false;
+  const previousDiagnostic =
+    result && standardResult
+      ? diagnosticHistory.find(
+          (r) =>
+            r.id !== result.id &&
+            r.finishedAt <= result.finishedAt &&
+            r.config.diagnosticVersion === result.config.diagnosticVersion,
+        )
+      : undefined;
   const currentItem = session?.items[session.index];
   const currentQuestion = currentItem
     ? questionMap.get(currentItem.questionId)!
     : null;
   const currentAnswer = session?.answers[session.index] ?? null;
   const answered = currentAnswer !== null;
+  const inDiagnostic = session?.config.mode === "diagnostic";
+  const showFeedback = answered && !inDiagnostic;
   const questionCategory = CATEGORIES.find(
     (c) => c.id === currentQuestion?.category,
   );
@@ -481,7 +528,9 @@ export default function App() {
                   <p>
                     {session.answers.filter((a) => a !== null).length} /{" "}
                     {session.items.length}問 回答済み ·{" "}
-                    {difficultyName(session.config.difficulty)}
+                    {inDiagnostic
+                      ? "標準診断"
+                      : difficultyName(session.config.difficulty)}
                   </p>
                 </div>
                 <button
@@ -510,7 +559,9 @@ export default function App() {
                     <ChevronDown size={14} />
                   </summary>
                   <p>
-                    家事、食、お金、買い物、仕事、慣習、交通、防災、ネット、社会の手続きに、ことばや身近な教養を加えた12ジャンル。各100問を収録しています。初級は基本、中級は使い分け、上級は条件を読み合わせる判断が中心です。日本の暮らしを想定し、地域・宗教・製品による違いは問題文で示します。
+                    家事、食、お金、買い物、仕事、慣習、交通、防災、ネット、社会の手続きに、ことばや身近な教養を加えた12ジャンル・
+                    {questions.length}
+                    問。画像で読む問題や、裁縫・靴・ペットなどの生活知識も収録しています。日本の暮らしを想定し、地域・宗教・製品による違いは問題文で示します。
                   </p>
                   <p>
                     実際のクイズ集と公的・実務資料を調査して再構成しました。
@@ -523,139 +574,235 @@ export default function App() {
                     </a>
                   </p>
                 </details>
-                <fieldset>
-                  <legend>
-                    <span className="number-label">01</span>難易度
-                    <span className="label-note">あなたに合ったレベルで</span>
-                  </legend>
-                  <div className="difficulty-options">
-                    {DIFFICULTIES.map((d, i) => (
-                      <button
-                        key={d.id}
-                        aria-pressed={config.difficulty === d.id}
-                        className={`difficulty-option ${config.difficulty === d.id ? "selected" : ""}`}
-                        onClick={() =>
-                          setConfig((c) => ({ ...c, difficulty: d.id }))
-                        }
-                      >
-                        <span className="difficulty-title">
-                          {i === 0 ? (
-                            <Sparkles size={16} />
-                          ) : (
-                            <span className={`level-bars level-${i}`}>
-                              <i />
-                              <i />
-                              <i />
-                            </span>
-                          )}
-                          {d.name}
-                          {config.difficulty === d.id && (
-                            <CheckCircle2
-                              className="difficulty-check"
-                              size={14}
-                            />
-                          )}
-                        </span>
-                        <small>{d.description}</small>
-                      </button>
-                    ))}
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <legend>
-                    <span className="number-label">02</span>ジャンル
-                    <span className="label-note">複数選択できます</span>
-                  </legend>
-                  <div className="genre-options">
+                <div
+                  className="challenge-modes"
+                  role="group"
+                  aria-label="チャレンジの種類"
+                >
+                  <button
+                    className={challengeMode === "diagnostic" ? "selected" : ""}
+                    aria-pressed={challengeMode === "diagnostic"}
+                    onClick={() => {
+                      setChallengeMode("diagnostic");
+                      setStartError("");
+                    }}
+                  >
+                    <Target size={20} />
+                    <strong>標準診断</strong>
+                    <small>同じ条件で、知識を測る</small>
+                  </button>
+                  <button
+                    className={challengeMode === "quiz" ? "selected" : ""}
+                    aria-pressed={challengeMode === "quiz"}
+                    onClick={() => {
+                      setChallengeMode("quiz");
+                      setStartError("");
+                    }}
+                  >
+                    <BookOpen size={20} />
+                    <strong>自由練習</strong>
+                    <small>難易度・ジャンル・問数を選ぶ</small>
+                  </button>
+                </div>
+                {startError && (
+                  <p className="start-error" role="alert">
+                    {startError}
+                  </p>
+                )}
+                {challengeMode === "diagnostic" ? (
+                  <div className="diagnostic-setup">
+                    <div className="diagnostic-heading">
+                      <span className="pill">標準診断 1</span>
+                      <span>
+                        <Clock3 size={14} />
+                        目安 約20分・中断可能
+                      </span>
+                    </div>
+                    <h3>12ジャンルを、同じ配分で。</h3>
+                    <p>
+                      各ジャンル5問、合計{DIAGNOSTIC_COUNT}
+                      問。毎回、初級2問・中級2問・上級1問を出題します。各ジャンルに画像問題を1問含みます。
+                    </p>
+                    <div className="diagnostic-facts">
+                      <span>
+                        <b>60</b>問
+                      </span>
+                      <span>
+                        <b>12</b>ジャンル
+                      </span>
+                      <span>
+                        画像<b>12</b>問
+                      </span>
+                    </div>
+                    <p className="diagnostic-note">
+                      正解と解説は、診断が終わってからまとめて確認できます。同じ出題範囲からランダムに選び、前回の標準診断と比較します。
+                    </p>
+                    {latestDiagnostic && (
+                      <div className="last-diagnostic">
+                        前回の標準診断{" "}
+                        <strong>
+                          {resultSummary(latestDiagnostic).percent}点
+                        </strong>
+                        <small>
+                          {dateFormat.format(latestDiagnostic.finishedAt)}
+                        </small>
+                      </div>
+                    )}
                     <button
-                      className={`genre-chip all-genres ${config.categories.length === CATEGORIES.length ? "selected" : ""}`}
-                      aria-pressed={
-                        config.categories.length === CATEGORIES.length
-                      }
-                      onClick={() =>
-                        setConfig((c) => ({
-                          ...c,
-                          categories: CATEGORIES.map((v) => v.id),
-                        }))
-                      }
+                      className="button primary start-button"
+                      onClick={() => start(questions, createDiagnosticConfig())}
                     >
-                      <Globe2 size={15} />
-                      すべてのジャンル
-                      {config.categories.length === CATEGORIES.length && (
-                        <Check size={14} />
-                      )}
+                      <Target size={18} />
+                      標準診断をはじめる
+                      <ArrowRight size={19} />
                     </button>
-                    {CATEGORIES.map((c) => (
-                      <button
-                        key={c.id}
-                        className={`genre-chip ${config.categories.includes(c.id) ? "selected" : ""}`}
-                        aria-pressed={config.categories.includes(c.id)}
-                        onClick={() => toggleCategory(c.id)}
-                      >
-                        <CategoryIcon id={c.id} size={15} />
-                        {c.name}
-                      </button>
-                    ))}
+                    <small className="diagnostic-disclaimer">
+                      学習用の目安です。出題内容やこれまでの学習によってスコアは変わります。
+                    </small>
                   </div>
-                </fieldset>
-                <fieldset>
-                  <legend>
-                    <span className="number-label">03</span>問題数
-                    <span className="label-note">
-                      ちょっとだけ、じっくりでも
-                    </span>
-                  </legend>
-                  <div className="count-row">
-                    <div className="count-options">
-                      {[12, 24, 48, 96, questions.length].map((count) => (
+                ) : (
+                  <>
+                    <fieldset>
+                      <legend>
+                        <span className="number-label">01</span>難易度
+                        <span className="label-note">
+                          あなたに合ったレベルで
+                        </span>
+                      </legend>
+                      <div className="difficulty-options">
+                        {DIFFICULTIES.map((d, i) => (
+                          <button
+                            key={d.id}
+                            aria-pressed={config.difficulty === d.id}
+                            className={`difficulty-option ${config.difficulty === d.id ? "selected" : ""}`}
+                            onClick={() =>
+                              setConfig((c) => ({ ...c, difficulty: d.id }))
+                            }
+                          >
+                            <span className="difficulty-title">
+                              {i === 0 ? (
+                                <Sparkles size={16} />
+                              ) : (
+                                <span className={`level-bars level-${i}`}>
+                                  <i />
+                                  <i />
+                                  <i />
+                                </span>
+                              )}
+                              {d.name}
+                              {config.difficulty === d.id && (
+                                <CheckCircle2
+                                  className="difficulty-check"
+                                  size={14}
+                                />
+                              )}
+                            </span>
+                            <small>{d.description}</small>
+                          </button>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>
+                        <span className="number-label">02</span>ジャンル
+                        <span className="label-note">複数選択できます</span>
+                      </legend>
+                      <div className="genre-options">
                         <button
-                          key={count}
-                          aria-pressed={config.count === count}
-                          className={config.count === count ? "selected" : ""}
-                          onClick={() => setConfig((c) => ({ ...c, count }))}
+                          className={`genre-chip all-genres ${config.categories.length === CATEGORIES.length ? "selected" : ""}`}
+                          aria-pressed={
+                            config.categories.length === CATEGORIES.length
+                          }
+                          onClick={() =>
+                            setConfig((c) => ({
+                              ...c,
+                              categories: CATEGORIES.map((v) => v.id),
+                            }))
+                          }
                         >
-                          {count === questions.length ? (
-                            "全問"
-                          ) : (
-                            <>
-                              {count}
-                              <small>問</small>
-                            </>
+                          <Globe2 size={15} />
+                          すべてのジャンル
+                          {config.categories.length === CATEGORIES.length && (
+                            <Check size={14} />
                           )}
                         </button>
-                      ))}
+                        {CATEGORIES.map((c) => (
+                          <button
+                            key={c.id}
+                            className={`genre-chip ${config.categories.includes(c.id) ? "selected" : ""}`}
+                            aria-pressed={config.categories.includes(c.id)}
+                            onClick={() => toggleCategory(c.id)}
+                          >
+                            <CategoryIcon id={c.id} size={15} />
+                            {c.name}
+                          </button>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>
+                        <span className="number-label">03</span>問題数
+                        <span className="label-note">
+                          ちょっとだけ、じっくりでも
+                        </span>
+                      </legend>
+                      <div className="count-row">
+                        <div className="count-options">
+                          {[12, 24, 48, 96, questions.length].map((count) => (
+                            <button
+                              key={count}
+                              aria-pressed={config.count === count}
+                              className={
+                                config.count === count ? "selected" : ""
+                              }
+                              onClick={() =>
+                                setConfig((c) => ({ ...c, count }))
+                              }
+                            >
+                              {count === questions.length ? (
+                                "全問"
+                              ) : (
+                                <>
+                                  {count}
+                                  <small>問</small>
+                                </>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                        <span className="time-estimate">
+                          <Clock3 size={14} />約
+                          {Math.max(1, Math.ceil(examCount * 0.3))}分
+                        </span>
+                      </div>
+                    </fieldset>
+                    <div className="start-area">
+                      <p>
+                        <ShieldCheck size={14} />
+                        {!config.categories.length
+                          ? "ジャンルを1つ以上選んでください"
+                          : `${examCount}問をランダム出題 · 解説つき · 時間制限なし`}
+                      </p>
+                      <button
+                        className="button primary start-button"
+                        disabled={!examCount}
+                        onClick={() => start()}
+                      >
+                        <Play size={17} fill="currentColor" />
+                        クイズをはじめる
+                        <ArrowRight size={19} />
+                      </button>
+                      <small>
+                        {config.categories.length === CATEGORIES.length
+                          ? "選んだ条件で練習します。成績の比較には標準診断をご利用ください。"
+                          : "選んだジャンルの理解度を測定します。未出題の分野は「未測定」と表示します。"}
+                        {available.length < config.count &&
+                          available.length > 0 &&
+                          ` 選択条件に該当する全${available.length}問が対象です。`}
+                      </small>
                     </div>
-                    <span className="time-estimate">
-                      <Clock3 size={14} />約
-                      {Math.max(1, Math.ceil(examCount * 0.3))}分
-                    </span>
-                  </div>
-                </fieldset>
-                <div className="start-area">
-                  <p>
-                    <ShieldCheck size={14} />
-                    {!config.categories.length
-                      ? "ジャンルを1つ以上選んでください"
-                      : `${examCount}問をランダム出題 · 解説つき · 時間制限なし`}
-                  </p>
-                  <button
-                    className="button primary start-button"
-                    disabled={!examCount}
-                    onClick={() => start()}
-                  >
-                    <Play size={17} fill="currentColor" />
-                    クイズをはじめる
-                    <ArrowRight size={19} />
-                  </button>
-                  <small>
-                    {config.categories.length === CATEGORIES.length
-                      ? "全ジャンルからバランスよく出題して、一般常識度を測定します。"
-                      : "選んだジャンルの理解度を測定します。未出題の分野は「未測定」と表示します。"}
-                    {available.length < config.count &&
-                      available.length > 0 &&
-                      ` 選択条件に該当する全${available.length}問が対象です。`}
-                  </small>
-                </div>
+                  </>
+                )}
               </section>
               <aside className="home-sidebar">
                 <section className="panel journey-card">
@@ -715,6 +862,7 @@ export default function App() {
                     <span className="daily-spark">✧</span>
                   </div>
                   <p className="daily-question">{daily.prompt}</p>
+                  <QuestionImage question={daily} compact />
                   <details>
                     <summary>
                       答えをのぞいてみる
@@ -757,6 +905,7 @@ export default function App() {
                     className="category-card"
                     key={c.id}
                     onClick={() => {
+                      setChallengeMode("quiz");
                       setConfig((v) => ({ ...v, categories: [c.id] }));
                       configRef.current?.scrollIntoView({
                         behavior: "smooth",
@@ -796,7 +945,7 @@ export default function App() {
               <div>
                 <span>02</span>
                 <h3>解説で「なるほど」</h3>
-                <p>すべての問題に解説。答えるたびに学べる。</p>
+                <p>すべての問題に解説。診断後はまとめて復習。</p>
               </div>
               <ArrowRight size={18} />
               <div>
@@ -823,9 +972,11 @@ export default function App() {
                   中断して戻る
                 </button>
                 <span className="pill">
-                  {session.config.mode === "review"
-                    ? "復習チャレンジ"
-                    : `${difficultyName(session.config.difficulty)}コース`}
+                  {inDiagnostic
+                    ? "標準診断 · 60問"
+                    : session.config.mode === "review"
+                      ? "復習チャレンジ"
+                      : `${difficultyName(session.config.difficulty)}コース`}
                 </span>
                 <span className="save-note">
                   <ShieldCheck size={14} />
@@ -871,6 +1022,7 @@ export default function App() {
                 <h1 ref={titleRef} tabIndex={-1}>
                   {currentQuestion.prompt}
                 </h1>
+                <QuestionImage question={currentQuestion} />
                 <p className="answer-hint">正しい答えを1つ選んでください。</p>
                 <div className="answer-options">
                   {currentItem.order.map((original, display) => {
@@ -884,15 +1036,15 @@ export default function App() {
                         aria-pressed={active}
                         disabled={answered}
                         onClick={() => setSelected(display)}
-                        className={`answer-option ${active ? "chosen" : ""} ${answered && correct ? "correct" : ""} ${answered && active && !correct ? "incorrect" : ""}`}
+                        className={`answer-option ${active ? "chosen" : ""} ${showFeedback && correct ? "correct" : ""} ${showFeedback && active && !correct ? "incorrect" : ""}`}
                       >
                         <span className="answer-letter">
                           {String.fromCharCode(65 + display)}
                         </span>
                         <span>{currentQuestion.choices[original]}</span>
-                        {answered && correct ? (
+                        {showFeedback && correct ? (
                           <CheckCircle2 size={21} />
-                        ) : answered && active ? (
+                        ) : showFeedback && active ? (
                           <XCircle size={21} />
                         ) : active ? (
                           <span className="selection-dot" />
@@ -901,7 +1053,15 @@ export default function App() {
                     );
                   })}
                 </div>
-                {answered && (
+                {answered && inDiagnostic && (
+                  <div className="diagnostic-saved" role="status">
+                    <CheckCircle2 size={19} />
+                    <p>
+                      回答を記録しました。正解と解説は診断の最後に表示します。
+                    </p>
+                  </div>
+                )}
+                {showFeedback && (
                   <div
                     className={`answer-feedback ${currentItem.order[currentAnswer] === currentQuestion.answer ? "positive" : "negative"}`}
                     role="status"
@@ -969,8 +1129,10 @@ export default function App() {
                 </h1>
                 <p>
                   {dateFormat.format(result.finishedAt)} ·{" "}
-                  {difficultyName(result.config.difficulty)} ·{" "}
-                  {result.items.length}問
+                  {standardResult
+                    ? "標準診断 1"
+                    : difficultyName(result.config.difficulty)}{" "}
+                  · {result.items.length}問
                   {result.config.mode === "review" ? " · 復習" : ""}
                 </p>
               </div>
@@ -992,21 +1154,25 @@ export default function App() {
             <div className="result-grid">
               <section className="panel score-panel">
                 <div className="eyebrow subtle">
-                  {result.config.mode === "review"
-                    ? "REVIEW RESULT"
-                    : "KNOWLEDGE SCORE"}
+                  {standardResult
+                    ? "STANDARD DIAGNOSTIC"
+                    : result.config.mode === "review"
+                      ? "REVIEW RESULT"
+                      : "KNOWLEDGE SCORE"}
                 </div>
                 <h2>
                   {resultHasRetiredQuestions
                     ? "改訂前のスコア"
                     : result.config.mode === "review"
                       ? "復習スコア"
-                      : result.config.categories.length ===
-                          (resultHasRetiredQuestions
-                            ? LEGACY_CATEGORIES.length
-                            : CATEGORIES.length)
-                        ? "あなたの一般常識度"
-                        : "選択ジャンルの理解度"}
+                      : standardResult
+                        ? "標準診断の一般常識度"
+                        : result.config.categories.length ===
+                            (resultHasRetiredQuestions
+                              ? LEGACY_CATEGORIES.length
+                              : CATEGORIES.length)
+                          ? "自由練習のスコア"
+                          : "選択ジャンルの理解度"}
                 </h2>
                 <div className="score-number">
                   {stats.percent}
@@ -1037,7 +1203,9 @@ export default function App() {
                 <p className="score-note">
                   正解数 ÷ 出題数 × 100 の学習用スコアです。
                   <br />
-                  難易度・ジャンル・問題数によって結果は変わります。
+                  {standardResult
+                    ? "標準診断 1：各ジャンル5問・画像12問の固定配分です。"
+                    : "自由練習・復習のランクは、その出題条件での目安です。"}
                 </p>
                 <details className="grade-guide">
                   <summary>
@@ -1072,6 +1240,45 @@ export default function App() {
                 </p>
               </section>
             </div>
+            {standardResult && (
+              <section className="panel diagnostic-comparison">
+                <div>
+                  <span className="eyebrow subtle">
+                    SAME CONDITIONS, YOUR PROGRESS.
+                  </span>
+                  <h2>前回の標準診断と比べる</h2>
+                  <p>同じ「標準診断 1」の記録だけで比較しています。</p>
+                </div>
+                {previousDiagnostic ? (
+                  <div className="comparison-values">
+                    <span>
+                      前回<b>{resultSummary(previousDiagnostic).percent}点</b>
+                    </span>
+                    <ArrowRight size={20} />
+                    <span>
+                      今回<b>{stats.percent}点</b>
+                    </span>
+                    <strong>
+                      {stats.percent -
+                        resultSummary(previousDiagnostic).percent >
+                      0
+                        ? "+"
+                        : ""}
+                      {stats.percent -
+                        resultSummary(previousDiagnostic).percent}
+                      点
+                    </strong>
+                  </div>
+                ) : (
+                  <p>
+                    最初の標準診断です。次の診断から前回との差を確認できます。
+                  </p>
+                )}
+                <small>
+                  出題は毎回変わります。これは学習の目安で、統計的に標準化された検査ではありません。
+                </small>
+              </section>
+            )}
             <section className="panel breakdown-panel">
               <div className="section-title-row">
                 <h2>得意と、これからの伸びしろ</h2>
@@ -1151,13 +1358,15 @@ export default function App() {
               <button
                 className="button secondary"
                 onClick={() => {
+                  setChallengeMode(standardResult ? "diagnostic" : "quiz");
                   setConfig({
-                    ...(resultHasRetiredQuestions
+                    ...(resultHasRetiredQuestions || standardResult
                       ? initialConfig
                       : result.config),
                     mode: "quiz",
                     count:
                       resultHasRetiredQuestions ||
+                      standardResult ||
                       result.config.mode === "review"
                         ? 24
                         : [12, 24, 48, 96, questions.length].includes(
@@ -1222,6 +1431,7 @@ export default function App() {
                         <ChevronDown size={17} />
                       </summary>
                       <div className="review-body">
+                        <QuestionImage question={q} compact />
                         <p className={!correct ? "error-color" : ""}>
                           あなたの回答：
                           {q.choices[item.order[result.answers[i]]]}
@@ -1284,13 +1494,13 @@ export default function App() {
               <div className="panel">
                 <span>
                   <Target size={18} />
-                  累計正答率
+                  最新の標準診断
                 </span>
                 <strong>
-                  {historyTotal
-                    ? Math.round((historyCorrect / historyTotal) * 100)
+                  {latestDiagnostic
+                    ? resultSummary(latestDiagnostic).percent
                     : "—"}
-                  <small>{historyTotal ? "%" : ""}</small>
+                  <small>{latestDiagnostic ? "点" : ""}</small>
                 </strong>
               </div>
             </div>
@@ -1353,35 +1563,39 @@ export default function App() {
                         </span>
                         <div>
                           <strong>
-                            {r.config.mode === "review"
-                              ? "復習チャレンジ"
-                              : r.config.categories.length ===
-                                  (r.items.some(
-                                    (item) =>
-                                      !activeQuestionIds.has(item.questionId),
-                                  )
-                                    ? LEGACY_CATEGORIES.length
-                                    : CATEGORIES.length)
-                                ? "全ジャンル診断"
-                                : r.config.categories
-                                    .map(
-                                      (id) =>
-                                        categoryFor(
-                                          id,
-                                          r.items.some(
-                                            (item) =>
-                                              !activeQuestionIds.has(
-                                                item.questionId,
-                                              ),
-                                          ),
-                                        ).name,
+                            {isStandardDiagnostic(r)
+                              ? "標準診断 1"
+                              : r.config.mode === "review"
+                                ? "復習チャレンジ"
+                                : r.config.categories.length ===
+                                    (r.items.some(
+                                      (item) =>
+                                        !activeQuestionIds.has(item.questionId),
                                     )
-                                    .join("・")}
+                                      ? LEGACY_CATEGORIES.length
+                                      : CATEGORIES.length)
+                                  ? "全ジャンルの自由練習"
+                                  : r.config.categories
+                                      .map(
+                                        (id) =>
+                                          categoryFor(
+                                            id,
+                                            r.items.some(
+                                              (item) =>
+                                                !activeQuestionIds.has(
+                                                  item.questionId,
+                                                ),
+                                            ),
+                                          ).name,
+                                      )
+                                      .join("・")}
                           </strong>
                           <p>
                             {dateFormat.format(r.finishedAt)}
                             <span>·</span>
-                            {difficultyName(r.config.difficulty)}
+                            {isStandardDiagnostic(r)
+                              ? "固定配分"
+                              : difficultyName(r.config.difficulty)}
                             <span>·</span>
                             {r.items.length}問
                             {r.items.some(
@@ -1496,6 +1710,15 @@ export default function App() {
                   </option>
                 ))}
               </select>
+              <select
+                aria-label="ライブラリの出題形式"
+                value={libraryFormat}
+                onChange={(e) => setLibraryFormat(e.target.value)}
+              >
+                <option value="all">すべての出題形式</option>
+                <option value="image">画像問題</option>
+                <option value="text">文章問題</option>
+              </select>
             </section>
             <div className="section-title-row library-count">
               <span>
@@ -1515,6 +1738,7 @@ export default function App() {
                     setLibraryCategory("all");
                     setLibraryDifficulty("all");
                     setLibraryTopic("all");
+                    setLibraryFormat("all");
                   }}
                 >
                   条件をリセット
@@ -1537,11 +1761,15 @@ export default function App() {
                               {difficultyName(q.difficulty)}
                             </span>
                             <span className="topic-label">{q.topic}</span>
+                            {q.image && (
+                              <span className="pill image-tag">画像問題</span>
+                            )}
                           </span>
                           <span className="library-prompt">{q.prompt}</span>
                           <ChevronDown size={17} />
                         </summary>
                         <div className="library-answer">
+                          <QuestionImage question={q} compact />
                           <div className="library-choices">
                             {q.choices.map((choice, i) => (
                               <div

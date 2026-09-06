@@ -1,0 +1,69 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 7</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="45"
+      y="28"
+      width="168"
+      height="209"
+      rx="12"
+      fill="#fff"
+      stroke="#bdcdbf"
+      stroke-width="2"
+    />
+    <rect
+      x="267"
+      y="28"
+      width="168"
+      height="209"
+      rx="12"
+      fill="#fff"
+      stroke="#bdcdbf"
+      stroke-width="2"
+    />
+    <circle
+      cx="78"
+      cy="58"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="78" y="65" font-size="21" text-anchor="middle" fill="#fff">A</text>
+    <circle
+      cx="300"
+      cy="58"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="300" y="65" font-size="21" text-anchor="middle" fill="#fff">
+      B
+    </text>
+    <text x="129" y="123" font-size="32" text-anchor="middle" fill="#233d36">
+      500 g
+    </text>
+    <text x="129" y="185" font-size="32" text-anchor="middle" fill="#233d36">
+      398円
+    </text>
+    <text x="351" y="123" font-size="32" text-anchor="middle" fill="#233d36">
+      750 g
+    </text>
+    <text x="351" y="185" font-size="32" text-anchor="middle" fill="#233d36">
+      570円
+    </text>
+    <text x="240" y="263" font-size="20" text-anchor="middle" fill="#233d36">
+      税込・同じ商品
+    </text>
+  </g>
+</svg>

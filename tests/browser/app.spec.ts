@@ -30,6 +30,7 @@ test("completes and scores a quiz, explains mistakes, saves history and allows t
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await page.getByRole("button", { name: "12問", exact: true }).click();
   await page.getByRole("button", { name: "クイズをはじめる" }).click();
   await expect(
@@ -78,6 +79,7 @@ test("resumes an answered question with the same shuffled options and score afte
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await page.getByRole("button", { name: "クイズをはじめる" }).click();
   const prompt = await page.locator(".question-panel h1").innerText();
   const options = await page.locator(".answer-option").allTextContents();
@@ -104,6 +106,7 @@ test("mobile stays in the viewport and single-genre result leaves other axes unm
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await page.screenshot({ path: "artifacts/home-mobile.png", fullPage: true });
   expect(
     await page.evaluate(
@@ -142,10 +145,11 @@ test("searches and filters the complete library, clears empty results and change
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
-  await expect(page.locator(".library-count")).toContainText("1200");
+  await expect(page.locator(".library-count")).toContainText("1284");
   await page.getByLabel("ライブラリのジャンル").selectOption("digital");
   await page.getByLabel("ライブラリの難易度").selectOption("hard");
   await expect(page.locator(".library-count")).toContainText("25");
@@ -156,7 +160,7 @@ test("searches and filters the complete library, clears empty results and change
     page.getByRole("heading", { name: "一致する問題が見つかりませんでした。" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "条件をリセット" }).click();
-  await expect(page.locator(".library-count")).toContainText("1200");
+  await expect(page.locator(".library-count")).toContainText("1284");
   await page.getByLabel("問題を検索").fill("スクリーンショット");
   await page.locator(".library-question").first().locator("summary").click();
   await expect(page.locator(".library-answer").first()).toBeVisible();
@@ -166,10 +170,12 @@ test("protects an unfinished session and recovers safely from corrupted storage"
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await page.evaluate(() =>
     localStorage.setItem("monosashi-v1", "{broken-json"),
   );
   await page.reload();
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await expect(
     page.getByRole("button", { name: "クイズをはじめる" }),
   ).toBeEnabled();
@@ -187,6 +193,11 @@ test("desktop homepage has no overflow and a stable screenshot", async ({
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "自由練習", exact: false }).click();
+  await page
+    .getByRole("button", { name: "標準診断", exact: false })
+    .first()
+    .click();
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: "artifacts/home-desktop.png", fullPage: true });
   expect(

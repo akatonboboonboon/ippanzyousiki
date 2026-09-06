@@ -1,0 +1,109 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 3</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <text x="280" y="37" font-size="22" text-anchor="start" fill="#233d36">
+      mL
+    </text>
+    <path
+      d="M130 45V235H305V45"
+      fill="#fff"
+      stroke="#42665b"
+      stroke-width="4"
+    />
+    <path
+      d="M305 70H330Q358 70 358 115Q358 160 305 160"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="6"
+    />
+    <path d="M134 112.5H301V231H134Z" fill="#c9e5e8" />
+    <path
+      d="M220 225L290 225"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <path
+      d="M250 206.25L290 206.25"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M250 187.5L290 187.5"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M250 168.75L290 168.75"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M220 150L290 150"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <path
+      d="M250 131.25L290 131.25"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M250 112.5L290 112.5"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M250 93.75L290 93.75"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M220 75L290 75"
+      fill="none"
+      stroke="#42665b"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <text x="205" y="232" font-size="22" text-anchor="end" fill="#233d36">
+      0
+    </text>
+    <text x="205" y="157" font-size="22" text-anchor="end" fill="#233d36">
+      100
+    </text>
+    <text x="205" y="82" font-size="22" text-anchor="end" fill="#233d36">
+      200
+    </text>
+    <path
+      d="M134 112.5L300 112.5"
+      fill="none"
+      stroke="#367e91"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

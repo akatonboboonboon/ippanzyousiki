@@ -1,0 +1,32 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 15</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="125"
+      y="22"
+      width="230"
+      height="238"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <path
+      d="M240 172C226 156 154 116 168 74C181 37 226 49 240 73C257 46 300 40 313 77C327 116 258 158 240 172Z"
+      fill="#c9434c"
+    />
+    <path d="M244 66L210 118H239L221 157L273 101H242L261 66Z" fill="#fff" />
+    <text x="240" y="232" font-size="42" text-anchor="middle" fill="#233d36">
+      AED
+    </text>
+  </g>
+</svg>

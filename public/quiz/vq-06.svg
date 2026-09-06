@@ -1,0 +1,59 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 6</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="35"
+      y="27"
+      width="240"
+      height="153"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="57" y="64" font-size="22" text-anchor="start" fill="#233d36">
+      税込価格
+    </text>
+    <text x="57" y="117" font-size="38" text-anchor="start" fill="#233d36">
+      1,500円
+    </text>
+    <rect
+      x="300"
+      y="50"
+      width="147"
+      height="107"
+      rx="12"
+      fill="#f6e3c5"
+      stroke="#d6bb87"
+      stroke-width="2"
+    />
+    <text x="373" y="94" font-size="26" text-anchor="middle" fill="#233d36">
+      10％引き
+    </text>
+    <text x="373" y="132" font-size="18" text-anchor="middle" fill="#233d36">
+      税込価格から
+    </text>
+    <rect
+      x="35"
+      y="201"
+      width="410"
+      height="52"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="240" y="235" font-size="24" text-anchor="middle" fill="#233d36">
+      お預かり 2,000円
+    </text>
+  </g>
+</svg>

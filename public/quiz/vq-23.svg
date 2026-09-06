@@ -1,0 +1,136 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 23</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M35 36L35 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M93 36L93 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M151 36L151 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M209 36L209 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M267 36L267 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M325 36L325 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M383 36L383 250"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M35 36L383 36"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M35 88L383 88"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M35 140L383 140"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M35 192L383 192"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M35 244L383 244"
+      fill="none"
+      stroke="#d2ddd2"
+      stroke-width="1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M72 105L110 75L148 105V153H73Z"
+      fill="#f5e5ca"
+      stroke="#7b735f"
+      stroke-width="3"
+    />
+    <text x="110" y="135" font-size="25" text-anchor="middle" fill="#233d36">
+      家
+    </text>
+    <rect
+      x="247"
+      y="174"
+      width="81"
+      height="57"
+      rx="3"
+      fill="#d4e5e7"
+      stroke="#698b8d"
+      stroke-width="2"
+    />
+    <text x="288" y="213" font-size="26" text-anchor="middle" fill="#233d36">
+      駅
+    </text>
+    <path
+      d="M428 118L428 61"
+      fill="none"
+      stroke="#365b4b"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <path
+      d="M416 76L428 56L440 76"
+      fill="none"
+      stroke="#365b4b"
+      stroke-width="4"
+    />
+    <text x="428" y="39" font-size="23" text-anchor="middle" fill="#233d36">
+      北
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 8</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <text x="240" y="42" font-size="25" text-anchor="middle" fill="#233d36">
+      最低3回のお受け取り
+    </text>
+    <rect
+      x="30"
+      y="75"
+      width="130"
+      height="123"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="95" y="115" font-size="23" text-anchor="middle" fill="#233d36">
+      1回目
+    </text>
+    <text x="95" y="165" font-size="24" text-anchor="middle" fill="#233d36">
+      980円
+    </text>
+    <rect
+      x="175"
+      y="75"
+      width="130"
+      height="123"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="240" y="115" font-size="23" text-anchor="middle" fill="#233d36">
+      2回目
+    </text>
+    <text x="240" y="165" font-size="24" text-anchor="middle" fill="#233d36">
+      2,480円
+    </text>
+    <rect
+      x="320"
+      y="75"
+      width="130"
+      height="123"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="385" y="115" font-size="23" text-anchor="middle" fill="#233d36">
+      3回目
+    </text>
+    <text x="385" y="165" font-size="24" text-anchor="middle" fill="#233d36">
+      2,480円
+    </text>
+    <text x="240" y="247" font-size="22" text-anchor="middle" fill="#233d36">
+      税込・送料0円・その他0円
+    </text>
+  </g>
+</svg>

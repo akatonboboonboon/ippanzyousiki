@@ -1,0 +1,73 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 20</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="161"
+      y="15"
+      width="158"
+      height="55"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="240" y="52" font-size="26" text-anchor="middle" fill="#233d36">
+      ゆき
+    </text>
+    <path
+      d="M240 70L240 99"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <text x="335" y="89" font-size="20" text-anchor="start" fill="#233d36">
+      あきの母
+    </text>
+    <rect
+      x="137"
+      y="99"
+      width="206"
+      height="66"
+      rx="12"
+      fill="#e0ece3"
+      stroke="#86a895"
+      stroke-width="2"
+    />
+    <text x="240" y="140" font-size="24" text-anchor="middle" fill="#233d36">
+      あき（世帯主）
+    </text>
+    <path
+      d="M240 165L240 201"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <text x="350" y="189" font-size="20" text-anchor="start" fill="#233d36">
+      はるの親
+    </text>
+    <rect
+      x="161"
+      y="201"
+      width="158"
+      height="56"
+      rx="12"
+      fill="#ffffff"
+      stroke="#d5ded7"
+      stroke-width="2"
+    />
+    <text x="240" y="238" font-size="26" text-anchor="middle" fill="#233d36">
+      はる
+    </text>
+  </g>
+</svg>

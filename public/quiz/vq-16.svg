@@ -1,0 +1,132 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 16</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <rect
+      x="190"
+      y="95"
+      width="95"
+      height="157"
+      rx="26"
+      fill="#be4947"
+      stroke="#8f3031"
+      stroke-width="2"
+    />
+    <rect
+      x="204"
+      y="153"
+      width="67"
+      height="52"
+      rx="4"
+      fill="#fff5dd"
+      stroke="#fff5dd"
+      stroke-width="2"
+    />
+    <text x="238" y="184" font-size="20" text-anchor="middle" fill="#233d36">
+      消火器
+    </text>
+    <path
+      d="M220 92L220 68"
+      fill="none"
+      stroke="#40534b"
+      stroke-width="13"
+      stroke-linecap="round"
+    />
+    <path
+      d="M217 64L276 46 M219 76L278 77"
+      fill="none"
+      stroke="#40534b"
+      stroke-width="9"
+    />
+    <path
+      d="M274 87C343 81 291 178 362 186"
+      fill="none"
+      stroke="#40534b"
+      stroke-width="12"
+    />
+    <path
+      d="M357 181L390 200"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="17"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="205"
+      cy="52"
+      r="13"
+      fill="none"
+      stroke="#bf963b"
+      stroke-width="5"
+    />
+    <path
+      d="M205 65L224 78"
+      fill="none"
+      stroke="#bf963b"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="116"
+      cy="48"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="116" y="55" font-size="21" text-anchor="middle" fill="#fff">
+      A
+    </text>
+    <path
+      d="M140 49L189 51"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="350"
+      cy="48"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="350" y="55" font-size="21" text-anchor="middle" fill="#fff">
+      C
+    </text>
+    <path
+      d="M326 48L284 49"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="401"
+      cy="137"
+      r="18"
+      fill="#233d36"
+      stroke="#233d36"
+      stroke-width="1"
+    />
+    <text x="401" y="144" font-size="21" text-anchor="middle" fill="#fff">
+      B
+    </text>
+    <path
+      d="M398 158L381 181"
+      fill="none"
+      stroke="#233d36"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

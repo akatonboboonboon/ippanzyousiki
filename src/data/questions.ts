@@ -2,6 +2,8 @@ import { practicalLifeQuestions } from "./practical-life";
 import { practicalCommunicationQuestions } from "./practical-communication";
 import { practicalSocietyQuestions } from "./practical-society";
 import { practicalWorldQuestions } from "./practical-world";
+import { visualQuestions } from "./visual-questions";
+import { lifeExpansionQuestions } from "./life-expansion";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
 export const questions: Question[] = [
@@ -9,6 +11,8 @@ export const questions: Question[] = [
   ...practicalCommunicationQuestions,
   ...practicalSocietyQuestions,
   ...practicalWorldQuestions,
+  ...visualQuestions,
+  ...lifeExpansionQuestions,
 ];
 export const archivedQuestions = archive as Question[];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));

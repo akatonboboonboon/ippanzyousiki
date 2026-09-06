@@ -1,0 +1,86 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 9</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <text x="240" y="34" font-size="21" text-anchor="middle" fill="#233d36">
+      予定あり＝塗りつぶし
+    </text>
+    <text x="115" y="76" font-size="19" text-anchor="middle" fill="#233d36">
+      9:00
+    </text>
+    <path
+      d="M115 87L115 222"
+      fill="none"
+      stroke="#d1dcd4"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <text x="220" y="76" font-size="19" text-anchor="middle" fill="#233d36">
+      10:00
+    </text>
+    <path
+      d="M220 87L220 222"
+      fill="none"
+      stroke="#d1dcd4"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <text x="325" y="76" font-size="19" text-anchor="middle" fill="#233d36">
+      11:00
+    </text>
+    <path
+      d="M325 87L325 222"
+      fill="none"
+      stroke="#d1dcd4"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <text x="430" y="76" font-size="19" text-anchor="middle" fill="#233d36">
+      12:00
+    </text>
+    <path
+      d="M430 87L430 222"
+      fill="none"
+      stroke="#d1dcd4"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <text x="23" y="129" font-size="22" text-anchor="start" fill="#233d36">
+      Aさん
+    </text>
+    <text x="23" y="193" font-size="22" text-anchor="start" fill="#233d36">
+      Bさん
+    </text>
+    <rect
+      x="115"
+      y="101"
+      width="105"
+      height="40"
+      rx="3"
+      fill="#86a895"
+      stroke="#557866"
+      stroke-width="2"
+    />
+    <rect
+      x="167.5"
+      y="165"
+      width="105"
+      height="40"
+      rx="3"
+      fill="#86a895"
+      stroke="#557866"
+      stroke-width="2"
+    />
+    <text x="240" y="257" font-size="20" text-anchor="middle" fill="#233d36">
+      移動・準備時間は不要
+    </text>
+  </g>
+</svg>

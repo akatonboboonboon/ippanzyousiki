@@ -10,7 +10,192 @@ export interface QuizConfig {
   difficulty: Difficulty | "mix";
   categories: CategoryId[];
   count: number;
-  mode: "quiz" | "review";
+  mode: "quiz" | "review" | "diagnostic";
+  diagnosticVersion?: string;
+}
+
+export const DIAGNOSTIC_VERSION = "standard-v1";
+export const DIAGNOSTIC_COUNT = 60;
+
+// Keep a version's axes and eligible IDs fixed when the practice bank grows.
+const DIAGNOSTIC_CATEGORIES = [
+  "household",
+  "health",
+  "money",
+  "consumer",
+  "work",
+  "manners",
+  "public",
+  "safety",
+  "digital",
+  "civic",
+  "culture",
+  "world",
+] as const satisfies readonly CategoryId[];
+const DIAGNOSTIC_BUCKET_COUNTS = {
+  easyText: 2,
+  normalText: 1,
+  normalImage: 1,
+  hardText: 1,
+} as const;
+type DiagnosticBucket = keyof typeof DIAGNOSTIC_BUCKET_COUNTS;
+const DIAGNOSTIC_BUCKETS = Object.keys(
+  DIAGNOSTIC_BUCKET_COUNTS,
+) as DiagnosticBucket[];
+const diagnosticPool = new Map<
+  string,
+  {
+    category: CategoryId;
+    difficulty: Difficulty;
+    bucket: DiagnosticBucket;
+  }
+>();
+for (const category of DIAGNOSTIC_CATEGORIES) {
+  for (const [difficulty, count, bucket] of [
+    ["easy", 40, "easyText"],
+    ["normal", 35, "normalText"],
+    ["hard", 25, "hardText"],
+    ["normal", 2, "normalImage"],
+  ] as const) {
+    for (let number = 1; number <= count; number++) {
+      const kind = bucket === "normalImage" ? "visual" : difficulty;
+      diagnosticPool.set(
+        `v2-${category}-${kind}-${String(number).padStart(3, "0")}`,
+        {
+          category,
+          difficulty,
+          bucket,
+        },
+      );
+    }
+  }
+}
+// These household additions shipped with standard-v1; later additions need a new version.
+const diagnosticExtraPool = new Map<string, CategoryId>();
+for (const [category, count] of [
+  ["household", 40],
+  ["health", 10],
+  ["consumer", 10],
+] as const) {
+  for (let number = 1; number <= count; number++)
+    diagnosticExtraPool.set(
+      `v2-${category}-extra-${String(number).padStart(3, "0")}`,
+      category,
+    );
+}
+
+export function createDiagnosticConfig(): QuizConfig {
+  return {
+    mode: "diagnostic",
+    diagnosticVersion: DIAGNOSTIC_VERSION,
+    difficulty: "mix",
+    categories: [...DIAGNOSTIC_CATEGORIES],
+    count: DIAGNOSTIC_COUNT,
+  };
+}
+
+/** Accept either a config or a record containing one; item quotas are checked by validRecord. */
+export function isStandardDiagnostic(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const config = (
+    "config" in value ? value.config : value
+  ) as Partial<QuizConfig> | null;
+  return (
+    !!config &&
+    typeof config === "object" &&
+    config.mode === "diagnostic" &&
+    config.diagnosticVersion === DIAGNOSTIC_VERSION &&
+    config.count === DIAGNOSTIC_COUNT &&
+    config.difficulty === "mix" &&
+    Array.isArray(config.categories) &&
+    config.categories.length === DIAGNOSTIC_CATEGORIES.length &&
+    new Set(config.categories).size === DIAGNOSTIC_CATEGORIES.length &&
+    DIAGNOSTIC_CATEGORIES.every((category) =>
+      config.categories!.includes(category),
+    )
+  );
+}
+
+function diagnosticBucket(question: Question): DiagnosticBucket | null {
+  const expected = diagnosticPool.get(question.id);
+  if (!expected) {
+    if (
+      diagnosticExtraPool.get(question.id) !== question.category ||
+      question.image !== undefined
+    )
+      return null;
+    return (
+      ({ easy: "easyText", normal: "normalText", hard: "hardText" } as const)[
+        question.difficulty
+      ] ?? null
+    );
+  }
+  if (
+    question.category !== expected.category ||
+    question.difficulty !== expected.difficulty
+  )
+    return null;
+  if (expected.bucket === "normalImage") {
+    if (
+      !question.image ||
+      !question.image.src?.trim() ||
+      !question.image.alt?.trim()
+    )
+      return null;
+  } else if (question.image !== undefined) return null;
+  return expected.bucket;
+}
+
+function selectDiagnosticQuestions(
+  bank: Question[],
+  random: () => number,
+): Question[] {
+  const unique = [
+    ...new Map(bank.map((question) => [question.id, question])).values(),
+  ];
+  const queues = shuffle(DIAGNOSTIC_CATEGORIES, random).map((category) => {
+    const selected = DIAGNOSTIC_BUCKETS.flatMap((bucket) => {
+      const candidates = unique.filter(
+        (question) =>
+          question.category === category &&
+          diagnosticBucket(question) === bucket,
+      );
+      const needed = DIAGNOSTIC_BUCKET_COUNTS[bucket];
+      if (candidates.length < needed)
+        throw new Error(
+          "標準診断の問題が不足しています。問題データを更新してから、もう一度お試しください。",
+        );
+      return shuffle(candidates, random).slice(0, needed);
+    });
+    return shuffle(selected, random);
+  });
+  // Five rounds of twelve keep every category represented throughout the run.
+  return Array.from({ length: 5 }, (_, round) =>
+    queues.map((queue) => queue[round]),
+  ).flat();
+}
+
+function hasDiagnosticDistribution(
+  items: QuizItem[],
+  bank: Map<string, Question>,
+): boolean {
+  if (items.length !== DIAGNOSTIC_COUNT) return false;
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    const question = bank.get(item.questionId);
+    if (!question) return false;
+    const bucket = diagnosticBucket(question);
+    if (!bucket) return false;
+    const key = `${question.category}/${bucket}`;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  return DIAGNOSTIC_CATEGORIES.every((category) =>
+    DIAGNOSTIC_BUCKETS.every(
+      (bucket) =>
+        counts.get(`${category}/${bucket}`) ===
+        DIAGNOSTIC_BUCKET_COUNTS[bucket],
+    ),
+  );
 }
 export interface QuizItem {
   questionId: string;
@@ -53,6 +238,17 @@ export function selectQuestions(
   config: QuizConfig,
   random = Math.random,
 ): Question[] {
+  if (config.mode === "diagnostic") {
+    if (!isStandardDiagnostic(config))
+      throw new Error(
+        "標準診断の設定が正しくありません。ホームから診断を開始し直してください。",
+      );
+    return selectDiagnosticQuestions(bank, random);
+  }
+  if (Object.prototype.hasOwnProperty.call(config, "diagnosticVersion"))
+    throw new Error(
+      "診断バージョンは標準診断でのみ指定できます。ホームから開始し直してください。",
+    );
   const eligible = bank.filter(
     (q) =>
       config.categories.includes(q.category) &&
@@ -97,7 +293,11 @@ export function createSession(bank: Question[], config: QuizConfig): Session {
     throw new Error("出題できる問題がありません。条件を変更してください。");
   return {
     id: crypto.randomUUID(),
-    config: { ...config, count: selected.length },
+    config: {
+      ...config,
+      categories: [...config.categories],
+      count: selected.length,
+    },
     items: selected.map((q) => ({
       questionId: q.id,
       order: shuffle([0, 1, 2, 3]),
@@ -201,7 +401,13 @@ export function validRecord(
     !Number.isFinite(r.startedAt) ||
     !Number.isFinite(new Date(r.startedAt).getTime()) ||
     !r.config ||
-    !["quiz", "review"].includes(r.config.mode)
+    !["quiz", "review", "diagnostic"].includes(r.config.mode)
+  )
+    return false;
+  if (
+    r.config.mode === "diagnostic"
+      ? !isStandardDiagnostic(r.config)
+      : Object.prototype.hasOwnProperty.call(r.config, "diagnosticVersion")
   )
     return false;
   if (
@@ -241,6 +447,11 @@ export function validRecord(
         item.order.every(Number.isInteger) &&
         [...item.order].sort().join("") === "0123",
     )
+  )
+    return false;
+  if (
+    r.config.mode === "diagnostic" &&
+    !hasDiagnosticDistribution(r.items, bank)
   )
     return false;
   const currentEdition = r.items[0].questionId.startsWith("v2-");

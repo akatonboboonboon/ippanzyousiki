@@ -34,6 +34,7 @@ export interface Question {
   choices: [string, string, string, string];
   answer: number;
   explanation: string;
+  image?: { src: string; alt: string; caption?: string };
   topic?: string;
   source?: { label: string; url: string };
 }

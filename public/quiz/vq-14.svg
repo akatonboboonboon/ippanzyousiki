@@ -1,0 +1,53 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 14</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M355 179L355 256"
+      fill="none"
+      stroke="#87978e"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+    <path
+      d="M264 36H446L355 189Z"
+      fill="#c9343c"
+      stroke="#fff"
+      stroke-width="7"
+    />
+    <text x="355" y="98" font-size="30" text-anchor="middle" fill="#fff">
+      止まれ
+    </text>
+    <text x="355" y="128" font-size="21" text-anchor="middle" fill="#fff">
+      STOP
+    </text>
+    <rect
+      x="36"
+      y="205"
+      width="245"
+      height="56"
+      rx="0"
+      fill="#b6beb7"
+      stroke="#b6beb7"
+      stroke-width="2"
+    />
+    <path
+      d="M52 217L268 217"
+      fill="none"
+      stroke="#fff"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+    <text x="160" y="196" font-size="22" text-anchor="middle" fill="#233d36">
+      停止線
+    </text>
+  </g>
+</svg>

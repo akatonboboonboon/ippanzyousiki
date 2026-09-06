@@ -1,0 +1,84 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 5</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <text x="30" y="39" font-size="25" text-anchor="start" fill="#233d36">
+      今月の収入 15万円
+    </text>
+    <text x="30" y="74" font-size="20" text-anchor="start" fill="#233d36">
+      支出（万円）
+    </text>
+    <text x="30" y="111" font-size="22" text-anchor="start" fill="#233d36">
+      家賃
+    </text>
+    <rect
+      x="112"
+      y="90"
+      width="240"
+      height="26"
+      rx="5"
+      fill="#86a895"
+      stroke="#86a895"
+      stroke-width="2"
+    />
+    <text x="366" y="112" font-size="22" text-anchor="start" fill="#233d36">
+      6
+    </text>
+    <text x="30" y="155" font-size="22" text-anchor="start" fill="#233d36">
+      食費
+    </text>
+    <rect
+      x="112"
+      y="134"
+      width="120"
+      height="26"
+      rx="5"
+      fill="#86a895"
+      stroke="#86a895"
+      stroke-width="2"
+    />
+    <text x="246" y="156" font-size="22" text-anchor="start" fill="#233d36">
+      3
+    </text>
+    <text x="30" y="199" font-size="22" text-anchor="start" fill="#233d36">
+      通信
+    </text>
+    <rect
+      x="112"
+      y="178"
+      width="40"
+      height="26"
+      rx="5"
+      fill="#86a895"
+      stroke="#86a895"
+      stroke-width="2"
+    />
+    <text x="166" y="200" font-size="22" text-anchor="start" fill="#233d36">
+      1
+    </text>
+    <text x="30" y="243" font-size="22" text-anchor="start" fill="#233d36">
+      その他
+    </text>
+    <rect
+      x="112"
+      y="222"
+      width="80"
+      height="26"
+      rx="5"
+      fill="#86a895"
+      stroke="#86a895"
+      stroke-width="2"
+    />
+    <text x="206" y="244" font-size="22" text-anchor="start" fill="#233d36">
+      2
+    </text>
+  </g>
+</svg>

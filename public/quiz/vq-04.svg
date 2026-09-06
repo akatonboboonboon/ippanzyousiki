@@ -1,0 +1,45 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 480 280"
+  width="480"
+  height="280"
+>
+  <title>問題の図 4</title>
+  <rect width="480" height="280" rx="18" fill="#f5f6ef" />
+  <g
+    font-family="Arial, 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif"
+    stroke-linejoin="round"
+  >
+    <circle
+      cx="120"
+      cy="140"
+      r="68"
+      fill="#fffef5"
+      stroke="#7e9a74"
+      stroke-width="5"
+    />
+    <circle
+      cx="120"
+      cy="140"
+      r="56"
+      fill="none"
+      stroke="#dbe5d0"
+      stroke-width="2"
+    />
+    <path
+      d="M120 66V214"
+      stroke="#687b70"
+      stroke-dasharray="8 6"
+      stroke-width="3"
+    />
+    <text x="226" y="152" font-size="40" text-anchor="middle" fill="#233d36">
+      →
+    </text>
+    <path
+      d="M310 68A64 64 0 0 0 310 196Z M344 86A64 64 0 0 1 344 214Z"
+      fill="#fffef5"
+      stroke="#7e9a74"
+      stroke-width="4"
+    />
+  </g>
+</svg>

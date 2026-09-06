@@ -38,19 +38,22 @@ describe("question bank quality", () => {
       expect(questionMap.get(original.id)).toEqual(original);
     }
   });
-  it("has 1200 unique, explained four-choice questions and an even 12 genres with 40 easy, 35 normal and 25 hard each", () => {
-    expect(questions).toHaveLength(1200);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(1200);
+  it("has 1284 unique questions with the original 1200, 24 visual questions and 60 new life questions", () => {
+    expect(questions).toHaveLength(1284);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(1284);
     expect(
       new Set(
         questions.map((q) => q.prompt.normalize("NFKC").replace(/\s/g, "")),
       ).size,
-    ).toBe(1200);
+    ).toBe(1284);
     for (const category of CATEGORIES)
       for (const difficulty of ["easy", "normal", "hard"]) {
         expect(
           questions.filter(
-            (q) => q.category === category.id && q.difficulty === difficulty,
+            (q) =>
+              q.category === category.id &&
+              q.difficulty === difficulty &&
+              /^v2-[a-z]+-(easy|normal|hard)-\d{3}$/.test(q.id),
           ),
           `${category.id}/${difficulty}`,
         ).toHaveLength(
@@ -59,6 +62,13 @@ describe("question bank quality", () => {
           ],
         );
       }
+    expect(questions.filter((q) => q.image)).toHaveLength(24);
+    expect(questions.filter((q) => q.id.includes("-extra-"))).toHaveLength(60);
+    for (const category of CATEGORIES) {
+      expect(
+        questions.filter((q) => q.category === category.id && q.image),
+      ).toHaveLength(2);
+    }
     for (const category of CATEGORIES) {
       expect(
         new Set(
@@ -92,8 +102,8 @@ describe("question bank quality", () => {
 });
 
 describe("balanced selection", () => {
-  it("samples equal numbers from all twelve axes for every full-diagnostic preset", () => {
-    for (const count of [12, 24, 48, 96, 1200]) {
+  it("samples equal numbers from all twelve axes for each limited practice preset", () => {
+    for (const count of [12, 24, 48, 96]) {
       const sample = selectQuestions(
         questions,
         { ...config, count },
@@ -135,12 +145,12 @@ describe("balanced selection", () => {
       [],
     );
   });
-  it("can exhaust all 1200 questions and select from a small review pool without repeats", () => {
+  it("can exhaust all 1284 questions and select from a small review pool without repeats", () => {
     expect(
       new Set(
-        selectQuestions(questions, { ...config, count: 1200 }).map((q) => q.id),
+        selectQuestions(questions, { ...config, count: 1284 }).map((q) => q.id),
       ).size,
-    ).toBe(1200);
+    ).toBe(1284);
     const pool = [questions[0], questions[2], questions[4]];
     expect(
       selectQuestions(pool, config)
