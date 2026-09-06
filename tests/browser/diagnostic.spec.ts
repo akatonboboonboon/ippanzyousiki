@@ -30,10 +30,15 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
     item.order.indexOf(questionMap.get(item.questionId)!.answer),
   );
   const practiceResult = finishSession(practice);
+  const old = createSession(questions, createDiagnosticConfig("standard-v1"));
+  old.answers = old.items.map((item) =>
+    item.order.indexOf(questionMap.get(item.questionId)!.answer),
+  );
+  const oldResult = finishSession(old);
   await page.goto("/");
   await page.evaluate(
     (saved) => localStorage.setItem("monosashi-v1", JSON.stringify(saved)),
-    { history: [practiceResult, previous], session: null },
+    { history: [oldResult, practiceResult, previous], session: null },
   );
   await page.reload();
   await expect(page.locator(".last-diagnostic")).toContainText("50点");
@@ -88,6 +93,9 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   await expect(page.locator(".score-number")).toHaveText("75/ 100");
   await expect(page.locator(".score-details")).toContainText("45 / 60問");
   await expect(page.locator(".diagnostic-comparison")).toContainText("+25点");
+  await expect(page.locator(".diagnostic-comparison")).toContainText(
+    "標準診断 2",
+  );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".review-item")).toHaveCount(15);
   await page.screenshot({
@@ -106,10 +114,16 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
     page.getByRole("button", { name: "標準診断をはじめる" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
-  await expect(page.locator(".history-stats")).toContainText(
-    "最新の標準診断75点",
+  await expect(page.locator(".history-stats .panel").last()).toContainText(
+    "最新の標準診断 2",
   );
-  await expect(page.locator(".history-row")).toHaveCount(3);
+  await expect(
+    page.locator(".history-stats .panel").last().locator("strong"),
+  ).toHaveText("75点");
+  await expect(page.locator(".history-row")).toHaveCount(4);
+  await expect(
+    page.locator(".history-row").filter({ hasText: "標準診断 1" }),
+  ).toHaveCount(1);
 });
 
 test("visual library loads all 24 diagrams, offers descriptions, and works on mobile", async ({

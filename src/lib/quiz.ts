@@ -14,8 +14,17 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v1";
+export const DIAGNOSTIC_VERSION = "standard-v2";
 export const DIAGNOSTIC_COUNT = 60;
+const DIAGNOSTIC_NAMES = {
+  "standard-v1": "標準診断 1",
+  "standard-v2": "標準診断 2",
+} as const;
+type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
+
+export function diagnosticName(version?: string): string {
+  return DIAGNOSTIC_NAMES[version as DiagnosticVersion] ?? "標準診断";
+}
 
 // Keep a version's axes and eligible IDs fixed when the practice bank grows.
 const DIAGNOSTIC_CATEGORIES = [
@@ -84,10 +93,36 @@ for (const [category, count] of [
     );
 }
 
-export function createDiagnosticConfig(): QuizConfig {
+// Standard 2 adds exactly the 720 published text questions; standard 1 stays unchanged.
+const expandedDiagnosticPool = new Map<
+  string,
+  {
+    category: CategoryId;
+    difficulty: Difficulty;
+    bucket: DiagnosticBucket;
+  }
+>();
+for (const category of DIAGNOSTIC_CATEGORIES) {
+  for (const [difficulty, count, bucket] of [
+    ["easy", 24, "easyText"],
+    ["normal", 24, "normalText"],
+    ["hard", 12, "hardText"],
+  ] as const) {
+    for (let number = 1; number <= count; number++) {
+      expandedDiagnosticPool.set(
+        `v2-${category}-expanded-${difficulty}-${String(number).padStart(3, "0")}`,
+        { category, difficulty, bucket },
+      );
+    }
+  }
+}
+
+export function createDiagnosticConfig(
+  version: DiagnosticVersion = DIAGNOSTIC_VERSION,
+): QuizConfig {
   return {
     mode: "diagnostic",
-    diagnosticVersion: DIAGNOSTIC_VERSION,
+    diagnosticVersion: version,
     difficulty: "mix",
     categories: [...DIAGNOSTIC_CATEGORIES],
     count: DIAGNOSTIC_COUNT,
@@ -104,7 +139,11 @@ export function isStandardDiagnostic(value: unknown): boolean {
     !!config &&
     typeof config === "object" &&
     config.mode === "diagnostic" &&
-    config.diagnosticVersion === DIAGNOSTIC_VERSION &&
+    typeof config.diagnosticVersion === "string" &&
+    Object.prototype.hasOwnProperty.call(
+      DIAGNOSTIC_NAMES,
+      config.diagnosticVersion,
+    ) &&
     config.count === DIAGNOSTIC_COUNT &&
     config.difficulty === "mix" &&
     Array.isArray(config.categories) &&
@@ -116,8 +155,15 @@ export function isStandardDiagnostic(value: unknown): boolean {
   );
 }
 
-function diagnosticBucket(question: Question): DiagnosticBucket | null {
-  const expected = diagnosticPool.get(question.id);
+function diagnosticBucket(
+  question: Question,
+  version: string,
+): DiagnosticBucket | null {
+  const expected =
+    diagnosticPool.get(question.id) ??
+    (version === "standard-v2"
+      ? expandedDiagnosticPool.get(question.id)
+      : undefined);
   if (!expected) {
     if (
       diagnosticExtraPool.get(question.id) !== question.category ||
@@ -149,6 +195,7 @@ function diagnosticBucket(question: Question): DiagnosticBucket | null {
 function selectDiagnosticQuestions(
   bank: Question[],
   random: () => number,
+  version: string,
 ): Question[] {
   const unique = [
     ...new Map(bank.map((question) => [question.id, question])).values(),
@@ -158,7 +205,7 @@ function selectDiagnosticQuestions(
       const candidates = unique.filter(
         (question) =>
           question.category === category &&
-          diagnosticBucket(question) === bucket,
+          diagnosticBucket(question, version) === bucket,
       );
       const needed = DIAGNOSTIC_BUCKET_COUNTS[bucket];
       if (candidates.length < needed)
@@ -178,13 +225,14 @@ function selectDiagnosticQuestions(
 function hasDiagnosticDistribution(
   items: QuizItem[],
   bank: Map<string, Question>,
+  version: string,
 ): boolean {
   if (items.length !== DIAGNOSTIC_COUNT) return false;
   const counts = new Map<string, number>();
   for (const item of items) {
     const question = bank.get(item.questionId);
     if (!question) return false;
-    const bucket = diagnosticBucket(question);
+    const bucket = diagnosticBucket(question, version);
     if (!bucket) return false;
     const key = `${question.category}/${bucket}`;
     counts.set(key, (counts.get(key) ?? 0) + 1);
@@ -243,7 +291,7 @@ export function selectQuestions(
       throw new Error(
         "標準診断の設定が正しくありません。ホームから診断を開始し直してください。",
       );
-    return selectDiagnosticQuestions(bank, random);
+    return selectDiagnosticQuestions(bank, random, config.diagnosticVersion!);
   }
   if (Object.prototype.hasOwnProperty.call(config, "diagnosticVersion"))
     throw new Error(
@@ -451,7 +499,7 @@ export function validRecord(
     return false;
   if (
     r.config.mode === "diagnostic" &&
-    !hasDiagnosticDistribution(r.items, bank)
+    !hasDiagnosticDistribution(r.items, bank, r.config.diagnosticVersion!)
   )
     return false;
   const currentEdition = r.items[0].questionId.startsWith("v2-");

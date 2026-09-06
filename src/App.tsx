@@ -45,6 +45,8 @@ import {
   createSession,
   createDiagnosticConfig,
   DIAGNOSTIC_COUNT,
+  DIAGNOSTIC_VERSION,
+  diagnosticName,
   isStandardDiagnostic,
   finishSession,
   getGrade,
@@ -203,7 +205,9 @@ export default function App() {
     currentHistory.flatMap((r) => r.items.map((i) => i.questionId)),
   ).size;
   const diagnosticHistory = currentHistory.filter(isStandardDiagnostic);
-  const latestDiagnostic = diagnosticHistory[0];
+  const latestDiagnostic = diagnosticHistory.find(
+    (r) => r.config.diagnosticVersion === DIAGNOSTIC_VERSION,
+  );
   const wrongIds = useMemo(() => {
     const wrong = new Set<string>();
     [...currentHistory].reverse().forEach((r) =>
@@ -529,7 +533,7 @@ export default function App() {
                     {session.answers.filter((a) => a !== null).length} /{" "}
                     {session.items.length}問 回答済み ·{" "}
                     {inDiagnostic
-                      ? "標準診断"
+                      ? diagnosticName(session.config.diagnosticVersion)
                       : difficultyName(session.config.difficulty)}
                   </p>
                 </div>
@@ -612,7 +616,9 @@ export default function App() {
                 {challengeMode === "diagnostic" ? (
                   <div className="diagnostic-setup">
                     <div className="diagnostic-heading">
-                      <span className="pill">標準診断 1</span>
+                      <span className="pill">
+                        {diagnosticName(DIAGNOSTIC_VERSION)}
+                      </span>
                       <span>
                         <Clock3 size={14} />
                         目安 約20分・中断可能
@@ -639,7 +645,7 @@ export default function App() {
                     </p>
                     {latestDiagnostic && (
                       <div className="last-diagnostic">
-                        前回の標準診断{" "}
+                        前回の{diagnosticName(DIAGNOSTIC_VERSION)}{" "}
                         <strong>
                           {resultSummary(latestDiagnostic).percent}点
                         </strong>
@@ -973,7 +979,7 @@ export default function App() {
                 </button>
                 <span className="pill">
                   {inDiagnostic
-                    ? "標準診断 · 60問"
+                    ? `${diagnosticName(session.config.diagnosticVersion)} · 60問`
                     : session.config.mode === "review"
                       ? "復習チャレンジ"
                       : `${difficultyName(session.config.difficulty)}コース`}
@@ -1130,7 +1136,7 @@ export default function App() {
                 <p>
                   {dateFormat.format(result.finishedAt)} ·{" "}
                   {standardResult
-                    ? "標準診断 1"
+                    ? diagnosticName(result.config.diagnosticVersion)
                     : difficultyName(result.config.difficulty)}{" "}
                   · {result.items.length}問
                   {result.config.mode === "review" ? " · 復習" : ""}
@@ -1204,7 +1210,7 @@ export default function App() {
                   正解数 ÷ 出題数 × 100 の学習用スコアです。
                   <br />
                   {standardResult
-                    ? "標準診断 1：各ジャンル5問・画像12問の固定配分です。"
+                    ? `${diagnosticName(result.config.diagnosticVersion)}：各ジャンル5問・画像12問の固定配分です。`
                     : "自由練習・復習のランクは、その出題条件での目安です。"}
                 </p>
                 <details className="grade-guide">
@@ -1247,7 +1253,10 @@ export default function App() {
                     SAME CONDITIONS, YOUR PROGRESS.
                   </span>
                   <h2>前回の標準診断と比べる</h2>
-                  <p>同じ「標準診断 1」の記録だけで比較しています。</p>
+                  <p>
+                    同じ「{diagnosticName(result.config.diagnosticVersion)}
+                    」の記録だけで比較しています。
+                  </p>
                 </div>
                 {previousDiagnostic ? (
                   <div className="comparison-values">
@@ -1271,7 +1280,7 @@ export default function App() {
                   </div>
                 ) : (
                   <p>
-                    最初の標準診断です。次の診断から前回との差を確認できます。
+                    比較できる同じ標準診断の記録がまだありません。次の診断から前回との差を確認できます。
                   </p>
                 )}
                 <small>
@@ -1494,7 +1503,7 @@ export default function App() {
               <div className="panel">
                 <span>
                   <Target size={18} />
-                  最新の標準診断
+                  最新の{diagnosticName(DIAGNOSTIC_VERSION)}
                 </span>
                 <strong>
                   {latestDiagnostic
@@ -1564,7 +1573,7 @@ export default function App() {
                         <div>
                           <strong>
                             {isStandardDiagnostic(r)
-                              ? "標準診断 1"
+                              ? diagnosticName(r.config.diagnosticVersion)
                               : r.config.mode === "review"
                                 ? "復習チャレンジ"
                                 : r.config.categories.length ===
