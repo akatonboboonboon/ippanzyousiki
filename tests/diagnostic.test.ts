@@ -111,13 +111,13 @@ describe("versioned standard diagnostic selection", () => {
     const config = createDiagnosticConfig();
     expect(config).toEqual({
       mode: "diagnostic",
-      diagnosticVersion: "standard-v4",
+      diagnosticVersion: "standard-v5",
       difficulty: "mix",
       count: 60,
       categories: [...CATEGORY_IDS],
     });
     expect(DIAGNOSTIC_COUNT).toBe(60);
-    expect(DIAGNOSTIC_VERSION).toBe("standard-v4");
+    expect(DIAGNOSTIC_VERSION).toBe("standard-v5");
     expect(isStandardDiagnostic(config)).toBe(true);
     expect(isStandardDiagnostic({ config })).toBe(true);
     expect(
@@ -137,7 +137,7 @@ describe("versioned standard diagnostic selection", () => {
     for (let seed = 1; seed <= 50; seed++) {
       const selected = selectQuestions(
         launchBank,
-        createDiagnosticConfig(),
+        createDiagnosticConfig("standard-v4"),
         seeded(seed),
       );
       expect(selected).toHaveLength(60);
@@ -201,16 +201,27 @@ describe("versioned standard diagnostic selection", () => {
     ];
     for (const seed of [1, 7, 42]) {
       expect(
-        selectQuestions(extended, createDiagnosticConfig(), seeded(seed)),
+        selectQuestions(
+          extended,
+          createDiagnosticConfig("standard-v4"),
+          seeded(seed),
+        ),
       ).toEqual(
-        selectQuestions(launchBank, createDiagnosticConfig(), seeded(seed)),
+        selectQuestions(
+          launchBank,
+          createDiagnosticConfig("standard-v4"),
+          seeded(seed),
+        ),
       );
     }
   });
 
   it("includes all 60 launch additions but freezes their category and numeric ID boundaries", () => {
     expect(launchBank).toHaveLength(1284);
-    const session = createSession(standardBank, createDiagnosticConfig());
+    const session = createSession(
+      standardBank,
+      createDiagnosticConfig("standard-v4"),
+    );
     for (const extra of launchExtras) {
       const revised = clone(session);
       const item = revised.items.find((entry) => {
@@ -227,7 +238,11 @@ describe("versioned standard diagnostic selection", () => {
     }
     const seen = new Set<string>();
     for (let seed = 1; seed <= 25; seed++)
-      selectQuestions(launchBank, createDiagnosticConfig(), seeded(seed))
+      selectQuestions(
+        launchBank,
+        createDiagnosticConfig("standard-v4"),
+        seeded(seed),
+      )
         .filter((q) => q.id.includes("-extra-"))
         .forEach((q) => seen.add(q.category));
     expect([...seen].sort()).toEqual(["consumer", "health", "household"]);
@@ -243,9 +258,17 @@ describe("versioned standard diagnostic selection", () => {
       };
       const withOutside = [...launchBank, outside];
       expect(
-        selectQuestions(withOutside, createDiagnosticConfig(), seeded(42)),
+        selectQuestions(
+          withOutside,
+          createDiagnosticConfig("standard-v4"),
+          seeded(42),
+        ),
       ).toEqual(
-        selectQuestions(launchBank, createDiagnosticConfig(), seeded(42)),
+        selectQuestions(
+          launchBank,
+          createDiagnosticConfig("standard-v4"),
+          seeded(42),
+        ),
       );
       const revised = clone(session);
       revised.items.find((entry) => {
@@ -266,9 +289,11 @@ describe("versioned standard diagnostic selection", () => {
     const doubled = [...standardBank, ...standardBank];
     expect(
       new Set(
-        selectQuestions(doubled, createDiagnosticConfig(), seeded(1)).map(
-          (q) => q.id,
-        ),
+        selectQuestions(
+          doubled,
+          createDiagnosticConfig("standard-v4"),
+          seeded(1),
+        ).map((q) => q.id),
       ).size,
     ).toBe(60);
     const onlyOneEasy = standardBank.filter(
@@ -279,7 +304,10 @@ describe("versioned standard diagnostic selection", () => {
     );
     const duplicate = onlyOneEasy.find((q) => q.id === "v2-health-easy-001")!;
     expect(() =>
-      selectQuestions([...onlyOneEasy, duplicate], createDiagnosticConfig()),
+      selectQuestions(
+        [...onlyOneEasy, duplicate],
+        createDiagnosticConfig("standard-v4"),
+      ),
     ).toThrow("問題が不足");
   });
 
@@ -290,21 +318,22 @@ describe("versioned standard diagnostic selection", () => {
           (q) => !q.id.startsWith(`v2-${category}-${kind}-`),
         );
         expect(
-          () => selectQuestions(incomplete, createDiagnosticConfig()),
+          () =>
+            selectQuestions(incomplete, createDiagnosticConfig("standard-v4")),
           `${category}/${kind}`,
         ).toThrow("問題が不足");
         expect(() =>
-          createSession(incomplete, createDiagnosticConfig()),
+          createSession(incomplete, createDiagnosticConfig("standard-v4")),
         ).toThrow("問題が不足");
       }
     }
   });
 
   it("rejects a missing/unknown version or a changed diagnostic configuration", () => {
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v4");
     const invalid = [
       { ...config, diagnosticVersion: undefined },
-      { ...config, diagnosticVersion: "standard-v5" },
+      { ...config, diagnosticVersion: "standard-v6" },
       { ...config, count: 59 },
       { ...config, count: 61 },
       { ...config, difficulty: "easy" },
@@ -337,7 +366,7 @@ describe("versioned standard diagnostic selection", () => {
         q.id.startsWith("v2-household-visual-") ? alter(q) : q,
       );
       expect(() =>
-        selectQuestions(malformed, createDiagnosticConfig()),
+        selectQuestions(malformed, createDiagnosticConfig("standard-v4")),
       ).toThrow("問題が不足");
     }
   });
@@ -345,7 +374,10 @@ describe("versioned standard diagnostic selection", () => {
 
 describe("diagnostic persistence and compatibility", () => {
   it("recovers an unfinished standard diagnostic and a finished result with the same version and item order", () => {
-    const session = createSession(standardBank, createDiagnosticConfig());
+    const session = createSession(
+      standardBank,
+      createDiagnosticConfig("standard-v4"),
+    );
     session.index = 12;
     session.answers = session.answers.map((answer, i) =>
       i < 12 ? i % 4 : answer,
@@ -364,7 +396,10 @@ describe("diagnostic persistence and compatibility", () => {
   });
 
   it("rejects forged diagnostic configs and same-length records that violate per-axis quotas", () => {
-    const session = createSession(standardBank, createDiagnosticConfig());
+    const session = createSession(
+      standardBank,
+      createDiagnosticConfig("standard-v4"),
+    );
     const used = new Set(session.items.map((item) => item.questionId));
     const replacements = [
       {
@@ -410,7 +445,10 @@ describe("diagnostic persistence and compatibility", () => {
   });
 
   it("rejects an added practice question substituted for an otherwise identical standard item", () => {
-    const session = createSession(standardBank, createDiagnosticConfig());
+    const session = createSession(
+      standardBank,
+      createDiagnosticConfig("standard-v4"),
+    );
     const original = standardMap.get(session.items[0].questionId)!;
     const extra = { ...original, id: `v2-${original.category}-extra-999` };
     const mapWithExtra = new Map([...standardMap, [extra.id, extra]]);
@@ -424,7 +462,10 @@ describe("diagnostic persistence and compatibility", () => {
   });
 
   it("rejects malformed diagnostic answers, item permutations, timestamps and incomplete completion", () => {
-    const session = createSession(standardBank, createDiagnosticConfig());
+    const session = createSession(
+      standardBank,
+      createDiagnosticConfig("standard-v4"),
+    );
     expect(() => finishSession(session)).toThrow("未回答");
     for (const malformed of [
       { ...session, items: [session.items[0], ...session.items.slice(0, -1)] },

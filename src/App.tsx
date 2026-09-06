@@ -95,6 +95,8 @@ const dateFormat = new Intl.DateTimeFormat("ja-JP", {
 });
 const difficultyName = (id: string) =>
   DIFFICULTIES.find((d) => d.id === id)?.name ?? id;
+const usesLegacyCategories = (record: Pick<Result, "items">) =>
+  record.items.some((item) => !item.questionId.startsWith("v2-"));
 function resultSummary(result: Result) {
   const scores = categoryScores(result, questionMap);
   const correct = scores.reduce((n, s) => n + s.correct, 0);
@@ -126,9 +128,7 @@ export default function App() {
   const [saved] = useState(() => readSaved(questionMap));
   const [history, setHistory] = useState<Result[]>(saved.history);
   const retiredSession = Boolean(
-    saved.session?.items.some(
-      (item) => !activeQuestionIds.has(item.questionId),
-    ),
+    saved.session && usesLegacyCategories(saved.session),
   );
   const [session, setSession] = useState<Session | null>(
     retiredSession ? null : saved.session,
@@ -204,7 +204,7 @@ export default function App() {
   const studied = new Set(
     currentHistory.flatMap((r) => r.items.map((i) => i.questionId)),
   ).size;
-  const diagnosticHistory = currentHistory.filter(isStandardDiagnostic);
+  const diagnosticHistory = history.filter(isStandardDiagnostic);
   const latestDiagnostic = diagnosticHistory.find(
     (r) => r.config.diagnosticVersion === DIAGNOSTIC_VERSION,
   );
@@ -328,6 +328,9 @@ export default function App() {
   const stats = result ? resultSummary(result) : null;
   const resultHasRetiredQuestions = Boolean(
     result?.items.some((item) => !activeQuestionIds.has(item.questionId)),
+  );
+  const resultUsesLegacyCategories = Boolean(
+    result && usesLegacyCategories(result),
   );
   const reviewableWrongIds = new Set(
     result?.items
@@ -536,6 +539,11 @@ export default function App() {
                       ? diagnosticName(session.config.diagnosticVersion)
                       : difficultyName(session.config.difficulty)}
                   </p>
+                  {((inDiagnostic &&
+                    session.config.diagnosticVersion !== DIAGNOSTIC_VERSION) ||
+                    session.items.some(
+                      (item) => !activeQuestionIds.has(item.questionId),
+                    )) && <p>開始時の問題・選択肢で再開します。</p>}
                 </div>
                 <button
                   className="button primary small"
@@ -1174,7 +1182,7 @@ export default function App() {
                       : standardResult
                         ? "標準診断の一般常識度"
                         : result.config.categories.length ===
-                            (resultHasRetiredQuestions
+                            (resultUsesLegacyCategories
                               ? LEGACY_CATEGORIES.length
                               : CATEGORIES.length)
                           ? "自由練習のスコア"
@@ -1235,7 +1243,7 @@ export default function App() {
                 </div>
                 <Radar
                   scores={stats.scores}
-                  legacy={resultHasRetiredQuestions}
+                  legacy={resultUsesLegacyCategories}
                 />
                 <p>
                   <span className="legend-dot" />
@@ -1295,7 +1303,7 @@ export default function App() {
               </div>
               <div className="breakdown-grid">
                 {stats.scores.map((s) => {
-                  const c = categoryFor(s.category, resultHasRetiredQuestions);
+                  const c = categoryFor(s.category, resultUsesLegacyCategories);
                   return (
                     <div className="breakdown-item" key={c.id}>
                       <span
@@ -1342,7 +1350,7 @@ export default function App() {
                       .filter((s) => s.percent === measured[0].percent)
                       .map(
                         (s) =>
-                          categoryFor(s.category, resultHasRetiredQuestions)
+                          categoryFor(s.category, resultUsesLegacyCategories)
                             .name,
                       );
                     return (
@@ -1577,10 +1585,7 @@ export default function App() {
                               : r.config.mode === "review"
                                 ? "復習チャレンジ"
                                 : r.config.categories.length ===
-                                    (r.items.some(
-                                      (item) =>
-                                        !activeQuestionIds.has(item.questionId),
-                                    )
+                                    (usesLegacyCategories(r)
                                       ? LEGACY_CATEGORIES.length
                                       : CATEGORIES.length)
                                   ? "全ジャンルの自由練習"
@@ -1589,12 +1594,7 @@ export default function App() {
                                         (id) =>
                                           categoryFor(
                                             id,
-                                            r.items.some(
-                                              (item) =>
-                                                !activeQuestionIds.has(
-                                                  item.questionId,
-                                                ),
-                                            ),
+                                            usesLegacyCategories(r),
                                           ).name,
                                       )
                                       .join("・")}

@@ -5,6 +5,7 @@ import {
   type Difficulty,
   type Question,
 } from "../data/types";
+import { currentChoiceId, originalChoiceId } from "../data/choice-revisions";
 
 export interface QuizConfig {
   difficulty: Difficulty | "mix";
@@ -14,13 +15,14 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v4";
+export const DIAGNOSTIC_VERSION = "standard-v5";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
   "standard-v2": "標準診断 2",
   "standard-v3": "標準診断 3",
   "standard-v4": "標準診断 4",
+  "standard-v5": "標準診断 5",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -216,6 +218,11 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v5") {
+    const originalId = originalChoiceId(question.id);
+    if (currentChoiceId(originalId) !== question.id) return null;
+    return diagnosticBucket({ ...question, id: originalId }, "standard-v4");
+  }
   const expected =
     diagnosticPool.get(question.id) ??
     (["standard-v2", "standard-v3", "standard-v4"].includes(version)

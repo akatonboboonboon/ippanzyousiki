@@ -14,6 +14,10 @@ export default defineConfig({
           if (bank) return `questions-${bank[1]}`;
           const expansion = id.match(/\/src\/data\/expansion-([^/]+)\.ts$/);
           if (expansion) return `questions-expanded-${expansion[1]}`;
+          const choices = id.match(
+            /\/src\/data\/choice-revisions-([^/]+)\.json$/,
+          );
+          if (choices) return `questions-choices-${choices[1]}`;
           if (id.includes("node_modules")) return "vendor";
         },
       },

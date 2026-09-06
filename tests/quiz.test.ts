@@ -5,6 +5,7 @@ import {
   questionMap,
   archivedQuestions,
   activeQuestionIds,
+  publishedQuestions,
 } from "../src/data/questions";
 import {
   categoryScores,
@@ -31,7 +32,9 @@ function seeded(seed: number) {
 
 describe("question bank quality", () => {
   it("keeps historical IDs immutable and archived questions out of the active bank", () => {
-    expect(archivedQuestions).toHaveLength(600);
+    expect(
+      archivedQuestions.filter((q) => !q.id.startsWith("v2-")),
+    ).toHaveLength(600);
     expect(questionMap.size).toBe(questions.length + archivedQuestions.length);
     for (const original of archivedQuestions) {
       expect(activeQuestionIds.has(original.id)).toBe(false);
@@ -49,7 +52,7 @@ describe("question bank quality", () => {
     for (const category of CATEGORIES)
       for (const difficulty of ["easy", "normal", "hard"]) {
         expect(
-          questions.filter(
+          publishedQuestions.filter(
             (q) =>
               q.category === category.id &&
               q.difficulty === difficulty &&

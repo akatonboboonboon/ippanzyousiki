@@ -15,7 +15,12 @@ import { recycleBatteryQuestions } from "./expansion-recycle-battery";
 import { bicycleFamiliarQuestions } from "./expansion-bicycle-familiar";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
-export const questions: Question[] = [
+import {
+  choiceRevisions,
+  currentChoiceId,
+  revisedOriginalIds,
+} from "./choice-revisions";
+export const publishedQuestions: Question[] = [
   ...practicalLifeQuestions,
   ...practicalCommunicationQuestions,
   ...practicalSocietyQuestions,
@@ -32,7 +37,21 @@ export const questions: Question[] = [
   ...recycleBatteryQuestions,
   ...bicycleFamiliarQuestions,
 ];
-export const archivedQuestions = archive as Question[];
+export const questions: Question[] = publishedQuestions.map((question) =>
+  revisedOriginalIds.has(question.id)
+    ? {
+        ...question,
+        ...choiceRevisions[question.id],
+        id: currentChoiceId(question.id),
+      }
+    : question,
+);
+export const archivedQuestions: Question[] = [
+  ...(archive as Question[]),
+  ...publishedQuestions.filter((question) =>
+    revisedOriginalIds.has(question.id),
+  ),
+];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));
 export const questionMap = new Map(
   [...archivedQuestions, ...questions].map((q) => [q.id, q]),

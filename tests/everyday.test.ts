@@ -1,6 +1,9 @@
 import { createHash } from "node:crypto";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { questions, questionMap } from "../src/data/questions";
+import {
+  publishedQuestions as questions,
+  questionMap,
+} from "../src/data/questions";
 import { CATEGORY_IDS } from "../src/data/types";
 import {
   createDiagnosticConfig,

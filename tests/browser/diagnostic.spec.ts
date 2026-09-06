@@ -1,6 +1,10 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { questions, questionMap } from "../../src/data/questions";
+import {
+  questions,
+  publishedQuestions,
+  questionMap,
+} from "../../src/data/questions";
 import {
   createSession,
   createDiagnosticConfig,
@@ -30,7 +34,10 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
     item.order.indexOf(questionMap.get(item.questionId)!.answer),
   );
   const practiceResult = finishSession(practice);
-  const old = createSession(questions, createDiagnosticConfig("standard-v3"));
+  const old = createSession(
+    publishedQuestions,
+    createDiagnosticConfig("standard-v4"),
+  );
   old.answers = old.items.map((item) =>
     item.order.indexOf(questionMap.get(item.questionId)!.answer),
   );
@@ -94,7 +101,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   await expect(page.locator(".score-details")).toContainText("45 / 60問");
   await expect(page.locator(".diagnostic-comparison")).toContainText("+25点");
   await expect(page.locator(".diagnostic-comparison")).toContainText(
-    "標準診断 4",
+    "標準診断 5",
   );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".review-item")).toHaveCount(15);
@@ -115,14 +122,14 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toBeVisible();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-stats .panel").last()).toContainText(
-    "最新の標準診断 4",
+    "最新の標準診断 5",
   );
   await expect(
     page.locator(".history-stats .panel").last().locator("strong"),
   ).toHaveText("75点");
   await expect(page.locator(".history-row")).toHaveCount(4);
   await expect(
-    page.locator(".history-row").filter({ hasText: "標準診断 3" }),
+    page.locator(".history-row").filter({ hasText: "標準診断 4" }),
   ).toHaveCount(1);
 });
 
