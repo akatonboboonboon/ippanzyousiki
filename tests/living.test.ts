@@ -173,6 +173,6 @@ describe("115 living questions and standard diagnostic 4", () => {
     vi.stubGlobal("localStorage", {
       getItem: () => JSON.stringify({ session, history }),
     });
-    expect(readSaved(questionMap)).toEqual({ session, history });
+    expect(readSaved(questionMap)).toMatchObject({ session, history });
   });
 });

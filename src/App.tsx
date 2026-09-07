@@ -58,6 +58,9 @@ import {
 } from "./lib/quiz";
 import Radar from "./Radar";
 import QuestionImage from "./QuestionImage";
+import { recordExposure, recordAnswer } from "./lib/learning";
+
+const activeQuestionMap = new Map(questions.map((q) => [q.id, q]));
 
 const icons: Record<CategoryId, LucideIcon> = {
   household: Lightbulb,
@@ -127,6 +130,7 @@ function Source({ question }: { question: Question }) {
 export default function App() {
   const [saved] = useState(() => readSaved(questionMap));
   const [history, setHistory] = useState<Result[]>(saved.history);
+  const [learning, setLearning] = useState(saved.learning);
   const retiredSession = Boolean(
     saved.session && usesLegacyCategories(saved.session),
   );
@@ -163,13 +167,22 @@ export default function App() {
     try {
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ version: 1, history, session }),
+        JSON.stringify({ version: 1, history, session, learning }),
       );
       setStorageError(false);
     } catch {
       setStorageError(true);
     }
-  }, [history, session]);
+  }, [history, session, learning]);
+  useEffect(() => {
+    if (page !== "quiz" || !session) return;
+    const item = session.items[session.index];
+    if (activeQuestionIds.has(item.questionId)) {
+      setLearning((previous) =>
+        recordExposure(previous, item, session.id, Date.now()),
+      );
+    }
+  }, [page, session?.id, session?.index]);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
     titleRef.current?.focus({ preventScroll: true });
@@ -201,24 +214,18 @@ export default function App() {
       ),
     [history],
   );
-  const studied = new Set(
-    currentHistory.flatMap((r) => r.items.map((i) => i.questionId)),
-  ).size;
+  const studied = Object.keys(learning).length;
   const diagnosticHistory = history.filter(isStandardDiagnostic);
   const latestDiagnostic = diagnosticHistory.find(
     (r) => r.config.diagnosticVersion === DIAGNOSTIC_VERSION,
   );
   const wrongIds = useMemo(() => {
-    const wrong = new Set<string>();
-    [...currentHistory].reverse().forEach((r) =>
-      r.items.forEach((item, i) => {
-        const q = questionMap.get(item.questionId)!;
-        if (item.order[r.answers[i]] === q.answer) wrong.delete(q.id);
-        else wrong.add(q.id);
-      }),
+    return new Set(
+      Object.entries(learning)
+        .filter(([, progress]) => progress.correct === false)
+        .map(([id]) => id),
     );
-    return wrong;
-  }, [currentHistory]);
+  }, [learning]);
   const historyCorrect = currentHistory.reduce(
     (sum, r) => sum + resultSummary(r).correct,
     0,
@@ -254,7 +261,7 @@ export default function App() {
   function start(bank = questions, settings = config) {
     const begin = () => {
       try {
-        const nextSession = createSession(bank, settings);
+        const nextSession = createSession(bank, settings, learning);
         setSession(nextSession);
         setSelected(null);
         setStartError("");
@@ -288,6 +295,16 @@ export default function App() {
       session.answers[session.index] !== null
     )
       return;
+    setLearning((previous) =>
+      recordAnswer(
+        previous,
+        session.items[session.index],
+        selected,
+        activeQuestionMap,
+        session.id,
+        Date.now(),
+      ),
+    );
     setSession({
       ...session,
       answers: session.answers.map((a, i) =>
@@ -616,6 +633,18 @@ export default function App() {
                     <small>難易度・ジャンル・問数を選ぶ</small>
                   </button>
                 </div>
+                <details className="scope-guide">
+                  <summary>
+                    未出題を優先する出題について
+                    <ChevronDown size={14} />
+                  </summary>
+                  <p>
+                    まだ出会っていない問題を優先し、直近で間違えた問題も最大2割を目安に混ぜます。ジャンル・難易度・画像の配分に合う未出題が足りないときは、誤答やしばらく出ていない問題で補います。
+                  </p>
+                  <p>
+                    出題済みの記録はこのブラウザーに保存し、履歴が50回を超えても保持します。途中でやめたクイズの未表示の問題は、未出題のままです。
+                  </p>
+                </details>
                 {startError && (
                   <p className="start-error" role="alert">
                     {startError}
@@ -649,7 +678,7 @@ export default function App() {
                       </span>
                     </div>
                     <p className="diagnostic-note">
-                      正解と解説は、診断が終わってからまとめて確認できます。同じ出題範囲からランダムに選び、前回の標準診断と比較します。
+                      未出題を優先し、以前間違えた問題も時々出題します。正解と解説は終了後に確認でき、同じ版の前回結果と比較します。
                     </p>
                     {latestDiagnostic && (
                       <div className="last-diagnostic">
@@ -795,7 +824,7 @@ export default function App() {
                         <ShieldCheck size={14} />
                         {!config.categories.length
                           ? "ジャンルを1つ以上選んでください"
-                          : `${examCount}問をランダム出題 · 解説つき · 時間制限なし`}
+                          : `${examCount}問 · 未出題を優先 · 間違えた問題も時々出題`}
                       </p>
                       <button
                         className="button primary start-button"
@@ -1477,7 +1506,7 @@ export default function App() {
                 </h1>
                 <p>積み重ねた「なるほど」を、振り返ろう。</p>
               </div>
-              {history.length > 0 && (
+              {(history.length > 0 || studied > 0) && (
                 <button
                   className="icon-button"
                   aria-label="学習履歴を削除"
@@ -1521,7 +1550,7 @@ export default function App() {
                 </strong>
               </div>
             </div>
-            {!history.length ? (
+            {!history.length && !wrongIds.size ? (
               <section className="panel empty-state">
                 <span className="empty-icon">
                   <BookOpen size={36} strokeWidth={1.3} />
@@ -1548,7 +1577,7 @@ export default function App() {
                     <div>
                       <h2>伸びしろを、知識に変えよう。</h2>
                       <p>
-                        現行問題の記録で間違えた問題が{wrongIds.size}
+                        直近の回答で間違えた問題が{wrongIds.size}
                         問あります。
                       </p>
                     </div>
@@ -1624,7 +1653,7 @@ export default function App() {
                 </div>
                 {last && (
                   <p className="history-note">
-                    上の集計と復習対象は、現行の問題だけで受けたチャレンジが対象です。改訂前の問題を含む記録は除きます。同じ問題への再回答も含み、最新50回までこのブラウザーに保存します。
+                    チャレンジ回数・累計正答率は、現行問題だけで受けた最新50回が対象です。出会った問題と直近の正誤は50回を超えても保持し、途中で回答した問題も含みます。記録はこのブラウザーに保存します。
                   </p>
                 )}
               </>
@@ -1858,7 +1887,7 @@ export default function App() {
           text={
             replacePending
               ? "中断中のクイズの途中経過が置き換わります。完了した学習の記録は残ります。"
-              : "保存された結果と復習リストを削除します。この操作は取り消せません。中断中のクイズは残ります。"
+              : "保存された結果・出題済みの記録・復習リストを削除します。この操作は取り消せません。中断中のクイズは残り、再開した問題から記録します。"
           }
           confirm={replacePending ? "新しくはじめる" : "記録を削除する"}
           onCancel={() => {
@@ -1869,6 +1898,7 @@ export default function App() {
             if (replacePending) replacePending();
             else {
               setHistory([]);
+              setLearning({});
               setResult(null);
               setClearPending(false);
             }

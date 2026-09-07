@@ -162,6 +162,6 @@ describe("120 everyday questions and standard diagnostic 3", () => {
     vi.stubGlobal("localStorage", {
       getItem: () => JSON.stringify({ session, history }),
     });
-    expect(readSaved(questionMap)).toEqual({ session, history });
+    expect(readSaved(questionMap)).toMatchObject({ session, history });
   });
 });

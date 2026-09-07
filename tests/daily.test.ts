@@ -84,7 +84,7 @@ describe("daily knowledge, deal comparisons and road signs", () => {
       }
     }
     const seen = new Set<string>();
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v6");
     expect(config.diagnosticVersion).toBe("standard-v6");
     for (let seed = 1; seed <= 60; seed++) {
       const sample = selectQuestions(questions, config, seeded(seed));
@@ -140,7 +140,7 @@ describe("daily knowledge, deal comparisons and road signs", () => {
     vi.stubGlobal("localStorage", {
       getItem: () => JSON.stringify({ session, history }),
     });
-    expect(readSaved(questionMap)).toEqual({ session, history });
+    expect(readSaved(questionMap)).toMatchObject({ session, history });
     for (const record of history) {
       expect(validRecord(record, questionMap)).toBe(true);
       expect(
@@ -150,7 +150,10 @@ describe("daily knowledge, deal comparisons and road signs", () => {
         ),
       ).toBe(60);
     }
-    const current = createSession(questions, createDiagnosticConfig());
+    const current = createSession(
+      questions,
+      createDiagnosticConfig("standard-v6"),
+    );
     const sign = dailyQuestions.find((q) => q.image)!;
     const index = current.items.findIndex((item) => {
       const q = questionMap.get(item.questionId)!;

@@ -109,7 +109,7 @@ describe("720-question expansion", () => {
     vi.stubGlobal("localStorage", {
       getItem: () => JSON.stringify({ session: old, history }),
     });
-    expect(readSaved(questionMap)).toEqual({ session: old, history });
+    expect(readSaved(questionMap)).toMatchObject({ session: old, history });
     expect(history.every((r) => isStandardDiagnostic(r))).toBe(true);
     expect(validRecord(old, questionMap, true)).toBe(true);
   });

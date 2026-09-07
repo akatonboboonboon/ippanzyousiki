@@ -111,13 +111,13 @@ describe("versioned standard diagnostic selection", () => {
     const config = createDiagnosticConfig();
     expect(config).toEqual({
       mode: "diagnostic",
-      diagnosticVersion: "standard-v6",
+      diagnosticVersion: "standard-v7",
       difficulty: "mix",
       count: 60,
       categories: [...CATEGORY_IDS],
     });
     expect(DIAGNOSTIC_COUNT).toBe(60);
-    expect(DIAGNOSTIC_VERSION).toBe("standard-v6");
+    expect(DIAGNOSTIC_VERSION).toBe("standard-v7");
     expect(isStandardDiagnostic(config)).toBe(true);
     expect(isStandardDiagnostic({ config })).toBe(true);
     expect(
@@ -333,7 +333,7 @@ describe("versioned standard diagnostic selection", () => {
     const config = createDiagnosticConfig("standard-v4");
     const invalid = [
       { ...config, diagnosticVersion: undefined },
-      { ...config, diagnosticVersion: "standard-v7" },
+      { ...config, diagnosticVersion: "standard-v8" },
       { ...config, count: 59 },
       { ...config, count: 61 },
       { ...config, difficulty: "easy" },
@@ -390,7 +390,7 @@ describe("diagnostic persistence and compatibility", () => {
     expect(validRecord(clone(result), standardMap)).toBe(true);
     const restored = readSaved(standardMap);
     expect(getItem).toHaveBeenCalledWith(STORAGE_KEY);
-    expect(restored).toEqual({ session, history: [result] });
+    expect(restored).toMatchObject({ session, history: [result] });
     expect(isStandardDiagnostic(restored.session)).toBe(true);
     expect(isStandardDiagnostic(restored.history[0])).toBe(true);
   });
@@ -458,7 +458,11 @@ describe("diagnostic persistence and compatibility", () => {
     vi.stubGlobal("localStorage", {
       getItem: () => JSON.stringify({ session, history: [answered(session)] }),
     });
-    expect(readSaved(mapWithExtra)).toEqual({ history: [], session: null });
+    expect(readSaved(mapWithExtra)).toEqual({
+      history: [],
+      session: null,
+      learning: {},
+    });
   });
 
   it("rejects malformed diagnostic answers, item permutations, timestamps and incomplete completion", () => {

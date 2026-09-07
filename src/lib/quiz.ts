@@ -6,6 +6,7 @@ import {
   type Question,
 } from "../data/types";
 import { currentChoiceId, originalChoiceId } from "../data/choice-revisions";
+import { restoreLearning, type LearningProgress } from "./learning";
 
 export interface QuizConfig {
   difficulty: Difficulty | "mix";
@@ -15,7 +16,7 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v6";
+export const DIAGNOSTIC_VERSION = "standard-v7";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -24,6 +25,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v4": "標準診断 4",
   "standard-v5": "標準診断 5",
   "standard-v6": "標準診断 6",
+  "standard-v7": "標準診断 7",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -257,6 +259,9 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  // Standard 7 changes selection priority, retaining standard 6's bank and quotas.
+  if (version === "standard-v7")
+    return diagnosticBucket(question, "standard-v6");
   if (version === "standard-v6") {
     const expected = dailyDiagnosticPool.get(question.id);
     if (!expected) return diagnosticBucket(question, "standard-v5");
@@ -408,19 +413,30 @@ export function selectQuestions(
   bank: Question[],
   config: QuizConfig,
   random = Math.random,
+  learning: LearningProgress = {},
 ): Question[] {
   if (config.mode === "diagnostic") {
     if (!isStandardDiagnostic(config))
       throw new Error(
         "標準診断の設定が正しくありません。ホームから診断を開始し直してください。",
       );
-    return selectDiagnosticQuestions(bank, random, config.diagnosticVersion!);
+    const version = config.diagnosticVersion!;
+    const sample = selectDiagnosticQuestions(bank, random, version);
+    return version === "standard-v7"
+      ? prioritizeQuestions(
+          sample,
+          bank.filter((q) => diagnosticBucket(q, version) !== null),
+          learning,
+          random,
+          (q) => `${q.category}/${diagnosticBucket(q, version)}`,
+        )
+      : sample;
   }
   if (Object.prototype.hasOwnProperty.call(config, "diagnosticVersion"))
     throw new Error(
       "診断バージョンは標準診断でのみ指定できます。ホームから開始し直してください。",
     );
-  const eligible = bank.filter(
+  const eligible = [...new Map(bank.map((q) => [q.id, q])).values()].filter(
     (q) =>
       config.categories.includes(q.category) &&
       (config.difficulty === "mix" || config.difficulty === q.difficulty),
@@ -455,11 +471,70 @@ export function selectQuestions(
       if (next && selected.length < config.count) selected.push(next);
     }
   }
-  return selected;
+  return config.mode === "quiz"
+    ? prioritizeQuestions(
+        selected,
+        eligible,
+        learning,
+        random,
+        (q) => `${q.category}/${q.difficulty}`,
+      )
+    : selected;
 }
 
-export function createSession(bank: Question[], config: QuizConfig): Session {
-  const selected = selectQuestions(bank, config);
+// Replace within each allocated slot so learning priority cannot change the quotas.
+function prioritizeQuestions(
+  sample: Question[],
+  bank: Question[],
+  learning: LearningProgress,
+  random: () => number,
+  group: (question: Question) => string,
+): Question[] {
+  if (!Object.keys(learning).length) return sample;
+  const reviewSlots = new Set(
+    shuffle(
+      sample.map((_, i) => i),
+      random,
+    ).slice(0, Math.floor(sample.length * 0.2)),
+  );
+  const pools = new Map<
+    string,
+    { unseen: Question[]; wrong: Question[]; seen: Question[] }
+  >();
+  const unique = [...new Map(bank.map((q) => [q.id, q])).values()];
+  // Shuffle before sorting to break ties fairly, including migrated histories.
+  for (const q of shuffle(unique, random)) {
+    const key = group(q);
+    const pool = pools.get(key) ?? { unseen: [], wrong: [], seen: [] };
+    const progress = learning[q.id];
+    if (!progress) pool.unseen.push(q);
+    else if (progress.correct === false) pool.wrong.push(q);
+    else pool.seen.push(q);
+    pools.set(key, pool);
+  }
+  for (const pool of pools.values()) {
+    const oldest = (a: Question, b: Question) =>
+      learning[a.id].lastSeenAt - learning[b.id].lastSeenAt;
+    pool.wrong.sort(oldest);
+    pool.seen.sort(oldest);
+  }
+  return sample.map((slot, i) => {
+    const pool = pools.get(group(slot))!;
+    if (pool.unseen.length) {
+      return (
+        reviewSlots.has(i) && pool.wrong.length ? pool.wrong : pool.unseen
+      ).shift()!;
+    }
+    return (pool.wrong.length ? pool.wrong : pool.seen).shift()!;
+  });
+}
+
+export function createSession(
+  bank: Question[],
+  config: QuizConfig,
+  learning: LearningProgress = {},
+): Session {
+  const selected = selectQuestions(bank, config, Math.random, learning);
   if (!selected.length)
     throw new Error("出題できる問題がありません。条件を変更してください。");
   return {
@@ -674,19 +749,29 @@ export const STORAGE_KEY = "monosashi-v1";
 export interface SavedData {
   history: Result[];
   session: Session | null;
+  learning: LearningProgress;
 }
 export function readSaved(bank: Map<string, Question>): SavedData {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
+    const history: Result[] = Array.isArray(saved?.history)
+      ? saved.history.filter((r: unknown) => validRecord(r, bank)).slice(0, 50)
+      : [];
+    const session = validRecord(saved?.session, bank, true)
+      ? (saved.session as Session)
+      : null;
+    const activeBank = new Map(
+      [...bank].filter(
+        ([id]) =>
+          id.startsWith("v2-") && currentChoiceId(originalChoiceId(id)) === id,
+      ),
+    );
     return {
-      history: Array.isArray(saved.history)
-        ? saved.history
-            .filter((r: unknown) => validRecord(r, bank))
-            .slice(0, 50)
-        : [],
-      session: validRecord(saved.session, bank, true) ? saved.session : null,
+      history,
+      session,
+      learning: restoreLearning(saved?.learning, history, session, activeBank),
     };
   } catch {
-    return { history: [], session: null };
+    return { history: [], session: null, learning: {} };
   }
 }

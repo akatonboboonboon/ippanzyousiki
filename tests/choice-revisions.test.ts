@@ -243,7 +243,7 @@ describe("choice revisions and diagnostic 5", () => {
     vi.stubGlobal("localStorage", {
       getItem: () => JSON.stringify({ session, history }),
     });
-    expect(readSaved(questionMap)).toEqual({ session, history });
+    expect(readSaved(questionMap)).toMatchObject({ session, history });
     for (const result of history) {
       expect(validRecord(result, questionMap)).toBe(true);
       const scores = categoryScores(result, questionMap);
