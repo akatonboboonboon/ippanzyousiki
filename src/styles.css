@@ -738,7 +738,7 @@ legend {
 .button.primary {
   background: var(--button-bg, var(--green));
   color: var(--on-accent, white);
-  border-color: var(--green);
+  border-color: var(--button-border, var(--green));
 }
 .button.primary:not(:disabled):hover {
   background: var(--accent-hover, #1c5f48);
