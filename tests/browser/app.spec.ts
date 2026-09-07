@@ -11,7 +11,9 @@ async function completeQuiz(page: Page, correctCount: number, count = 12) {
     await page
       .locator(".answer-option")
       .filter({
-        has: page.getByText(question.choices[choice], { exact: true }),
+        has: page
+          .locator("span:not(.answer-letter)")
+          .and(page.getByText(question.choices[choice], { exact: true })),
       })
       .click();
     await page.getByRole("button", { name: "回答を確定する" }).click();

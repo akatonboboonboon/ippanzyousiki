@@ -136,7 +136,10 @@ test("practice selects all remaining unseen questions and records only displayed
   const replacementSession = (await stored(page)).session!;
   const replacementFirstId = replacementSession.items[0].questionId;
   await expect
-    .poll(async () => (await stored(page)).learning[replacementFirstId]?.lastSessionId)
+    .poll(
+      async () =>
+        (await stored(page)).learning[replacementFirstId]?.lastSessionId,
+    )
     .toBe(replacementSession.id);
   const replacement = await stored(page);
   const changed = Object.keys({
@@ -182,7 +185,11 @@ test("a confirmed mistake becomes correct after answering its review question", 
   await page
     .locator(".answer-option")
     .filter({
-      has: page.getByText(question.choices[question.answer], { exact: true }),
+      has: page
+        .locator("span:not(.answer-letter)")
+        .and(
+          page.getByText(question.choices[question.answer], { exact: true }),
+        ),
     })
     .click();
   await page.getByRole("button", { name: "回答を確定する" }).click();

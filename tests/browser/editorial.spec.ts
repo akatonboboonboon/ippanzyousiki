@@ -192,7 +192,15 @@ test("familiar diagrams and a rewritten question remain usable on mobile and sav
       path: `artifacts/familiar-${["games", "photo", "hotel", "rewritten"][i]}-mobile.png`,
       fullPage: true,
     });
-    await page.locator(".answer-option").nth(order.indexOf(q.answer)).click();
+    // The hotel answer is a diagram letter, which must not match the button's own letter.
+    await page
+      .locator(".answer-option")
+      .filter({
+        has: page
+          .locator("span:not(.answer-letter)")
+          .and(page.getByText(q.choices[q.answer], { exact: true })),
+      })
+      .click();
     await page.getByRole("button", { name: "回答を確定する" }).click();
     await expect(page.locator(".answer-feedback")).toContainText(q.explanation);
     await page.reload();
