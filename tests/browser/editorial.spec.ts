@@ -10,7 +10,7 @@ import {
 } from "../../src/data/editorial-revisions";
 import { currentKnowledgeId } from "../../src/data/knowledge-revisions";
 
-test("all seven familiar topics expose 15 sourced questions with the intended difficulty distribution", async ({
+test("all seven familiar topics expose their current sourced questions and difficulty filters", async ({
   page,
 }) => {
   await page.goto("/");
@@ -21,14 +21,20 @@ test("all seven familiar topics expose 15 sourced questions with the intended di
     const q = questions.find((q) => q.topic === topic)!;
     await page.getByLabel("ライブラリのジャンル").selectOption(q.category);
     await page.getByLabel("ライブラリの題材").selectOption(topic);
-    await expect(page.locator(".library-count b")).toHaveText("15");
-    for (const [difficulty, count] of [
-      ["easy", 6],
-      ["normal", 6],
-      ["hard", 3],
-    ] as const) {
+    const topicQuestions = questions.filter(
+      (item) => item.category === q.category && item.topic === topic,
+    );
+    await expect(page.locator(".library-count b")).toHaveText(
+      String(topicQuestions.length),
+    );
+    for (const difficulty of ["easy", "normal", "hard"] as const) {
       await page.getByLabel("ライブラリの難易度").selectOption(difficulty);
-      await expect(page.locator(".library-count b")).toHaveText(String(count));
+      await expect(page.locator(".library-count b")).toHaveText(
+        String(
+          topicQuestions.filter((item) => item.difficulty === difficulty)
+            .length,
+        ),
+      );
     }
     await page.getByLabel("ライブラリの難易度").selectOption("all");
     await page.getByLabel("問題を検索").fill(q.prompt);

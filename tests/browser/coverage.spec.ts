@@ -5,13 +5,17 @@ test("daily-life topics are discoverable, filterable and reset when the genre ch
   page,
 }) => {
   await page.goto("/");
-  await expect(page.locator(".hero-facts")).toContainText("2597");
+  await expect(page.locator(".hero-facts")).toContainText(
+    String(questions.length),
+  );
   await expect(page.locator(".category-card")).toHaveCount(12);
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
   await page.getByLabel("ライブラリのジャンル").selectOption("household");
-  await expect(page.locator(".library-count")).toContainText("332");
+  await expect(page.locator(".library-count b")).toHaveText(
+    String(questions.filter((q) => q.category === "household").length),
+  );
   const topic = questions.find((q) => q.category === "household")!.topic!;
   await page.getByLabel("ライブラリの題材").selectOption(topic);
   const count = questions.filter(
@@ -21,7 +25,9 @@ test("daily-life topics are discoverable, filterable and reset when the genre ch
   await expect(page.locator(".topic-label").first()).toHaveText(topic);
   await page.getByLabel("ライブラリのジャンル").selectOption("manners");
   await expect(page.getByLabel("ライブラリの題材")).toHaveValue("all");
-  await expect(page.locator(".library-count b")).toHaveText("177");
+  await expect(page.locator(".library-count b")).toHaveText(
+    String(questions.filter((q) => q.category === "manners").length),
+  );
   await page.getByLabel("問題を検索").fill("水引");
   await expect(page.locator(".library-question").first()).toBeVisible();
   await page.setViewportSize({ width: 390, height: 844 });

@@ -151,19 +151,30 @@ test("searches and filters the complete library, clears empty results and change
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
-  await expect(page.locator(".library-count")).toContainText("2597");
+  await expect(page.locator(".library-count b")).toHaveText(
+    String(questions.length),
+  );
   await page.getByLabel("ライブラリのジャンル").selectOption("digital");
   await page.getByLabel("ライブラリの難易度").selectOption("hard");
-  await expect(page.locator(".library-count b")).toHaveText("43");
+  const filteredCount = questions.filter(
+    (q) => q.category === "digital" && q.difficulty === "hard",
+  ).length;
+  await expect(page.locator(".library-count b")).toHaveText(
+    String(filteredCount),
+  );
   await page.getByRole("button", { name: "次へ", exact: true }).click();
-  await expect(page.locator(".pagination > span")).toHaveText("2 / 3");
+  await expect(page.locator(".pagination > span")).toHaveText(
+    `2 / ${Math.ceil(filteredCount / 20)}`,
+  );
   await expect(page.locator(".library-question")).toHaveCount(20);
   await page.getByLabel("問題を検索").fill("there-is-no-such-question-zzz");
   await expect(
     page.getByRole("heading", { name: "一致する問題が見つかりませんでした。" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "条件をリセット" }).click();
-  await expect(page.locator(".library-count")).toContainText("2597");
+  await expect(page.locator(".library-count b")).toHaveText(
+    String(questions.length),
+  );
   await page.getByLabel("問題を検索").fill("スクリーンショット");
   await page.locator(".library-question").first().locator("summary").click();
   await expect(page.locator(".library-answer").first()).toBeVisible();

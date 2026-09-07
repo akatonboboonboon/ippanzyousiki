@@ -111,13 +111,13 @@ describe("versioned standard diagnostic selection", () => {
     const config = createDiagnosticConfig();
     expect(config).toEqual({
       mode: "diagnostic",
-      diagnosticVersion: "standard-v10",
+      diagnosticVersion: "standard-v11",
       difficulty: "mix",
       count: 60,
       categories: [...CATEGORY_IDS],
     });
     expect(DIAGNOSTIC_COUNT).toBe(60);
-    expect(DIAGNOSTIC_VERSION).toBe("standard-v10");
+    expect(DIAGNOSTIC_VERSION).toBe("standard-v11");
     expect(isStandardDiagnostic(config)).toBe(true);
     expect(isStandardDiagnostic({ config })).toBe(true);
     expect(
@@ -333,7 +333,7 @@ describe("versioned standard diagnostic selection", () => {
     const config = createDiagnosticConfig("standard-v4");
     const invalid = [
       { ...config, diagnosticVersion: undefined },
-      { ...config, diagnosticVersion: "standard-v11" },
+      { ...config, diagnosticVersion: "standard-v12" },
       { ...config, count: 59 },
       { ...config, count: 61 },
       { ...config, difficulty: "easy" },

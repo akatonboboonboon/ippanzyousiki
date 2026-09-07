@@ -9,24 +9,29 @@ test("the seven new topics expose their questions, difficulties and sources", as
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
-  for (const [category, topic, counts] of [
-    ["world", "身近な道具の仕組み", [6, 6, 3]],
-    ["health", "食品の包装の役割", [6, 6, 3]],
-    ["money", "光熱費の明細", [6, 6, 3]],
-    ["digital", "ニュースの数字", [6, 6, 3]],
-    ["manners", "外食で見かける言葉", [6, 6, 3]],
-    ["consumer", "どちらがお得？", [16, 16, 8]],
-    ["public", "道路標識の見分け方", [0, 18, 0]],
+  for (const [category, topic] of [
+    ["world", "身近な道具の仕組み"],
+    ["health", "食品の包装の役割"],
+    ["money", "光熱費の明細"],
+    ["digital", "ニュースの数字"],
+    ["manners", "外食で見かける言葉"],
+    ["consumer", "どちらがお得？"],
+    ["public", "道路標識の見分け方"],
   ] as const) {
     await page.getByLabel("ライブラリのジャンル").selectOption(category);
     await page.getByLabel("ライブラリの題材").selectOption(topic);
-    await expect(page.locator(".library-count b")).toHaveText(
-      String(counts.reduce((sum: number, n) => sum + n, 0)),
+    const topicQuestions = questions.filter(
+      (q) => q.category === category && q.topic === topic,
     );
-    for (const [i, difficulty] of ["easy", "normal", "hard"].entries()) {
+    await expect(page.locator(".library-count b")).toHaveText(
+      String(topicQuestions.length),
+    );
+    for (const difficulty of ["easy", "normal", "hard"]) {
       await page.getByLabel("ライブラリの難易度").selectOption(difficulty);
       await expect(page.locator(".library-count b")).toHaveText(
-        String(counts[i]),
+        String(
+          topicQuestions.filter((q) => q.difficulty === difficulty).length,
+        ),
       );
     }
     await page.getByLabel("ライブラリの難易度").selectOption("all");

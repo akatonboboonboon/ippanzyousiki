@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { describe, it, expect, vi, afterEach } from "vitest";
 import {
-  questions,
+  knowledgeEditionQuestions as questions,
   familiarEditionQuestions,
   archivedQuestions,
   activeQuestionIds,
@@ -131,7 +131,7 @@ describe("knowledge required beyond the wording", () => {
           ),
         );
     }
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v10");
     expect(config.diagnosticVersion).toBe("standard-v10");
     for (let n = 1; n <= 20; n++) {
       const sample = selectQuestions(questions, config, seed(n));

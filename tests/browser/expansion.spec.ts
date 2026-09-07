@@ -4,6 +4,7 @@ import {
   dailyEditionQuestions,
   sceneEditionQuestions,
   familiarEditionQuestions,
+  knowledgeEditionQuestions,
   publishedQuestions,
   revisedQuestions,
   questionMap,
@@ -25,21 +26,24 @@ for (const version of [
   "standard-v7",
   "standard-v8",
   "standard-v9",
+  "standard-v10",
 ] as const) {
   test(`a ${version} session survives the expansion and keeps its own label and comparison`, async ({
     page,
   }) => {
-    const label = `標準診断 ${version.slice(-1)}`;
+    const label = `標準診断 ${version.replace("standard-v", "")}`;
     const old = createSession(
-      version === "standard-v9"
-        ? familiarEditionQuestions
-        : version === "standard-v8"
-          ? sceneEditionQuestions
-          : version === "standard-v6" || version === "standard-v7"
-            ? dailyEditionQuestions
-            : version === "standard-v5"
-              ? revisedQuestions
-              : publishedQuestions,
+      version === "standard-v10"
+        ? knowledgeEditionQuestions
+        : version === "standard-v9"
+          ? familiarEditionQuestions
+          : version === "standard-v8"
+            ? sceneEditionQuestions
+            : version === "standard-v6" || version === "standard-v7"
+              ? dailyEditionQuestions
+              : version === "standard-v5"
+                ? revisedQuestions
+                : publishedQuestions,
       createDiagnosticConfig(version),
     );
     old.startedAt = Date.now() - 10000;
@@ -73,7 +77,7 @@ for (const version of [
     );
     await page.reload();
     await expect(page.locator(".diagnostic-heading")).toContainText(
-      "標準診断 10",
+      "標準診断 11",
     );
     await expect(page.locator(".last-diagnostic")).toHaveCount(0);
     await expect(page.locator(".resume-banner")).toContainText(label);
@@ -95,7 +99,7 @@ for (const version of [
     await expect(page.locator(".diagnostic-comparison")).toContainText(label);
     await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
     await expect(page.locator(".diagnostic-heading")).toContainText(
-      "標準診断 10",
+      "標準診断 11",
     );
     await page.getByRole("button", { name: "学習の記録", exact: true }).click();
     await expect(page.locator(".history-row")).toHaveCount(2);

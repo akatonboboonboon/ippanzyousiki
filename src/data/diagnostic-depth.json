@@ -1,0 +1,1898 @@
+[
+  {
+    "id": "v2-household-depth-grooming-easy-001",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-002",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-003",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-004",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-001",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-002",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-003",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-004",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-005",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-006",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-007",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-005",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-006",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-007",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-008",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-008",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-009",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-009",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-010",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-010",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-011",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-012",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-easy-011",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-grooming-normal-013",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-easy-001",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-easy-002",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-001",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-002",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-hard-001",
+    "category": "health",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-easy-003",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-easy-004",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-003",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-easy-005",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-easy-006",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-004",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-005",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-006",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-007",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-hard-002",
+    "category": "health",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-normal-008",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-measurement-hard-003",
+    "category": "health",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-001",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-handtools-easy-001",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-002",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-003",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-004",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-005",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-easy-002",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-006",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-handtools-easy-003",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-007",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-008",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-009",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-010",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-easy-004",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-011",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-012",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-013",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-014",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-easy-005",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-normal-015",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-handtools-easy-006",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-easy-001",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-easy-002",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-001",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-easy-003",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-002",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-003",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-004",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-easy-004",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-005",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-006",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-007",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-008",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-009",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-easy-005",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-easy-006",
+    "category": "health",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-health-depth-cookingmore-normal-010",
+    "category": "health",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-easy-001",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-001",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-002",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-easy-002",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-easy-003",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-003",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-easy-004",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-004",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-005",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-006",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-007",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-008",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-009",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-easy-005",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-010",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-gardenmore-normal-011",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-001",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-002",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-003",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-004",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-005",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-006",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-007",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-easy-008",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-001",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-002",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-003",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-004",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-005",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-006",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-007",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-008",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-009",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-010",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-normal-011",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-hard-001",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-hard-002",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-hard-003",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-connectors-hard-004",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-easy-001",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-easy-002",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-easy-003",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-easy-004",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-easy-005",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-easy-006",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-001",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-002",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-003",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-004",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-005",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-006",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-007",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-008",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-009",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-010",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-normal-011",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-hard-001",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-codes-hard-002",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-001",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-002",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-003",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-004",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-005",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-006",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-007",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-easy-008",
+    "category": "household",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-001",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-002",
+    "category": "household",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-003",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-004",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-005",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-006",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-007",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-008",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-normal-009",
+    "category": "household",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-hard-001",
+    "category": "household",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-hard-002",
+    "category": "household",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-household-depth-timekeeping-hard-003",
+    "category": "household",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-easy-001",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-easy-002",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-easy-003",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-easy-004",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-easy-005",
+    "category": "digital",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-001",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-002",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-003",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-004",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-005",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-006",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-007",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-008",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-009",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-normal-010",
+    "category": "digital",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-hard-001",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-hard-002",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-digital-depth-photomore-hard-003",
+    "category": "digital",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-easy-001",
+    "category": "work",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-easy-002",
+    "category": "work",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-easy-003",
+    "category": "work",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-easy-004",
+    "category": "work",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-easy-005",
+    "category": "work",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-easy-006",
+    "category": "work",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-001",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-002",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-003",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-004",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-005",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-006",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-007",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-008",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-normal-009",
+    "category": "work",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-hard-001",
+    "category": "work",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-hard-002",
+    "category": "work",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-work-depth-stationerymore-hard-003",
+    "category": "work",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-001",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-002",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-003",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-004",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-005",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-001",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-002",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-003",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-006",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-004",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-007",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-008",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-009",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-010",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-005",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-006",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-007",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-008",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-009",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-hard-001",
+    "category": "culture",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-011",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-012",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-013",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-010",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-011",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-012",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-hard-002",
+    "category": "culture",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-hard-003",
+    "category": "culture",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-014",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-015",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-016",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-easy-017",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-013",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-014",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-015",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-016",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-017",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-spectating-normal-018",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-easy-001",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-easy-002",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-easy-003",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-easy-004",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-easy-005",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-easy-006",
+    "category": "culture",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-001",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-002",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-003",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-004",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-005",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-006",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-007",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-008",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-normal-009",
+    "category": "culture",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-hard-001",
+    "category": "culture",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-hard-002",
+    "category": "culture",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-culture-depth-playmore-hard-003",
+    "category": "culture",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-easy-001",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-easy-002",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-easy-003",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-easy-004",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-easy-005",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-001",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-002",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-003",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-004",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-005",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-006",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-hard-001",
+    "category": "public",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-hard-002",
+    "category": "public",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-librarymore-normal-007",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-easy-001",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-easy-002",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-easy-003",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-easy-004",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-easy-005",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-easy-006",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-001",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-002",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-003",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-004",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-005",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-006",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-007",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-hard-001",
+    "category": "public",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-hotelmore-normal-008",
+    "category": "public",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-easy-001",
+    "category": "manners",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-easy-002",
+    "category": "manners",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-normal-001",
+    "category": "manners",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-normal-002",
+    "category": "manners",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-normal-003",
+    "category": "manners",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-normal-004",
+    "category": "manners",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-manners-depth-mannersmore-normal-005",
+    "category": "manners",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-easy-001",
+    "category": "consumer",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-easy-002",
+    "category": "consumer",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-easy-003",
+    "category": "consumer",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-easy-004",
+    "category": "consumer",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-easy-005",
+    "category": "consumer",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-easy-006",
+    "category": "consumer",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-001",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-002",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-003",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-004",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-005",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-006",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-007",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-normal-008",
+    "category": "consumer",
+    "difficulty": "normal",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-hard-001",
+    "category": "consumer",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-hard-002",
+    "category": "consumer",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-hard-003",
+    "category": "consumer",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-consumer-depth-dealsmore-hard-004",
+    "category": "consumer",
+    "difficulty": "hard",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-001",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-002",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-003",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-004",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-005",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-006",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-007",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-008",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-009",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-signsmore-normal-010",
+    "category": "public",
+    "difficulty": "normal",
+    "image": true
+  },
+  {
+    "id": "v2-public-depth-travelmore-easy-001",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-travelmore-easy-002",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-travelmore-easy-003",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  },
+  {
+    "id": "v2-public-depth-travelmore-easy-004",
+    "category": "public",
+    "difficulty": "easy",
+    "image": false
+  }
+]

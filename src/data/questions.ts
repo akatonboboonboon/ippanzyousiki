@@ -24,6 +24,10 @@ import { settlementShoppingQuestions } from "./expansion-settlement-shopping";
 import { objectsStationeryQuestions } from "./expansion-objects-stationery";
 import { gamesGardenLibraryQuestions } from "./expansion-games-garden-library";
 import { photoHotelQuestions } from "./expansion-photo-hotel";
+import { depthLifeQuestions } from "./expansion-depth-life";
+import { depthDigitalQuestions } from "./expansion-depth-digital";
+import { depthCultureQuestions } from "./expansion-depth-culture";
+import { depthPublicQuestions } from "./expansion-depth-public";
 import {
   editorialRevisions,
   editorialOriginalIds,
@@ -104,11 +108,22 @@ export const familiarEditionQuestions: Question[] = [
   ...editorialQuestions,
   ...familiarQuestions,
 ];
-export const questions: Question[] = familiarEditionQuestions.map((q) =>
-  knowledgeOriginalIds.has(q.id)
-    ? { ...q, ...knowledgeRevisions[q.id], id: currentKnowledgeId(q.id) }
-    : q,
-);
+export const knowledgeEditionQuestions: Question[] =
+  familiarEditionQuestions.map((q) =>
+    knowledgeOriginalIds.has(q.id)
+      ? { ...q, ...knowledgeRevisions[q.id], id: currentKnowledgeId(q.id) }
+      : q,
+  );
+export const depthQuestions: Question[] = [
+  ...depthLifeQuestions,
+  ...depthDigitalQuestions,
+  ...depthCultureQuestions,
+  ...depthPublicQuestions,
+];
+export const questions: Question[] = [
+  ...knowledgeEditionQuestions,
+  ...depthQuestions,
+];
 export const archivedQuestions: Question[] = [
   ...(archive as Question[]),
   ...publishedQuestions.filter((question) =>

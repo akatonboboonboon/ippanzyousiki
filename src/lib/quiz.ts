@@ -15,6 +15,7 @@ import {
   originalKnowledgeId,
 } from "../data/knowledge-revisions";
 import { restoreLearning, type LearningProgress } from "./learning";
+import depthDiagnosticManifest from "../data/diagnostic-depth.json" with { type: "json" };
 
 export interface QuizConfig {
   difficulty: Difficulty | "mix";
@@ -24,7 +25,7 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v10";
+export const DIAGNOSTIC_VERSION = "standard-v11";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -37,6 +38,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v8": "標準診断 8",
   "standard-v9": "標準診断 9",
   "standard-v10": "標準診断 10",
+  "standard-v11": "標準診断 11",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -66,6 +68,10 @@ const DIAGNOSTIC_BUCKET_COUNTS = {
   hardText: 1,
 } as const;
 type DiagnosticBucket = keyof typeof DIAGNOSTIC_BUCKET_COUNTS;
+// Published metadata is frozen separately so future additions cannot enter standard 11.
+const depthDiagnosticPool = new Map(
+  depthDiagnosticManifest.map((entry) => [entry.id, entry]),
+);
 const DIAGNOSTIC_BUCKETS = Object.keys(
   DIAGNOSTIC_BUCKET_COUNTS,
 ) as DiagnosticBucket[];
@@ -351,6 +357,28 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v11") {
+    const expected = depthDiagnosticPool.get(question.id);
+    if (!expected) return diagnosticBucket(question, "standard-v10");
+    if (
+      question.category !== expected.category ||
+      question.difficulty !== expected.difficulty
+    )
+      return null;
+    if (expected.image) {
+      if (
+        question.difficulty !== "normal" ||
+        !question.image?.src?.trim() ||
+        !question.image.alt?.trim()
+      )
+        return null;
+      return "normalImage";
+    }
+    if (question.image !== undefined) return null;
+    return (
+      { easy: "easyText", normal: "normalText", hard: "hardText" } as const
+    )[question.difficulty];
+  }
   if (version === "standard-v10") {
     const originalId = originalKnowledgeId(question.id);
     if (currentKnowledgeId(originalId) !== question.id) return null;
@@ -554,7 +582,8 @@ export function selectQuestions(
     return version === "standard-v7" ||
       version === "standard-v8" ||
       version === "standard-v9" ||
-      version === "standard-v10"
+      version === "standard-v10" ||
+      version === "standard-v11"
       ? prioritizeQuestions(
           sample,
           bank.filter((q) => diagnosticBucket(q, version) !== null),

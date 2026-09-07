@@ -6,6 +6,7 @@ import {
   archivedQuestions,
   activeQuestionIds,
   publishedQuestions,
+  depthQuestions,
 } from "../src/data/questions";
 import {
   categoryScores,
@@ -41,14 +42,14 @@ describe("question bank quality", () => {
       expect(questionMap.get(original.id)).toEqual(original);
     }
   });
-  it("has 2597 unique questions including the expanded living topics", () => {
-    expect(questions).toHaveLength(2597);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(2597);
+  it("has unique questions including all deeper everyday additions", () => {
+    expect(questions).toHaveLength(2597 + depthQuestions.length);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(questions.length);
     expect(
       new Set(
         questions.map((q) => q.prompt.normalize("NFKC").replace(/\s/g, "")),
       ).size,
-    ).toBe(2597);
+    ).toBe(questions.length);
     for (const category of CATEGORIES)
       for (const difficulty of ["easy", "normal", "hard"]) {
         expect(
@@ -65,23 +66,27 @@ describe("question bank quality", () => {
           ],
         );
       }
-    expect(questions.filter((q) => q.image)).toHaveLength(120);
+    expect(questions.filter((q) => q.image)).toHaveLength(
+      120 + depthQuestions.filter((q) => q.image).length,
+    );
     expect(questions.filter((q) => q.id.includes("-extra-"))).toHaveLength(60);
     for (const category of CATEGORIES) {
       expect(
         questions.filter((q) => q.category === category.id && q.image),
       ).toHaveLength(
-        category.id === "public"
-          ? 56
-          : category.id === "household"
-            ? 23
-            : category.id === "culture"
-              ? 14
-              : category.id === "digital"
-                ? 8
-                : category.id === "work"
-                  ? 5
-                  : 2,
+        depthQuestions.filter((q) => q.category === category.id && q.image)
+          .length +
+          (category.id === "public"
+            ? 56
+            : category.id === "household"
+              ? 23
+              : category.id === "culture"
+                ? 14
+                : category.id === "digital"
+                  ? 8
+                  : category.id === "work"
+                    ? 5
+                    : 2),
       );
     }
     for (const category of CATEGORIES) {
@@ -152,7 +157,14 @@ describe("balanced selection", () => {
       categories: ["world"],
       count: 80,
     });
-    expect(sample).toHaveLength(44);
+    expect(sample).toHaveLength(
+      Math.min(
+        80,
+        questions.filter(
+          (q) => q.category === "world" && q.difficulty === "hard",
+        ).length,
+      ),
+    );
     expect(
       sample.every((q) => q.category === "world" && q.difficulty === "hard"),
     ).toBe(true);
@@ -160,12 +172,14 @@ describe("balanced selection", () => {
       [],
     );
   });
-  it("can exhaust all 2597 questions and select from a small review pool without repeats", () => {
+  it("can exhaust the entire current bank and select from a small review pool without repeats", () => {
     expect(
       new Set(
-        selectQuestions(questions, { ...config, count: 2597 }).map((q) => q.id),
+        selectQuestions(questions, { ...config, count: questions.length }).map(
+          (q) => q.id,
+        ),
       ).size,
-    ).toBe(2597);
+    ).toBe(questions.length);
     const pool = [questions[0], questions[2], questions[4]];
     expect(
       selectQuestions(pool, config)

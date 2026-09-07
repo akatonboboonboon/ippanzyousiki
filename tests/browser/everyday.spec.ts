@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { questions } from "../../src/data/questions";
 
-test("all six everyday topics expose 20 questions, difficulty filters, explanations and sources", async ({
+test("all six everyday topics expose their current questions, difficulty filters, explanations and sources", async ({
   page,
 }) => {
   await page.goto("/");
@@ -18,14 +18,19 @@ test("all six everyday topics expose 20 questions, difficulty filters, explanati
   ]) {
     await page.getByLabel("ライブラリのジャンル").selectOption(category);
     await page.getByLabel("ライブラリの題材").selectOption(topic);
-    await expect(page.locator(".library-count b")).toHaveText("20");
-    for (const [difficulty, count] of [
-      ["easy", "8"],
-      ["normal", "8"],
-      ["hard", "4"],
-    ]) {
+    const topicQuestions = questions.filter(
+      (q) => q.category === category && q.topic === topic,
+    );
+    await expect(page.locator(".library-count b")).toHaveText(
+      String(topicQuestions.length),
+    );
+    for (const difficulty of ["easy", "normal", "hard"]) {
       await page.getByLabel("ライブラリの難易度").selectOption(difficulty);
-      await expect(page.locator(".library-count b")).toHaveText(count);
+      await expect(page.locator(".library-count b")).toHaveText(
+        String(
+          topicQuestions.filter((q) => q.difficulty === difficulty).length,
+        ),
+      );
     }
     await page.getByLabel("ライブラリの難易度").selectOption("all");
     const q = questions.find((q) => q.topic === topic)!;

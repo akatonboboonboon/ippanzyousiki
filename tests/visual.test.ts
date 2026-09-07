@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, relative } from "node:path";
 import { describe, expect, it } from "vitest";
-import { questions } from "../src/data/questions";
+import { questions, depthQuestions } from "../src/data/questions";
 import {
   createDiagnosticConfig,
   selectQuestions,
@@ -10,10 +10,14 @@ import {
 } from "../src/lib/quiz";
 
 describe("visual question delivery", () => {
-  it("ships all 120 local SVGs with complete descriptions and no external resource dependencies", () => {
+  it("ships every local SVG with a valid canvas, complete descriptions and no external resource dependencies", () => {
     const visualQuestions = questions.filter((q) => q.image);
-    expect(visualQuestions).toHaveLength(120);
-    expect(new Set(visualQuestions.map((q) => q.image!.src)).size).toBe(120);
+    expect(visualQuestions).toHaveLength(
+      120 + depthQuestions.filter((q) => q.image).length,
+    );
+    expect(new Set(visualQuestions.map((q) => q.image!.src)).size).toBe(
+      visualQuestions.length,
+    );
     const publicDir = resolve("public");
     for (const question of visualQuestions) {
       expect(question.image, question.id).toBeDefined();
@@ -24,10 +28,17 @@ describe("visual question delivery", () => {
       expect(existsSync(path), image.src).toBe(true);
       const svg = readFileSync(path, "utf8");
       expect(svg, image.src).toMatch(/<svg\b/);
-      expect(svg, image.src).toMatch(/viewBox="0 0 480 280"/);
+      const canvas = svg.match(/viewBox="0 0 (\d+) (\d+)"/);
+      expect(canvas, image.src).not.toBeNull();
+      expect(Number(canvas![1]), image.src).toBeGreaterThan(0);
+      expect(Number(canvas![2]), image.src).toBeGreaterThan(0);
       expect(svg, image.src).not.toMatch(
-        /<script|<foreignObject|(?:xlink:)?href\s*=|@import|url\(/i,
+        /<script|<foreignObject|(?:xlink:)?href\s*=|@import/i,
       );
+      for (const reference of svg.matchAll(/url\(([^)]+)\)/g))
+        expect(reference[1].replace(/["']/g, "").trim(), image.src).toMatch(
+          /^#[a-zA-Z][\w-]*$/,
+        );
       expect(image.alt.trim().length, question.id).toBeGreaterThan(20);
       expect(question.source?.url, question.id).toMatch(/^https:\/\//);
     }
