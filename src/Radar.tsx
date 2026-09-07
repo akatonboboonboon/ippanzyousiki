@@ -43,7 +43,7 @@ export default function Radar({
               .map((_, i) => point(i, scale).join(","))
               .join(" ")}
             fill={scale === 1 ? "var(--radar-bg, #f7faf7)" : "none"}
-            stroke="#dce6dc"
+            stroke="var(--radar-grid, #dce6dc)"
             className={scale === 1 ? "radar-outer" : ""}
           />
         ))
@@ -55,7 +55,7 @@ export default function Radar({
           y1={center}
           x2={point(i, 1)[0]}
           y2={point(i, 1)[1]}
-          stroke="#dce6dc"
+          stroke="var(--radar-grid, #dce6dc)"
         />
       ))}
       {[25, 50, 75, 100].map((value) => (
@@ -64,7 +64,7 @@ export default function Radar({
           x={center + 5}
           y={center - (radius * value) / 100 + 3}
           fontSize="9"
-          fill="#8b9b90"
+          fill="var(--radar-scale, #8b9b90)"
         >
           {value}
         </text>
@@ -72,8 +72,8 @@ export default function Radar({
       {measured && (
         <polygon
           points={points}
-          fill="rgba(67, 143, 100, .18)"
-          stroke="#388365"
+          fill="var(--radar-area, rgba(67, 143, 100, .18))"
+          stroke="var(--radar-data, #388365)"
           strokeWidth="2.5"
           strokeLinejoin="round"
         />
@@ -88,7 +88,7 @@ export default function Radar({
                 y1={center}
                 x2={point(i, s.percent / 100)[0]}
                 y2={point(i, s.percent / 100)[1]}
-                stroke="#388365"
+                stroke="var(--radar-data, #388365)"
                 strokeWidth="3"
                 opacity=".45"
               />
@@ -102,8 +102,8 @@ export default function Radar({
               cx={point(i, s.percent / 100)[0]}
               cy={point(i, s.percent / 100)[1]}
               r="4"
-              fill="#388365"
-              stroke="white"
+              fill="var(--radar-data, #388365)"
+              stroke="var(--surface, white)"
               strokeWidth="2"
             />
           ),
@@ -121,7 +121,7 @@ export default function Radar({
                 y={y + 20}
                 textAnchor="middle"
                 fontSize="10"
-                fill="#7c877f"
+                fill="var(--text-secondary, #7c877f)"
               >
                 {scores[i]?.percent === null
                   ? "未測定"

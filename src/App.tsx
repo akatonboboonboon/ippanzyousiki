@@ -18,10 +18,12 @@ import {
   Leaf,
   Lightbulb,
   Monitor,
+  Moon,
   Play,
   RotateCcw,
   Search,
   ShieldCheck,
+  Sun,
   Target,
   Trash2,
   Trophy,
@@ -64,6 +66,7 @@ import {
 import Radar from "./Radar";
 import QuestionImage from "./QuestionImage";
 import { recordExposure, recordAnswer } from "./lib/learning";
+import { useTheme, type ThemePreference } from "./lib/theme";
 
 const activeQuestionMap = new Map(questions.map((q) => [q.id, q]));
 
@@ -134,6 +137,9 @@ function Source({ question }: { question: Question }) {
 }
 
 export default function App() {
+  const { preference, setPreference, saveError: themeSaveError } = useTheme();
+  const ThemeIcon =
+    preference === "system" ? Monitor : preference === "dark" ? Moon : Sun;
   const [saved] = useState(() => readSaved(questionMap));
   const [history, setHistory] = useState<Result[]>(saved.history);
   const [learning, setLearning] = useState(saved.learning);
@@ -438,12 +444,28 @@ export default function App() {
               <span>問題ライブラリ</span>
             </button>
           </nav>
-          <span className="header-note">
-            <span className="status-dot" />
-            登録不要
-          </span>
+          <label className="theme-control">
+            <ThemeIcon size={17} aria-hidden="true" />
+            <span className="theme-label">表示</span>
+            <select
+              aria-label="表示テーマ"
+              value={preference}
+              onChange={(event) =>
+                setPreference(event.target.value as ThemePreference)
+              }
+            >
+              <option value="system">端末に合わせる</option>
+              <option value="light">ライト</option>
+              <option value="dark">ダーク</option>
+            </select>
+          </label>
         </div>
       </header>
+      {themeSaveError && (
+        <p className="theme-save-note" role="status">
+          表示テーマを保存できませんでした。今回は選んだテーマで表示します。
+        </p>
+      )}
       {storageError && (
         <div role="alert" className="storage-warning">
           今回の回答や記録の変更を保存できていません。クイズは続けられますが、ページを閉じると保存できなかった内容は失われます。

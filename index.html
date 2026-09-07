@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#247459" />
+    <meta name="theme-color" content="#f8f9f5" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // Apply before the app and styles load so dark mode starts on a dark canvas.
+      (() => {
+        let preference = "system";
+        try {
+          const saved = localStorage.getItem("joshiki-theme");
+          if (saved === "light" || saved === "dark") preference = saved;
+        } catch {}
+        const theme =
+          preference === "system"
+            ? matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : preference;
+        const background = theme === "dark" ? "#0b100d" : "#f8f9f5";
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.documentElement.style.backgroundColor = background;
+        document.querySelector('meta[name="theme-color"]').content = background;
+      })();
+    </script>
     <meta
       name="description"
       content="暮らしや仕事、社会の一般常識を学べるクイズアプリ。難易度やジャンルを選んで解き、正解数とジャンル別の正答率を確認できます。画像問題と60問の標準診断もあります。"

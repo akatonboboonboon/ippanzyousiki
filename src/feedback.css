@@ -59,27 +59,27 @@
 }
 .scope-options button {
   padding: 10px 16px;
-  border: 1px solid #cbd6c7;
+  border: 1px solid var(--border-subtle, #cbd6c7);
   border-radius: 6px;
-  background: white;
-  color: #304a3e;
+  background: var(--surface, white);
+  color: var(--text-primary, #304a3e);
   font: inherit;
   font-size: 13px;
 }
 .scope-options button.selected {
-  border-color: #27755f;
-  background: #edf5f0;
+  border-color: var(--border-selected, #27755f);
+  background: var(--surface-selected, #edf5f0);
   font-weight: 700;
 }
 .scope-description {
   margin: 10px 0 0;
   font-size: 12px;
   line-height: 1.8;
-  color: #526357;
+  color: var(--text-secondary, #526357);
 }
 .question-kind {
-  background: #eef1ed;
-  color: #495b50;
+  background: var(--surface-subtle, #eef1ed);
+  color: var(--text-secondary, #495b50);
 }
 .score-panel {
   padding: 32px;
@@ -104,12 +104,12 @@
 .score-correct {
   margin: 0 0 24px;
   font-size: 21px;
-  color: #244b3e;
+  color: var(--text-accent, #244b3e);
 }
 .score-context {
   line-height: 1.9;
   font-size: 13px;
-  color: #526357;
+  color: var(--text-secondary, #526357);
 }
 .score-note {
   padding-top: 14px;

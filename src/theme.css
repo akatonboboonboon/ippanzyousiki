@@ -1,0 +1,53 @@
+/* The existing light palette lives in the component rules as token fallbacks.
+   Screen-only tokens keep printed results on a light background. */
+@media screen {
+  :root[data-theme="dark"] {
+    --page-bg: #0b100d;
+    --surface: #121a16;
+    --surface-subtle: #19251e;
+    --surface-hover: #233029;
+    --surface-selected: #23392d;
+    --text-primary: #d6dfd8;
+    --text-secondary: #aab9ae;
+    --text-accent: #87bf9b;
+    --green: #80b994;
+    --dark: #d6dfd8;
+    --muted: #aab9ae;
+    --line: #34463a;
+    --border-subtle: #34463a;
+    --border-selected: #6da983;
+    --soft: #19251e;
+    --accent-solid: #76b28d;
+    --button-bg: #2d6347;
+    --accent-hover: #397755;
+    --on-accent: #e5eee6;
+    --track-bg: #34463a;
+    --success-bg: #1e3124;
+    --success-text: #acd9b7;
+    --success-border: #75af88;
+    --error-bg: #34231f;
+    --error-text: #f0b6a9;
+    --error-border: #bf8c81;
+    --error-marker: #7e4f47;
+    --warning-bg: #2d281a;
+    --warning-text: #e0cd95;
+    --warning-border: #8e8056;
+    --advanced-bg: #2b2433;
+    --advanced-text: #cfbadd;
+    --info-bg: #1d2b36;
+    --info-text: #a9cadd;
+    --focus-ring: #bbdeb4;
+    --selection-bg: #40664b;
+    --dialog-backdrop: #050b08b8;
+    --shadow-color: #050b0859;
+    --radar-bg: #16221a;
+    --radar-grid: #566c5c;
+    --radar-scale: #aab9ae;
+    --radar-area: #76b28d2b;
+    --radar-data: #87bf9b;
+  }
+
+  :root[data-theme="dark"] .answer-option.incorrect .answer-letter {
+    color: #f8e3dc;
+  }
+}
