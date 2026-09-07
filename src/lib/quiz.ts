@@ -10,6 +10,10 @@ import {
   currentEditorialId,
   originalEditorialId,
 } from "../data/editorial-revisions";
+import {
+  currentKnowledgeId,
+  originalKnowledgeId,
+} from "../data/knowledge-revisions";
 import { restoreLearning, type LearningProgress } from "./learning";
 
 export interface QuizConfig {
@@ -20,7 +24,7 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v9";
+export const DIAGNOSTIC_VERSION = "standard-v10";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -32,6 +36,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v7": "標準診断 7",
   "standard-v8": "標準診断 8",
   "standard-v9": "標準診断 9",
+  "standard-v10": "標準診断 10",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -346,6 +351,11 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v10") {
+    const originalId = originalKnowledgeId(question.id);
+    if (currentKnowledgeId(originalId) !== question.id) return null;
+    return diagnosticBucket({ ...question, id: originalId }, "standard-v9");
+  }
   if (version === "standard-v9") {
     const expected = familiarDiagnosticPool.get(question.id);
     if (expected) {
@@ -543,7 +553,8 @@ export function selectQuestions(
     const sample = selectDiagnosticQuestions(bank, random, version);
     return version === "standard-v7" ||
       version === "standard-v8" ||
-      version === "standard-v9"
+      version === "standard-v9" ||
+      version === "standard-v10"
       ? prioritizeQuestions(
           sample,
           bank.filter((q) => diagnosticBucket(q, version) !== null),
@@ -886,7 +897,8 @@ export function readSaved(bank: Map<string, Question>): SavedData {
         ([id]) =>
           id.startsWith("v2-") &&
           currentChoiceId(originalChoiceId(id)) === id &&
-          currentEditorialId(originalEditorialId(id)) === id,
+          currentEditorialId(originalEditorialId(id)) === id &&
+          currentKnowledgeId(originalKnowledgeId(id)) === id,
       ),
     );
     return {

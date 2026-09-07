@@ -12,10 +12,11 @@ import {
   revisedOriginalIds,
 } from "../src/data/choice-revisions";
 import { editorialOriginalIds } from "../src/data/editorial-revisions";
+import { knowledgeOriginalIds } from "../src/data/knowledge-revisions";
 // Check the edition as published, even when later wording revisions retire its IDs.
 const activeQuestionIds = new Set(questions.map((q) => q.id));
 const archivedQuestions = allArchivedQuestions.filter(
-  (q) => !editorialOriginalIds.has(q.id),
+  (q) => !editorialOriginalIds.has(q.id) && !knowledgeOriginalIds.has(q.id),
 );
 import { CATEGORY_IDS, type Question } from "../src/data/types";
 import {

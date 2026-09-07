@@ -22,6 +22,10 @@ export default defineConfig({
             /\/src\/data\/editorial-revisions-([^/]+)\.json$/,
           );
           if (editorial) return `questions-editorial-${editorial[1]}`;
+          const knowledge = id.match(
+            /\/src\/data\/knowledge-revisions-([^/]+)\.json$/,
+          );
+          if (knowledge) return `questions-knowledge-${knowledge[1]}`;
           if (id.includes("node_modules")) return "vendor";
         },
       },

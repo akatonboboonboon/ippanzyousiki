@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
-  questions,
+  familiarEditionQuestions as questions,
   familiarQuestions,
   sceneEditionQuestions,
   editorialQuestions,
@@ -9,8 +9,7 @@ import {
   revisedQuestions,
   publishedQuestions,
   questionMap,
-  activeQuestionIds,
-  archivedQuestions,
+  archivedQuestions as allArchivedQuestions,
 } from "../src/data/questions";
 import {
   editorialRevisions,
@@ -18,6 +17,11 @@ import {
   currentEditorialId,
   originalEditorialId,
 } from "../src/data/editorial-revisions";
+import { knowledgeOriginalIds } from "../src/data/knowledge-revisions";
+const activeQuestionIds = new Set(questions.map((q) => q.id));
+const archivedQuestions = allArchivedQuestions.filter(
+  (q) => !knowledgeOriginalIds.has(q.id),
+);
 import life from "../src/data/editorial-revisions-life.json" with { type: "json" };
 import society from "../src/data/editorial-revisions-society.json" with { type: "json" };
 import knowledge from "../src/data/editorial-revisions-knowledge.json" with { type: "json" };
@@ -270,7 +274,7 @@ describe("familiar knowledge and wording revisions", () => {
   });
 
   it("uses edited IDs and all seven additions in standard 9 with unchanged quotas and excludes future IDs", () => {
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v9");
     expect(config.diagnosticVersion).toBe("standard-v9");
     const seenTopics = new Set<string>();
     let sawRevision = false;
@@ -338,7 +342,7 @@ describe("familiar knowledge and wording revisions", () => {
         pool.slice(count).forEach((q) => (learning[q.id] = progress()));
       }
     }
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v9");
     const sample = selectQuestions(questions, config, seeded(13), learning);
     expect(new Set(sample.map((q) => q.id))).toEqual(unseen);
     for (const q of questions
@@ -383,7 +387,10 @@ describe("familiar knowledge and wording revisions", () => {
       );
       return finishSession(session);
     });
-    const current = createSession(questions, createDiagnosticConfig());
+    const current = createSession(
+      questions,
+      createDiagnosticConfig("standard-v9"),
+    );
     current.answers = current.items.map((item) =>
       item.order.indexOf(questionMap.get(item.questionId)!.answer),
     );
@@ -392,7 +399,7 @@ describe("familiar knowledge and wording revisions", () => {
       editorialOriginalIds.has(q.id),
     )!;
     const unchanged = sceneEditionQuestions.find(
-      (q) => !editorialOriginalIds.has(q.id),
+      (q) => !editorialOriginalIds.has(q.id) && !knowledgeOriginalIds.has(q.id),
     )!;
     const learning = { [old.id]: progress(false), [unchanged.id]: progress() };
     const session = createSession([old], {

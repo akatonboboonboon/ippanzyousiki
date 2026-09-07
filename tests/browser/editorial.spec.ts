@@ -8,6 +8,7 @@ import {
   currentEditorialId,
   editorialOriginalIds,
 } from "../../src/data/editorial-revisions";
+import { currentKnowledgeId } from "../../src/data/knowledge-revisions";
 
 test("all seven familiar topics expose 15 sourced questions with the intended difficulty distribution", async ({
   page,
@@ -17,7 +18,7 @@ test("all seven familiar topics expose 15 sourced questions with the intended di
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
   for (const topic of new Set(familiarQuestions.map((q) => q.topic!))) {
-    const q = familiarQuestions.find((q) => q.topic === topic)!;
+    const q = questions.find((q) => q.topic === topic)!;
     await page.getByLabel("ライブラリのジャンル").selectOption(q.category);
     await page.getByLabel("ライブラリの題材").selectOption(topic);
     await expect(page.locator(".library-count b")).toHaveText("15");
@@ -50,11 +51,12 @@ test("an archived wording resumes and scores as published while the library show
       (q) =>
         editorialOriginalIds.has(q.id) &&
         q.answer !==
-          questions.find((newQ) => newQ.id === currentEditorialId(q.id))
-            ?.answer,
+          questions.find(
+            (newQ) => newQ.id === currentKnowledgeId(currentEditorialId(q.id)),
+          )?.answer,
     ) ?? sceneEditionQuestions.find((q) => editorialOriginalIds.has(q.id))!;
   const edited = questions.find(
-    (q) => q.id === currentEditorialId(original.id),
+    (q) => q.id === currentKnowledgeId(currentEditorialId(original.id)),
   )!;
   const order = [2, 0, 3, 1];
   await page.goto("/");
@@ -131,7 +133,7 @@ test("familiar diagrams and a rewritten question remain usable on mobile and sav
   page.on("pageerror", (err) => errors.push(err.message));
   const selected = [
     ...["games", "photo", "hotel"].map((key) =>
-      familiarQuestions.find((q) => q.id.includes(`-${key}-normal-003`))!,
+      questions.find((q) => q.id.includes(`-familiar-${key}-normal-003`))!,
     ),
     questions
       .filter((q) => q.id.endsWith("-r3"))

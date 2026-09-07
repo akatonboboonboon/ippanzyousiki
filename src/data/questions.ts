@@ -29,6 +29,11 @@ import {
   editorialOriginalIds,
   currentEditorialId,
 } from "./editorial-revisions";
+import {
+  knowledgeRevisions,
+  knowledgeOriginalIds,
+  currentKnowledgeId,
+} from "./knowledge-revisions";
 import { dealQuestions } from "./expansion-deals";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
@@ -95,16 +100,22 @@ export const familiarQuestions: Question[] = [
   ...gamesGardenLibraryQuestions,
   ...photoHotelQuestions,
 ];
-export const questions: Question[] = [
+export const familiarEditionQuestions: Question[] = [
   ...editorialQuestions,
   ...familiarQuestions,
 ];
+export const questions: Question[] = familiarEditionQuestions.map((q) =>
+  knowledgeOriginalIds.has(q.id)
+    ? { ...q, ...knowledgeRevisions[q.id], id: currentKnowledgeId(q.id) }
+    : q,
+);
 export const archivedQuestions: Question[] = [
   ...(archive as Question[]),
   ...publishedQuestions.filter((question) =>
     revisedOriginalIds.has(question.id),
   ),
   ...sceneEditionQuestions.filter((q) => editorialOriginalIds.has(q.id)),
+  ...familiarEditionQuestions.filter((q) => knowledgeOriginalIds.has(q.id)),
 ];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));
 export const questionMap = new Map(

@@ -20,6 +20,7 @@ import {
 } from "../src/lib/quiz";
 import type { LearningProgress } from "../src/lib/learning";
 import { editorialOriginalIds } from "../src/data/editorial-revisions";
+import { knowledgeOriginalIds } from "../src/data/knowledge-revisions";
 
 const topics = [
   ["public", "road", "道路に描かれた表示", [0, 15, 0], 15],
@@ -178,7 +179,8 @@ describe("everyday scenes expansion", () => {
     expect(saved.learning).toEqual(
       Object.fromEntries(
         Object.entries(learning).filter(
-          ([id]) => !editorialOriginalIds.has(id),
+          ([id]) =>
+            !editorialOriginalIds.has(id) && !knowledgeOriginalIds.has(id),
         ),
       ),
     );

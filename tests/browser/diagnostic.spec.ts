@@ -103,7 +103,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   await expect(page.locator(".score-details")).toContainText("45 / 60問");
   await expect(page.locator(".diagnostic-comparison")).toContainText("+25点");
   await expect(page.locator(".diagnostic-comparison")).toContainText(
-    "標準診断 9",
+    "標準診断 10",
   );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".review-item")).toHaveCount(15);
@@ -124,7 +124,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toBeVisible();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-stats .panel").last()).toContainText(
-    "最新の標準診断 9",
+    "最新の標準診断 10",
   );
   await expect(
     page.locator(".history-stats .panel").last().locator("strong"),
