@@ -17,6 +17,10 @@ import { toolsPackagingQuestions } from "./expansion-tools-packaging";
 import { utilitiesNewsQuestions } from "./expansion-utilities-news";
 import { diningQuestions } from "./expansion-dining";
 import { signQuestions } from "./expansion-signs";
+import { streetSymbolQuestions } from "./expansion-street-symbols";
+import { floorFamilyQuestions } from "./expansion-floor-family";
+import { beddingApplianceQuestions } from "./expansion-bedding-appliance";
+import { settlementShoppingQuestions } from "./expansion-settlement-shopping";
 import { dealQuestions } from "./expansion-deals";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
@@ -59,7 +63,20 @@ export const dailyQuestions: Question[] = [
   ...dealQuestions,
   ...signQuestions,
 ];
-export const questions: Question[] = [...revisedQuestions, ...dailyQuestions];
+export const dailyEditionQuestions: Question[] = [
+  ...revisedQuestions,
+  ...dailyQuestions,
+];
+export const sceneQuestions: Question[] = [
+  ...streetSymbolQuestions,
+  ...floorFamilyQuestions,
+  ...beddingApplianceQuestions,
+  ...settlementShoppingQuestions,
+];
+export const questions: Question[] = [
+  ...dailyEditionQuestions,
+  ...sceneQuestions,
+];
 export const archivedQuestions: Question[] = [
   ...(archive as Question[]),
   ...publishedQuestions.filter((question) =>

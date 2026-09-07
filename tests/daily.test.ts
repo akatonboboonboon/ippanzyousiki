@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   dailyQuestions,
-  questions,
+  dailyEditionQuestions as questions,
   revisedQuestions,
   publishedQuestions,
   archivedQuestions,

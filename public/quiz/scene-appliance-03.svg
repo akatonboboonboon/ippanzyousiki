@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">洗濯乾燥機の標準コース容量</title>
+  <desc id="desc">洗濯6kgまで、乾燥3kgまで。乾いた衣類の重さを表す。</desc>
+  <rect width="480" height="280" rx="18" fill="#f5f7f4"/>
+  <g font-family="sans-serif" fill="#263d36" text-anchor="middle">
+    <text x="240" y="38" font-size="20" font-weight="bold">標準コースの容量</text>
+    <rect x="45" y="65" width="185" height="148" rx="14" fill="#dceadf" stroke="#476b5d" stroke-width="3"/>
+    <rect x="250" y="65" width="185" height="148" rx="14" fill="#e8e4d4" stroke="#7c7656" stroke-width="3"/>
+    <text x="137" y="106" font-size="25">洗濯</text>
+    <text x="342" y="106" font-size="25">乾燥</text>
+    <text x="137" y="158" font-size="37" font-weight="bold">6kg</text>
+    <text x="342" y="158" font-size="37" font-weight="bold">3kg</text>
+    <text x="137" y="190" font-size="20">まで</text>
+    <text x="342" y="190" font-size="20">まで</text>
+    <text x="240" y="253" font-size="18">重さは「乾いた衣類」の重さ</text>
+  </g>
+</svg>

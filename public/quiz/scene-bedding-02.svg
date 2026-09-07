@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">衣類の正面図</title>
+  <desc id="desc">肩から腰までの胴部分があり、首元はV字、前にはボタン。左右に腕を通す穴があり袖は付いていない。</desc>
+  <rect width="480" height="280" rx="18" fill="#f5f7f4"/>
+  <text x="240" y="34" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#263d36">正面から見た形</text>
+  <g stroke="#476b5d" stroke-width="3" stroke-linejoin="round">
+    <path d="M190 58 214 52 240 104 266 52 290 58 Q282 107 310 122 L310 231 259 247 240 229 221 247 170 231 170 122 Q198 107 190 58Z" fill="#9fbcad"/>
+    <path d="M214 52 240 104 266 52 M240 104 240 229" fill="none"/>
+    <path d="M188 170 222 176 219 186 186 180Z M258 176 292 170 294 180 261 186Z" fill="#d8e7df"/>
+    <circle cx="250" cy="128" r="3" fill="#35594b"/>
+    <circle cx="250" cy="151" r="3" fill="#35594b"/>
+    <circle cx="250" cy="174" r="3" fill="#35594b"/>
+    <circle cx="250" cy="197" r="3" fill="#35594b"/>
+    <circle cx="250" cy="220" r="3" fill="#35594b"/>
+  </g>
+</svg>

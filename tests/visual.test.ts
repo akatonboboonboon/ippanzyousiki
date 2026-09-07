@@ -10,10 +10,10 @@ import {
 } from "../src/lib/quiz";
 
 describe("visual question delivery", () => {
-  it("ships all 42 local SVGs with complete descriptions and no external resource dependencies", () => {
+  it("ships all 90 local SVGs with complete descriptions and no external resource dependencies", () => {
     const visualQuestions = questions.filter((q) => q.image);
-    expect(visualQuestions).toHaveLength(42);
-    expect(new Set(visualQuestions.map((q) => q.image!.src)).size).toBe(42);
+    expect(visualQuestions).toHaveLength(90);
+    expect(new Set(visualQuestions.map((q) => q.image!.src)).size).toBe(90);
     const publicDir = resolve("public");
     for (const question of visualQuestions) {
       expect(question.image, question.id).toBeDefined();

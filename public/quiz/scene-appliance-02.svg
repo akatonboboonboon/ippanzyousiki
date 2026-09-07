@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">洗濯機の予約表示例</title>
+  <desc id="desc">標準コース。予約ランプが点灯し8時間後と表示。予約は運転が終了するまでの時間。</desc>
+  <rect width="480" height="280" rx="18" fill="#f5f7f4"/>
+  <text x="240" y="37" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#263d36">洗濯機の表示</text>
+  <rect x="74" y="56" width="332" height="159" rx="16" fill="#e7eee7" stroke="#476b5d" stroke-width="3"/>
+  <g font-family="sans-serif" fill="#263d36" text-anchor="middle">
+    <text x="240" y="90" font-size="22">洗濯コース：標準</text>
+    <circle cx="173" cy="121" r="7" fill="#386e53"/>
+    <text x="248" y="128" font-size="20">予約　点灯</text>
+    <text x="240" y="186" font-size="38" font-weight="bold">8時間後</text>
+    <text x="240" y="244" font-size="18">予約：運転が終了するまでの時間</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">枕に付けた薄い布</title>
+  <desc id="desc">左の上面図は枕の上を薄い布で覆っている。右の裏面図は枕の中央が露出し、二本のゴムバンドが枕の裏を横切る。</desc>
+  <rect width="480" height="280" rx="18" fill="#f5f7f4"/>
+  <g font-family="sans-serif" font-size="20" font-weight="bold" fill="#263d36" text-anchor="middle">
+    <text x="126" y="41">上面</text><text x="354" y="41">裏面</text>
+  </g>
+  <g stroke="#476b5d" stroke-width="3" stroke-linejoin="round">
+    <rect x="28" y="79" width="194" height="123" rx="28" fill="#eef2f0"/>
+    <rect x="30" y="68" width="190" height="118" rx="22" fill="#b8d4c5"/>
+    <path d="M47 91H202 M47 119H202 M47 147H202 M76 81V172 M125 81V172 M174 81V172" stroke="#90b29f" stroke-width="2"/>
+    <rect x="256" y="75" width="196" height="127" rx="28" fill="#eef2f0"/>
+    <path d="M286 77H306V200H286Z M402 77H422V200H402Z" fill="#b8d4c5"/>
+    <path d="M296 207V225H340" fill="none" stroke-width="2"/>
+  </g>
+  <g font-family="sans-serif" font-size="18" fill="#263d36" text-anchor="middle">
+    <text x="126" y="243">薄い布で上面を覆う</text><text x="374" y="231">ゴム</text>
+  </g>
+</svg>

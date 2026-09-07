@@ -16,7 +16,7 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v7";
+export const DIAGNOSTIC_VERSION = "standard-v8";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -26,6 +26,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v5": "標準診断 5",
   "standard-v6": "標準診断 6",
   "standard-v7": "標準診断 7",
+  "standard-v8": "標準診断 8",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -217,6 +218,46 @@ for (const [category, topic, counts, images] of [
   }
 }
 
+// Standard 8 adds these exact everyday scenes; standards 1–7 retain their banks.
+const sceneDiagnosticPool = new Map<
+  string,
+  { category: CategoryId; difficulty: Difficulty; bucket: DiagnosticBucket }
+>();
+for (const [category, topic, counts, normalImages] of [
+  ["public", "road", [0, 15, 0], 15],
+  ["public", "facility", [0, 15, 0], 15],
+  ["household", "floorplan", [6, 6, 3], 6],
+  ["culture", "family", [6, 6, 3], 6],
+  ["household", "bedding", [6, 6, 3], 3],
+  ["household", "appliance", [6, 6, 3], 3],
+  ["money", "settlement", [6, 6, 3], 0],
+  ["consumer", "shopping", [6, 6, 3], 0],
+] as const) {
+  for (const [i, difficulty] of (
+    ["easy", "normal", "hard"] as const
+  ).entries()) {
+    for (let n = 1; n <= counts[i]; n++) {
+      sceneDiagnosticPool.set(
+        `v2-${category}-scene-${topic}-${difficulty}-${String(n).padStart(3, "0")}`,
+        {
+          category,
+          difficulty,
+          bucket:
+            difficulty === "normal" && n <= normalImages
+              ? "normalImage"
+              : (
+                  {
+                    easy: "easyText",
+                    normal: "normalText",
+                    hard: "hardText",
+                  } as const
+                )[difficulty],
+        },
+      );
+    }
+  }
+}
+
 export function createDiagnosticConfig(
   version: DiagnosticVersion = DIAGNOSTIC_VERSION,
 ): QuizConfig {
@@ -259,6 +300,20 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v8") {
+    const expected = sceneDiagnosticPool.get(question.id);
+    if (!expected) return diagnosticBucket(question, "standard-v7");
+    if (
+      question.category !== expected.category ||
+      question.difficulty !== expected.difficulty
+    )
+      return null;
+    if (expected.bucket === "normalImage") {
+      if (!question.image?.src?.trim() || !question.image.alt?.trim())
+        return null;
+    } else if (question.image !== undefined) return null;
+    return expected.bucket;
+  }
   // Standard 7 changes selection priority, retaining standard 6's bank and quotas.
   if (version === "standard-v7")
     return diagnosticBucket(question, "standard-v6");
@@ -422,7 +477,7 @@ export function selectQuestions(
       );
     const version = config.diagnosticVersion!;
     const sample = selectDiagnosticQuestions(bank, random, version);
-    return version === "standard-v7"
+    return version === "standard-v7" || version === "standard-v8"
       ? prioritizeQuestions(
           sample,
           bank.filter((q) => diagnosticBucket(q, version) !== null),

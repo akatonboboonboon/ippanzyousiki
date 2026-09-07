@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">マットレスに使う布の形</title>
+  <desc id="desc">左は上面と側面を布で覆ったマットレス。右は布を裏側から見た形で、中央が開き開口部の周囲にゴムが通っている。</desc>
+  <rect width="480" height="280" rx="18" fill="#f5f7f4"/>
+  <g font-family="sans-serif" fill="#263d36" text-anchor="middle">
+    <text x="131" y="37" font-size="20" font-weight="bold">かぶせた状態</text>
+    <text x="363" y="37" font-size="20" font-weight="bold">布の裏側</text>
+  </g>
+  <g stroke="#476b5d" stroke-width="3" stroke-linejoin="round">
+    <path d="M31 128 149 76 232 117 114 174Z" fill="#cce2d5"/>
+    <path d="M31 128 114 174 114 217 31 169Z" fill="#94bda8"/>
+    <path d="M114 174 232 117 232 161 114 217Z" fill="#aecfbe"/>
+    <path d="M37 162 114 208 225 154" fill="none" stroke-dasharray="5 5"/>
+    <rect x="283" y="69" width="161" height="162" rx="28" fill="#cce2d5"/>
+    <rect x="308" y="94" width="111" height="112" rx="25" fill="#f5f7f4"/>
+    <rect x="301" y="87" width="125" height="126" rx="30" fill="none" stroke-dasharray="4 5"/>
+  </g>
+  <g font-family="sans-serif" font-size="18" fill="#263d36" text-anchor="middle">
+    <text x="131" y="257">上面と側面を覆う</text>
+    <text x="363" y="257">開口部の全周にゴム</text>
+  </g>
+</svg>

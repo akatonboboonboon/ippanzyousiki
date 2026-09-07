@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  questions,
+  dailyEditionQuestions as questions,
   publishedQuestions,
   revisedQuestions,
   questionMap,
@@ -201,7 +201,7 @@ describe("unseen-first selection", () => {
         pool.slice(needed).forEach((q) => (learning[q.id] = progress(true)));
       }
     }
-    const settings = createDiagnosticConfig();
+    const settings = createDiagnosticConfig("standard-v7");
     expect(settings.diagnosticVersion).toBe("standard-v7");
     for (let seed = 1; seed <= 10; seed++) {
       const sample = selectQuestions(
