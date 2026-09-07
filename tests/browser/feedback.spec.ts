@@ -8,7 +8,7 @@ import {
   finishSession,
 } from "../../src/lib/quiz";
 
-test("51 of 60 is shown as 85 percent in the result and history without a fabricated grade", async ({
+test("43 of 50 is shown as 86 percent in the result and history without a fabricated grade", async ({
   page,
 }) => {
   const session = createSession(questions, createDiagnosticConfig());
@@ -16,7 +16,7 @@ test("51 of 60 is shown as 85 percent in the result and history without a fabric
     const correct = item.order.indexOf(
       questionMap.get(item.questionId)!.answer,
     );
-    return i < 51 ? correct : (correct + 1) % 4;
+    return i < 43 ? correct : (correct + 1) % 4;
   });
   const result = finishSession(session);
   await page.goto("/");
@@ -30,11 +30,11 @@ test("51 of 60 is shown as 85 percent in the result and history without a fabric
   );
   await page.reload();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
-  await expect(page.locator(".history-row")).toContainText("85%");
-  await expect(page.locator(".history-row")).toContainText("60問中 51問正解");
+  await expect(page.locator(".history-row")).toContainText("86%");
+  await expect(page.locator(".history-row")).toContainText("50問中 43問正解");
   await page.locator(".history-row").click();
-  await expect(page.locator(".score-number")).toHaveText("85%");
-  await expect(page.locator(".score-correct")).toHaveText("60問中 51問正解");
+  await expect(page.locator(".score-number")).toHaveText("86%");
+  await expect(page.locator(".score-correct")).toHaveText("50問中 43問正解");
   await expect(page.locator(".grade-title,.history-grade")).toHaveCount(0);
   await expect(page.locator(".score-panel")).not.toContainText("/ 100");
   await expect(page.locator(".result-radar")).toBeVisible();

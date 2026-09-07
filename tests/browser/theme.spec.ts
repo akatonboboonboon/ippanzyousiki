@@ -151,7 +151,7 @@ test("dark home, correct and incorrect feedback, dialog, library, history and ra
     const correct = item.order.indexOf(
       questionMap.get(item.questionId)!.answer,
     );
-    return index < 45 ? correct : (correct + 1) % 4;
+    return index < 40 ? correct : (correct + 1) % 4;
   });
   const result = finishSession(session);
   await page.addInitScript((savedResult) => {
@@ -241,7 +241,7 @@ test("dark home, correct and incorrect feedback, dialog, library, history and ra
   await check();
   await page.locator(".history-row").click();
   await expect(page.locator(".result-radar")).toBeVisible();
-  await expect(page.locator(".score-number")).toHaveText("75%");
+  await expect(page.locator(".score-number")).toHaveText("80%");
   await check();
   await page.screenshot({
     path: "artifacts/theme/result-desktop.png",

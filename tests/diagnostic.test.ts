@@ -107,18 +107,18 @@ function answered(session: Session) {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("versioned standard diagnostic selection", () => {
-  it("creates the fixed 60-question config without sharing mutable category arrays", () => {
+  it("creates the fixed 50-question config without sharing mutable category arrays", () => {
     const config = createDiagnosticConfig();
     expect(config).toEqual({
       mode: "diagnostic",
-      diagnosticVersion: "standard-v12",
+      diagnosticVersion: "standard-v13",
       questionScope: "knowledge",
       difficulty: "mix",
-      count: 60,
+      count: 50,
       categories: [...CATEGORY_IDS],
     });
-    expect(DIAGNOSTIC_COUNT).toBe(60);
-    expect(DIAGNOSTIC_VERSION).toBe("standard-v12");
+    expect(DIAGNOSTIC_COUNT).toBe(50);
+    expect(DIAGNOSTIC_VERSION).toBe("standard-v13");
     expect(isStandardDiagnostic(config)).toBe(true);
     expect(isStandardDiagnostic({ config })).toBe(true);
     expect(
@@ -334,7 +334,7 @@ describe("versioned standard diagnostic selection", () => {
     const config = createDiagnosticConfig("standard-v4");
     const invalid = [
       { ...config, diagnosticVersion: undefined },
-      { ...config, diagnosticVersion: "standard-v13" },
+      { ...config, diagnosticVersion: "standard-v14" },
       { ...config, count: 59 },
       { ...config, count: 61 },
       { ...config, difficulty: "easy" },

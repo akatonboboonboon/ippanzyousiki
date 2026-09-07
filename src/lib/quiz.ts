@@ -34,8 +34,8 @@ export interface QuizConfig {
   questionScope?: QuestionScope;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v12";
-export const DIAGNOSTIC_COUNT = 60;
+export const DIAGNOSTIC_VERSION = "standard-v13";
+export const DIAGNOSTIC_COUNT = 50;
 export const DIAGNOSTIC_IMAGE_COUNT = 10;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -49,12 +49,17 @@ const DIAGNOSTIC_NAMES = {
   "standard-v9": "標準診断 9",
   "standard-v10": "標準診断 10",
   "standard-v11": "標準診断 11",
-  "standard-v12": "知識診断",
+  "standard-v12": "知識診断（60問）",
+  "standard-v13": "知識診断",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
 export function diagnosticName(version?: string): string {
   return DIAGNOSTIC_NAMES[version as DiagnosticVersion] ?? "標準診断";
+}
+
+export function diagnosticCount(version: string = DIAGNOSTIC_VERSION): number {
+  return version === "standard-v13" ? 50 : 60;
 }
 
 // Keep a version's axes and eligible IDs fixed when the practice bank grows.
@@ -352,8 +357,8 @@ export function createDiagnosticConfig(
     diagnosticVersion: version,
     difficulty: "mix",
     categories: [...DIAGNOSTIC_CATEGORIES],
-    count: DIAGNOSTIC_COUNT,
-    ...(version === "standard-v12"
+    count: diagnosticCount(version),
+    ...(version === "standard-v12" || version === "standard-v13"
       ? { questionScope: "knowledge" as const }
       : {}),
   };
@@ -369,7 +374,8 @@ export function isStandardDiagnostic(value: unknown): boolean {
     !!config &&
     typeof config === "object" &&
     config.mode === "diagnostic" &&
-    (config.diagnosticVersion === "standard-v12"
+    (config.diagnosticVersion === "standard-v12" ||
+    config.diagnosticVersion === "standard-v13"
       ? config.questionScope === "knowledge"
       : config.questionScope === undefined) &&
     typeof config.diagnosticVersion === "string" &&
@@ -377,7 +383,7 @@ export function isStandardDiagnostic(value: unknown): boolean {
       DIAGNOSTIC_NAMES,
       config.diagnosticVersion,
     ) &&
-    config.count === DIAGNOSTIC_COUNT &&
+    config.count === diagnosticCount(config.diagnosticVersion) &&
     config.difficulty === "mix" &&
     Array.isArray(config.categories) &&
     config.categories.length === DIAGNOSTIC_CATEGORIES.length &&
@@ -392,7 +398,7 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
-  if (version === "standard-v12") {
+  if (version === "standard-v12" || version === "standard-v13") {
     const expected = reviewedDiagnosticPool.get(question.id);
     if (
       !expected ||
@@ -537,6 +543,8 @@ function selectDiagnosticQuestions(
   random: () => number,
   version: string,
 ): Question[] {
+  if (version === "standard-v13")
+    return selectFiftyQuestionDiagnostic(bank, random);
   const unique = [
     ...new Map(bank.map((question) => [question.id, question])).values(),
   ];
@@ -562,12 +570,67 @@ function selectDiagnosticQuestions(
   ).flat();
 }
 
+// Fifty questions cover all twelve categories while retaining a 2:2:1 difficulty ratio.
+// The shuffled category assignment changes which two categories receive the fifth question.
+const FIFTY_QUESTION_PATTERNS = [
+  { easy: 2, normal: 2, hard: 1, categories: 2 },
+  { easy: 2, normal: 2, hard: 0, categories: 2 },
+  { easy: 2, normal: 1, hard: 1, categories: 4 },
+  { easy: 1, normal: 2, hard: 1, categories: 4 },
+] as const;
+
+function diagnosticImageQuota(category: CategoryId): number {
+  return category === "money" || category === "consumer" ? 0 : 1;
+}
+
+function selectFiftyQuestionDiagnostic(
+  bank: Question[],
+  random: () => number,
+): Question[] {
+  const unique = [
+    ...new Map(bank.map((question) => [question.id, question])).values(),
+  ];
+  const categories = shuffle(DIAGNOSTIC_CATEGORIES, random);
+  const patterns = FIFTY_QUESTION_PATTERNS.flatMap((pattern) =>
+    Array.from({ length: pattern.categories }, () => pattern),
+  );
+  const queues = categories.map((category, index) => {
+    const pattern = patterns[index];
+    const imageCount = diagnosticImageQuota(category);
+    const quota: Record<DiagnosticBucket, number> = {
+      easyText: pattern.easy,
+      normalText: pattern.normal - imageCount,
+      normalImage: imageCount,
+      hardText: pattern.hard,
+    };
+    const selected = DIAGNOSTIC_BUCKETS.flatMap((bucket) => {
+      const needed = quota[bucket];
+      if (!needed) return [];
+      const candidates = unique.filter(
+        (question) =>
+          question.category === category &&
+          diagnosticBucket(question, "standard-v13") === bucket,
+      );
+      if (candidates.length < needed)
+        throw new Error(
+          "標準診断の問題が不足しています。問題データを更新してから、もう一度お試しください。",
+        );
+      return shuffle(candidates, random).slice(0, needed);
+    });
+    return shuffle(selected, random);
+  });
+  const orderedQueues = shuffle(queues, random);
+  return Array.from({ length: 5 }, (_, round) =>
+    orderedQueues.flatMap((queue) => (queue[round] ? [queue[round]] : [])),
+  ).flat();
+}
+
 function hasDiagnosticDistribution(
   items: QuizItem[],
   bank: Map<string, Question>,
   version: string,
 ): boolean {
-  if (items.length !== DIAGNOSTIC_COUNT) return false;
+  if (items.length !== diagnosticCount(version)) return false;
   const counts = new Map<string, number>();
   for (const item of items) {
     const question = bank.get(item.questionId);
@@ -576,6 +639,39 @@ function hasDiagnosticDistribution(
     if (!bucket) return false;
     const key = `${question.category}/${bucket}`;
     counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  if (version === "standard-v13") {
+    const patterns = new Map<string, number>();
+    let easyTotal = 0;
+    let normalTotal = 0;
+    let hardTotal = 0;
+    let imageTotal = 0;
+    for (const category of DIAGNOSTIC_CATEGORIES) {
+      const count = (bucket: DiagnosticBucket) =>
+        counts.get(`${category}/${bucket}`) ?? 0;
+      const easy = count("easyText");
+      const image = count("normalImage");
+      const normal = count("normalText") + image;
+      const hard = count("hardText");
+      if (image !== diagnosticImageQuota(category)) return false;
+      const key = `${easy}/${normal}/${hard}`;
+      patterns.set(key, (patterns.get(key) ?? 0) + 1);
+      easyTotal += easy;
+      normalTotal += normal;
+      hardTotal += hard;
+      imageTotal += image;
+    }
+    return (
+      easyTotal === 20 &&
+      normalTotal === 20 &&
+      hardTotal === 10 &&
+      imageTotal === DIAGNOSTIC_IMAGE_COUNT &&
+      FIFTY_QUESTION_PATTERNS.every(
+        (pattern) =>
+          patterns.get(`${pattern.easy}/${pattern.normal}/${pattern.hard}`) ===
+          pattern.categories,
+      )
+    );
   }
   return DIAGNOSTIC_CATEGORIES.every((category) =>
     DIAGNOSTIC_BUCKETS.every(
@@ -639,7 +735,8 @@ export function selectQuestions(
       version === "standard-v9" ||
       version === "standard-v10" ||
       version === "standard-v11" ||
-      version === "standard-v12"
+      version === "standard-v12" ||
+      version === "standard-v13"
       ? prioritizeQuestions(
           sample,
           bank.filter((q) => diagnosticBucket(q, version) !== null),

@@ -11,7 +11,7 @@ import {
   finishSession,
 } from "../../src/lib/quiz";
 
-test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and compares only standard results", async ({
+test("50-question diagnostic defers feedback, resumes, and compares only the same edition", async ({
   page,
 }) => {
   test.setTimeout(150000);
@@ -42,17 +42,28 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
     item.order.indexOf(questionMap.get(item.questionId)!.answer),
   );
   const oldResult = finishSession(old);
+  const oldKnowledge = createSession(
+    questions,
+    createDiagnosticConfig("standard-v12"),
+  );
+  oldKnowledge.answers = oldKnowledge.items.map((item) =>
+    item.order.indexOf(questionMap.get(item.questionId)!.answer),
+  );
+  const oldKnowledgeResult = finishSession(oldKnowledge);
   await page.goto("/");
   await page.evaluate(
     (saved) => localStorage.setItem("monosashi-v1", JSON.stringify(saved)),
-    { history: [oldResult, practiceResult, previous], session: null },
+    {
+      history: [oldResult, practiceResult, previous, oldKnowledgeResult],
+      session: null,
+    },
   );
   await page.reload();
-  await expect(page.locator(".last-diagnostic")).toContainText("50%");
+  await expect(page.locator(".last-diagnostic")).toContainText("60%");
   await expect(page.locator(".count-options")).toHaveCount(0);
   await page.getByRole("button", { name: "知識診断をはじめる" }).click();
   let imageCount = 0;
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 50; i++) {
     const prompt = await page.locator(".question-panel h1").innerText();
     const question = questions.find((q) => q.prompt === prompt)!;
     if (question.image) {
@@ -67,7 +78,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
         )
         .toBe(true);
     }
-    const choice = i < 45 ? question.answer : (question.answer + 1) % 4;
+    const choice = i < 40 ? question.answer : (question.answer + 1) % 4;
     await page
       .locator(".answer-option")
       .filter({
@@ -85,28 +96,28 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
     ).toHaveCount(0);
     if (i === 19) {
       await page.reload();
-      await expect(page.locator(".resume-banner")).toContainText("20 / 60問");
+      await expect(page.locator(".resume-banner")).toContainText("20 / 50問");
       await page.getByRole("button", { name: "クイズを再開" }).click();
       await expect(page.locator(".question-panel h1")).toHaveText(prompt);
       await expect(page.locator(".diagnostic-saved")).toBeVisible();
       await expect(page.locator(".answer-feedback")).toHaveCount(0);
     }
     await page
-      .getByRole("button", { name: i === 59 ? "結果を見る" : "次の問題へ" })
+      .getByRole("button", { name: i === 49 ? "結果を見る" : "次の問題へ" })
       .click();
   }
   expect(imageCount).toBe(10);
   await expect(page.locator(".score-panel h2")).toHaveText("今回の正答率");
-  await expect(page.locator(".score-number")).toHaveText("75%");
-  await expect(page.locator(".score-correct")).toContainText("60問中 45問正解");
+  await expect(page.locator(".score-number")).toHaveText("80%");
+  await expect(page.locator(".score-correct")).toContainText("50問中 40問正解");
   await expect(page.locator(".diagnostic-comparison")).toContainText(
-    "+25ポイント",
+    "+20ポイント",
   );
   await expect(page.locator(".diagnostic-comparison")).toContainText(
     "知識診断",
   );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
-  await expect(page.locator(".review-item")).toHaveCount(15);
+  await expect(page.locator(".review-item")).toHaveCount(10);
   await page.screenshot({
     path: "artifacts/standard-result.png",
     fullPage: true,
@@ -128,11 +139,14 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   );
   await expect(
     page.locator(".history-stats .panel").last().locator("strong"),
-  ).toHaveText("75%");
-  await expect(page.locator(".history-row")).toHaveCount(4);
+  ).toHaveText("80%");
+  await expect(page.locator(".history-row")).toHaveCount(5);
   await expect(
     page.locator(".history-row").filter({ hasText: "標準診断 4" }),
   ).toHaveCount(1);
+  await expect(
+    page.locator(".history-row").filter({ hasText: "知識診断（60問）" }),
+  ).toContainText("60問中 60問正解");
 });
 
 test("visual library loads every diagram, offers descriptions, and works on mobile", async ({

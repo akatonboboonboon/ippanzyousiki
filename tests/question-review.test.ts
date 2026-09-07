@@ -79,8 +79,8 @@ describe("reviewed questions and separate knowledge diagnosis", () => {
     );
   });
 
-  it("uses only knowledge, keeps 5 per genre and difficulty quotas, and excludes future additions", () => {
-    const config = createDiagnosticConfig();
+  it("preserves standard 12 knowledge-only selection, 5 per genre and difficulty quotas, and excludes future additions", () => {
+    const config = createDiagnosticConfig("standard-v12");
     const extras = questions.map((q) => ({ ...q, id: q.id + "-future" }));
     for (let seed = 1; seed <= 20; seed++) {
       const selected = selectQuestions(questions, config, seeded(seed));

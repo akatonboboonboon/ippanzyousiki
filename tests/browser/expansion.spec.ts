@@ -29,25 +29,31 @@ for (const version of [
   "standard-v9",
   "standard-v10",
   "standard-v11",
+  "standard-v12",
 ] as const) {
   test(`a ${version} session survives the expansion and keeps its own label and comparison`, async ({
     page,
   }) => {
-    const label = `標準診断 ${version.replace("standard-v", "")}`;
+    const label =
+      version === "standard-v12"
+        ? "知識診断（60問）"
+        : `標準診断 ${version.replace("standard-v", "")}`;
     const old = createSession(
-      version === "standard-v11"
-        ? depthEditionQuestions
-        : version === "standard-v10"
-          ? knowledgeEditionQuestions
-          : version === "standard-v9"
-            ? familiarEditionQuestions
-            : version === "standard-v8"
-              ? sceneEditionQuestions
-              : version === "standard-v6" || version === "standard-v7"
-                ? dailyEditionQuestions
-                : version === "standard-v5"
-                  ? revisedQuestions
-                  : publishedQuestions,
+      version === "standard-v12"
+        ? questions
+        : version === "standard-v11"
+          ? depthEditionQuestions
+          : version === "standard-v10"
+            ? knowledgeEditionQuestions
+            : version === "standard-v9"
+              ? familiarEditionQuestions
+              : version === "standard-v8"
+                ? sceneEditionQuestions
+                : version === "standard-v6" || version === "standard-v7"
+                  ? dailyEditionQuestions
+                  : version === "standard-v5"
+                    ? revisedQuestions
+                    : publishedQuestions,
       createDiagnosticConfig(version),
     );
     old.startedAt = Date.now() - 10000;
@@ -57,19 +63,21 @@ for (const version of [
     );
     const previous = { ...finishSession(old), finishedAt: Date.now() - 5000 };
     const resumed = createSession(
-      version === "standard-v11"
-        ? depthEditionQuestions
-        : version === "standard-v10"
-          ? knowledgeEditionQuestions
-          : version === "standard-v9"
-            ? familiarEditionQuestions
-            : version === "standard-v8"
-              ? sceneEditionQuestions
-              : version === "standard-v6" || version === "standard-v7"
-                ? dailyEditionQuestions
-                : version === "standard-v5"
-                  ? revisedQuestions
-                  : publishedQuestions,
+      version === "standard-v12"
+        ? questions
+        : version === "standard-v11"
+          ? depthEditionQuestions
+          : version === "standard-v10"
+            ? knowledgeEditionQuestions
+            : version === "standard-v9"
+              ? familiarEditionQuestions
+              : version === "standard-v8"
+                ? sceneEditionQuestions
+                : version === "standard-v6" || version === "standard-v7"
+                  ? dailyEditionQuestions
+                  : version === "standard-v5"
+                    ? revisedQuestions
+                    : publishedQuestions,
       createDiagnosticConfig(version),
     );
     resumed.index = 59;
@@ -99,6 +107,7 @@ for (const version of [
     await page.getByRole("button", { name: "結果を見る" }).click();
     await expect(page.locator(".score-panel .eyebrow")).toContainText(label);
     await expect(page.locator(".score-number")).toHaveText("100%");
+    await expect(page.locator(".score-correct")).toHaveText("60問中 60問正解");
     await expect(page.locator(".diagnostic-comparison")).toContainText(
       "+100ポイント",
     );

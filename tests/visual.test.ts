@@ -47,7 +47,7 @@ describe("visual question delivery", () => {
 
   it("uses the shipped questions to create and restore a complete standard diagnostic", () => {
     const selected = selectQuestions(questions, createDiagnosticConfig());
-    expect(selected).toHaveLength(60);
+    expect(selected).toHaveLength(50);
     expect(selected.filter((q) => q.image)).toHaveLength(DIAGNOSTIC_IMAGE_COUNT);
     const bank = new Map(questions.map((q) => [q.id, q]));
     const session = createSession(questions, createDiagnosticConfig());

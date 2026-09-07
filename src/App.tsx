@@ -568,7 +568,7 @@ export default function App() {
                   >
                     <Target size={20} />
                     <strong>知識診断</strong>
-                    <small>身近な知識を60問で確認</small>
+                    <small>身近な知識を{DIAGNOSTIC_COUNT}問で確認</small>
                   </button>
                   <button
                     className={challengeMode === "quiz" ? "selected" : ""}
@@ -597,17 +597,17 @@ export default function App() {
                       </span>
                       <span>
                         <Clock3 size={14} />
-                        約20分・途中で中断できます
+                        目安15〜20分・途中で中断できます
                       </span>
                     </div>
                     <h3>12ジャンルの知識を確認</h3>
                     <p>
-                      各ジャンル5問、合計{DIAGNOSTIC_COUNT}
-                      問。初級2問・中級2問・上級1問を出題します。
+                      各ジャンル4〜5問、合計{DIAGNOSTIC_COUNT}
+                      問。初級20問・中級20問・上級10問を出題します。
                     </p>
                     <div className="diagnostic-facts">
                       <span>
-                        <b>60</b>問
+                        <b>{DIAGNOSTIC_COUNT}</b>問
                       </span>
                       <span>
                         <b>12</b>ジャンル
@@ -617,7 +617,7 @@ export default function App() {
                       </span>
                     </div>
                     <p className="diagnostic-note">
-                      正解と解説は、60問を終えてから表示します。
+                      正解と解説は、{DIAGNOSTIC_COUNT}問を終えてから表示します。
                     </p>
                     {latestDiagnostic && (
                       <div className="last-diagnostic">
@@ -1001,11 +1001,17 @@ export default function App() {
                   中断して戻る
                 </button>
                 <span className="pill">
-                  {inDiagnostic
-                    ? `${diagnosticName(session.config.diagnosticVersion)} · 60問`
-                    : session.config.mode === "review"
-                      ? "復習"
-                      : `${scopeName(session.config.questionScope)} · ${difficultyName(session.config.difficulty)}`}
+                  {inDiagnostic ? (
+                    <>
+                      {diagnosticName(session.config.diagnosticVersion)}
+                      {session.config.diagnosticVersion !== "standard-v12" &&
+                        ` · ${session.items.length}問`}
+                    </>
+                  ) : session.config.mode === "review" ? (
+                    "復習"
+                  ) : (
+                    `${scopeName(session.config.questionScope)} · ${difficultyName(session.config.difficulty)}`
+                  )}
                 </span>
                 <span className="save-note">
                   <ShieldCheck size={14} />
@@ -1203,8 +1209,8 @@ export default function App() {
                 </p>
                 <p className="score-context">
                   {standardResult
-                    ? result.config.diagnosticVersion === DIAGNOSTIC_VERSION
-                      ? "身近な知識を問う60問の結果です。各ジャンルの正解数を下で確認できます。"
+                    ? result.config.questionScope === "knowledge"
+                      ? `身近な知識を問う${result.items.length}問の結果です。各ジャンルの正解数を下で確認できます。`
                       : "以前の標準診断の結果です。知識問題に加え、計算・読み取り問題を含むことがあります。"
                     : result.config.mode === "review"
                       ? "間違えた問題を解き直した結果です。"
@@ -1267,12 +1273,12 @@ export default function App() {
                   </div>
                 ) : (
                   <p>
-                    同じ出題範囲での過去の結果がないため、今回は比較を表示しません。
+                    同じ問題数・配分での過去の結果がないため、今回は比較を表示しません。
                   </p>
                 )}
                 <small>
                   {result.config.diagnosticVersion === DIAGNOSTIC_VERSION
-                    ? "出題範囲を更新したため、以前の標準診断とは比較しません。"
+                    ? "問題数と配分が異なるため、以前の60問の診断とは比較しません。"
                     : "開始時の出題範囲が同じ結果を比較しています。"}
                   問題は毎回変わり、学習経験によっても正答率は変わります。
                 </small>
