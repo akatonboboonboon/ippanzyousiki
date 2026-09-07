@@ -15,7 +15,7 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v5";
+export const DIAGNOSTIC_VERSION = "standard-v6";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -23,6 +23,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v3": "標準診断 3",
   "standard-v4": "標準診断 4",
   "standard-v5": "標準診断 5",
+  "standard-v6": "標準診断 6",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -176,6 +177,44 @@ for (const [category, topic] of [
   }
 }
 
+// The new topics and sign images belong to standard 6; published pools remain fixed.
+const dailyDiagnosticPool = new Map<
+  string,
+  { category: CategoryId; difficulty: Difficulty; bucket: DiagnosticBucket }
+>();
+for (const [category, topic, counts, images] of [
+  ["world", "tools", [6, 6, 3], false],
+  ["health", "packaging", [6, 6, 3], false],
+  ["money", "utilities", [6, 6, 3], false],
+  ["digital", "news", [6, 6, 3], false],
+  ["manners", "dining", [6, 6, 3], false],
+  ["consumer", "deals", [16, 16, 8], false],
+  ["public", "signs", [0, 18, 0], true],
+] as const) {
+  for (const [i, difficulty] of (
+    ["easy", "normal", "hard"] as const
+  ).entries()) {
+    for (let n = 1; n <= counts[i]; n++) {
+      dailyDiagnosticPool.set(
+        `v2-${category}-daily-${topic}-${difficulty}-${String(n).padStart(3, "0")}`,
+        {
+          category,
+          difficulty,
+          bucket: images
+            ? "normalImage"
+            : (
+                {
+                  easy: "easyText",
+                  normal: "normalText",
+                  hard: "hardText",
+                } as const
+              )[difficulty],
+        },
+      );
+    }
+  }
+}
+
 export function createDiagnosticConfig(
   version: DiagnosticVersion = DIAGNOSTIC_VERSION,
 ): QuizConfig {
@@ -218,6 +257,20 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v6") {
+    const expected = dailyDiagnosticPool.get(question.id);
+    if (!expected) return diagnosticBucket(question, "standard-v5");
+    if (
+      question.category !== expected.category ||
+      question.difficulty !== expected.difficulty
+    )
+      return null;
+    if (expected.bucket === "normalImage") {
+      if (!question.image?.src?.trim() || !question.image.alt?.trim())
+        return null;
+    } else if (question.image !== undefined) return null;
+    return expected.bucket;
+  }
   if (version === "standard-v5") {
     const originalId = originalChoiceId(question.id);
     if (currentChoiceId(originalId) !== question.id) return null;

@@ -41,14 +41,14 @@ describe("question bank quality", () => {
       expect(questionMap.get(original.id)).toEqual(original);
     }
   });
-  it("has 2239 unique questions including the expanded living topics", () => {
-    expect(questions).toHaveLength(2239);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(2239);
+  it("has 2372 unique questions including the expanded living topics", () => {
+    expect(questions).toHaveLength(2372);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(2372);
     expect(
       new Set(
         questions.map((q) => q.prompt.normalize("NFKC").replace(/\s/g, "")),
       ).size,
-    ).toBe(2239);
+    ).toBe(2372);
     for (const category of CATEGORIES)
       for (const difficulty of ["easy", "normal", "hard"]) {
         expect(
@@ -65,12 +65,12 @@ describe("question bank quality", () => {
           ],
         );
       }
-    expect(questions.filter((q) => q.image)).toHaveLength(24);
+    expect(questions.filter((q) => q.image)).toHaveLength(42);
     expect(questions.filter((q) => q.id.includes("-extra-"))).toHaveLength(60);
     for (const category of CATEGORIES) {
       expect(
         questions.filter((q) => q.category === category.id && q.image),
-      ).toHaveLength(2);
+      ).toHaveLength(category.id === "public" ? 20 : 2);
     }
     for (const category of CATEGORIES) {
       expect(
@@ -140,7 +140,7 @@ describe("balanced selection", () => {
       categories: ["world"],
       count: 80,
     });
-    expect(sample).toHaveLength(41);
+    expect(sample).toHaveLength(44);
     expect(
       sample.every((q) => q.category === "world" && q.difficulty === "hard"),
     ).toBe(true);
@@ -148,12 +148,12 @@ describe("balanced selection", () => {
       [],
     );
   });
-  it("can exhaust all 2239 questions and select from a small review pool without repeats", () => {
+  it("can exhaust all 2372 questions and select from a small review pool without repeats", () => {
     expect(
       new Set(
-        selectQuestions(questions, { ...config, count: 2239 }).map((q) => q.id),
+        selectQuestions(questions, { ...config, count: 2372 }).map((q) => q.id),
       ).size,
-    ).toBe(2239);
+    ).toBe(2372);
     const pool = [questions[0], questions[2], questions[4]];
     expect(
       selectQuestions(pool, config)

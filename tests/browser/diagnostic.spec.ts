@@ -101,7 +101,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   await expect(page.locator(".score-details")).toContainText("45 / 60問");
   await expect(page.locator(".diagnostic-comparison")).toContainText("+25点");
   await expect(page.locator(".diagnostic-comparison")).toContainText(
-    "標準診断 5",
+    "標準診断 6",
   );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".review-item")).toHaveCount(15);
@@ -122,7 +122,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toBeVisible();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-stats .panel").last()).toContainText(
-    "最新の標準診断 5",
+    "最新の標準診断 6",
   );
   await expect(
     page.locator(".history-stats .panel").last().locator("strong"),
@@ -133,7 +133,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toHaveCount(1);
 });
 
-test("visual library loads all 24 diagrams, offers descriptions, and works on mobile", async ({
+test("visual library loads all 42 diagrams, offers descriptions, and works on mobile", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -146,8 +146,8 @@ test("visual library loads all 24 diagrams, offers descriptions, and works on mo
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
   await page.getByLabel("ライブラリの出題形式").selectOption("image");
-  await expect(page.locator(".library-count b")).toHaveText("24");
-  for (let p = 0; p < 2; p++) {
+  await expect(page.locator(".library-count b")).toHaveText("42");
+  for (let p = 0; p < 3; p++) {
     const items = page.locator(".library-question");
     for (let i = 0; i < (await items.count()); i++) {
       const item = items.nth(i);
@@ -170,7 +170,7 @@ test("visual library loads all 24 diagrams, offers descriptions, and works on mo
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
-    if (p === 0)
+    if (p < 2)
       await page.getByRole("button", { name: "次へ", exact: true }).click();
   }
   await page.screenshot({

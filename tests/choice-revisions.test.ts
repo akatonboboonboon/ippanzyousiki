@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
-  questions,
+  revisedQuestions as questions,
   publishedQuestions,
   questionMap,
   activeQuestionIds,
@@ -74,7 +74,7 @@ describe("choice revisions and diagnostic 5", () => {
   });
 
   it("uses the revised questions with fixed quotas in diagnostic 5 and excludes obsolete variants", () => {
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v5");
     expect(config.diagnosticVersion).toBe("standard-v5");
     const seen = new Set<string>();
     for (let seed = 1; seed <= 50; seed++) {
@@ -146,7 +146,10 @@ describe("choice revisions and diagnostic 5", () => {
   });
 
   it("rejects mixing old and revised diagnostic variants or changing their category and format", () => {
-    const session = createSession(questions, createDiagnosticConfig());
+    const session = createSession(
+      questions,
+      createDiagnosticConfig("standard-v5"),
+    );
     const revised = questions.find(
       (q) =>
         q.id.endsWith("-r2") &&

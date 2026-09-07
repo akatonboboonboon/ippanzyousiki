@@ -13,6 +13,11 @@ import { carHomeQuestions } from "./expansion-car-home";
 import { rentLabelQuestions } from "./expansion-rent-label";
 import { recycleBatteryQuestions } from "./expansion-recycle-battery";
 import { bicycleFamiliarQuestions } from "./expansion-bicycle-familiar";
+import { toolsPackagingQuestions } from "./expansion-tools-packaging";
+import { utilitiesNewsQuestions } from "./expansion-utilities-news";
+import { diningQuestions } from "./expansion-dining";
+import { signQuestions } from "./expansion-signs";
+import { dealQuestions } from "./expansion-deals";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
 import {
@@ -37,15 +42,24 @@ export const publishedQuestions: Question[] = [
   ...recycleBatteryQuestions,
   ...bicycleFamiliarQuestions,
 ];
-export const questions: Question[] = publishedQuestions.map((question) =>
-  revisedOriginalIds.has(question.id)
-    ? {
-        ...question,
-        ...choiceRevisions[question.id],
-        id: currentChoiceId(question.id),
-      }
-    : question,
+export const revisedQuestions: Question[] = publishedQuestions.map(
+  (question) =>
+    revisedOriginalIds.has(question.id)
+      ? {
+          ...question,
+          ...choiceRevisions[question.id],
+          id: currentChoiceId(question.id),
+        }
+      : question,
 );
+export const dailyQuestions: Question[] = [
+  ...toolsPackagingQuestions,
+  ...utilitiesNewsQuestions,
+  ...diningQuestions,
+  ...dealQuestions,
+  ...signQuestions,
+];
+export const questions: Question[] = [...revisedQuestions, ...dailyQuestions];
 export const archivedQuestions: Question[] = [
   ...(archive as Question[]),
   ...publishedQuestions.filter((question) =>

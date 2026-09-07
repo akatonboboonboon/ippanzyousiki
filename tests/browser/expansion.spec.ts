@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import {
   questions,
   publishedQuestions,
+  revisedQuestions,
   questionMap,
 } from "../../src/data/questions";
 import { CATEGORY_IDS } from "../../src/data/types";
@@ -16,13 +17,14 @@ for (const version of [
   "standard-v2",
   "standard-v3",
   "standard-v4",
+  "standard-v5",
 ] as const) {
   test(`a ${version} session survives the expansion and keeps its own label and comparison`, async ({
     page,
   }) => {
     const label = `標準診断 ${version.slice(-1)}`;
     const old = createSession(
-      publishedQuestions,
+      version === "standard-v5" ? revisedQuestions : publishedQuestions,
       createDiagnosticConfig(version),
     );
     old.startedAt = Date.now() - 10000;
@@ -32,7 +34,7 @@ for (const version of [
     );
     const previous = { ...finishSession(old), finishedAt: Date.now() - 5000 };
     const resumed = createSession(
-      publishedQuestions,
+      version === "standard-v5" ? revisedQuestions : publishedQuestions,
       createDiagnosticConfig(version),
     );
     resumed.index = 59;
@@ -48,7 +50,7 @@ for (const version of [
     );
     await page.reload();
     await expect(page.locator(".diagnostic-heading")).toContainText(
-      "標準診断 5",
+      "標準診断 6",
     );
     await expect(page.locator(".last-diagnostic")).toHaveCount(0);
     await expect(page.locator(".resume-banner")).toContainText(label);
@@ -70,7 +72,7 @@ for (const version of [
     await expect(page.locator(".diagnostic-comparison")).toContainText(label);
     await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
     await expect(page.locator(".diagnostic-heading")).toContainText(
-      "標準診断 5",
+      "標準診断 6",
     );
     await page.getByRole("button", { name: "学習の記録", exact: true }).click();
     await expect(page.locator(".history-row")).toHaveCount(2);
