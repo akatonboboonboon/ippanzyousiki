@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { questions, depthQuestions } from "../src/data/questions";
 import {
   createDiagnosticConfig,
+  DIAGNOSTIC_IMAGE_COUNT,
   selectQuestions,
   validRecord,
   createSession,
@@ -47,7 +48,7 @@ describe("visual question delivery", () => {
   it("uses the shipped questions to create and restore a complete standard diagnostic", () => {
     const selected = selectQuestions(questions, createDiagnosticConfig());
     expect(selected).toHaveLength(60);
-    expect(selected.filter((q) => q.image)).toHaveLength(12);
+    expect(selected.filter((q) => q.image)).toHaveLength(DIAGNOSTIC_IMAGE_COUNT);
     const bank = new Map(questions.map((q) => [q.id, q]));
     const session = createSession(questions, createDiagnosticConfig());
     expect(validRecord(JSON.parse(JSON.stringify(session)), bank, true)).toBe(

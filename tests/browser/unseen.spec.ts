@@ -204,7 +204,7 @@ test("a confirmed mistake becomes correct after answering its review question", 
     corrected.session!.id,
   );
   await page.getByRole("button", { name: "結果を見る", exact: true }).click();
-  await expect(page.locator(".score-number")).toHaveText("100/ 100");
+  await expect(page.locator(".score-number")).toHaveText("100%");
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".review-banner")).toContainText("0問");
 });

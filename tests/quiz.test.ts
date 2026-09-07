@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { CATEGORIES, type Question } from "../src/data/types";
+import { retiredReviewIds } from "../src/data/question-review";
 import {
   questions,
   questionMap,
@@ -43,7 +44,9 @@ describe("question bank quality", () => {
     }
   });
   it("has unique questions including all deeper everyday additions", () => {
-    expect(questions).toHaveLength(2597 + depthQuestions.length);
+    expect(questions).toHaveLength(
+      2597 + depthQuestions.length - retiredReviewIds.size,
+    );
     expect(new Set(questions.map((q) => q.id)).size).toBe(questions.length);
     expect(
       new Set(

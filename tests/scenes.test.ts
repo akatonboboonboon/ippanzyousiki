@@ -21,6 +21,10 @@ import {
 import type { LearningProgress } from "../src/lib/learning";
 import { editorialOriginalIds } from "../src/data/editorial-revisions";
 import { knowledgeOriginalIds } from "../src/data/knowledge-revisions";
+import {
+  reviewOriginalIds,
+  retiredReviewIds,
+} from "../src/data/question-review";
 
 const topics = [
   ["public", "road", "道路に描かれた表示", [0, 15, 0], 15],
@@ -180,7 +184,10 @@ describe("everyday scenes expansion", () => {
       Object.fromEntries(
         Object.entries(learning).filter(
           ([id]) =>
-            !editorialOriginalIds.has(id) && !knowledgeOriginalIds.has(id),
+            !editorialOriginalIds.has(id) &&
+            !knowledgeOriginalIds.has(id) &&
+            !reviewOriginalIds.has(id) &&
+            !retiredReviewIds.has(id),
         ),
       ),
     );

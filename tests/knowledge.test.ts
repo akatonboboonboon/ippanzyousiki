@@ -3,8 +3,7 @@ import { describe, it, expect, vi, afterEach } from "vitest";
 import {
   knowledgeEditionQuestions as questions,
   familiarEditionQuestions,
-  archivedQuestions,
-  activeQuestionIds,
+  depthArchivedQuestions as archivedQuestions,
   questionMap,
   publishedQuestions,
   revisedQuestions,
@@ -29,6 +28,7 @@ import {
 } from "../src/lib/quiz";
 const seed = (n: number) => () =>
   ((n = (Math.imul(n, 1664525) + 1013904223) | 0) >>> 0) / 4294967296;
+const activeQuestionIds = new Set(questions.map((q) => q.id));
 const correct = {
   lastSeenAt: 1,
   lastSessionId: "before",

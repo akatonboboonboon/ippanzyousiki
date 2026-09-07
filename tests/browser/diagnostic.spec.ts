@@ -48,9 +48,9 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
     { history: [oldResult, practiceResult, previous], session: null },
   );
   await page.reload();
-  await expect(page.locator(".last-diagnostic")).toContainText("50点");
+  await expect(page.locator(".last-diagnostic")).toContainText("50%");
   await expect(page.locator(".count-options")).toHaveCount(0);
-  await page.getByRole("button", { name: "標準診断をはじめる" }).click();
+  await page.getByRole("button", { name: "知識診断をはじめる" }).click();
   let imageCount = 0;
   for (let i = 0; i < 60; i++) {
     const prompt = await page.locator(".question-panel h1").innerText();
@@ -95,15 +95,15 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
       .getByRole("button", { name: i === 59 ? "結果を見る" : "次の問題へ" })
       .click();
   }
-  expect(imageCount).toBe(12);
-  await expect(page.locator(".score-panel h2")).toHaveText(
-    "標準診断の一般常識度",
-  );
-  await expect(page.locator(".score-number")).toHaveText("75/ 100");
-  await expect(page.locator(".score-details")).toContainText("45 / 60問");
-  await expect(page.locator(".diagnostic-comparison")).toContainText("+25点");
+  expect(imageCount).toBe(10);
+  await expect(page.locator(".score-panel h2")).toHaveText("今回の正答率");
+  await expect(page.locator(".score-number")).toHaveText("75%");
+  await expect(page.locator(".score-correct")).toContainText("60問中 45問正解");
   await expect(page.locator(".diagnostic-comparison")).toContainText(
-    "標準診断 11",
+    "+25ポイント",
+  );
+  await expect(page.locator(".diagnostic-comparison")).toContainText(
+    "知識診断",
   );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".review-item")).toHaveCount(15);
@@ -120,15 +120,15 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toEqual([]);
   await page.getByRole("button", { name: "次のクイズを選ぶ" }).click();
   await expect(
-    page.getByRole("button", { name: "標準診断をはじめる" }),
+    page.getByRole("button", { name: "知識診断をはじめる" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-stats .panel").last()).toContainText(
-    "最新の標準診断 11",
+    "最新の知識診断",
   );
   await expect(
     page.locator(".history-stats .panel").last().locator("strong"),
-  ).toHaveText("75点");
+  ).toHaveText("75%");
   await expect(page.locator(".history-row")).toHaveCount(4);
   await expect(
     page.locator(".history-row").filter({ hasText: "標準診断 4" }),

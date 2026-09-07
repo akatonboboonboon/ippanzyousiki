@@ -129,7 +129,7 @@ test("deal comparison and sign image answers survive reload, score correctly and
       .getByRole("button", { name: i === 0 ? "次の問題へ" : "結果を見る" })
       .click();
   }
-  await expect(page.locator(".score-number")).toHaveText("100/ 100");
-  await expect(page.locator(".score-details")).toContainText("2 / 2問");
+  await expect(page.locator(".score-number")).toHaveText("100%");
+  await expect(page.locator(".score-correct")).toContainText("2問中 2問正解");
   expect(errors).toEqual([]);
 });

@@ -57,7 +57,7 @@ test("the reported closure question is replaced in the library while a saved ans
   await expect(page.locator(".question-panel h1")).toHaveText(old.prompt);
   await expect(page.locator(".answer-feedback")).toContainText(old.explanation);
   await page.getByRole("button", { name: "結果を見る" }).click();
-  await expect(page.locator(".score-details")).toContainText("1 / 1問");
+  await expect(page.locator(".score-correct")).toContainText("1問中 1問正解");
   await page.evaluate(
     ({ q, order }) =>
       localStorage.setItem(
@@ -109,5 +109,5 @@ test("the reported closure question is replaced in the library while a saved ans
     revised.explanation,
   );
   await page.getByRole("button", { name: "結果を見る" }).click();
-  await expect(page.locator(".score-details")).toContainText("1 / 1問");
+  await expect(page.locator(".score-correct")).toContainText("1問中 1問正解");
 });

@@ -113,7 +113,7 @@ test("an archived wording resumes and scores as published while the library show
     .click();
   await page.getByRole("button", { name: "回答を確定する" }).click();
   await page.getByRole("button", { name: "結果を見る" }).click();
-  await expect(page.locator(".score-details")).toContainText("1 / 1問");
+  await expect(page.locator(".score-correct")).toContainText("1問中 1問正解");
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   const saved = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("monosashi-v1")!),
@@ -224,6 +224,6 @@ test("familiar diagrams and a rewritten question remain usable on mobile and sav
       })
       .click();
   }
-  await expect(page.locator(".score-details")).toContainText("4 / 4問");
+  await expect(page.locator(".score-correct")).toContainText("4問中 4問正解");
   expect(errors).toEqual([]);
 });

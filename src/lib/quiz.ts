@@ -16,6 +16,14 @@ import {
 } from "../data/knowledge-revisions";
 import { restoreLearning, type LearningProgress } from "./learning";
 import depthDiagnosticManifest from "../data/diagnostic-depth.json" with { type: "json" };
+import reviewedDiagnosticManifest from "../data/diagnostic-reviewed.json" with { type: "json" };
+import {
+  currentReviewId,
+  originalReviewId,
+  retiredReviewIds,
+  matchesScope,
+  type QuestionScope,
+} from "../data/question-review";
 
 export interface QuizConfig {
   difficulty: Difficulty | "mix";
@@ -23,10 +31,12 @@ export interface QuizConfig {
   count: number;
   mode: "quiz" | "review" | "diagnostic";
   diagnosticVersion?: string;
+  questionScope?: QuestionScope;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v11";
+export const DIAGNOSTIC_VERSION = "standard-v12";
 export const DIAGNOSTIC_COUNT = 60;
+export const DIAGNOSTIC_IMAGE_COUNT = 10;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
   "standard-v2": "標準診断 2",
@@ -39,6 +49,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v9": "標準診断 9",
   "standard-v10": "標準診断 10",
   "standard-v11": "標準診断 11",
+  "standard-v12": "知識診断",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -72,6 +83,24 @@ type DiagnosticBucket = keyof typeof DIAGNOSTIC_BUCKET_COUNTS;
 const depthDiagnosticPool = new Map(
   depthDiagnosticManifest.map((entry) => [entry.id, entry]),
 );
+const reviewedDiagnosticPool = new Map(
+  reviewedDiagnosticManifest.map((entry) => [entry.id, entry]),
+);
+// Money and shopping images in this edition require arithmetic. Use text knowledge questions instead.
+function diagnosticQuota(
+  category: CategoryId,
+  bucket: DiagnosticBucket,
+  version: string,
+) {
+  if (
+    version === "standard-v12" &&
+    (category === "money" || category === "consumer")
+  ) {
+    if (bucket === "normalImage") return 0;
+    if (bucket === "normalText") return 2;
+  }
+  return DIAGNOSTIC_BUCKET_COUNTS[bucket];
+}
 const DIAGNOSTIC_BUCKETS = Object.keys(
   DIAGNOSTIC_BUCKET_COUNTS,
 ) as DiagnosticBucket[];
@@ -324,6 +353,9 @@ export function createDiagnosticConfig(
     difficulty: "mix",
     categories: [...DIAGNOSTIC_CATEGORIES],
     count: DIAGNOSTIC_COUNT,
+    ...(version === "standard-v12"
+      ? { questionScope: "knowledge" as const }
+      : {}),
   };
 }
 
@@ -337,6 +369,9 @@ export function isStandardDiagnostic(value: unknown): boolean {
     !!config &&
     typeof config === "object" &&
     config.mode === "diagnostic" &&
+    (config.diagnosticVersion === "standard-v12"
+      ? config.questionScope === "knowledge"
+      : config.questionScope === undefined) &&
     typeof config.diagnosticVersion === "string" &&
     Object.prototype.hasOwnProperty.call(
       DIAGNOSTIC_NAMES,
@@ -357,6 +392,26 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v12") {
+    const expected = reviewedDiagnosticPool.get(question.id);
+    if (
+      !expected ||
+      question.category !== expected.category ||
+      question.difficulty !== expected.difficulty ||
+      Boolean(question.image) !== expected.image ||
+      !matchesScope(question, "knowledge")
+    )
+      return null;
+    if (question.image)
+      return question.difficulty === "normal" &&
+        question.image.src?.trim() &&
+        question.image.alt?.trim()
+        ? "normalImage"
+        : null;
+    return (
+      { easy: "easyText", normal: "normalText", hard: "hardText" } as const
+    )[question.difficulty];
+  }
   if (version === "standard-v11") {
     const expected = depthDiagnosticPool.get(question.id);
     if (!expected) return diagnosticBucket(question, "standard-v10");
@@ -492,7 +547,7 @@ function selectDiagnosticQuestions(
           question.category === category &&
           diagnosticBucket(question, version) === bucket,
       );
-      const needed = DIAGNOSTIC_BUCKET_COUNTS[bucket];
+      const needed = diagnosticQuota(category, bucket, version);
       if (candidates.length < needed)
         throw new Error(
           "標準診断の問題が不足しています。問題データを更新してから、もう一度お試しください。",
@@ -525,8 +580,8 @@ function hasDiagnosticDistribution(
   return DIAGNOSTIC_CATEGORIES.every((category) =>
     DIAGNOSTIC_BUCKETS.every(
       (bucket) =>
-        counts.get(`${category}/${bucket}`) ===
-        DIAGNOSTIC_BUCKET_COUNTS[bucket],
+        (counts.get(`${category}/${bucket}`) ?? 0) ===
+        diagnosticQuota(category, bucket, version),
     ),
   );
 }
@@ -583,7 +638,8 @@ export function selectQuestions(
       version === "standard-v8" ||
       version === "standard-v9" ||
       version === "standard-v10" ||
-      version === "standard-v11"
+      version === "standard-v11" ||
+      version === "standard-v12"
       ? prioritizeQuestions(
           sample,
           bank.filter((q) => diagnosticBucket(q, version) !== null),
@@ -599,6 +655,7 @@ export function selectQuestions(
     );
   const eligible = [...new Map(bank.map((q) => [q.id, q])).values()].filter(
     (q) =>
+      matchesScope(q, config.questionScope) &&
       config.categories.includes(q.category) &&
       (config.difficulty === "mix" || config.difficulty === q.difficulty),
   );
@@ -815,6 +872,8 @@ export function validRecord(
     return false;
   if (
     !["mix", "easy", "normal", "hard"].includes(r.config.difficulty) ||
+    (r.config.questionScope !== undefined &&
+      !["knowledge", "reasoning", "all"].includes(r.config.questionScope)) ||
     !Array.isArray(r.config.categories) ||
     !r.config.categories.length
   )
@@ -842,6 +901,7 @@ export function validRecord(
       (item) =>
         item &&
         bank.has(item.questionId) &&
+        matchesScope(bank.get(item.questionId)!, r.config.questionScope) &&
         r.config.categories.includes(bank.get(item.questionId)!.category) &&
         (r.config.difficulty === "mix" ||
           bank.get(item.questionId)!.difficulty === r.config.difficulty) &&
@@ -923,7 +983,9 @@ export function readSaved(bank: Map<string, Question>): SavedData {
           id.startsWith("v2-") &&
           currentChoiceId(originalChoiceId(id)) === id &&
           currentEditorialId(originalEditorialId(id)) === id &&
-          currentKnowledgeId(originalKnowledgeId(id)) === id,
+          currentKnowledgeId(originalKnowledgeId(id)) === id &&
+          currentReviewId(originalReviewId(id)) === id &&
+          !retiredReviewIds.has(originalReviewId(id)),
       ),
     );
     return {

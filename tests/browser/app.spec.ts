@@ -39,8 +39,8 @@ test("completes and scores a quiz, explains mistakes, saves history and allows t
     page.getByRole("button", { name: "回答を確定する" }),
   ).toBeDisabled();
   await completeQuiz(page, 9);
-  await expect(page.locator(".score-number")).toHaveText("75/ 100");
-  await expect(page.locator(".score-details")).toContainText("9 / 12問");
+  await expect(page.locator(".score-number")).toHaveText("75%");
+  await expect(page.locator(".score-correct")).toContainText("12問中 9問正解");
   await expect(
     page.getByRole("img", { name: /ジャンル別正答率/ }),
   ).toBeVisible();
@@ -63,7 +63,7 @@ test("completes and scores a quiz, explains mistakes, saves history and allows t
   await page.getByRole("button", { name: "間違えた3問を復習" }).click();
   await expect(page.locator(".quiz-toolbar")).toContainText("復習");
   await completeQuiz(page, 3, 3);
-  await expect(page.locator(".score-number")).toHaveText("100/ 100");
+  await expect(page.locator(".score-number")).toHaveText("100%");
   await page.getByRole("button", { name: "次のクイズを選ぶ" }).click();
   await expect(
     page.getByRole("button", { name: "24問", exact: true }),
@@ -100,7 +100,7 @@ test("resumes an answered question with the same shuffled options and score afte
   );
   await expect(page.getByRole("status")).toBeVisible();
   await page.getByRole("button", { name: "次の問題へ" }).click();
-  await expect(page.locator(".quiz-progress-label")).toContainText("02");
+  await expect(page.locator(".quiz-progress-label")).toContainText("第 2 問");
 });
 
 test("mobile stays in the viewport and single-genre result leaves other axes unmeasured", async ({
@@ -126,9 +126,7 @@ test("mobile stays in the viewport and single-genre result leaves other axes unm
     ),
   ).toBe(true);
   await completeQuiz(page, 6);
-  await expect(page.locator(".score-panel h2")).toHaveText(
-    "選んだジャンルのスコア",
-  );
+  await expect(page.locator(".score-panel h2")).toHaveText("今回の正答率");
   await expect(
     page.locator(".breakdown-content b").filter({ hasText: "未測定" }),
   ).toHaveCount(11);
@@ -209,7 +207,7 @@ test("desktop homepage has no overflow and a stable screenshot", async ({
   await page.goto("/");
   await page.getByRole("button", { name: "自由練習", exact: false }).click();
   await page
-    .getByRole("button", { name: "標準診断", exact: false })
+    .getByRole("button", { name: "知識診断", exact: false })
     .first()
     .click();
   await page.evaluate(() => document.fonts.ready);

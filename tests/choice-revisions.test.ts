@@ -4,7 +4,7 @@ import {
   revisedQuestions as questions,
   publishedQuestions,
   questionMap,
-  archivedQuestions as allArchivedQuestions,
+  depthArchivedQuestions as allArchivedQuestions,
 } from "../src/data/questions";
 import {
   choiceRevisions,

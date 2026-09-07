@@ -42,6 +42,12 @@ import { dealQuestions } from "./expansion-deals";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
 import {
+  questionRevisions,
+  reviewOriginalIds,
+  retiredReviewIds,
+  currentReviewId,
+} from "./question-review";
+import {
   choiceRevisions,
   currentChoiceId,
   revisedOriginalIds,
@@ -120,17 +126,30 @@ export const depthQuestions: Question[] = [
   ...depthCultureQuestions,
   ...depthPublicQuestions,
 ];
-export const questions: Question[] = [
+export const depthEditionQuestions: Question[] = [
   ...knowledgeEditionQuestions,
   ...depthQuestions,
 ];
-export const archivedQuestions: Question[] = [
+export const questions: Question[] = depthEditionQuestions
+  .filter((q) => !retiredReviewIds.has(q.id))
+  .map((q) =>
+    reviewOriginalIds.has(q.id)
+      ? { ...q, ...questionRevisions[q.id], id: currentReviewId(q.id) }
+      : q,
+  );
+export const depthArchivedQuestions: Question[] = [
   ...(archive as Question[]),
   ...publishedQuestions.filter((question) =>
     revisedOriginalIds.has(question.id),
   ),
   ...sceneEditionQuestions.filter((q) => editorialOriginalIds.has(q.id)),
   ...familiarEditionQuestions.filter((q) => knowledgeOriginalIds.has(q.id)),
+];
+export const archivedQuestions: Question[] = [
+  ...depthArchivedQuestions,
+  ...depthEditionQuestions.filter(
+    (q) => reviewOriginalIds.has(q.id) || retiredReviewIds.has(q.id),
+  ),
 ];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));
 export const questionMap = new Map(

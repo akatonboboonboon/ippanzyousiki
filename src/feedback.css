@@ -1,0 +1,170 @@
+/* Keep the quiz controls and the user's actual result ahead of decoration. */
+.hero {
+  display: block;
+  min-height: 0;
+  margin: 0;
+  padding: 36px 0 28px;
+}
+.hero-copy {
+  padding: 0;
+  max-width: 760px;
+}
+.hero h1 {
+  font-size: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.hero-copy > p {
+  margin: 12px 0 18px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.hero-facts {
+  margin: 0;
+  gap: 24px;
+}
+.hero-facts b {
+  font-family: inherit;
+  font-size: 15px;
+}
+.hero-facts svg {
+  display: none;
+}
+.panel {
+  box-shadow: none;
+  border-radius: 12px;
+}
+.quiz-setup .step-badge {
+  display: none;
+}
+.diagnostic-setup h3 {
+  font-size: 21px;
+  line-height: 1.7;
+}
+.diagnostic-facts {
+  padding: 16px 0;
+}
+.diagnostic-facts b {
+  font-size: 26px;
+  font-family: inherit;
+}
+.category-card {
+  box-shadow: none;
+  border-radius: 8px;
+}
+.scope-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.scope-options button {
+  padding: 10px 16px;
+  border: 1px solid #cbd6c7;
+  border-radius: 6px;
+  background: white;
+  color: #304a3e;
+  font: inherit;
+  font-size: 13px;
+}
+.scope-options button.selected {
+  border-color: #27755f;
+  background: #edf5f0;
+  font-weight: 700;
+}
+.scope-description {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #526357;
+}
+.question-kind {
+  background: #eef1ed;
+  color: #495b50;
+}
+.score-panel {
+  padding: 32px;
+}
+.score-panel h2 {
+  margin-top: 18px;
+  font-size: 17px;
+}
+.score-number {
+  font:
+    600 72px/1.15 Arial,
+    sans-serif;
+  margin: 18px 0 10px;
+  letter-spacing: -0.025em;
+}
+.score-number > span {
+  font:
+    400 30px/1 Arial,
+    sans-serif;
+  margin-left: 4px;
+}
+.score-correct {
+  margin: 0 0 24px;
+  font-size: 21px;
+  color: #244b3e;
+}
+.score-context {
+  line-height: 1.9;
+  font-size: 13px;
+  color: #526357;
+}
+.score-note {
+  padding-top: 14px;
+  margin-top: 20px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.history-score em {
+  font-size: 11px;
+}
+.history-row p {
+  flex-wrap: wrap;
+}
+.comparison-values {
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .hero {
+    padding: 24px 0;
+  }
+  .hero h1 {
+    font-size: 26px;
+  }
+  .hero-copy > p {
+    font-size: 13px;
+    margin: 10px 0 14px;
+  }
+  .hero-facts {
+    gap: 12px;
+    font-size: 10px;
+  }
+  .hero-facts b {
+    font-size: 13px;
+  }
+  .diagnostic-setup h3 {
+    font-size: 19px;
+  }
+  .scope-options button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .score-panel {
+    padding: 24px;
+  }
+  .score-number {
+    font-size: 64px;
+  }
+  .score-correct {
+    font-size: 19px;
+  }
+  .history-row {
+    gap: 12px;
+    padding: 16px;
+  }
+  .history-score em {
+    font-size: 10px;
+  }
+}

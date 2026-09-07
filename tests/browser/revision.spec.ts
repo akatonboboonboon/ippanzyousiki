@@ -53,8 +53,8 @@ test("a revised bank preserves historical answers and scores, excludes retired q
   ).toHaveText("0回");
   await expect(page.locator(".review-banner")).toContainText("0問");
   await page.locator(".history-row").click();
-  await expect(page.locator(".score-panel h2")).toHaveText("改訂前のスコア");
-  await expect(page.locator(".score-number")).toHaveText("50/ 100");
+  await expect(page.locator(".score-panel h2")).toHaveText("今回の正答率");
+  await expect(page.locator(".score-number")).toHaveText("50%");
   await expect(page.locator(".breakdown-item")).toHaveCount(8);
   await expect(
     page.getByRole("img", { name: /ジャンル別正答率/ }),

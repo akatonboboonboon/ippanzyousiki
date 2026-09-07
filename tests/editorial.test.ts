@@ -9,7 +9,7 @@ import {
   revisedQuestions,
   publishedQuestions,
   questionMap,
-  archivedQuestions as allArchivedQuestions,
+  depthArchivedQuestions as allArchivedQuestions,
 } from "../src/data/questions";
 import {
   editorialRevisions,

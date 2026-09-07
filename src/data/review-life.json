@@ -1,0 +1,775 @@
+{
+  "reasoningIds": [
+    "v2-household-easy-036",
+    "v2-household-easy-037",
+    "v2-household-easy-038",
+    "v2-household-easy-040",
+    "v2-household-normal-005",
+    "v2-household-normal-031",
+    "v2-household-normal-032",
+    "v2-household-normal-033",
+    "v2-household-normal-034",
+    "v2-household-normal-035",
+    "v2-household-hard-012",
+    "v2-household-hard-013",
+    "v2-household-hard-014",
+    "v2-household-hard-015",
+    "v2-household-hard-016",
+    "v2-household-hard-018",
+    "v2-health-normal-033",
+    "v2-health-hard-001",
+    "v2-health-hard-002",
+    "v2-health-hard-004",
+    "v2-health-hard-007",
+    "v2-health-hard-008",
+    "v2-health-hard-009",
+    "v2-money-normal-001",
+    "v2-money-normal-002",
+    "v2-money-normal-003",
+    "v2-money-normal-004",
+    "v2-money-normal-007",
+    "v2-money-normal-011",
+    "v2-money-normal-020",
+    "v2-money-normal-030",
+    "v2-money-normal-032",
+    "v2-money-hard-003",
+    "v2-money-hard-004",
+    "v2-money-hard-005",
+    "v2-money-hard-009",
+    "v2-money-hard-010",
+    "v2-money-hard-011-r2-r3",
+    "v2-money-hard-024",
+    "v2-consumer-normal-001-r2",
+    "v2-consumer-normal-002",
+    "v2-consumer-normal-003",
+    "v2-consumer-normal-004",
+    "v2-consumer-normal-005",
+    "v2-consumer-hard-001",
+    "v2-consumer-hard-002",
+    "v2-consumer-hard-003",
+    "v2-health-visual-001",
+    "v2-money-visual-001",
+    "v2-money-visual-002",
+    "v2-consumer-visual-001",
+    "v2-consumer-visual-002",
+    "v2-money-expanded-normal-005-r2",
+    "v2-consumer-expanded-normal-014",
+    "v2-consumer-living-rent-hard-001",
+    "v2-consumer-living-rent-hard-004",
+    "v2-money-daily-utilities-normal-001",
+    "v2-money-daily-utilities-normal-002",
+    "v2-money-daily-utilities-normal-003",
+    "v2-money-daily-utilities-normal-004",
+    "v2-money-daily-utilities-normal-005",
+    "v2-money-daily-utilities-hard-001",
+    "v2-money-daily-utilities-hard-002",
+    "v2-money-daily-utilities-hard-003",
+    "v2-consumer-daily-deals-easy-001",
+    "v2-consumer-daily-deals-easy-002",
+    "v2-consumer-daily-deals-easy-003",
+    "v2-consumer-daily-deals-easy-004",
+    "v2-consumer-daily-deals-easy-005",
+    "v2-consumer-daily-deals-easy-006",
+    "v2-consumer-daily-deals-easy-007",
+    "v2-consumer-daily-deals-easy-008",
+    "v2-consumer-daily-deals-easy-009",
+    "v2-consumer-daily-deals-easy-010",
+    "v2-consumer-daily-deals-easy-011",
+    "v2-consumer-daily-deals-easy-012",
+    "v2-consumer-daily-deals-easy-013",
+    "v2-consumer-daily-deals-easy-014",
+    "v2-consumer-daily-deals-easy-015",
+    "v2-consumer-daily-deals-easy-016",
+    "v2-consumer-daily-deals-normal-001",
+    "v2-consumer-daily-deals-normal-002",
+    "v2-consumer-daily-deals-normal-003",
+    "v2-consumer-daily-deals-normal-004",
+    "v2-consumer-daily-deals-normal-005",
+    "v2-consumer-daily-deals-normal-006",
+    "v2-consumer-daily-deals-normal-007",
+    "v2-consumer-daily-deals-normal-008",
+    "v2-consumer-daily-deals-normal-009",
+    "v2-consumer-daily-deals-normal-010",
+    "v2-consumer-daily-deals-normal-011",
+    "v2-consumer-daily-deals-normal-012",
+    "v2-consumer-daily-deals-normal-013",
+    "v2-consumer-daily-deals-normal-014",
+    "v2-consumer-daily-deals-normal-015",
+    "v2-consumer-daily-deals-normal-016",
+    "v2-consumer-daily-deals-hard-001",
+    "v2-consumer-daily-deals-hard-002",
+    "v2-consumer-daily-deals-hard-003",
+    "v2-consumer-daily-deals-hard-004",
+    "v2-consumer-daily-deals-hard-005",
+    "v2-consumer-daily-deals-hard-006",
+    "v2-consumer-daily-deals-hard-007",
+    "v2-consumer-daily-deals-hard-008",
+    "v2-household-scene-floorplan-normal-001",
+    "v2-household-scene-floorplan-normal-002",
+    "v2-household-scene-floorplan-normal-003",
+    "v2-household-scene-floorplan-normal-004",
+    "v2-household-scene-floorplan-normal-005",
+    "v2-household-scene-floorplan-normal-006",
+    "v2-money-scene-settlement-easy-001",
+    "v2-money-scene-settlement-easy-002",
+    "v2-money-scene-settlement-easy-003",
+    "v2-money-scene-settlement-easy-004",
+    "v2-money-scene-settlement-easy-005",
+    "v2-money-scene-settlement-easy-006",
+    "v2-money-scene-settlement-normal-001",
+    "v2-money-scene-settlement-normal-002",
+    "v2-money-scene-settlement-normal-003",
+    "v2-money-scene-settlement-normal-004",
+    "v2-money-scene-settlement-normal-005",
+    "v2-money-scene-settlement-normal-006",
+    "v2-money-scene-settlement-hard-001",
+    "v2-money-scene-settlement-hard-002",
+    "v2-money-scene-settlement-hard-003",
+    "v2-household-depth-timekeeping-normal-001",
+    "v2-household-depth-timekeeping-normal-002",
+    "v2-household-depth-timekeeping-normal-003",
+    "v2-consumer-depth-dealsmore-easy-001",
+    "v2-consumer-depth-dealsmore-easy-002",
+    "v2-consumer-depth-dealsmore-easy-003",
+    "v2-consumer-depth-dealsmore-easy-004",
+    "v2-consumer-depth-dealsmore-easy-005",
+    "v2-consumer-depth-dealsmore-easy-006",
+    "v2-consumer-depth-dealsmore-normal-001",
+    "v2-consumer-depth-dealsmore-normal-002",
+    "v2-consumer-depth-dealsmore-normal-003",
+    "v2-consumer-depth-dealsmore-normal-004",
+    "v2-consumer-depth-dealsmore-normal-005",
+    "v2-consumer-depth-dealsmore-normal-006",
+    "v2-consumer-depth-dealsmore-normal-007",
+    "v2-consumer-depth-dealsmore-normal-008",
+    "v2-consumer-depth-dealsmore-hard-001",
+    "v2-consumer-depth-dealsmore-hard-002",
+    "v2-consumer-depth-dealsmore-hard-003",
+    "v2-consumer-depth-dealsmore-hard-004",
+    "v2-household-scene-bedding-hard-002",
+    "v2-health-expanded-easy-023"
+  ],
+  "retiredIds": [
+    "v2-household-easy-020-r2",
+    "v2-household-hard-006",
+    "v2-consumer-easy-036-r2",
+    "v2-consumer-normal-018",
+    "v2-consumer-hard-023-r2",
+    "v2-household-living-recycle-hard-003",
+    "v2-household-scene-appliance-normal-005-r3",
+    "v2-household-depth-handtools-normal-003",
+    "v2-household-easy-016-r2",
+    "v2-money-normal-023-r2",
+    "v2-consumer-normal-034-r2",
+    "v2-household-expanded-normal-024-r2",
+    "v2-household-depth-handtools-normal-005"
+  ],
+  "revisions": {
+    "v2-household-easy-034-r2": {
+      "prompt": "賃貸マンションで水漏れを見つけた。連絡先としてまず確認したいのは？",
+      "choices": [
+        "管理会社や管理人",
+        "設備メーカーの修理受付",
+        "水道局の料金窓口",
+        "火災保険会社の事故受付"
+      ],
+      "answer": 0,
+      "explanation": "建物の管理範囲に関わるため管理者に相談します。"
+    },
+    "v2-household-normal-011-r2": {
+      "prompt": "耐熱ガラスの器の手入れに、使用を避けたいものは？",
+      "choices": [
+        "研磨剤入りスポンジ",
+        "ウレタン製のスポンジ",
+        "綿のふきん",
+        "シリコーン製の洗浄ブラシ"
+      ],
+      "answer": 0,
+      "explanation": "研磨剤や金属たわしはガラスの表面に傷を付け、破損の原因になることがあります。柔らかい道具と中性洗剤で洗います。",
+      "difficulty": "easy",
+      "source": {
+        "label": "HARIO｜耐熱ガラスの法定品質表示と取扱上の注意",
+        "url": "https://www.hario.cc/PDF/pdf2012/hario_015.pdf"
+      }
+    },
+    "v2-household-normal-016-r2": {
+      "prompt": "魚焼きグリルの受け皿に脂や食材のかすを残したまま使うと、特に起こりやすくなる事故は？",
+      "choices": [
+        "残った脂や食材への引火",
+        "点火用の電池からの液漏れ",
+        "ガスホースの接続部からの漏れ",
+        "器具の電源部分での感電"
+      ],
+      "answer": 0,
+      "explanation": "庫内の脂や食材が火災の原因になることがあります。"
+    },
+    "v2-household-normal-017-r2": {
+      "prompt": "ガスホースがこんろの高温になる部分に触れていた。特に心配される不具合は？",
+      "choices": [
+        "ホースが劣化してガスが漏れる",
+        "ガスの噴出口が食材で詰まる",
+        "点火電極に水がたまる",
+        "温度センサーに油が付着する"
+      ],
+      "answer": 0,
+      "explanation": "ホースの正しい接続・取り回しを確認します。"
+    },
+    "v2-household-normal-019-r2": {
+      "prompt": "ドライヤーのコードを本体へきつく巻いて保管することで、起きやすくなる不具合は？",
+      "choices": [
+        "コード内部の導線の断線",
+        "プラグの差し込み刃のさび",
+        "コンセントの差し込み口の摩耗",
+        "吸込口のフィルターの目詰まり"
+      ],
+      "answer": 0,
+      "explanation": "強い曲げが内部の断線につながることがあります。"
+    },
+    "v2-household-normal-030-r2": {
+      "prompt": "水道修理で、依頼する作業全体の支払額を知りたい。確認する資料として適切なのは？",
+      "choices": [
+        "作業料・部品代・出張費を含む見積もり",
+        "広告に出ている基本料金の表",
+        "交換部品の販売価格の一覧",
+        "出張の距離ごとの料金表"
+      ],
+      "answer": 0,
+      "explanation": "東京都水道局も作業内容・費用の事前確認を案内しています。"
+    },
+    "v2-household-hard-024-r2": {
+      "prompt": "充電式家電で、電源コードを外した後も動作するための電力を蓄えている部品は？",
+      "choices": [
+        "充電池",
+        "電源スイッチ",
+        "温度センサー",
+        "ヒューズ"
+      ],
+      "answer": 0,
+      "explanation": "充電式家電は充電池に蓄えた電力で動きます。外から見えなくても内部に電池を持つ製品があり、処分方法は説明書や自治体等の案内で確認します。",
+      "difficulty": "easy"
+    },
+    "v2-health-easy-020": {
+      "prompt": "生肉に食中毒菌が付いているか、見た目や臭いだけで分かる？",
+      "choices": [
+        "見た目や臭いで食中毒菌の有無は判断できない",
+        "表面の色が鮮やかなら菌が付いていない",
+        "肉汁が透明なら菌が付いていない",
+        "酸っぱい臭いがなければ菌が付いていない"
+      ],
+      "answer": 0,
+      "explanation": "鮮度の見た目と病原体の有無は別です。"
+    },
+    "v2-health-easy-025": {
+      "prompt": "咳エチケットとしてマスクで覆う範囲は？",
+      "choices": [
+        "鼻・口・あご",
+        "口・あごを覆い鼻は出す",
+        "鼻・口を覆いあごは出す",
+        "鼻を覆い口元は空ける"
+      ],
+      "answer": 0,
+      "explanation": "鼻と口を覆い、隙間を少なくして着用します。"
+    },
+    "v2-health-easy-028": {
+      "prompt": "寝室の環境で、眠りを妨げやすいものは？",
+      "choices": [
+        "強い照明をつけたままにする",
+        "照明を暗くして室温を整える",
+        "寝具の肌触りを整える",
+        "外からの騒音を抑える"
+      ],
+      "answer": 0,
+      "explanation": "光、音、暑さ寒さなどは睡眠の質に影響します。"
+    },
+    "v2-health-easy-033": {
+      "prompt": "歯ブラシだけでは十分に掃除しにくいのは？",
+      "choices": [
+        "歯と歯が接する隙間",
+        "前歯の外側の平らな面",
+        "奥歯のかみ合わせの面",
+        "前歯の内側の平らな面"
+      ],
+      "answer": 0,
+      "explanation": "歯間にはフロス等の補助道具を使う方法があります。"
+    },
+    "v2-health-normal-019-r2": {
+      "prompt": "睡眠への影響から、夕方以降にとる量に気を付けたい飲み物の成分は？",
+      "choices": [
+        "カフェイン",
+        "クエン酸",
+        "炭酸",
+        "ビタミンC"
+      ],
+      "answer": 0,
+      "explanation": "遅い時刻の摂取は睡眠に影響しやすくなります。",
+      "difficulty": "easy"
+    },
+    "v2-health-normal-024-r2": {
+      "prompt": "健康づくりで、運動時間と別に注意する習慣は？",
+      "choices": [
+        "座った姿勢が長時間続くこと",
+        "散歩の経路を日によって変えること",
+        "家事の作業をいくつかに分けること",
+        "短い距離の移動にも歩くこと"
+      ],
+      "answer": 0,
+      "explanation": "座位の時間が長くなりすぎないようにします。"
+    },
+    "v2-health-normal-030": {
+      "prompt": "薬の保存場所で避けたい条件は？",
+      "choices": [
+        "日当たりがよく湿気の多い窓辺",
+        "高温や湿気を避けた専用の収納",
+        "子どもが開けられない鍵付きの収納",
+        "表示に合う温度で保つ保管場所"
+      ],
+      "answer": 0,
+      "explanation": "品質や誤使用を防ぐため、個別の保存条件を守ります。"
+    },
+    "v2-health-normal-034-r2": {
+      "prompt": "サプリメントを使い始めて体調の変化を感じたときに役立つ情報は？",
+      "choices": [
+        "製品名・使った量・使い始めた日",
+        "購入店・支払額・レシート番号",
+        "容器の大きさ・内容量・保管棚の位置",
+        "広告媒体・評判・購入を決めた理由"
+      ],
+      "answer": 0,
+      "explanation": "使用状況を記録し、医師や薬剤師に伝えます。"
+    },
+    "v2-health-hard-015-r2": {
+      "prompt": "店で原因食物を抜いてもらう注文をした。残る確認事項は？",
+      "choices": [
+        "原因食物を扱った器具との共用",
+        "食材の産地と仕入れの日付",
+        "調理してから提供するまでの時間",
+        "配膳する食器の材質と大きさ"
+      ],
+      "answer": 0,
+      "explanation": "材料を除く対応と混入防止は別の確認です。"
+    },
+    "v2-health-hard-020": {
+      "prompt": "眠れないため寝床で「早く寝なければ」と頑張り続けている。公的案内で示される方法は？",
+      "choices": [
+        "一度寝床を離れ、眠くなってから戻る",
+        "寝床で横になったまま眠ろうと努力する",
+        "寝床でスマートフォンを見て眠気を待つ",
+        "予定の起床時刻を遅らせて寝床にとどまる"
+      ],
+      "answer": 0,
+      "explanation": "無理に眠ろうとする緊張を避け、リラックスします。"
+    },
+    "v2-health-hard-022": {
+      "prompt": "処方薬との飲み合わせを薬剤師に相談する。使っている市販薬とサプリメントはどう伝える？",
+      "choices": [
+        "市販薬もサプリメントも伝える",
+        "市販薬は伝え、サプリメントは省く",
+        "サプリメントは伝え、市販薬は省く",
+        "処方薬を伝え、他は症状が出てから伝える"
+      ],
+      "answer": 0,
+      "explanation": "薬同士だけでなく食品・サプリメントとの組合せも確認します。"
+    },
+    "v2-money-easy-015-r2": {
+      "prompt": "クレジットカードの利用明細で、身に覚えのない請求に気づくためにすることは？",
+      "choices": [
+        "利用日・利用先・金額を自分の記録と照合する",
+        "請求の合計額が利用限度額を超えていないか見る",
+        "付与されたポイント数が前月と同じか見る",
+        "請求の合計額が前月より増えていないか見る"
+      ],
+      "answer": 0,
+      "explanation": "利用日・利用先・金額などを記録と照合し、誤りや不正利用に早く気づくためです。"
+    },
+    "v2-money-easy-016": {
+      "prompt": "ローンを比較するとき、返済総額に含める費用の組合せは？",
+      "choices": [
+        "元本と利息、契約上必要な手数料",
+        "毎月の元本返済額と利息の差額",
+        "借入限度額と支払済みの利息",
+        "頭金と契約時に払った手数料"
+      ],
+      "answer": 0,
+      "explanation": "返済の負担は借入額だけでなく、利息や手数料を含む支払総額で確認します。"
+    },
+    "v2-money-normal-021-r2": {
+      "prompt": "借入先を比べるとき、月々の返済額に加えて確認したいことは？",
+      "choices": [
+        "完済までの期間と利息等を含む総額",
+        "最初の引落し日と引落し口座",
+        "毎月の支払日と明細の発行日",
+        "返済に使う口座と振込先の支店名"
+      ],
+      "answer": 0,
+      "explanation": "月々が小さくても期間が長ければ総負担が増えることがあります。回数・期間・総額を併せて比べます。"
+    },
+    "v2-money-normal-034": {
+      "prompt": "広告に「過去5年間の成績が良い」とある。将来についていえることは？",
+      "choices": [
+        "過去の成績は、将来の利益を保証しない",
+        "好成績の期間と同じ長さなら利益を見込額で確定できる",
+        "過去の平均利回りを次の期間の最低利回りとして使える",
+        "好成績が続いた年数で元本保証の期間が決まる"
+      ],
+      "answer": 0,
+      "explanation": "将来の価格や収益は変わります。過去の実績と将来の見込みを区別します。"
+    },
+    "v2-consumer-easy-025-r2": {
+      "prompt": "リコールの案内と手元の製品を照合するとき、商品名のほかに見る識別情報は？",
+      "choices": [
+        "本体の型番や製造番号",
+        "購入時のレシート番号",
+        "保証書の販売店コード",
+        "修理受付の問い合わせ番号"
+      ],
+      "answer": 0,
+      "explanation": "同じ商品名でも対象の型番・製造時期などが限られる場合があります。公表された対象条件に従います。"
+    },
+    "v2-consumer-normal-012-r2": {
+      "prompt": "届いた商品が注文した型番と違う。連絡時に役立つ資料の組合せは？",
+      "choices": [
+        "注文確認記録と、届いた商品の型番や写真",
+        "支払完了通知と、荷物の配達完了記録",
+        "商品の価格表と、購入時の割引クーポン",
+        "配送伝票と、梱包箱の大きさの記録"
+      ],
+      "answer": 0,
+      "explanation": "契約した内容と実際に届いた物の違いを具体的に示す資料を残して、販売者へ連絡します。"
+    },
+    "v2-consumer-normal-021-r2": {
+      "prompt": "フリマで「発送前から傷があったか」「荷物が届いたか」というトラブルに備える。残すと役立つ記録は？",
+      "choices": [
+        "発送前の品物の写真と配送の追跡情報",
+        "購入時の商品価格と出品時の価格",
+        "出品ページの閲覧数と売れるまでの日数",
+        "梱包材の購入額と発送場所の営業時間"
+      ],
+      "answer": 0,
+      "explanation": "商品の状態や発送・配達の記録は、破損・未着などが起きたときの確認材料になります。"
+    },
+    "v2-consumer-normal-024-r2": {
+      "prompt": "「通常1万円が5,000円」とあった。本当に半額のお得さがあるかを考える材料は？",
+      "choices": [
+        "比較対象の通常価格で実際に販売された実績",
+        "商品の値段が税込で表示されていること",
+        "割引後の値段が端数のない数字であること",
+        "値引きの広告が長い期間掲載されていること"
+      ],
+      "answer": 0,
+      "explanation": "比較に使う価格が根拠のない額なら、お得さを誤認させるおそれがあります。"
+    },
+    "v2-consumer-normal-027-r2": {
+      "prompt": "通販の商品が約束の時期を過ぎても届かない。問い合わせで注文を特定し、進み具合を確認するための記録は？",
+      "choices": [
+        "注文番号・発送予定・配送の追跡情報",
+        "商品番号・在庫数・次回の入荷予定",
+        "会員番号・獲得ポイント・ポイント有効期限",
+        "レシート番号・保証期間・修理の受付番号"
+      ],
+      "answer": 0,
+      "explanation": "販売者や配送事業者に事実を伝えられるよう、注文と配送の記録を整理します。"
+    },
+    "v2-consumer-normal-030-r2": {
+      "prompt": "解約受付が電話だけなのに、何度かけてもつながらない。残しておきたいものは？",
+      "choices": [
+        "連絡を試みた日時と通話・送信の記録",
+        "商品を使った回数と使い終わった日",
+        "届いた商品の数と未開封の箱の数",
+        "広告を見た日と商品の購入価格"
+      ],
+      "answer": 0,
+      "explanation": "連絡を試みた事実を残し、別の連絡方法や消費生活相談も利用します。記録だけで自動解約になるわけではありません。"
+    },
+    "v2-consumer-hard-016-r2-r3": {
+      "prompt": "副業の募集で、詐欺の手口として特に注意したいものは？",
+      "choices": [
+        "報酬の出金前に、解除料などの追加支払いを繰り返し求められる",
+        "仕事を受ける前に、業務経験と連絡先の提出を求められる",
+        "契約時に、仕事内容と一回ごとの報酬額が書面で示される",
+        "報酬の振込日が、業務を行った月の翌月に設定される"
+      ],
+      "answer": 0,
+      "explanation": "報酬の受け取りを口実に、名目を変えて費用を求める手口に注意します。支払済みの金額を取り戻したい気持ちで追加送金を続けず、記録を残して相談します。",
+      "source": {
+        "label": "国民生活センター｜副業サイトで手続き費用を請求された",
+        "url": "https://www.faq.kokusen.go.jp/faq/show/186?site_domain=default"
+      }
+    },
+    "v2-household-extra-016-r2": {
+      "prompt": "迷子になったペットを保護した人が、飼い主へ直接連絡する手掛かりになるものは？",
+      "choices": [
+        "連絡先を記した迷子札",
+        "ペットの愛称を記した首輪",
+        "ワクチン接種日を記した手帳",
+        "品種と毛色を記した札"
+      ],
+      "answer": 0,
+      "explanation": "飼い主の連絡先が分かる迷子札は、保護した人からの連絡に役立ちます。住所や電話番号が変わったときは情報を更新します。"
+    },
+    "v2-household-extra-029-r2": {
+      "prompt": "無臭タイプの防虫剤で交換時期を判断するには、何を確認する？",
+      "choices": [
+        "使用開始日と表示された有効期間",
+        "衣類へ香りが移り始めた時期",
+        "収納ケースを最後に開けた時期",
+        "衣類に虫食いが見つかった時期"
+      ],
+      "answer": 0,
+      "explanation": "無臭でも有効期間があります。表示や交換サインに従って取り替えます。"
+    },
+    "v2-consumer-extra-007-r2": {
+      "prompt": "生後半年の子猫に合う主食を選ぶとき、栄養面でまず見る表示は？",
+      "choices": [
+        "成長期用の総合栄養食かどうか",
+        "フードの粒が小さめかどうか",
+        "100g当たりの価格が高いかどうか",
+        "一番上の原材料が魚かどうか"
+      ],
+      "answer": 0,
+      "explanation": "子猫と成猫では必要な栄養が異なります。総合栄養食の表示と対象年齢・成長段階を確認します。"
+    },
+    "v2-household-expanded-easy-009": {
+      "prompt": "排水口のトラップに残る水が、主に防いでいるものは？",
+      "choices": [
+        "排水管からのにおいや虫の侵入",
+        "髪の毛が排水管へ流れ込むこと",
+        "高温の排水が排水管に触れること",
+        "排水の勢いによる水はね"
+      ],
+      "answer": 0,
+      "explanation": "トラップに残る水が、排水管と室内の空気を遮るふたの役割をします。"
+    },
+    "v2-household-expanded-normal-013-r2": {
+      "prompt": "調理直後の熱いフライパンに冷水をかけて急冷した。本体に起こりやすくなる不具合は？",
+      "choices": [
+        "急な温度変化による変形",
+        "金属面の酸化による変色",
+        "研磨による表面の擦り傷",
+        "油の酸化によるべたつき"
+      ],
+      "answer": 0,
+      "explanation": "急冷は本体や表面に負担をかけます。十分冷ましてから、説明書に合う方法で洗います。",
+      "source": {
+        "label": "サーモス｜フライパンを長く使うための手入れ",
+        "url": "https://www.thermos.jp/product/fryingpan/guide.html"
+      }
+    },
+    "v2-health-expanded-easy-018-r2": {
+      "prompt": "イヤホンで音楽を聞く際、聴力への負担を左右する主な組合せは？",
+      "choices": [
+        "音量と聞き続ける時間",
+        "曲のテンポと歌詞の量",
+        "保存した曲数と音源の容量",
+        "イヤホンの重さとケーブルの長さ"
+      ],
+      "answer": 0,
+      "explanation": "大きな音を長く聞くことは聴力に影響します。音量を下げ、耳を休める時間を設けます。"
+    },
+    "v2-money-expanded-easy-011": {
+      "prompt": "ネット決済で「セキュリティコード」を求められた。クレジットカードでは何を入力する？",
+      "choices": [
+        "カード会社が指定する3桁または4桁のコード",
+        "自分で設定したカードの暗証番号",
+        "カード番号の末尾の3桁または4桁",
+        "会員サイトへログインするパスワード"
+      ],
+      "answer": 0,
+      "explanation": "セキュリティコードはカード番号や暗証番号とは別の情報です。カードによって確認する場所や桁数が異なります。",
+      "source": {
+        "label": "JCB｜セキュリティコードの確認方法",
+        "url": "https://www.jcb.co.jp/ordercard/special/security_code.html"
+      }
+    },
+    "v2-money-expanded-normal-003-r2": {
+      "prompt": "三井住友銀行の定額自動送金で、指定日に残高が足りなかった。自動融資の契約がない場合、どうなることがある？",
+      "choices": [
+        "送金できず、受取先へ入金されない",
+        "残高の分だけ送金し、不足分を翌日に送る",
+        "不足分を次回の送金額に加えて送る",
+        "送金額を銀行が立て替え、後日引き落とす"
+      ],
+      "answer": 0,
+      "explanation": "定額自動送金は予約の受付だけで送金が保証されるものではありません。指定日に送金額や手数料に必要な残高が不足すると、送金できない場合があります。",
+      "source": {
+        "label": "三井住友銀行｜定額自動送金規定",
+        "url": "https://www.smbc.co.jp/kojin/soukin/pdf/teigakusoukinkitei.pdf"
+      }
+    },
+    "v2-consumer-expanded-easy-015": {
+      "prompt": "楽天の期間限定ポイントの有効期限は、どの期限？",
+      "choices": [
+        "ポイントを支払いに利用できる期限",
+        "ポイントを獲得した注文を返品できる期限",
+        "ポイントで買った商品が到着する期限",
+        "ポイントを獲得した購入品の保証期限"
+      ],
+      "answer": 0,
+      "explanation": "期間限定ポイントの期限は利用の期限です。予約や注文と、実際のサービス提供日は区別します。"
+    },
+    "v2-household-everyday-home-easy-007-r2": {
+      "prompt": "TOTOへトイレの修理を相談する。交換部品が合う製品かを特定するために伝える番号は？",
+      "choices": [
+        "本体ラベルなどにある製品の品番",
+        "水道料金の明細にあるお客さま番号",
+        "購入したときのレシートの会計番号",
+        "設置した建物の部屋番号"
+      ],
+      "answer": 0,
+      "explanation": "型番や種類で製品や部品を特定しやすくなります。場所が分からないときはメーカーの案内を利用します。"
+    },
+    "v2-household-living-recycle-easy-005": {
+      "prompt": "廃家電4品目を販売店に自宅まで引き取りに来てもらう場合、基本となる費用は？",
+      "choices": [
+        "リサイクル料金と収集・運搬料金",
+        "リサイクル料金と新製品の設置料金",
+        "粗大ごみ処理券代と収集・運搬料金",
+        "粗大ごみ処理券代と新製品の設置料金"
+      ],
+      "answer": 0,
+      "explanation": "リサイクルのための料金と、自宅などから指定引取場所へ運ぶための料金は別です。合計額を依頼先に確認します。"
+    },
+    "v2-consumer-scene-shopping-easy-005": {
+      "prompt": "服を買い足す際、タグなどにある「商品番号」は主に何を特定する手掛かりになる？",
+      "choices": [
+        "服の種類や型",
+        "販売した店舗",
+        "購入した会員",
+        "会計をした順番"
+      ],
+      "answer": 0,
+      "explanation": "商品番号と色・サイズなどの仕様を伝えると、似た商品や別仕様との取り違えを減らせます。番号の表示場所や体系は商品により異なります。"
+    },
+    "v2-consumer-scene-shopping-normal-001-r3": {
+      "prompt": "ユニクロのオンラインストアで再入荷通知を受け取った。希望の商品を購入するために、通知の後に必要なのは？",
+      "choices": [
+        "在庫を確認し、注文手続きをする",
+        "発送通知が届くまで手続きを待つ",
+        "登録済みの代金の引落しを待つ",
+        "通知に自動返信して受取日を決める"
+      ],
+      "answer": 0,
+      "explanation": "通知登録と購入手続きは別です。再入荷通知が届いても、購入時に在庫や価格を確かめて注文します。"
+    },
+    "v2-consumer-scene-shopping-normal-003-r3-r4": {
+      "prompt": "ネット注文の商品を店舗へ受け取りに行く。来店の目安にする通知は？",
+      "choices": [
+        "店舗で渡せる状態になったことを知らせる通知",
+        "店が注文を受け付けたことを知らせる通知",
+        "店が代金の決済を受け付けたことを知らせる通知",
+        "配送元の倉庫から発送したことを知らせる通知"
+      ],
+      "answer": 0,
+      "explanation": "注文の受付と、受取店舗で商品を渡せる準備の完了は異なります。店舗での受取準備ができた通知を確認します。"
+    },
+    "v2-household-depth-grooming-normal-001": {
+      "prompt": "プラスチックレンズの眼鏡を真夏の車内に置いた。高温で起こりやすくなる傷みは？",
+      "choices": [
+        "レンズの膜のひびやフレームの変形",
+        "レンズ表面に付いた砂による擦り傷",
+        "金属部分のさびによる変色",
+        "つるの開閉を繰り返すことによるねじの緩み"
+      ],
+      "answer": 0,
+      "explanation": "車内の高温や急な温度変化は、レンズのひびやフレームの変形につながります。"
+    },
+    "v2-household-depth-grooming-easy-005": {
+      "prompt": "シャンプーで洗い流す主な汚れは？",
+      "choices": [
+        "頭皮や髪の皮脂・ほこり",
+        "髪の内部へ定着した染料",
+        "毛先の傷んだ繊維",
+        "髪の表面を覆うキューティクル"
+      ],
+      "answer": 0,
+      "explanation": "シャンプーは頭皮の皮脂などの汚れを落とすためのものです。髪や頭皮を傷めるような洗い方は避けます。"
+    },
+    "v2-household-depth-grooming-normal-005": {
+      "prompt": "シャンプーを付ける前に、髪だけでなく頭皮まで濡らすのはなぜ？",
+      "choices": [
+        "泡立ちをよくし、洗浄料を行き渡らせる",
+        "髪の形を固定し、寝ぐせを付きにくくする",
+        "カラー剤の色素を定着させ、色落ちを抑える",
+        "髪の表面を乾きやすくし、乾燥時間を短くする"
+      ],
+      "answer": 0,
+      "explanation": "十分な水分があるとシャンプーが泡立ち、頭皮と髪に広がりやすくなります。"
+    },
+    "v2-household-depth-grooming-normal-007": {
+      "prompt": "濡れた髪のもつれを整えるとき、使いやすいくしは？",
+      "choices": [
+        "歯の間隔が広いくし",
+        "歯の間隔が細かいくし",
+        "細い毛が密集したブラシ",
+        "短い毛が密集したロールブラシ"
+      ],
+      "answer": 0,
+      "explanation": "濡れた髪はこすれや引っ張りで傷みやすいため、目の粗いくしなどでやさしく整えます。"
+    },
+    "v2-health-depth-cookingmore-normal-001": {
+      "prompt": "にんじんを「乱切り」にする手順は？",
+      "choices": [
+        "にんじんを回しながら斜めに切る",
+        "にんじんを回さず、直角に薄く切る",
+        "にんじんを縦に薄く切り重ねて細く切る",
+        "にんじんを縦に四つに分け、直角に薄く切る"
+      ],
+      "answer": 0,
+      "explanation": "野菜を回しながら斜めに切りますが、大きさはおおむねそろえます。形を不規則にすることと、大小をばらばらにすることは別です。"
+    },
+    "v2-health-depth-cookingmore-normal-002": {
+      "prompt": "グリーンアスパラガスの下処理で、口当たりをよくするために薄くむくのは？",
+      "choices": [
+        "根元寄りの硬い皮",
+        "先端の穂を包む部分",
+        "茎の中央の柔らかな部分",
+        "先端近くの細い茎"
+      ],
+      "answer": 0,
+      "explanation": "根元の乾いた端を切り、硬い皮を薄くむくと口当たりがよくなります。"
+    },
+    "v2-household-depth-gardenmore-normal-002": {
+      "prompt": "鉢へ土を入れるとき、縁までいっぱいにせず少し空ける主な目的は？",
+      "choices": [
+        "水を一時的にため、土へ染み込ませる",
+        "排水穴から流れ出る土を受け止める",
+        "風で傾く茎を鉢の縁で支える",
+        "追肥を土に触れない位置に置く"
+      ],
+      "answer": 0,
+      "explanation": "縁の下に水を一時的にためる空間を残すと、土ごと外へ流れにくくなり、水を染み込ませやすくなります。"
+    },
+    "v2-household-depth-timekeeping-normal-008": {
+      "prompt": "腕時計を外して机に置く。進み・遅れの原因になり得るため、密着させない方がよいものは？",
+      "choices": [
+        "磁石で留めるバッグの留め具",
+        "ステンレス製のスプーン",
+        "アルミ製の文鎮",
+        "真ちゅう製の鍵"
+      ],
+      "answer": 0,
+      "explanation": "時計は磁気の影響を受ける場合があります。磁石の留め具やスピーカーなど、磁気を発するものから離して保管します。"
+    },
+    "v2-household-depth-timekeeping-normal-009": {
+      "prompt": "電池が切れた腕時計の針が、暗い部屋でしばらく光っている。この発光に使われるものは？",
+      "choices": [
+        "蓄光塗料",
+        "LED照明",
+        "液晶表示",
+        "有機EL表示"
+      ],
+      "answer": 0,
+      "explanation": "蓄光塗料は先に受けた光を蓄え、暗所で放出します。光を受けない間は徐々に明るさが低下します。電池式バックライトは電力で点灯します。"
+    },
+    "v2-household-depth-grooming-easy-009": {
+      "prompt": "洗髪後、通常のヘアアイロンを使い始めるのに適した段階は？",
+      "choices": [
+        "ドライヤーなどで十分に乾かした後",
+        "手で水を絞った直後",
+        "タオルで水滴を拭き取った直後",
+        "髪の表面だけが乾き、内側は湿っているとき"
+      ],
+      "answer": 0,
+      "explanation": "基本は乾いた髪に使います。濡れた髪へ高温のプレートを当てると、髪を傷めるおそれがあります。"
+    }
+  }
+}

@@ -11,7 +11,7 @@ test("all six living topics expose the expected questions, difficulty filters, e
   for (const [category, topic, counts] of [
     ["consumer", "住まい探しの費用", [8, 8, 4]],
     ["health", "食品表示の読み分け", [8, 8, 4]],
-    ["household", "家電の処分", [8, 8, 4]],
+    ["household", "家電の処分", [8, 8, 3]],
     ["household", "乾電池の使い方", [6, 6, 3]],
     ["public", "自転車の手入れ", [8, 8, 4]],
     ["world", "身近なものの知識", [8, 8, 4]],

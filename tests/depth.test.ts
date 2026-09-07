@@ -2,10 +2,10 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
-  questions,
+  depthEditionQuestions as questions,
   depthQuestions,
   knowledgeEditionQuestions,
-  archivedQuestions,
+  depthArchivedQuestions as archivedQuestions,
   questionMap,
 } from "../src/data/questions";
 import manifest from "../src/data/diagnostic-depth.json" with { type: "json" };
@@ -137,7 +137,7 @@ describe("broader everyday question bank", () => {
           oldLearning,
         ),
       );
-    const next = createDiagnosticConfig();
+    const next = createDiagnosticConfig("standard-v11");
     expect(next.diagnosticVersion).toBe("standard-v11");
     const image = depthQuestions.find((q) => q.image)!;
     const extras: Question[] = [
@@ -161,7 +161,7 @@ describe("broader everyday question bank", () => {
   });
 
   it("uses additions as unseen questions while preserving the diagnostic quotas and occasional wrong-answer repeats", () => {
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v11");
     const selected = selectQuestions(
       questions,
       config,

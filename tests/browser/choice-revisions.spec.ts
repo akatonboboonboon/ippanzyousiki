@@ -65,7 +65,7 @@ test("an older twelve-genre practice resumes with its original choices and chart
   await page.locator(".answer-option").nth(answers[1]).click();
   await page.getByRole("button", { name: "回答を確定する" }).click();
   await page.getByRole("button", { name: "結果を見る" }).click();
-  await expect(page.locator(".score-number")).toHaveText("50/ 100");
+  await expect(page.locator(".score-number")).toHaveText("50%");
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-row")).toHaveCount(2);
   await expect(page.locator(".history-row").first()).toContainText(
@@ -73,7 +73,7 @@ test("an older twelve-genre practice resumes with its original choices and chart
   );
   await expect(page.locator(".history-row").first()).toContainText("改訂前");
   await page.locator(".history-row").first().click();
-  await expect(page.locator(".score-number")).toHaveText("50/ 100");
+  await expect(page.locator(".score-number")).toHaveText("50%");
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".breakdown-item")).toContainText([
     "家事・暮らし",
@@ -166,5 +166,5 @@ test("revised choices resume, score and wrap on mobile without horizontal overfl
   await page.locator(".answer-option").nth(order.indexOf(q.answer)).click();
   await page.getByRole("button", { name: "回答を確定する" }).click();
   await page.getByRole("button", { name: "結果を見る" }).click();
-  await expect(page.locator(".score-number")).toHaveText("100/ 100");
+  await expect(page.locator(".score-number")).toHaveText("100%");
 });

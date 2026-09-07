@@ -121,7 +121,7 @@ test("additional diagrams and comparisons answer, resume and score on a small sc
       })
       .click();
   }
-  await expect(page.locator(".score-details")).toContainText("3 / 3問");
+  await expect(page.locator(".score-correct")).toContainText("3問中 3問正解");
   await page.screenshot({
     path: "artifacts/depth-result-mobile.png",
     fullPage: true,

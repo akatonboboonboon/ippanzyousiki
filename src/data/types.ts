@@ -209,8 +209,8 @@ export const DIFFICULTIES: {
   name: string;
   description: string;
 }[] = [
-  { id: "mix", name: "おまかせ", description: "3つの難易度をミックス" },
-  { id: "easy", name: "初級", description: "まずは基本をおさらい" },
+  { id: "mix", name: "おまかせ", description: "初級・中級・上級から出題" },
+  { id: "easy", name: "初級", description: "身近な基本知識" },
   { id: "normal", name: "中級", description: "意味や使い方を確認" },
   { id: "hard", name: "上級", description: "基礎知識を使って判断" },
 ];

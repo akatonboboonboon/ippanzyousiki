@@ -14,13 +14,13 @@ test("all eight scene topics are searchable with difficulty counts and source ex
     ["household", "間取り図の読み方", [6, 6, 3]],
     ["culture", "親族の呼び方", [6, 6, 3]],
     ["household", "衣類・寝具の形と用途", [6, 6, 3]],
-    ["household", "家電の運転機能", [6, 6, 3]],
+    ["household", "家電の運転機能", [6, 5, 3]],
     ["money", "立替・割り勘・精算", [6, 6, 3]],
     ["consumer", "お店の在庫と受け取り", [6, 6, 3]],
   ] as const) {
     await page.getByLabel("ライブラリのジャンル").selectOption(category);
     await page.getByLabel("ライブラリの題材").selectOption(topic);
-    await expect(page.locator(".library-count b")).toHaveText("15");
+    await expect(page.locator(".library-count b")).toHaveText(String(counts[0] + counts[1] + counts[2]));
     for (const [i, difficulty] of ["easy", "normal", "hard"].entries()) {
       await page.getByLabel("ライブラリの難易度").selectOption(difficulty);
       await expect(page.locator(".library-count b")).toHaveText(
@@ -130,7 +130,7 @@ test("floor plans, family diagrams and settlements stay readable on mobile and r
       .getByRole("button", { name: i < 2 ? "次の問題へ" : "結果を見る" })
       .click();
   }
-  await expect(page.locator(".score-number")).toHaveText("100/ 100");
-  await expect(page.locator(".score-details")).toContainText("3 / 3問");
+  await expect(page.locator(".score-number")).toHaveText("100%");
+  await expect(page.locator(".score-correct")).toContainText("3問中 3問正解");
   expect(errors).toEqual([]);
 });
