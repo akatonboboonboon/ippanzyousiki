@@ -61,10 +61,10 @@ test("completes and scores a quiz, explains mistakes, saves history and allows t
     ).violations,
   ).toEqual([]);
   await page.getByRole("button", { name: "間違えた3問を復習" }).click();
-  await expect(page.locator(".quiz-toolbar")).toContainText("復習チャレンジ");
+  await expect(page.locator(".quiz-toolbar")).toContainText("復習");
   await completeQuiz(page, 3, 3);
   await expect(page.locator(".score-number")).toHaveText("100/ 100");
-  await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
+  await page.getByRole("button", { name: "次のクイズを選ぶ" }).click();
   await expect(
     page.getByRole("button", { name: "24問", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
@@ -127,7 +127,7 @@ test("mobile stays in the viewport and single-genre result leaves other axes unm
   ).toBe(true);
   await completeQuiz(page, 6);
   await expect(page.locator(".score-panel h2")).toHaveText(
-    "選択ジャンルの理解度",
+    "選んだジャンルのスコア",
   );
   await expect(
     page.locator(".breakdown-content b").filter({ hasText: "未測定" }),

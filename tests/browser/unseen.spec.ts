@@ -181,7 +181,7 @@ test("a confirmed mistake becomes correct after answering its review question", 
   await page
     .getByRole("button", { name: "間違えた1問を復習", exact: true })
     .click();
-  await expect(page.locator(".quiz-toolbar")).toContainText("復習チャレンジ");
+  await expect(page.locator(".quiz-toolbar")).toContainText("復習");
   await page
     .locator(".answer-option")
     .filter({

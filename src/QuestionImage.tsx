@@ -28,7 +28,7 @@ function ImageFigure({
       {image.caption && <figcaption>{image.caption}</figcaption>}
       {!failed && (
         <details className="image-description">
-          <summary>画像の説明を読む</summary>
+          <summary>画像の説明</summary>
           <p>{image.alt}</p>
         </details>
       )}

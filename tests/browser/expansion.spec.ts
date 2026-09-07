@@ -97,7 +97,7 @@ for (const version of [
       "+100点",
     );
     await expect(page.locator(".diagnostic-comparison")).toContainText(label);
-    await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
+    await page.getByRole("button", { name: "次のクイズを選ぶ" }).click();
     await expect(page.locator(".diagnostic-heading")).toContainText(
       "標準診断 11",
     );

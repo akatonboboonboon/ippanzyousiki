@@ -34,7 +34,9 @@ test("blocked local storage shows a warning while the quiz remains usable", asyn
     };
   });
   await page.goto("/");
-  await expect(page.getByRole("alert")).toContainText("記録を保存できません");
+  await expect(page.getByRole("alert")).toContainText(
+    "記録の変更を保存できていません",
+  );
   await page.getByRole("button", { name: "標準診断をはじめる" }).click();
   await page.locator(".answer-option").first().click();
   await page.getByRole("button", { name: "回答を確定する" }).click();

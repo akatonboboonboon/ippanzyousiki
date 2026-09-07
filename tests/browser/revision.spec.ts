@@ -42,7 +42,7 @@ test("a revised bank preserves historical answers and scores, excludes retired q
   );
   await page.reload();
   await expect(page.getByRole("status")).toContainText(
-    "更新前の問題を含む中断データを終了",
+    "古い形式のクイズは再開できなくなりました",
   );
   await expect(page.locator(".resume-banner")).toHaveCount(0);
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
@@ -67,7 +67,7 @@ test("a revised bank preserves historical answers and scores, excludes retired q
   await expect(page.locator(".review-body")).toContainText(
     old[1].choices[old[1].answer],
   );
-  await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
+  await page.getByRole("button", { name: "次のクイズを選ぶ" }).click();
   await expect(
     page.getByRole("button", { name: "24問", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");

@@ -399,7 +399,7 @@ export default function App() {
               <BookOpen size={23} strokeWidth={1.6} />
             </span>
             <span>
-              常識のものさし<small>DAILY KNOWLEDGE, LITTLE BY LITTLE.</small>
+              常識のものさし<small>一般常識クイズ</small>
             </span>
           </button>
           <nav aria-label="メインナビゲーション">
@@ -430,13 +430,13 @@ export default function App() {
           </nav>
           <span className="header-note">
             <span className="status-dot" />
-            毎日の、小さな発見。
+            登録不要
           </span>
         </div>
       </header>
       {storageError && (
         <div role="alert" className="storage-warning">
-          このブラウザーでは記録を保存できません。クイズは続けられますが、ページを閉じると履歴と途中経過が失われます。
+          今回の回答や記録の変更を保存できていません。クイズは続けられますが、ページを閉じると保存できなかった内容は失われます。
         </div>
       )}
       <main id="main" className={`main-content page-${page}`}>
@@ -445,7 +445,7 @@ export default function App() {
             {showRevisionNotice && (
               <div className="content-notice" role="status">
                 <p>
-                  問題集の改訂に伴い、更新前の問題を含む中断データを終了しました。新しい問題で挑戦できます。完了済みの記録は残っています。
+                  問題集の更新により、古い形式のクイズは再開できなくなりました。新しいクイズを選んでください。完了済みの結果は残っています。
                 </p>
                 <button
                   className="icon-button"
@@ -458,29 +458,26 @@ export default function App() {
             )}
             <section className="hero">
               <div className="hero-copy">
-                <div className="eyebrow">
-                  <span /> KNOW MORE. GROW MORE.
-                </div>
                 <h1 ref={titleRef} tabIndex={-1}>
-                  あなたの「知ってる」、
+                  一般常識を
                   <br />
-                  どのくらい
+                  クイズで
                   <span className="hero-question">
-                    ？
+                    チェック
                     <svg viewBox="0 0 80 13" aria-hidden="true">
                       <path d="M3 9Q35 0 76 5" />
                     </svg>
                   </span>
                 </h1>
                 <p>
-                  知っているつもりのことも、はじめて知ることも。
+                  生活の知識から、言葉やスポーツまで。
                   <br />
-                  クイズで見つける、あなたの知識と、新しい発見。
+                  正解数とジャンル別の成績を確認できます。
                 </p>
                 <div className="hero-facts">
                   <span>
                     <BookOpen size={16} />
-                    <b>{questions.length}</b>問の知識
+                    <b>{questions.length}</b>問を収録
                   </span>
                   <span>
                     <Globe2 size={16} />
@@ -488,7 +485,7 @@ export default function App() {
                   </span>
                   <span>
                     <ChartNoAxesCombined size={16} />
-                    <b>3</b>つの難易度
+                    <b>3</b>段階の難易度
                   </span>
                 </div>
                 <button
@@ -500,19 +497,19 @@ export default function App() {
                     })
                   }
                 >
-                  さっそく、測ってみよう
+                  クイズを選ぶ
                   <ArrowRight size={17} />
                 </button>
               </div>
               <div className="hero-visual">
                 <div className="floating-label label-top">
                   <Sparkles size={14} />
-                  「知らなかった」が、伸びしろ。
+                  得意・苦手を確認
                 </div>
                 <div className="radar-preview">
                   <div className="preview-top">
                     <span>
-                      <Target size={15} /> あなたの知識バランス
+                      <Target size={15} /> ジャンル別の成績
                     </span>
                     <small>サンプル</small>
                   </div>
@@ -529,14 +526,14 @@ export default function App() {
                   />
                   <div className="preview-bottom">
                     <span className="legend-dot" />
-                    {CATEGORIES.length}つの角度から、得意と苦手を見える化
+                    {CATEGORIES.length}ジャンルの正答率を表示
                   </div>
                 </div>
                 <div className="floating-label label-bottom">
                   <span className="tiny-check">
                     <Check size={12} />
                   </span>
-                  知るほど、世界はおもしろい。
+                  間違えた問題を復習
                 </div>
                 <span className="deco-star star-one">✳</span>
                 <span className="deco-star star-two">✧</span>
@@ -548,7 +545,7 @@ export default function App() {
                   <History size={21} />
                 </div>
                 <div>
-                  <strong>つづきから、はじめよう。</strong>
+                  <strong>途中のクイズがあります</strong>
                   <p>
                     {session.answers.filter((a) => a !== null).length} /{" "}
                     {session.items.length}問 回答済み ·{" "}
@@ -575,8 +572,7 @@ export default function App() {
               <section className="panel quiz-setup" ref={configRef}>
                 <div className="section-top">
                   <div>
-                    <div className="eyebrow subtle">LET’S FIND OUT</div>
-                    <h2>今日のチャレンジを選ぼう</h2>
+                    <h2>クイズを選ぶ</h2>
                   </div>
                   <span className="step-badge">
                     <Compass size={17} />
@@ -593,7 +589,7 @@ export default function App() {
                     問。画像で読む問題や、裁縫・靴・ペットなどの生活知識も収録しています。日本の暮らしを想定し、地域・宗教・製品による違いは問題文で示します。
                   </p>
                   <p>
-                    実際のクイズ集と公的・実務資料を調査して再構成しました。
+                    出典と出題方針は、次のページで確認できます。
                     <a
                       href="https://github.com/akatonboboonboon/ippanzyousiki/blob/codex/build-quiz-app/docs/research/overview.md"
                       target="_blank"
@@ -606,7 +602,7 @@ export default function App() {
                 <div
                   className="challenge-modes"
                   role="group"
-                  aria-label="チャレンジの種類"
+                  aria-label="クイズの種類"
                 >
                   <button
                     className={challengeMode === "diagnostic" ? "selected" : ""}
@@ -618,7 +614,7 @@ export default function App() {
                   >
                     <Target size={20} />
                     <strong>標準診断</strong>
-                    <small>同じ条件で、知識を測る</small>
+                    <small>12ジャンルから60問</small>
                   </button>
                   <button
                     className={challengeMode === "quiz" ? "selected" : ""}
@@ -635,11 +631,11 @@ export default function App() {
                 </div>
                 <details className="scope-guide">
                   <summary>
-                    未出題を優先する出題について
+                    問題の選び方について
                     <ChevronDown size={14} />
                   </summary>
                   <p>
-                    まだ出会っていない問題を優先し、直近で間違えた問題も最大2割を目安に混ぜます。ジャンル・難易度・画像の配分に合う未出題が足りないときは、誤答やしばらく出ていない問題で補います。
+                    まだ出ていない問題を優先します。新しい問題が十分にある場合は、直近で間違えた問題を最大2割まで混ぜます。選んだ条件に合う未出題が足りない場合は、間違えた問題や最近出ていない問題も出題します。
                   </p>
                   <p>
                     出題済みの記録はこのブラウザーに保存し、履歴が50回を超えても保持します。途中でやめたクイズの未表示の問題は、未出題のままです。
@@ -658,10 +654,10 @@ export default function App() {
                       </span>
                       <span>
                         <Clock3 size={14} />
-                        目安 約20分・中断可能
+                        約20分・途中で中断できます
                       </span>
                     </div>
-                    <h3>12ジャンルを、同じ配分で。</h3>
+                    <h3>各ジャンルから5問ずつ出題</h3>
                     <p>
                       各ジャンル5問、合計{DIAGNOSTIC_COUNT}
                       問。毎回、初級2問・中級2問・上級1問を出題します。各ジャンルに画像問題を1問含みます。
@@ -678,7 +674,7 @@ export default function App() {
                       </span>
                     </div>
                     <p className="diagnostic-note">
-                      未出題を優先し、以前間違えた問題も時々出題します。正解と解説は終了後に確認でき、同じ版の前回結果と比較します。
+                      正解と解説は60問を終えてから表示します。同じ標準診断の前回の点数と比較できます。
                     </p>
                     {latestDiagnostic && (
                       <div className="last-diagnostic">
@@ -708,9 +704,7 @@ export default function App() {
                     <fieldset>
                       <legend>
                         <span className="number-label">01</span>難易度
-                        <span className="label-note">
-                          あなたに合ったレベルで
-                        </span>
+                        <span className="label-note">1つ選んでください</span>
                       </legend>
                       <div className="difficulty-options">
                         {DIFFICULTIES.map((d, i) => (
@@ -785,9 +779,7 @@ export default function App() {
                     <fieldset>
                       <legend>
                         <span className="number-label">03</span>問題数
-                        <span className="label-note">
-                          ちょっとだけ、じっくりでも
-                        </span>
+                        <span className="label-note">12問から選べます</span>
                       </legend>
                       <div className="count-row">
                         <div className="count-options">
@@ -837,11 +829,11 @@ export default function App() {
                       </button>
                       <small>
                         {config.categories.length === CATEGORIES.length
-                          ? "選んだ条件で練習します。成績の比較には標準診断をご利用ください。"
-                          : "選んだジャンルの理解度を測定します。未出題の分野は「未測定」と表示します。"}
+                          ? "ジャンルや難易度を指定して練習できます。前回の点数と比べたい場合は、標準診断を選んでください。"
+                          : "選んだジャンルから出題します。出題しないジャンルの成績は「未測定」と表示します。"}
                         {available.length < config.count &&
                           available.length > 0 &&
-                          ` 選択条件に該当する全${available.length}問が対象です。`}
+                          ` 条件に合う全${available.length}問が対象です。`}
                       </small>
                     </div>
                   </>
@@ -852,7 +844,7 @@ export default function App() {
                   <div className="mini-heading">
                     <span>
                       <ChartNoAxesCombined size={17} />
-                      あなたの学び
+                      これまでの記録
                     </span>
                     <span className="pill light">現行の問題集</span>
                   </div>
@@ -861,7 +853,7 @@ export default function App() {
                       {studied}
                       <small> / {questions.length} 問</small>
                     </strong>
-                    <span>出会った問題</span>
+                    <span>出題済みの問題</span>
                   </div>
                   <div className="progress-track">
                     <span
@@ -876,7 +868,7 @@ export default function App() {
                         {currentHistory.length}
                         <small>回</small>
                       </b>
-                      <span>チャレンジ</span>
+                      <span>完了した回数</span>
                     </div>
                     <div>
                       <b>
@@ -900,7 +892,7 @@ export default function App() {
                   <div className="mini-heading">
                     <span>
                       <Lightbulb size={17} />
-                      今日のひとくち常識
+                      今日の1問
                     </span>
                     <span className="daily-spark">✧</span>
                   </div>
@@ -908,7 +900,7 @@ export default function App() {
                   <QuestionImage question={daily} compact />
                   <details>
                     <summary>
-                      答えをのぞいてみる
+                      正解と解説を見る
                       <ChevronDown size={15} />
                     </summary>
                     <div className="daily-answer">
@@ -921,9 +913,9 @@ export default function App() {
                 <div className="sidebar-note">
                   <BookOpen size={23} strokeWidth={1.3} />
                   <p>
-                    1日ひとつの「なるほど」が、
+                    問題と解説は、
                     <br />
-                    明日のあなたを、少し豊かに。
+                    問題ライブラリでも読めます。
                   </p>
                 </div>
               </aside>
@@ -931,8 +923,7 @@ export default function App() {
             <section className="discover-section">
               <div className="section-title-row">
                 <div>
-                  <div className="eyebrow subtle">A WORLD OF KNOWLEDGE</div>
-                  <h2>{CATEGORIES.length}のジャンル、暮らしに広がる知識。</h2>
+                  <h2>{CATEGORIES.length}ジャンルから選ぶ</h2>
                 </div>
                 <button
                   className="text-link"
@@ -981,20 +972,20 @@ export default function App() {
             <section className="how-it-works">
               <div>
                 <span>01</span>
-                <h3>好きなペースで挑戦</h3>
-                <p>気分に合わせて、難易度と問題数を選択。</p>
+                <h3>クイズを選ぶ</h3>
+                <p>標準診断か、条件を選べる自由練習。</p>
               </div>
               <ArrowRight size={18} />
               <div>
                 <span>02</span>
-                <h3>解説で「なるほど」</h3>
-                <p>すべての問題に解説。診断後はまとめて復習。</p>
+                <h3>答えと解説を確認</h3>
+                <p>全問に解説付き。標準診断では終了後に表示。</p>
               </div>
               <ArrowRight size={18} />
               <div>
                 <span>03</span>
-                <h3>得意と伸びしろを発見</h3>
-                <p>レーダーチャートで、次の学びが見えてくる。</p>
+                <h3>ジャンル別の成績を見る</h3>
+                <p>正答率を比較し、間違えた問題を復習。</p>
               </div>
             </section>
           </>
@@ -1018,7 +1009,7 @@ export default function App() {
                   {inDiagnostic
                     ? `${diagnosticName(session.config.diagnosticVersion)} · 60問`
                     : session.config.mode === "review"
-                      ? "復習チャレンジ"
+                      ? "復習"
                       : `${difficultyName(session.config.difficulty)}コース`}
                 </span>
                 <span className="save-note">
@@ -1114,12 +1105,12 @@ export default function App() {
                       currentQuestion.answer ? (
                         <>
                           <CheckCircle2 size={23} />
-                          <strong>正解！ その知識、身についています。</strong>
+                          <strong>正解です</strong>
                         </>
                       ) : (
                         <>
                           <Lightbulb size={23} />
-                          <strong>新しい知識を、ひとつ。</strong>
+                          <strong>不正解です</strong>
                         </>
                       )}
                     </div>
@@ -1155,7 +1146,7 @@ export default function App() {
               </section>
               <p className="quiz-bottom-note">
                 <Leaf size={14} />
-                焦らず、自分のペースで。知ることを楽しもう。
+                「中断して戻る」で、途中のクイズを残せます。
               </p>
             </div>
           )}
@@ -1164,11 +1155,8 @@ export default function App() {
           <>
             <div className="page-heading">
               <div>
-                <div className="eyebrow subtle">
-                  YOUR KNOWLEDGE, DISCOVERED.
-                </div>
                 <h1 ref={titleRef} tabIndex={-1}>
-                  あなたの「知ってる」が、見えてきた。
+                  クイズの結果
                 </h1>
                 <p>
                   {dateFormat.format(result.finishedAt)} ·{" "}
@@ -1190,7 +1178,7 @@ export default function App() {
             {resultHasRetiredQuestions && (
               <div className="content-notice">
                 <p>
-                  改訂前の問題を含む記録です。当時の問題と正答で表示しており、現在の集計には含めません。差し替えた旧問題は復習の対象外です。
+                  改訂前の問題を含む結果です。当時の問題と正解を表示します。完了した回数と累計正答率の集計には含めません。差し替えられた問題は復習できません。
                 </p>
               </div>
             )}
@@ -1198,10 +1186,10 @@ export default function App() {
               <section className="panel score-panel">
                 <div className="eyebrow subtle">
                   {standardResult
-                    ? "STANDARD DIAGNOSTIC"
+                    ? "標準診断"
                     : result.config.mode === "review"
-                      ? "REVIEW RESULT"
-                      : "KNOWLEDGE SCORE"}
+                      ? "復習"
+                      : "自由練習"}
                 </div>
                 <h2>
                   {resultHasRetiredQuestions
@@ -1215,7 +1203,7 @@ export default function App() {
                               ? LEGACY_CATEGORIES.length
                               : CATEGORIES.length)
                           ? "自由練習のスコア"
-                          : "選択ジャンルの理解度"}
+                          : "選んだジャンルのスコア"}
                 </h2>
                 <div className="score-number">
                   {stats.percent}
@@ -1244,7 +1232,7 @@ export default function App() {
                   </div>
                 </div>
                 <p className="score-note">
-                  正解数 ÷ 出題数 × 100 の学習用スコアです。
+                  得点は、正解数 ÷ 出題数 × 100 を四捨五入した値です。
                   <br />
                   {standardResult
                     ? `${diagnosticName(result.config.diagnosticVersion)}：各ジャンル5問・画像12問の固定配分です。`
@@ -1266,7 +1254,7 @@ export default function App() {
                 <div className="mini-heading">
                   <span>
                     <Target size={19} />
-                    ジャンル別の知識バランス
+                    ジャンル別の正答率
                   </span>
                   <span className="pill light">正答率 %</span>
                 </div>
@@ -1276,7 +1264,7 @@ export default function App() {
                 />
                 <p>
                   <span className="legend-dot" />
-                  今回のチャレンジ
+                  今回の結果
                   {stats.scores.some((s) => s.percent === null) && (
                     <small> · 未出題のジャンルは未測定</small>
                   )}
@@ -1286,13 +1274,10 @@ export default function App() {
             {standardResult && (
               <section className="panel diagnostic-comparison">
                 <div>
-                  <span className="eyebrow subtle">
-                    SAME CONDITIONS, YOUR PROGRESS.
-                  </span>
                   <h2>前回の標準診断と比べる</h2>
                   <p>
                     同じ「{diagnosticName(result.config.diagnosticVersion)}
-                    」の記録だけで比較しています。
+                    」の結果と比較します。
                   </p>
                 </div>
                 {previousDiagnostic ? (
@@ -1317,7 +1302,7 @@ export default function App() {
                   </div>
                 ) : (
                   <p>
-                    比較できる同じ標準診断の記録がまだありません。次の診断から前回との差を確認できます。
+                    同じ標準診断の過去の結果がないため、今回は比較を表示しません。
                   </p>
                 )}
                 <small>
@@ -1327,7 +1312,7 @@ export default function App() {
             )}
             <section className="panel breakdown-panel">
               <div className="section-title-row">
-                <h2>得意と、これからの伸びしろ</h2>
+                <h2>ジャンル別の正解数</h2>
                 <span className="label-note">今回の回答から</span>
               </div>
               <div className="breakdown-grid">
@@ -1358,7 +1343,7 @@ export default function App() {
                         </div>
                         <small>
                           {s.total
-                            ? `${s.correct} / ${s.total}問正解${s.total < 3 ? " · 少数の出題による参考値" : ""}`
+                            ? `${s.correct} / ${s.total}問正解${s.total < 3 ? " · 出題数が少ないため参考値" : ""}`
                             : "このジャンルの出題はありません"}
                         </small>
                       </div>
@@ -1374,7 +1359,7 @@ export default function App() {
                       .filter((s) => s.percent !== null)
                       .sort((a, b) => a.percent! - b.percent!);
                     if (measured.every((s) => s.percent === 100))
-                      return "すべての出題ジャンルで全問正解！ 次は別の難易度や問題に挑戦して、知識の幅を広げてみましょう。";
+                      return "今回は全問正解でした。各問題の解説は、下の「すべて」から確認できます。";
                     const weak = measured
                       .filter((s) => s.percent === measured[0].percent)
                       .map(
@@ -1384,8 +1369,8 @@ export default function App() {
                       );
                     return (
                       <>
-                        次の一歩は、<strong>{weak.join("・")}</strong>
-                        から。今回の正答率が低かったジャンルです。解説と復習で「知ってる」を増やしましょう。
+                        今回は<strong>{weak.join("・")}</strong>
+                        の正答率が最も低い結果でした。下の一覧で、間違えた問題と解説を確認できます。
                       </>
                     );
                   })()}
@@ -1425,12 +1410,12 @@ export default function App() {
                 }}
               >
                 <Compass size={17} />
-                次のチャレンジを選ぶ
+                次のクイズを選ぶ
               </button>
             </div>
             <section className="review-section">
               <div className="section-title-row">
-                <h2>解答を振り返る</h2>
+                <h2>回答と解説</h2>
                 <div className="segmented">
                   <button
                     className={reviewFilter === "wrong" ? "active" : ""}
@@ -1452,8 +1437,8 @@ export default function App() {
               reviewFilter === "wrong" ? (
                 <div className="empty-state compact">
                   <Trophy size={30} />
-                  <h3>全問正解、おめでとう！</h3>
-                  <p>「すべて」から各問題の解説を振り返れます。</p>
+                  <h3>全問正解です</h3>
+                  <p>「すべて」を選ぶと、正解した問題の解説も読めます。</p>
                 </div>
               ) : (
                 result.items.map((item, i) => {
@@ -1500,11 +1485,12 @@ export default function App() {
           <>
             <div className="page-heading">
               <div>
-                <div className="eyebrow subtle">LITTLE STEPS, REAL GROWTH.</div>
                 <h1 ref={titleRef} tabIndex={-1}>
-                  あなたの、学びのあしあと。
+                  学習の記録
                 </h1>
-                <p>積み重ねた「なるほど」を、振り返ろう。</p>
+                <p>
+                  過去の結果を確認したり、間違えた問題を復習したりできます。
+                </p>
               </div>
               {(history.length > 0 || studied > 0) && (
                 <button
@@ -1520,7 +1506,7 @@ export default function App() {
               <div className="panel">
                 <span>
                   <Compass size={18} />
-                  チャレンジ回数
+                  完了した回数
                 </span>
                 <strong>
                   {currentHistory.length}
@@ -1530,7 +1516,7 @@ export default function App() {
               <div className="panel">
                 <span>
                   <BookOpen size={18} />
-                  出会った問題
+                  出題済みの問題
                 </span>
                 <strong>
                   {studied}
@@ -1555,7 +1541,7 @@ export default function App() {
                 <span className="empty-icon">
                   <BookOpen size={36} strokeWidth={1.3} />
                 </span>
-                <h2>最初の一歩から、はじめよう。</h2>
+                <h2>保存された結果はありません</h2>
                 <p>
                   クイズを最後まで回答すると、
                   <br />
@@ -1575,9 +1561,9 @@ export default function App() {
                   <div>
                     <RotateCcw size={24} />
                     <div>
-                      <h2>伸びしろを、知識に変えよう。</h2>
+                      <h2>間違えた問題を復習</h2>
                       <p>
-                        直近の回答で間違えた問題が{wrongIds.size}
+                        最後に答えたときに間違えた問題が{wrongIds.size}
                         問あります。
                       </p>
                     </div>
@@ -1592,7 +1578,7 @@ export default function App() {
                   </button>
                 </section>
                 <div className="section-title-row">
-                  <h2>チャレンジの記録</h2>
+                  <h2>過去の結果</h2>
                   <span className="label-note">最新50回まで保存</span>
                 </div>
                 <div className="history-list">
@@ -1612,7 +1598,7 @@ export default function App() {
                             {isStandardDiagnostic(r)
                               ? diagnosticName(r.config.diagnosticVersion)
                               : r.config.mode === "review"
-                                ? "復習チャレンジ"
+                                ? "復習"
                                 : r.config.categories.length ===
                                     (usesLegacyCategories(r)
                                       ? LEGACY_CATEGORIES.length
@@ -1653,7 +1639,7 @@ export default function App() {
                 </div>
                 {last && (
                   <p className="history-note">
-                    チャレンジ回数・累計正答率は、現行問題だけで受けた最新50回が対象です。出会った問題と直近の正誤は50回を超えても保持し、途中で回答した問題も含みます。記録はこのブラウザーに保存します。
+                    回数と累計正答率は、保存中の最新50回のうち、現在の問題だけで解いた結果から計算します。出題済みの問題と直近の正誤は50回を超えても残り、中断したクイズで表示した問題も含みます。記録はこのブラウザーに保存します。
                   </p>
                 )}
               </>
@@ -1665,13 +1651,12 @@ export default function App() {
           <>
             <div className="page-heading">
               <div>
-                <div className="eyebrow subtle">STAY CURIOUS.</div>
                 <h1 ref={titleRef} tabIndex={-1}>
-                  知りたいことを、ひとつずつ。
+                  問題ライブラリ
                 </h1>
                 <p>
                   {questions.length}
-                  問の問題と解説。気になるジャンルから、知識を広げよう。
+                  問を掲載しています。ジャンルや題材で絞り込んで、正解と解説を読めます。
                 </p>
               </div>
               <span className="library-icon">
@@ -1760,7 +1745,7 @@ export default function App() {
             </section>
             <div className="section-title-row library-count">
               <span>
-                <b>{libraryQuestions.length}</b> 問の問題
+                <b>{libraryQuestions.length}</b> 問
               </span>
               <small>開くと正解と解説を確認できます</small>
             </div>
@@ -1870,11 +1855,11 @@ export default function App() {
             <BookOpen size={17} />
             常識のものさし
           </span>
-          <p>知らないを、知る楽しみに。</p>
+          <p>暮らし・仕事・教養の一般常識クイズ</p>
         </div>
-        <small>学習のための知識クイズ · 記録はこのブラウザーに保存</small>
+        <small>回答と結果はこのブラウザーに保存されます</small>
         <span className="footer-end">
-          MADE FOR CURIOUS MINDS. <Flower2 size={17} />
+          全問に解説付き <Flower2 size={17} />
         </span>
       </footer>
       {(replacePending || clearPending) && (
@@ -1886,8 +1871,8 @@ export default function App() {
           }
           text={
             replacePending
-              ? "中断中のクイズの途中経過が置き換わります。完了した学習の記録は残ります。"
-              : "保存された結果・出題済みの記録・復習リストを削除します。この操作は取り消せません。中断中のクイズは残り、再開した問題から記録します。"
+              ? "途中のクイズは破棄され、新しいクイズが始まります。完了済みの結果は残ります。"
+              : "保存済みの結果、出題済みの記録、復習リストを削除します。元には戻せません。途中のクイズは残り、再開して表示した問題から新しく記録します。"
           }
           confirm={replacePending ? "新しくはじめる" : "記録を削除する"}
           onCancel={() => {

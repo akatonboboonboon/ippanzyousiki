@@ -31,7 +31,7 @@ export default function Radar({
       role="img"
       aria-label={
         sample
-          ? "診断後のレーダーチャートのサンプル"
+          ? "ジャンル別正答率の表示例"
           : `ジャンル別正答率。${scores.map((s) => `${categories.find((c) => c.id === s.category)!.name} ${s.percent === null ? "未測定" : `${s.percent}%`}`).join("、")}`
       }
     >

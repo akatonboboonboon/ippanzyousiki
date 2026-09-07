@@ -188,8 +188,8 @@ button svg {
 }
 .brand small {
   display: block;
-  font-size: 7px;
-  letter-spacing: 1.1px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   font-weight: 500;
   margin-top: 5px;
   color: #606a62;
@@ -2384,8 +2384,8 @@ summary::-webkit-details-marker {
     border-radius: 10px;
   }
   .brand small {
-    font-size: 6px;
-    letter-spacing: 1px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
     margin-top: 4px;
   }
   .header-inner nav {

@@ -118,7 +118,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
         .analyze()
     ).violations,
   ).toEqual([]);
-  await page.getByRole("button", { name: "次のチャレンジを選ぶ" }).click();
+  await page.getByRole("button", { name: "次のクイズを選ぶ" }).click();
   await expect(
     page.getByRole("button", { name: "標準診断をはじめる" }),
   ).toBeVisible();
