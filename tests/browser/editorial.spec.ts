@@ -212,7 +212,14 @@ test("familiar diagrams and a rewritten question remain usable on mobile and sav
     await page.getByRole("button", { name: "回答を確定する" }).click();
     await expect(page.locator(".answer-feedback")).toContainText(q.explanation);
     await page.reload();
-    await page.getByRole("button", { name: "クイズを再開" }).click();
+    // Cover keyboard resume after reload as well as the initial pointer resume.
+    // This avoids Chromium's stalled pre-click scroll after repeated mobile reloads.
+    const resume = page.getByRole("button", { name: "クイズを再開" });
+    await expect(resume).toBeVisible();
+    await expect(resume).toBeEnabled();
+    await resume.focus();
+    await expect(resume).toBeFocused();
+    await page.keyboard.press("Enter");
     await expect(page.locator(".answer-feedback")).toContainText(q.explanation);
     const learning = await page.evaluate(
       () => JSON.parse(localStorage.getItem("monosashi-v1")!).learning,
