@@ -101,7 +101,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   await expect(page.locator(".score-details")).toContainText("45 / 60問");
   await expect(page.locator(".diagnostic-comparison")).toContainText("+25点");
   await expect(page.locator(".diagnostic-comparison")).toContainText(
-    "標準診断 8",
+    "標準診断 9",
   );
   await expect(page.locator(".breakdown-item")).toHaveCount(12);
   await expect(page.locator(".review-item")).toHaveCount(15);
@@ -122,7 +122,7 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toBeVisible();
   await page.getByRole("button", { name: "学習の記録", exact: true }).click();
   await expect(page.locator(".history-stats .panel").last()).toContainText(
-    "最新の標準診断 8",
+    "最新の標準診断 9",
   );
   await expect(
     page.locator(".history-stats .panel").last().locator("strong"),
@@ -133,9 +133,10 @@ test("standard diagnostic keeps fixed conditions, defers feedback, resumes, and 
   ).toHaveCount(1);
 });
 
-test("visual library loads all 90 diagrams, offers descriptions, and works on mobile", async ({
+test("visual library loads all 120 diagrams, offers descriptions, and works on mobile", async ({
   page,
 }) => {
+  test.setTimeout(120000);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.screenshot({
@@ -146,8 +147,8 @@ test("visual library loads all 90 diagrams, offers descriptions, and works on mo
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();
   await page.getByLabel("ライブラリの出題形式").selectOption("image");
-  await expect(page.locator(".library-count b")).toHaveText("90");
-  for (let p = 0; p < 5; p++) {
+  await expect(page.locator(".library-count b")).toHaveText("120");
+  for (let p = 0; p < 6; p++) {
     const items = page.locator(".library-question");
     for (let i = 0; i < (await items.count()); i++) {
       const item = items.nth(i);
@@ -170,7 +171,7 @@ test("visual library loads all 90 diagrams, offers descriptions, and works on mo
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
-    if (p < 4)
+    if (p < 5)
       await page.getByRole("button", { name: "次へ", exact: true }).click();
   }
   await page.screenshot({

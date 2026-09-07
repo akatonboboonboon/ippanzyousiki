@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { sceneQuestions } from "../../src/data/questions";
+import { questions, sceneQuestions } from "../../src/data/questions";
 
 test("all eight scene topics are searchable with difficulty counts and source explanations", async ({
   page,
@@ -28,7 +28,7 @@ test("all eight scene topics are searchable with difficulty counts and source ex
       );
     }
     await page.getByLabel("ライブラリの難易度").selectOption("all");
-    const q = sceneQuestions.find((q) => q.topic === topic)!;
+    const q = questions.find((q) => q.topic === topic)!;
     await page.getByLabel("問題を検索").fill(q.prompt);
     await expect(page.locator(".library-count b")).toHaveText("1");
     await page.locator(".library-question summary").first().click();

@@ -18,6 +18,10 @@ export default defineConfig({
             /\/src\/data\/choice-revisions-([^/]+)\.json$/,
           );
           if (choices) return `questions-choices-${choices[1]}`;
+          const editorial = id.match(
+            /\/src\/data\/editorial-revisions-([^/]+)\.json$/,
+          );
+          if (editorial) return `questions-editorial-${editorial[1]}`;
           if (id.includes("node_modules")) return "vendor";
         },
       },

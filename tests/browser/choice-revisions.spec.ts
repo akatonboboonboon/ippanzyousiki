@@ -4,6 +4,7 @@ import {
   currentChoiceId,
   revisedOriginalIds,
 } from "../../src/data/choice-revisions";
+import { currentEditorialId } from "../../src/data/editorial-revisions";
 
 test("an older twelve-genre practice resumes with its original choices and chart while the library shows revised choices", async ({
   page,
@@ -100,7 +101,9 @@ test("an older twelve-genre practice resumes with its original choices and chart
   await expect(page.locator(".review-body")).toContainText(
     old[1].choices[items[1].order[answers[1]]],
   );
-  const revised = questions.find((q) => q.id === currentChoiceId(old[1].id))!;
+  const revised = questions.find(
+    (q) => q.id === currentEditorialId(currentChoiceId(old[1].id)),
+  )!;
   await page
     .getByRole("button", { name: "問題ライブラリ", exact: true })
     .click();

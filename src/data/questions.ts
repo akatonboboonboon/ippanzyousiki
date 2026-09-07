@@ -21,6 +21,14 @@ import { streetSymbolQuestions } from "./expansion-street-symbols";
 import { floorFamilyQuestions } from "./expansion-floor-family";
 import { beddingApplianceQuestions } from "./expansion-bedding-appliance";
 import { settlementShoppingQuestions } from "./expansion-settlement-shopping";
+import { objectsStationeryQuestions } from "./expansion-objects-stationery";
+import { gamesGardenLibraryQuestions } from "./expansion-games-garden-library";
+import { photoHotelQuestions } from "./expansion-photo-hotel";
+import {
+  editorialRevisions,
+  editorialOriginalIds,
+  currentEditorialId,
+} from "./editorial-revisions";
 import { dealQuestions } from "./expansion-deals";
 import archive from "./archive-v1.json" with { type: "json" };
 import type { Question } from "./types";
@@ -73,15 +81,30 @@ export const sceneQuestions: Question[] = [
   ...beddingApplianceQuestions,
   ...settlementShoppingQuestions,
 ];
-export const questions: Question[] = [
+export const sceneEditionQuestions: Question[] = [
   ...dailyEditionQuestions,
   ...sceneQuestions,
+];
+export const editorialQuestions: Question[] = sceneEditionQuestions.map((q) =>
+  editorialOriginalIds.has(q.id)
+    ? { ...q, ...editorialRevisions[q.id], id: currentEditorialId(q.id) }
+    : q,
+);
+export const familiarQuestions: Question[] = [
+  ...objectsStationeryQuestions,
+  ...gamesGardenLibraryQuestions,
+  ...photoHotelQuestions,
+];
+export const questions: Question[] = [
+  ...editorialQuestions,
+  ...familiarQuestions,
 ];
 export const archivedQuestions: Question[] = [
   ...(archive as Question[]),
   ...publishedQuestions.filter((question) =>
     revisedOriginalIds.has(question.id),
   ),
+  ...sceneEditionQuestions.filter((q) => editorialOriginalIds.has(q.id)),
 ];
 export const activeQuestionIds = new Set(questions.map((q) => q.id));
 export const questionMap = new Map(

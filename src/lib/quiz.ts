@@ -6,6 +6,10 @@ import {
   type Question,
 } from "../data/types";
 import { currentChoiceId, originalChoiceId } from "../data/choice-revisions";
+import {
+  currentEditorialId,
+  originalEditorialId,
+} from "../data/editorial-revisions";
 import { restoreLearning, type LearningProgress } from "./learning";
 
 export interface QuizConfig {
@@ -16,7 +20,7 @@ export interface QuizConfig {
   diagnosticVersion?: string;
 }
 
-export const DIAGNOSTIC_VERSION = "standard-v8";
+export const DIAGNOSTIC_VERSION = "standard-v9";
 export const DIAGNOSTIC_COUNT = 60;
 const DIAGNOSTIC_NAMES = {
   "standard-v1": "標準診断 1",
@@ -27,6 +31,7 @@ const DIAGNOSTIC_NAMES = {
   "standard-v6": "標準診断 6",
   "standard-v7": "標準診断 7",
   "standard-v8": "標準診断 8",
+  "standard-v9": "標準診断 9",
 } as const;
 type DiagnosticVersion = keyof typeof DIAGNOSTIC_NAMES;
 
@@ -258,6 +263,47 @@ for (const [category, topic, counts, normalImages] of [
   }
 }
 
+// Standard 9 includes the edited wording and these seven fixed topic ranges.
+const familiarDiagnosticPool = new Map<
+  string,
+  { category: CategoryId; difficulty: Difficulty; bucket: DiagnosticBucket }
+>();
+for (const [category, topic, normalImages] of [
+  ["household", "smallitems", 6],
+  ["work", "stationery", 3],
+  ["culture", "games", 6],
+  ["household", "gardening", 3],
+  ["public", "library", 3],
+  ["digital", "photo", 6],
+  ["public", "hotel", 3],
+] as const) {
+  for (const [difficulty, count] of [
+    ["easy", 6],
+    ["normal", 6],
+    ["hard", 3],
+  ] as const) {
+    for (let n = 1; n <= count; n++) {
+      familiarDiagnosticPool.set(
+        `v2-${category}-familiar-${topic}-${difficulty}-${String(n).padStart(3, "0")}`,
+        {
+          category,
+          difficulty,
+          bucket:
+            difficulty === "normal" && n <= normalImages
+              ? "normalImage"
+              : (
+                  {
+                    easy: "easyText",
+                    normal: "normalText",
+                    hard: "hardText",
+                  } as const
+                )[difficulty],
+        },
+      );
+    }
+  }
+}
+
 export function createDiagnosticConfig(
   version: DiagnosticVersion = DIAGNOSTIC_VERSION,
 ): QuizConfig {
@@ -300,6 +346,24 @@ function diagnosticBucket(
   question: Question,
   version: string,
 ): DiagnosticBucket | null {
+  if (version === "standard-v9") {
+    const expected = familiarDiagnosticPool.get(question.id);
+    if (expected) {
+      if (
+        question.category !== expected.category ||
+        question.difficulty !== expected.difficulty
+      )
+        return null;
+      if (expected.bucket === "normalImage") {
+        if (!question.image?.src?.trim() || !question.image.alt?.trim())
+          return null;
+      } else if (question.image !== undefined) return null;
+      return expected.bucket;
+    }
+    const originalId = originalEditorialId(question.id);
+    if (currentEditorialId(originalId) !== question.id) return null;
+    return diagnosticBucket({ ...question, id: originalId }, "standard-v8");
+  }
   if (version === "standard-v8") {
     const expected = sceneDiagnosticPool.get(question.id);
     if (!expected) return diagnosticBucket(question, "standard-v7");
@@ -477,7 +541,9 @@ export function selectQuestions(
       );
     const version = config.diagnosticVersion!;
     const sample = selectDiagnosticQuestions(bank, random, version);
-    return version === "standard-v7" || version === "standard-v8"
+    return version === "standard-v7" ||
+      version === "standard-v8" ||
+      version === "standard-v9"
       ? prioritizeQuestions(
           sample,
           bank.filter((q) => diagnosticBucket(q, version) !== null),
@@ -818,7 +884,9 @@ export function readSaved(bank: Map<string, Question>): SavedData {
     const activeBank = new Map(
       [...bank].filter(
         ([id]) =>
-          id.startsWith("v2-") && currentChoiceId(originalChoiceId(id)) === id,
+          id.startsWith("v2-") &&
+          currentChoiceId(originalChoiceId(id)) === id &&
+          currentEditorialId(originalEditorialId(id)) === id,
       ),
     );
     return {

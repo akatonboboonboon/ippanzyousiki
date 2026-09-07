@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
-import { dailyQuestions } from "../../src/data/questions";
+import { questions } from "../../src/data/questions";
+const dailyQuestions = questions.filter((q) => q.id.includes("-daily-"));
 
 test("the seven new topics expose their questions, difficulties and sources", async ({
   page,

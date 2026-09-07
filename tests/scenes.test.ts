@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   dailyEditionQuestions,
   sceneQuestions,
-  questions,
+  sceneEditionQuestions as questions,
   publishedQuestions,
   revisedQuestions,
   questionMap,
@@ -19,6 +19,7 @@ import {
   validRecord,
 } from "../src/lib/quiz";
 import type { LearningProgress } from "../src/lib/learning";
+import { editorialOriginalIds } from "../src/data/editorial-revisions";
 
 const topics = [
   ["public", "road", "道路に描かれた表示", [0, 15, 0], 15],
@@ -114,7 +115,7 @@ describe("everyday scenes expansion", () => {
 
   it("includes the eight topics in standard 8 while retaining all category, difficulty and image quotas", () => {
     const seen = new Set<string>();
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v8");
     expect(config.diagnosticVersion).toBe("standard-v8");
     for (let seed = 1; seed <= 100; seed++) {
       const sample = selectQuestions(questions, config, seeded(seed));
@@ -145,7 +146,7 @@ describe("everyday scenes expansion", () => {
     const learning: LearningProgress = Object.fromEntries(
       dailyEditionQuestions.map((q, i) => [q.id, learned(i + 1)]),
     );
-    const config = createDiagnosticConfig();
+    const config = createDiagnosticConfig("standard-v8");
     const sample = selectQuestions(questions, config, seeded(7), learning);
     for (const q of sample) {
       const hasUnseenInBucket = sceneQuestions.some(
@@ -174,7 +175,13 @@ describe("everyday scenes expansion", () => {
     });
     const saved = readSaved(questionMap);
     expect(saved.history).toEqual([result]);
-    expect(saved.learning).toEqual(learning);
+    expect(saved.learning).toEqual(
+      Object.fromEntries(
+        Object.entries(learning).filter(
+          ([id]) => !editorialOriginalIds.has(id),
+        ),
+      ),
+    );
     expect(
       categoryScores(result, questionMap).reduce(
         (sum, axis) => sum + axis.correct,

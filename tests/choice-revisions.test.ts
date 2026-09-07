@@ -4,14 +4,19 @@ import {
   revisedQuestions as questions,
   publishedQuestions,
   questionMap,
-  activeQuestionIds,
-  archivedQuestions,
+  archivedQuestions as allArchivedQuestions,
 } from "../src/data/questions";
 import {
   choiceRevisions,
   currentChoiceId,
   revisedOriginalIds,
 } from "../src/data/choice-revisions";
+import { editorialOriginalIds } from "../src/data/editorial-revisions";
+// Check the edition as published, even when later wording revisions retire its IDs.
+const activeQuestionIds = new Set(questions.map((q) => q.id));
+const archivedQuestions = allArchivedQuestions.filter(
+  (q) => !editorialOriginalIds.has(q.id),
+);
 import { CATEGORY_IDS, type Question } from "../src/data/types";
 import {
   categoryScores,
