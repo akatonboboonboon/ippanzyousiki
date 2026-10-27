@@ -17,7 +17,7 @@
 
 ## 開発・確認
 
-Node.js 24とnpmを使用します。リポジトリのルートで実行してください。
+Node.js 24.22.1とnpmを使用します。リポジトリのルートで実行してください。
 
 ```sh
 npm install
@@ -43,7 +43,7 @@ npm run preview
 
 Playwrightはテスト用サーバーを自動起動します。Linuxでブラウザーのシステム依存関係も導入する場合は、`npx playwright install --with-deps chromium` を使用します。
 
-GitHub ActionsのCIはpushとpull requestで、Ubuntu・Node.js 24上の `npm ci`、ビルド、単体テスト、Chromiumの画面操作テストを実行します。失敗時は生成されたテスト結果・トレースを成果物として保存します。
+GitHub ActionsのCIはpushとpull requestで、Ubuntu・Node.js 24.22.1上の `npm ci`、ビルド、単体テスト、Chromiumの画面操作テストを実行します。失敗時は生成されたテスト結果・トレースを成果物として保存します。
 
 ## 構成
 
@@ -90,4 +90,6 @@ GitHub ActionsのCIはpushとpull requestで、Ubuntu・Node.js 24上の `npm ci
 
 `npm run build` で生成される `dist/` を静的ホスティングへ配置できます。Viteの `base` は `./` なので、サブディレクトリへの配置にも対応しています。開発サーバーやNode.jsを公開先で常駐させる必要はありません。CIには公開・デプロイ処理を含めていません。
 
-Renderでは **Static Site** を選択します。ブランチは `codex/build-quiz-app`、Root Directoryは空欄、Build Commandは `npm ci --include=dev && npm run build`、Publish Directoryは `dist`、環境変数は `NODE_VERSION=24`。Start Commandは不要です。Renderが発行した公開URLは外部からアクセスできます。GitHubへのpush後に反映するには、自動デプロイを有効にするか手動デプロイを実行してください。
+Renderでは **Static Site** を選択します。ブランチは `codex/build-quiz-app`、Root Directoryは空欄、Build Commandは `npm ci --include=dev && npm run build`、Publish Directoryは `dist`、環境変数は `NODE_VERSION=24.22.1`。Start Commandは不要です。Renderが発行した公開URLは外部からアクセスできます。GitHubへのpush後に反映するには、自動デプロイを有効にするか手動デプロイを実行してください。
+
+[Render の eMudhra 勧告](https://render.com/docs/advisory-emudhra)への対応として、ビルド用 Node.js は `.node-version` の修正版に固定しています。Render の `NODE_VERSION` 環境変数がある場合はファイルより優先されるため、承認後に同じ修正版へ更新し、Static Site を再ビルドしてください。ビルドログでも Node.js の実際のバージョンを確認してください。
